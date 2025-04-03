@@ -7,7 +7,7 @@ from api import api_key
 openai.api_key = api_key
 dirs = ['mgsm_en', 'mgsm_zh']
 nums = 250
-
+prompt = "\n請在最後一行輸出答案，答案只需要包含數字"
 
 def handle_dir(dir):
     df = pd.read_csv(f'./data/mgsm/{dir}.tsv', sep = '\t', nrows=nums, names=['question', 'answer'])
@@ -17,7 +17,7 @@ def handle_dir(dir):
     
     result = []
     for i in tqdm(range(nums)):
-        text = data['question'][str(i)]
+        text = data['question'][str(i)] + prompt
         response = openai.ChatCompletion.create(
             model="gpt-4o-mini-2024-07-18",
             messages=[{"role": "user", "content": text}],
