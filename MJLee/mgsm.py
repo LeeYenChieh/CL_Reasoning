@@ -7,7 +7,7 @@ import nums_from_string as nfs
 
 openai.api_key = api_key
 dirs = ['mgsm_en', 'mgsm_zh']
-nums = 10
+nums = 250
 prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
 
 def handle_dir(dir):
