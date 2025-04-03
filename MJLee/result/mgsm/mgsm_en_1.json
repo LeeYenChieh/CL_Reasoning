@@ -1,0 +1,6 @@
+[
+  {
+    "answer": "To determine how much Janet makes daily at the farmers' market from selling her duck eggs, we start by calculating the total number of eggs she sells after accounting for her personal use.\n\n1. **Total eggs laid by ducks per day:** 16 eggs\n2. **Eggs eaten for breakfast:** 3 eggs\n3. **Eggs used for baking muffins:** 4 eggs\n\nNext, we calculate the total number of eggs Janet uses each day: \n\n\\[\n\\text{Total eggs used} = \\text{Eggs eaten} + \\text{Eggs for baking} = 3 + 4 = 7 \\text{ eggs}\n\\]\n\nNow, subtract the total eggs used from the total eggs laid to find out how many are left for selling:\n\n\\[\n\\text{Eggs sold} = \\text{Total eggs laid} - \\text{Total eggs used} = 16 - 7 = 9 \\text{ eggs}\n\\]\n\nJanet sells these eggs at a price of $2 per egg:\n\n\\[\n\\text{Daily earnings} = \\text{Eggs sold} \\times \\text{Price per egg} = 9 \\times 2 = 18 \\text{ dollars}\n\\]\n\nThus, the total amount Janet makes every day at the farmers' market is:\n\n\\[\n\\boxed{18}\n\\]",
+    "correct": 18
+  }
+]

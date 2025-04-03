@@ -1,0 +1,4 @@
+openai==0.18.0
+pandas
+tqdm
+json
