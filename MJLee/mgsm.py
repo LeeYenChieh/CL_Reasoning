@@ -28,7 +28,13 @@ def handle_dir(dir):
                         "output": response["choices"][0]["message"]["content"],
                         "answer": data['answer'][str(i)],
                         "question": text,
-                        "correct":True if data['answer'][str(i)] == nfs.get_nums(response["choices"][0]["message"]["content"])[-1] else False
+                        "correct":True if nfs.get_nums(str(data['answer'][str(i)]))[-1] == nfs.get_nums(response["choices"][0]["message"]["content"])[-1] else False
+                    })
+        print({"index": i, 
+                        "output": response["choices"][0]["message"]["content"],
+                        "answer": data['answer'][str(i)],
+                        "question": text,
+                        "correct":True if nfs.get_nums(str(data['answer'][str(i)]))[-1] == nfs.get_nums(response["choices"][0]["message"]["content"])[-1] else False
                     })
     if dir == 'mgsm_en':
         with open(f'./MJLee/result/mgsm/{dir}_{nums}.json', 'w') as f:
