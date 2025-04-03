@@ -3,11 +3,12 @@ import pandas as pd
 import json
 from tqdm import tqdm
 from api import api_key
+import nums_from_string as nfs
 
 openai.api_key = api_key
 dirs = ['mgsm_en', 'mgsm_zh']
 nums = 250
-prompt = "\n請在最後一行輸出答案，答案只需要包含數字"
+prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
 
 def handle_dir(dir):
     df = pd.read_csv(f'./data/mgsm/{dir}.tsv', sep = '\t', nrows=nums, names=['question', 'answer'])
@@ -21,12 +22,13 @@ def handle_dir(dir):
         response = openai.ChatCompletion.create(
             model="gpt-4o-mini-2024-07-18",
             messages=[{"role": "user", "content": text}],
+            temperature=0.2
         )
         result.append({"index": i, 
                         "output": response["choices"][0]["message"]["content"],
                         "answer": data['answer'][str(i)],
                         "question": text,
-                        "correct": True
+                        "correct":True if data['answer'][str(i)] == nfs.get_nums(response["choices"][0]["message"]["content"])[-1] else False
                     })
     if dir == 'mgsm_en':
         with open(f'./MJLee/result/mgsm/{dir}_{nums}.json', 'w') as f:
