@@ -5,8 +5,8 @@ from tqdm import tqdm
 from api import api_key
 
 openai.api_key = api_key
-dirs = ['mgsm_en', 'mgsm_zh', 'mgsm_th']
-nums = 1
+dirs = ['mgsm_en', 'mgsm_zh']
+nums = 250
 
 
 def handle_dir(dir):
@@ -25,13 +25,14 @@ def handle_dir(dir):
         result.append({"index": i, 
                         "output": response["choices"][0]["message"]["content"],
                         "answer": data['answer'][str(i)],
-                        "question": text
+                        "question": text,
+                        "correct": True
                     })
     if dir == 'mgsm_en':
-        with open(f'./result/mgsm/{dir}_{nums}.json', 'w') as f:
+        with open(f'./MJLee/result/mgsm/{dir}_{nums}.json', 'w') as f:
             json.dump(result, f, indent=2)
     else:
-        with open(f'./result/mgsm/{dir}_{nums}.json', 'w', encoding='utf-8') as f:
+        with open(f'./MJLee/result/mgsm/{dir}_{nums}.json', 'w', encoding='utf-8') as f:
             json.dump(result, f, indent=2, ensure_ascii=False)
 
 
