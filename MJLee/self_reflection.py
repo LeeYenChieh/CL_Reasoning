@@ -11,53 +11,52 @@ dir2 = 'mgsm_en'
 nums = 250
 prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
 
-def compute_correct(result1, result2):
-    w1c2 = []
-    w2c1 = []
-    w1w2 = []
-    c1c2 = []
-    for i in range(nums):
-        if result1[i]['correct'] and result2[i]['correct']:
-            c1c2.append(i)
-        elif result1[i]['correct'] and not result2[i]['correct']:
-            w2c1.append(i)
-        elif not result1[i]['correct'] and not result2[i]['correct']:
-            w1w2.append(i)
-        else:
-            w1c2.append(i)
-    print(f'wrong in {dir1}, correct in {dir2}：{len(w1c2)}/{nums}')
-    print(f'wrong in {dir2}, correct in {dir1}：{len(w2c1)}/{nums}')
-    print(f'wrong in {dir1}, wrong in {dir2}：{len(w1w2)}/{nums}')
-    print(f'correct in both：{len(c1c2)}/{nums}')
-    return w1c2, w2c1, w1w2, c1c2
-
-def self_reflection(index, w_dir, c_dir, w_data, c_data, w_result, c_result):
+def self_reflection(data1, data2, result1, result2):
     result = []
-    cnt = 0
-    bar = tqdm(total=len(index))
-    for i in index:
-        text = f'問題是{w_data["question"][str(i)]}，請你將題目翻成中文以及英文，分別回答一次後比較兩個的答案並輸出正確的答案。' + prompt
+    c1c2, w2c1, w1w2, w1c2 = 0, 0, 0, 0
+    c1c2_nums, w2c1_nums, w1w2_nums, w1c2_nums = 0, 0, 0, 0
+    for i in tqdm(range(nums)):
+        text = f'問題是{data1["question"][str(i)]}，請你將題目翻成中文以及英文，分別回答一次後比較兩個的答案並輸出正確的答案。' + prompt
         response = openai.ChatCompletion.create(
             model="gpt-4o-mini-2024-07-18",
-            messages=[{"role": "user", "content": w_data["question"][str(i)]}, 
-                        {"role": "assistant", "content": w_result[i]['output']},
+            messages=[{"role": "user", "content": data1["question"][str(i)]}, 
+                        {"role": "assistant", "content": result1[i]['output']},
                         {"role": "user", "content": text}],
             temperature=0.2
         )
-        correct = True if nfs.get_nums(str(w_data['answer'][str(i)]))[-1] == nfs.get_nums(response["choices"][0]["message"]["content"])[-1] else False
-        if correct:
-            cnt += 1
+        correct = True if nfs.get_nums(str(data1['answer'][str(i)]))[-1] == nfs.get_nums(response["choices"][0]["message"]["content"])[-1] else False
+        if result1[i]['correct'] and result2[i]['correct']:
+            c1c2_nums += 1
+            c1c2 += 1 if correct else 0
+        elif result1[i]['correct'] and not result2[i]['correct']:
+            w2c1_nums += 1
+            w2c1 += 1 if correct else 0
+        elif not result1[i]['correct'] and not result2[i]['correct']:
+            w1w2_nums += 1
+            w1w2 += 1 if correct else 0
+        else:
+            w1c2_nums += 1
+            w1c2 += 1 if correct else 0
+
         result.append({"index": i, 
                         "output": response["choices"][0]["message"]["content"],
-                        "answer": w_data['answer'][str(i)],
+                        "answer": data1['answer'][str(i)],
                         "question": text,
                         "correct":correct
         })
-        bar.update(1)
-    with open(f'./MJLee/result/mgsm/w_{w_dir}_c_{c_dir}_{nums}.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/result/mgsm/{dir1}_{dir2}_{nums}.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
-    print(f'wrong in {w_dir}, correct in {c_dir} after self reflection：{cnt}/{len(index)}')
 
+    print(f'wrong in {dir1}, correct in {dir2}：{w1c2_nums}/{nums}')
+    print(f'wrong in {dir2}, correct in {dir1}：{w2c1_nums}/{nums}')
+    print(f'wrong in {dir1}, wrong in {dir2}：{w1w2_nums}/{nums}')
+    print(f'correct in both：{c1c2_nums}/{nums}')
+    print("-" * 30)
+    print("**After self reflection**")
+    print(f'wrong in {dir1}, correct in {dir2}：{w1c2}/{w1c2_nums}')
+    print(f'wrong in {dir2}, correct in {dir1}：{w2c1}/{w2c1_nums}')
+    print(f'wrong in {dir1}, wrong in {dir2}：{w1w2}/{w1w2_nums}')
+    print(f'correct in both：{c1c2}/{c1c2_nums}')
 
 
 def main():
@@ -70,9 +69,8 @@ def main():
     with open(f'./MJLee/result/mgsm/{dir2}_{nums}.json', 'r') as f:
         result2 = json.load(f)
 
-    w1c2, w2c1, w1w2, c1c2 = compute_correct(result1, result2)
-    self_reflection(w1c2, dir1, dir2, data1, data2, result1, result2)
-    self_reflection(w2c1, dir2, dir1, data2, data1, result2, result1)
+    self_reflection(data1, data2, result1, result2)
+    
 
 if __name__ == '__main__':
     main()

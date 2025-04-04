@@ -1,0 +1,17 @@
+experiment 1
+
+response = openai.ChatCompletion.create(
+            model="gpt-4o-mini-2024-07-18",
+            messages=[{"role": "user", "content": w_data["question"][str(i)]}, 
+                        {"role": "assistant", "content": w_result[i]['output']},
+                        {"role": "user", "content": text}],
+            temperature=0.2
+        )
+
+wrong in mgsm_zh, correct in mgsm_en：34/250
+wrong in mgsm_en, correct in mgsm_zh：12/250
+wrong in mgsm_zh, wrong in mgsm_en：13/250
+correct in both：191/250
+
+wrong in mgsm_zh, correct in mgsm_en after self reflection：7/34
+wrong in mgsm_en, correct in mgsm_zh after self reflection：5/12
