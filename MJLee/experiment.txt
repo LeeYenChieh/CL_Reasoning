@@ -1,9 +1,12 @@
 experiment 1
-
+dir1 = 'mgsm_zh'
+dir2 = 'mgsm_en'
+prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
+text = f'問題是{data1["question"][str(i)]}，請你將題目翻成中文以及英文，分別回答一次後比較兩個的答案並輸出正確的答案。' + prompt
 response = openai.ChatCompletion.create(
             model="gpt-4o-mini-2024-07-18",
-            messages=[{"role": "user", "content": w_data["question"][str(i)]}, 
-                        {"role": "assistant", "content": w_result[i]['output']},
+            messages=[{"role": "user", "content": data1["question"][str(i)]}, 
+                        {"role": "assistant", "content": result1[i]['output']},
                         {"role": "user", "content": text}],
             temperature=0.2
         )
@@ -12,6 +15,15 @@ wrong in mgsm_zh, correct in mgsm_en：34/250
 wrong in mgsm_en, correct in mgsm_zh：12/250
 wrong in mgsm_zh, wrong in mgsm_en：13/250
 correct in both：191/250
+------------------------------
+**After self reflection**
+wrong in mgsm_zh, correct in mgsm_en：5/34
+wrong in mgsm_en, correct in mgsm_zh：12/12
+wrong in mgsm_zh, wrong in mgsm_en：2/13
+correct in both：190/191
 
-wrong in mgsm_zh, correct in mgsm_en after self reflection：7/34
-wrong in mgsm_en, correct in mgsm_zh after self reflection：5/12
+{dir1}_{dir2}_{nums}.json
+
+
+experiment 2
+
