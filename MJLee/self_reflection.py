@@ -16,22 +16,10 @@ def self_reflection(data1, data2, result1, result2):
     c1c2, w2c1, w1w2, w1c2 = 0, 0, 0, 0
     c1c2_nums, w2c1_nums, w1w2_nums, w1c2_nums = 0, 0, 0, 0
     for i in tqdm(range(nums)):
-        text = f'請比較你輸出的兩個答案並輸出最終的答案。' + prompt
-        response_for_al = openai.ChatCompletion.create(
-            model="gpt-4o-mini-2024-07-18",
-            messages=[{"role": "user", "content": data2["question"][str(i)] + prompt},
-                        {"role": "assistant", "content": result2[i]['output']},
-                        {"role": "user", "content": data1["question"][str(i)] + prompt}
-                        ],
-            temperature=0.2
-        )
+        text = f'問題是{data1['question'][str(i)]}，有一中文的回答為{result1[i]['output']}，一英文的回答為{result1[i]['output']}，請比較兩者的答案並輸出一個最終的答案' + prompt
         response = openai.ChatCompletion.create(
             model="gpt-4o-mini-2024-07-18",
-            messages=[{"role": "user", "content": data2["question"][str(i)] + prompt},
-                        {"role": "assistant", "content": result2[i]['output']},
-                        {"role": "user", "content": data1["question"][str(i)] + prompt},
-                        {"role": "assistant", "content": response_for_al["choices"][0]["message"]["content"]},
-                        {"role": "user", "content": text}],
+            messages=[{"role": "user", "content": text}],
             temperature=0.2
         )
         correct = True if nfs.get_nums(str(data2['answer'][str(i)]))[-1] == nfs.get_nums(response["choices"][0]["message"]["content"])[-1] else False
@@ -49,13 +37,12 @@ def self_reflection(data1, data2, result1, result2):
             w1c2 += 1 if correct else 0
 
         result.append({"index": i, 
-                        "output_for_al": response_for_al["choices"][0]["message"]["content"],
                         "output": response["choices"][0]["message"]["content"],
                         "answer": data2['answer'][str(i)],
                         "question": text,
                         "correct":correct
         })
-    with open(f'./MJLee/result/mgsm/experiment8.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/result/mgsm/experiment9.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
     print(f'wrong in {dir1}, correct in {dir2}：{w1c2_nums}/{nums}')
