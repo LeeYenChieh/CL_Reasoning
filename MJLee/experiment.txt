@@ -302,3 +302,31 @@ wrong in mgsm_zh, wrong in mgsm_en：0/13
 correct in both：191/191
 
 total：223/250
+
+
+
+experiment10
+dir1 = 'mgsm_zh'
+dir2 = 'mgsm_en'
+prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
+text = f'問題是{data2["question"][str(i)]}，有一中文的回答為{result1[i]["output"]}，一英文的回答為{result2[i]["output"]}，請比較兩者的答案並輸出一個最終的答案' + prompt
+response = openai.ChatCompletion.create(
+    model="gpt-4o-mini-2024-07-18",
+    messages=[{"role": "user", "content": text}],
+    temperature=0.2
+)
+wrong in mgsm_zh, correct in mgsm_en：34/250
+wrong in mgsm_en, correct in mgsm_zh：12/250
+wrong in mgsm_zh, wrong in mgsm_en：13/250
+correct in both：191/250
+
+mgsm_zh：203/250
+mgsm_en：225/250
+------------------------------
+**After self reflection**
+wrong in mgsm_zh, correct in mgsm_en：25/34
+wrong in mgsm_en, correct in mgsm_zh：6/12
+wrong in mgsm_zh, wrong in mgsm_en：0/13
+correct in both：191/191
+
+total：222/250

@@ -16,7 +16,7 @@ def self_reflection(data1, data2, result1, result2):
     c1c2, w2c1, w1w2, w1c2 = 0, 0, 0, 0
     c1c2_nums, w2c1_nums, w1w2_nums, w1c2_nums = 0, 0, 0, 0
     for i in tqdm(range(nums)):
-        text = f'問題是{data2["question"][str(i)]}，有一中文的回答為{result1[i]["output"]}，一英文的回答為{result2[i]["output"]}，請比較兩者的答案並輸出一個最終的答案' + prompt
+        text = text = f'問題是{data2["question"][str(i)]}，請你將題目翻成中文以及英文，一步一步思考，回答中文的問題後回答英文的問題，完成後比較兩個的答案並輸出正確的答案。' + prompt
         response = openai.ChatCompletion.create(
             model="gpt-4o-mini-2024-07-18",
             messages=[{"role": "user", "content": text}],
@@ -42,7 +42,7 @@ def self_reflection(data1, data2, result1, result2):
                         "question": text,
                         "correct":correct
         })
-    with open(f'./MJLee/result/mgsm/experiment10.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/result/mgsm/experiment11.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
     print(f'wrong in {dir1}, correct in {dir2}：{w1c2_nums}/{nums}')
