@@ -36,7 +36,7 @@ def self_reflection(index, w_dir, c_dir, w_data, c_data, w_result, c_result):
     cnt = 0
     bar = tqdm(total=len(index))
     for i in index:
-        text = f'問題是{w_data['question'][str(i)]}，請你將題目翻成中文以及英文，分別回答一次後比較兩個的答案並輸出正確的答案。' + prompt
+        text = f'問題是{w_data["question"][str(i)]}，請你將題目翻成中文以及英文，分別回答一次後比較兩個的答案並輸出正確的答案。' + prompt
         response = openai.ChatCompletion.create(
             model="gpt-4o-mini-2024-07-18",
             messages=[{"role": "user", "content": text}],
