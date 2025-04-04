@@ -39,7 +39,9 @@ def self_reflection(index, w_dir, c_dir, w_data, c_data, w_result, c_result):
         text = f'問題是{w_data["question"][str(i)]}，請你將題目翻成中文以及英文，分別回答一次後比較兩個的答案並輸出正確的答案。' + prompt
         response = openai.ChatCompletion.create(
             model="gpt-4o-mini-2024-07-18",
-            messages=[{"role": "user", "content": text}],
+            messages=[{"role": "user", "content": w_data["question"][str(i)]}, 
+                        {"role": "assistant", "content": w_result[i]['output']},
+                        {"role": "user", "content": text}],
             temperature=0.2
         )
         correct = True if nfs.get_nums(str(w_data['answer'][str(i)]))[-1] == nfs.get_nums(response["choices"][0]["message"]["content"])[-1] else False
