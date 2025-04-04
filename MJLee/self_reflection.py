@@ -16,7 +16,7 @@ def self_reflection(data1, data2, result1, result2):
     c1c2, w2c1, w1w2, w1c2 = 0, 0, 0, 0
     c1c2_nums, w2c1_nums, w1w2_nums, w1c2_nums = 0, 0, 0, 0
     for i in tqdm(range(nums)):
-        text = f'問題是{data2["question"][str(i)]}，請你將題目翻成中文以及英文，分別回答一次後比較兩個的答案並輸出正確的答案。' + prompt
+        text = f'問題是{data1["question"][str(i)]}，請你將題目翻成中文以及英文，分別回答一次後比較兩個的答案並輸出正確的答案。' + prompt
         response = openai.ChatCompletion.create(
             model="gpt-4o-mini-2024-07-18",
             messages=[{"role": "user", "content": text}],
@@ -42,19 +42,24 @@ def self_reflection(data1, data2, result1, result2):
                         "question": text,
                         "correct":correct
         })
-    with open(f'./MJLee/result/mgsm/{dir1}_{dir2}_{nums}.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/result/mgsm/experiment4.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
     print(f'wrong in {dir1}, correct in {dir2}：{w1c2_nums}/{nums}')
     print(f'wrong in {dir2}, correct in {dir1}：{w2c1_nums}/{nums}')
     print(f'wrong in {dir1}, wrong in {dir2}：{w1w2_nums}/{nums}')
     print(f'correct in both：{c1c2_nums}/{nums}')
+    print()
+    print(f'{dir1}：{c1c2_nums + w2c1_nums}/{nums}')
+    print(f'{dir2}：{c1c2_nums + w1c2_nums}/{nums}')
     print("-" * 30)
     print("**After self reflection**")
     print(f'wrong in {dir1}, correct in {dir2}：{w1c2}/{w1c2_nums}')
     print(f'wrong in {dir2}, correct in {dir1}：{w2c1}/{w2c1_nums}')
     print(f'wrong in {dir1}, wrong in {dir2}：{w1w2}/{w1w2_nums}')
     print(f'correct in both：{c1c2}/{c1c2_nums}')
+    print()
+    print(f'total：{c1c2 + w1c2 + w2c1 + w1w2}/{nums}')
 
 
 def main():
