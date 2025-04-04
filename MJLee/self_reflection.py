@@ -17,12 +17,20 @@ def self_reflection(data1, data2, result1, result2):
     c1c2_nums, w2c1_nums, w1w2_nums, w1c2_nums = 0, 0, 0, 0
     for i in tqdm(range(nums)):
         text = f'請比較你輸出的兩個答案並輸出最終的答案。' + prompt
+        response_for_al = openai.ChatCompletion.create(
+            model="gpt-4o-mini-2024-07-18",
+            messages=[{"role": "user", "content": data1["question"][str(i)]},
+                        {"role": "assistant", "content": result1[i]['output']},
+                        {"role": "user", "content": data2["question"][str(i)]}
+                        ],
+            temperature=0.2
+        )
         response = openai.ChatCompletion.create(
             model="gpt-4o-mini-2024-07-18",
-            messages=[{"role": "user", "content": data2["question"][str(i)]},
-                        {"role": "assistant", "content": result2[i]['output']},
-                        {"role": "user", "content": data1["question"][str(i)]},
+            messages=[{"role": "user", "content": data1["question"][str(i)]},
                         {"role": "assistant", "content": result1[i]['output']},
+                        {"role": "user", "content": data2["question"][str(i)]},
+                        {"role": "assistant", "content": response_for_al["choices"][0]["message"]["content"]},
                         {"role": "user", "content": text}],
             temperature=0.2
         )
@@ -41,12 +49,13 @@ def self_reflection(data1, data2, result1, result2):
             w1c2 += 1 if correct else 0
 
         result.append({"index": i, 
+                        "output_for_al": response_for_al["choices"][0]["message"]["content"],
                         "output": response["choices"][0]["message"]["content"],
                         "answer": data2['answer'][str(i)],
                         "question": text,
                         "correct":correct
         })
-    with open(f'./MJLee/result/mgsm/experiment6.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/result/mgsm/experiment7.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
     print(f'wrong in {dir1}, correct in {dir2}：{w1c2_nums}/{nums}')
