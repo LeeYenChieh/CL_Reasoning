@@ -31,6 +31,7 @@ def handle_dir(dir):
             if correct:
                 cnt += 1
         except:
+            print(response["choices"][0]["message"]["content"])
             correct = "True/False?"
         result.append({"index": i, 
                         "output": response["choices"][0]["message"]["content"],
