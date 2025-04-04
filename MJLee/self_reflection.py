@@ -16,7 +16,7 @@ def self_reflection(data1, data2, result1, result2):
     c1c2, w2c1, w1w2, w1c2 = 0, 0, 0, 0
     c1c2_nums, w2c1_nums, w1w2_nums, w1c2_nums = 0, 0, 0, 0
     for i in tqdm(range(nums)):
-        text = f'問題是{data1["question"][str(i)]}，有一中文的回答為{result1[i]["output"]}，一英文的回答為{result2[i]["output"]}，請比較兩者的答案並輸出一個最終的答案' + prompt
+        text = f'問題是{data2["question"][str(i)]}，有一中文的回答為{result1[i]["output"]}，一英文的回答為{result2[i]["output"]}，請比較兩者的答案並輸出一個最終的答案' + prompt
         response = openai.ChatCompletion.create(
             model="gpt-4o-mini-2024-07-18",
             messages=[{"role": "user", "content": text}],
