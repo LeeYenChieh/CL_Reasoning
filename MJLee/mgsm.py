@@ -25,9 +25,13 @@ def handle_dir(dir):
             messages=[{"role": "user", "content": text}],
             temperature=0.2
         )
-        correct = True if nfs.get_nums(str(data['answer'][str(i)]))[-1] == nfs.get_nums(response["choices"][0]["message"]["content"])[-1] else False
-        if correct:
-            cnt += 1
+        correct = True
+        try:
+            correct = True if nfs.get_nums(str(data['answer'][str(i)]))[-1] == nfs.get_nums(response["choices"][0]["message"]["content"])[-1] else False
+            if correct:
+                cnt += 1
+        except:
+            correct = "True/False?"
         result.append({"index": i, 
                         "output": response["choices"][0]["message"]["content"],
                         "answer": data['answer'][str(i)],
