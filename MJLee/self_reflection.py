@@ -42,7 +42,7 @@ def self_reflection(data1, data2, result1, result2):
                         "question": text,
                         "correct":correct
         })
-    with open(f'./MJLee/result/mgsm/experiment9.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/result/mgsm/experiment10.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
     print(f'wrong in {dir1}, correct in {dir2}：{w1c2_nums}/{nums}')
