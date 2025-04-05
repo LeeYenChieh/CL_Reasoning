@@ -1,0 +1,465 @@
+mgsm_zh：203/250
+mgsm_en：225/250
+mgsm_bn：199/250
+mgsm_de：206/250
+mgsm_es：221/250                    
+mgsm_fr：210/250                    
+mgsm_ja：203/250                    
+mgsm_ru：212/250                   
+mgsm_sw：197/250                 
+mgsm_te：165/250             
+mgsm_th：178/250
+
+
+experiment 1
+dir1 = 'mgsm_zh'
+dir2 = 'mgsm_en'
+prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
+text = f'問題是{data1["question"][str(i)]}，請你將題目翻成中文以及英文，分別回答一次後比較兩個的答案並輸出正確的答案。' + prompt
+response = openai.ChatCompletion.create(
+            model="gpt-4o-mini-2024-07-18",
+            messages=[{"role": "user", "content": data1["question"][str(i)]}, 
+                        {"role": "assistant", "content": result1[i]['output']},
+                        {"role": "user", "content": text}],
+            temperature=0.2
+        )
+
+wrong in mgsm_zh, correct in mgsm_en：34/250
+wrong in mgsm_en, correct in mgsm_zh：12/250
+wrong in mgsm_zh, wrong in mgsm_en：13/250
+correct in both：191/250
+
+mgsm_zh：203/250
+mgsm_en：225/250
+------------------------------
+**After self reflection**
+wrong in mgsm_zh, correct in mgsm_en：5/34
+wrong in mgsm_en, correct in mgsm_zh：12/12
+wrong in mgsm_zh, wrong in mgsm_en：2/13
+correct in both：190/191
+
+total：209/250
+
+{dir1}_{dir2}_{nums}.json -> lost
+
+
+
+experiment 2
+dir1 = 'mgsm_zh'
+dir2 = 'mgsm_en'
+prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
+text = f'問題是{data2["question"][str(i)]}，請你將題目翻成中文以及英文，分別回答一次後比較兩個的答案並輸出正確的答案。' + prompt
+response = openai.ChatCompletion.create(
+            model="gpt-4o-mini-2024-07-18",
+            messages=[{"role": "user", "content": data2["question"][str(i)]}, 
+                        {"role": "assistant", "content": result2[i]['output']},
+                        {"role": "user", "content": text}],
+            temperature=0.2
+        )
+
+wrong in mgsm_zh, correct in mgsm_en：34/250
+wrong in mgsm_en, correct in mgsm_zh：12/250
+wrong in mgsm_zh, wrong in mgsm_en：13/250
+correct in both：191/250
+
+mgsm_zh：203/250
+mgsm_en：225/250
+------------------------------
+**After self reflection**
+wrong in mgsm_zh, correct in mgsm_en：34/34
+wrong in mgsm_en, correct in mgsm_zh：5/12
+wrong in mgsm_zh, wrong in mgsm_en：2/13
+correct in both：191/191
+
+total：232/250
+
+{dir1}_{dir2}_{nums}.json -> lost
+
+
+
+experiment 3
+dir1 = 'mgsm_zh'
+dir2 = 'mgsm_en'
+prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
+text = f'問題是{data2["question"][str(i)]}，請你將題目翻成中文以及英文，分別回答一次後比較兩個的答案並輸出正確的答案。' + prompt
+response = openai.ChatCompletion.create(
+            model="gpt-4o-mini-2024-07-18",
+            messages=[{"role": "user", "content": text}],
+            temperature=0.2
+        )
+
+wrong in mgsm_zh, correct in mgsm_en：34/250
+wrong in mgsm_en, correct in mgsm_zh：12/250
+wrong in mgsm_zh, wrong in mgsm_en：13/250
+correct in both：191/250
+
+mgsm_zh：203/250
+mgsm_en：225/250
+------------------------------
+**After self reflection**
+wrong in mgsm_zh, correct in mgsm_en：32/34
+wrong in mgsm_en, correct in mgsm_zh：9/12
+wrong in mgsm_zh, wrong in mgsm_en：4/13
+correct in both：186/191
+
+total：231/250
+
+experiment3.json
+
+
+
+
+experiment 4
+dir1 = 'mgsm_zh'
+dir2 = 'mgsm_en'
+prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
+text = f'問題是{data1["question"][str(i)]}，請你將題目翻成中文以及英文，分別回答一次後比較兩個的答案並輸出正確的答案。' + prompt
+response = openai.ChatCompletion.create(
+            model="gpt-4o-mini-2024-07-18",
+            messages=[{"role": "user", "content": text}],
+            temperature=0.2
+        )
+wrong in mgsm_zh, correct in mgsm_en：34/250
+wrong in mgsm_en, correct in mgsm_zh：12/250
+wrong in mgsm_zh, wrong in mgsm_en：13/250
+correct in both：191/250
+
+mgsm_zh：203/250
+mgsm_en：225/250
+------------------------------
+**After self reflection**
+wrong in mgsm_zh, correct in mgsm_en：21/34
+wrong in mgsm_en, correct in mgsm_zh：10/12
+wrong in mgsm_zh, wrong in mgsm_en：4/13
+correct in both：185/191
+
+total：220/250
+
+experiment4.json
+
+
+
+
+experiment 5
+dir1 = 'mgsm_zh'
+dir2 = 'mgsm_en'
+prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
+text = f'請比較你輸出的兩個答案並輸出最終的答案。' + prompt
+response = openai.ChatCompletion.create(
+    model="gpt-4o-mini-2024-07-18",
+    messages=[{"role": "user", "content": data1["question"][str(i)]},
+                {"role": "assistant", "content": result1[i]['output']},
+                {"role": "user", "content": data2["question"][str(i)]},
+                {"role": "assistant", "content": result2[i]['output']},
+                {"role": "user", "content": text}],
+    temperature=0.2
+)
+wrong in mgsm_zh, correct in mgsm_en：34/250
+wrong in mgsm_en, correct in mgsm_zh：12/250
+wrong in mgsm_zh, wrong in mgsm_en：13/250
+correct in both：191/250
+
+mgsm_zh：203/250
+mgsm_en：225/250
+------------------------------
+**After self reflection**
+wrong in mgsm_zh, correct in mgsm_en：33/34
+wrong in mgsm_en, correct in mgsm_zh：4/12
+wrong in mgsm_zh, wrong in mgsm_en：0/13
+correct in both：190/191
+
+total：227/250
+
+experiment5.json
+
+
+
+experiment6
+dir1 = 'mgsm_zh'
+dir2 = 'mgsm_en'
+prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
+text = f'請比較你輸出的兩個答案並輸出最終的答案。' + prompt
+response = openai.ChatCompletion.create(
+    model="gpt-4o-mini-2024-07-18",
+    messages=[{"role": "user", "content": data2["question"][str(i)]},
+                {"role": "assistant", "content": result2[i]['output']},
+                {"role": "user", "content": data1["question"][str(i)]},
+                {"role": "assistant", "content": result1[i]['output']},
+                {"role": "user", "content": text}],
+    temperature=0.2
+)
+wrong in mgsm_zh, correct in mgsm_en：34/250
+wrong in mgsm_en, correct in mgsm_zh：12/250
+wrong in mgsm_zh, wrong in mgsm_en：13/250
+correct in both：191/250
+
+mgsm_zh：203/250
+mgsm_en：225/250
+------------------------------
+**After self reflection**
+wrong in mgsm_zh, correct in mgsm_en：17/34
+wrong in mgsm_en, correct in mgsm_zh：11/12
+wrong in mgsm_zh, wrong in mgsm_en：0/13
+correct in both：191/191
+
+total：219/250
+
+experiment6.json
+
+
+
+experiment7
+dir1 = 'mgsm_zh'
+dir2 = 'mgsm_en'
+prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
+text = f'請比較你輸出的兩個答案並輸出最終的答案。' + prompt
+response_for_al = openai.ChatCompletion.create(
+    model="gpt-4o-mini-2024-07-18",
+    messages=[{"role": "user", "content": data1["question"][str(i)]},
+                {"role": "assistant", "content": result1[i]['output']},
+                {"role": "user", "content": data2["question"][str(i)]}
+                ],
+    temperature=0.2
+)
+response = openai.ChatCompletion.create(
+    model="gpt-4o-mini-2024-07-18",
+    messages=[{"role": "user", "content": data1["question"][str(i)]},
+                {"role": "assistant", "content": result1[i]['output']},
+                {"role": "user", "content": data2["question"][str(i)]},
+                {"role": "assistant", "content": response_for_al["choices"][0]["message"]["content"]},
+                {"role": "user", "content": text}],
+    temperature=0.2
+)
+wrong in mgsm_zh, correct in mgsm_en：34/250
+wrong in mgsm_en, correct in mgsm_zh：12/250
+wrong in mgsm_zh, wrong in mgsm_en：13/250
+correct in both：191/250
+
+mgsm_zh：203/250
+mgsm_en：225/250
+------------------------------
+**After self reflection**
+wrong in mgsm_zh, correct in mgsm_en：25/34
+wrong in mgsm_en, correct in mgsm_zh：12/12
+wrong in mgsm_zh, wrong in mgsm_en：4/13
+correct in both：189/191
+
+total：230/250
+
+experiment7.json
+
+
+
+experiment8
+dir1 = 'mgsm_zh'
+dir2 = 'mgsm_en'
+prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
+text = f'請比較你輸出的兩個答案並輸出最終的答案。' + prompt
+response_for_al = openai.ChatCompletion.create(
+    model="gpt-4o-mini-2024-07-18",
+    messages=[{"role": "user", "content": data2["question"][str(i)] + prompt},
+                {"role": "assistant", "content": result2[i]['output']},
+                {"role": "user", "content": data1["question"][str(i)] + prompt}
+                ],
+    temperature=0.2
+)
+response = openai.ChatCompletion.create(
+    model="gpt-4o-mini-2024-07-18",
+    messages=[{"role": "user", "content": data2["question"][str(i)] + prompt},
+                {"role": "assistant", "content": result2[i]['output']},
+                {"role": "user", "content": data1["question"][str(i)] + prompt},
+                {"role": "assistant", "content": response_for_al["choices"][0]["message"]["content"]},
+                {"role": "user", "content": text}],
+    temperature=0.2
+)
+wrong in mgsm_zh, correct in mgsm_en：34/250
+wrong in mgsm_en, correct in mgsm_zh：12/250
+wrong in mgsm_zh, wrong in mgsm_en：13/250
+correct in both：191/250
+
+mgsm_zh：203/250
+mgsm_en：225/250
+------------------------------
+**After self reflection**
+wrong in mgsm_zh, correct in mgsm_en：30/34
+wrong in mgsm_en, correct in mgsm_zh：1/12
+wrong in mgsm_zh, wrong in mgsm_en：1/13
+correct in both：191/191
+
+total：223/250
+
+
+
+experiment9
+dir1 = 'mgsm_zh'
+dir2 = 'mgsm_en'
+prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
+text = f'問題是{data1["question"][str(i)]}，有一中文的回答為{result1[i]["output"]}，一英文的回答為{result2[i]["output"]}，請比較兩者的答案並輸出一個最終的答案' + prompt
+response = openai.ChatCompletion.create(
+    model="gpt-4o-mini-2024-07-18",
+    messages=[{"role": "user", "content": text}],
+    temperature=0.2
+)
+wrong in mgsm_zh, correct in mgsm_en：34/250
+wrong in mgsm_en, correct in mgsm_zh：12/250
+wrong in mgsm_zh, wrong in mgsm_en：13/250
+correct in both：191/250
+
+mgsm_zh：203/250
+mgsm_en：225/250
+------------------------------
+**After self reflection**
+wrong in mgsm_zh, correct in mgsm_en：23/34
+wrong in mgsm_en, correct in mgsm_zh：9/12
+wrong in mgsm_zh, wrong in mgsm_en：0/13
+correct in both：191/191
+
+total：223/250
+
+
+
+experiment10
+dir1 = 'mgsm_zh'
+dir2 = 'mgsm_en'
+prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
+text = f'問題是{data2["question"][str(i)]}，有一中文的回答為{result1[i]["output"]}，一英文的回答為{result2[i]["output"]}，請比較兩者的答案並輸出一個最終的答案' + prompt
+response = openai.ChatCompletion.create(
+    model="gpt-4o-mini-2024-07-18",
+    messages=[{"role": "user", "content": text}],
+    temperature=0.2
+)
+wrong in mgsm_zh, correct in mgsm_en：34/250
+wrong in mgsm_en, correct in mgsm_zh：12/250
+wrong in mgsm_zh, wrong in mgsm_en：13/250
+correct in both：191/250
+
+mgsm_zh：203/250
+mgsm_en：225/250
+------------------------------
+**After self reflection**
+wrong in mgsm_zh, correct in mgsm_en：25/34
+wrong in mgsm_en, correct in mgsm_zh：6/12
+wrong in mgsm_zh, wrong in mgsm_en：0/13
+correct in both：191/191
+
+total：222/250
+
+
+
+experiment11
+dir1 = 'mgsm_zh'
+dir2 = 'mgsm_en'
+prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
+text = text = f'問題是{data2["question"][str(i)]}，請你將題目翻成中文以及英文，一步一步思考，回答中文的問題後回答英文的問題，完成後比較兩個的答案並輸出正確的答案。' + prompt
+        response = openai.ChatCompletion.create(
+            model="gpt-4o-mini-2024-07-18",
+            messages=[{"role": "user", "content": text}],
+            temperature=0.2
+        )
+wrong in mgsm_zh, correct in mgsm_en：34/250
+wrong in mgsm_en, correct in mgsm_zh：12/250
+wrong in mgsm_zh, wrong in mgsm_en：13/250
+correct in both：191/250
+
+mgsm_zh：203/250
+mgsm_en：225/250
+------------------------------
+**After self reflection**
+wrong in mgsm_zh, correct in mgsm_en：32/34
+wrong in mgsm_en, correct in mgsm_zh：7/12
+wrong in mgsm_zh, wrong in mgsm_en：3/13
+correct in both：189/191
+
+total：231/250
+
+
+
+experiment12
+dir1 = 'mgsm_te'
+dir2 = 'mgsm_en'
+prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
+text_for_translation = f'請將"{data1["question"][str(i)]}"翻譯成英文。'
+text_for_compare = f'請比較你輸出的兩個答案並輸出最終的答案。' + prompt
+response_for_trans = openai.ChatCompletion.create(
+    model="gpt-4o-mini-2024-07-18",
+    messages=[{"role": "user", "content": data1["question"][str(i)] + prompt},
+                {"role": "assistant", "content": result1[i]['output']},
+                {"role": "user", "content": text_for_translation}
+                ],
+    temperature=0.2
+)
+response_for_al = openai.ChatCompletion.create(
+    model="gpt-4o-mini-2024-07-18",
+    messages=[{"role": "user", "content": data1["question"][str(i)] + prompt},
+                {"role": "assistant", "content": result1[i]['output']},
+                {"role": "user", "content": text_for_translation},
+                {"role": "assistant", "content": response_for_trans["choices"][0]["message"]["content"]},
+                {"role": "user", "content": f'請回答"{response_for_trans["choices"][0]["message"]["content"]}"' + prompt}],
+    temperature=0.2
+)
+response = openai.ChatCompletion.create(
+    model="gpt-4o-mini-2024-07-18",
+    messages=[{"role": "user", "content": data1["question"][str(i)] + prompt},
+                {"role": "assistant", "content": result1[i]['output']},
+                {"role": "user", "content": text_for_translation},
+                {"role": "assistant", "content": response_for_trans["choices"][0]["message"]["content"]},
+                {"role": "user", "content": f'請回答"{response_for_trans["choices"][0]["message"]["content"]}"' + prompt},
+                {"role": "assistant", "content": response_for_al["choices"][0]["message"]["content"]},
+                {"role": "user", "content": text_for_compare}],
+    temperature=0.2
+)
+wrong in mgsm_te, correct in mgsm_en：66/250
+wrong in mgsm_en, correct in mgsm_te：6/250
+wrong in mgsm_te, wrong in mgsm_en：19/250
+correct in both：159/250
+
+mgsm_te：165/250
+mgsm_en：225/250
+------------------------------
+**After self reflection**
+wrong in mgsm_te, correct in mgsm_en：28/66
+wrong in mgsm_en, correct in mgsm_te：6/6
+wrong in mgsm_te, wrong in mgsm_en：3/19
+correct in both：157/159
+
+total：194/250
+
+
+
+experiment 13
+dir1 = 'mgsm_te'
+dir2 = 'mgsm_en'
+prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
+text = f'請比較你輸出的兩個答案並輸出最終的答案。' + prompt
+response_for_al = openai.ChatCompletion.create(
+    model="gpt-4o-mini-2024-07-18",
+    messages=[{"role": "user", "content": data1["question"][str(i)] + prompt},
+                {"role": "assistant", "content": result1[i]['output']},
+                {"role": "user", "content": data2["question"][str(i)] + prompt}
+                ],
+    temperature=0.2
+)
+response = openai.ChatCompletion.create(
+    model="gpt-4o-mini-2024-07-18",
+    messages=[{"role": "user", "content": data1["question"][str(i)] + prompt},
+                {"role": "assistant", "content": result1[i]['output']},
+                {"role": "user", "content": data2["question"][str(i)] + prompt},
+                {"role": "assistant", "content": response_for_al["choices"][0]["message"]["content"]},
+                {"role": "user", "content": text}],
+    temperature=0.2
+)
+wrong in mgsm_te, correct in mgsm_en：66/250                                                                  
+wrong in mgsm_en, correct in mgsm_te：6/250   
+wrong in mgsm_te, wrong in mgsm_en：19/250    
+correct in both：159/250                      
+
+mgsm_te：165/250                              
+mgsm_en：225/250                              
+------------------------------                
+**After self reflection**                     
+wrong in mgsm_te, correct in mgsm_en：45/66   
+wrong in mgsm_en, correct in mgsm_te：5/6     
+wrong in mgsm_te, wrong in mgsm_en：5/19      
+correct in both：159/159                      
+
+total：214/250
