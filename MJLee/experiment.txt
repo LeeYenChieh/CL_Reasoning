@@ -1,3 +1,16 @@
+mgsm_zh：203/250
+mgsm_en：225/250
+mgsm_bn：199/250
+mgsm_de：206/250
+mgsm_es：221/250                    
+mgsm_fr：210/250                    
+mgsm_ja：203/250                    
+mgsm_ru：212/250                   
+mgsm_sw：197/250                 
+mgsm_te：165/250             
+mgsm_th：178/250
+
+
 experiment 1
 dir1 = 'mgsm_zh'
 dir2 = 'mgsm_en'
@@ -200,23 +213,23 @@ dir1 = 'mgsm_zh'
 dir2 = 'mgsm_en'
 prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
 text = f'請比較你輸出的兩個答案並輸出最終的答案。' + prompt
-        response_for_al = openai.ChatCompletion.create(
-            model="gpt-4o-mini-2024-07-18",
-            messages=[{"role": "user", "content": data1["question"][str(i)]},
-                        {"role": "assistant", "content": result1[i]['output']},
-                        {"role": "user", "content": data2["question"][str(i)]}
-                        ],
-            temperature=0.2
-        )
-        response = openai.ChatCompletion.create(
-            model="gpt-4o-mini-2024-07-18",
-            messages=[{"role": "user", "content": data1["question"][str(i)]},
-                        {"role": "assistant", "content": result1[i]['output']},
-                        {"role": "user", "content": data2["question"][str(i)]},
-                        {"role": "assistant", "content": response_for_al["choices"][0]["message"]["content"]},
-                        {"role": "user", "content": text}],
-            temperature=0.2
-        )
+response_for_al = openai.ChatCompletion.create(
+    model="gpt-4o-mini-2024-07-18",
+    messages=[{"role": "user", "content": data1["question"][str(i)]},
+                {"role": "assistant", "content": result1[i]['output']},
+                {"role": "user", "content": data2["question"][str(i)]}
+                ],
+    temperature=0.2
+)
+response = openai.ChatCompletion.create(
+    model="gpt-4o-mini-2024-07-18",
+    messages=[{"role": "user", "content": data1["question"][str(i)]},
+                {"role": "assistant", "content": result1[i]['output']},
+                {"role": "user", "content": data2["question"][str(i)]},
+                {"role": "assistant", "content": response_for_al["choices"][0]["message"]["content"]},
+                {"role": "user", "content": text}],
+    temperature=0.2
+)
 wrong in mgsm_zh, correct in mgsm_en：34/250
 wrong in mgsm_en, correct in mgsm_zh：12/250
 wrong in mgsm_zh, wrong in mgsm_en：13/250

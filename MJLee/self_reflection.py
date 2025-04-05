@@ -6,7 +6,7 @@ import nums_from_string as nfs
 
 
 openai.api_key = api_key
-dir1 = 'mgsm_zh'
+dir1 = 'mgsm_te'
 dir2 = 'mgsm_en'
 nums = 250
 prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
@@ -16,10 +16,34 @@ def self_reflection(data1, data2, result1, result2):
     c1c2, w2c1, w1w2, w1c2 = 0, 0, 0, 0
     c1c2_nums, w2c1_nums, w1w2_nums, w1c2_nums = 0, 0, 0, 0
     for i in tqdm(range(nums)):
-        text = text = f'問題是{data2["question"][str(i)]}，請你將題目翻成中文以及英文，一步一步思考，回答中文的問題後回答英文的問題，完成後比較兩個的答案並輸出正確的答案。' + prompt
+        text_for_translation = f'請將"{data1["question"][str(i)]}"翻譯成英文。'
+        text_for_compare = f'請比較你輸出的兩個答案並輸出最終的答案。' + prompt
+        response_for_trans = openai.ChatCompletion.create(
+            model="gpt-4o-mini-2024-07-18",
+            messages=[{"role": "user", "content": data1["question"][str(i)] + prompt},
+                        {"role": "assistant", "content": result1[i]['output']},
+                        {"role": "user", "content": text_for_translation}
+                        ],
+            temperature=0.2
+        )
+        response_for_al = openai.ChatCompletion.create(
+            model="gpt-4o-mini-2024-07-18",
+            messages=[{"role": "user", "content": data1["question"][str(i)] + prompt},
+                        {"role": "assistant", "content": result1[i]['output']},
+                        {"role": "user", "content": text_for_translation},
+                        {"role": "assistant", "content": response_for_trans["choices"][0]["message"]["content"]},
+                        {"role": "user", "content": f'請回答"{response_for_trans["choices"][0]["message"]["content"]}"' + prompt}],
+            temperature=0.2
+        )
         response = openai.ChatCompletion.create(
             model="gpt-4o-mini-2024-07-18",
-            messages=[{"role": "user", "content": text}],
+            messages=[{"role": "user", "content": data1["question"][str(i)] + prompt},
+                        {"role": "assistant", "content": result1[i]['output']},
+                        {"role": "user", "content": text_for_translation},
+                        {"role": "assistant", "content": response_for_trans["choices"][0]["message"]["content"]},
+                        {"role": "user", "content": f'請回答"{response_for_trans["choices"][0]["message"]["content"]}"' + prompt},
+                        {"role": "assistant", "content": response_for_al["choices"][0]["message"]["content"]},
+                        {"role": "user", "content": text_for_compare}],
             temperature=0.2
         )
         correct = True if nfs.get_nums(str(data2['answer'][str(i)]))[-1] == nfs.get_nums(response["choices"][0]["message"]["content"])[-1] else False
@@ -37,12 +61,15 @@ def self_reflection(data1, data2, result1, result2):
             w1c2 += 1 if correct else 0
 
         result.append({"index": i, 
-                        "output": response["choices"][0]["message"]["content"],
+                        "output_translation": response_for_trans["choices"][0]["message"]["content"],
+                        "output_al": response_for_al["choices"][0]["message"]["content"],
+                        "output_final": response["choices"][0]["message"]["content"],
                         "answer": data2['answer'][str(i)],
-                        "question": text,
+                        "question_translation": text_for_translation,
+                        "question_compare": text_for_compare,
                         "correct":correct
         })
-    with open(f'./MJLee/result/mgsm/experiment11.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/result/mgsm/experiment12.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
     print(f'wrong in {dir1}, correct in {dir2}：{w1c2_nums}/{nums}')
