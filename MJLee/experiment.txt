@@ -371,3 +371,59 @@ wrong in mgsm_zh, wrong in mgsm_en：3/13
 correct in both：189/191
 
 total：231/250
+
+
+
+experiment12
+dir1 = 'mgsm_te'
+dir2 = 'mgsm_en'
+prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
+text_for_translation = f'請將"{data1["question"][str(i)]}"翻譯成英文。'
+text_for_compare = f'請比較你輸出的兩個答案並輸出最終的答案。' + prompt
+response_for_trans = openai.ChatCompletion.create(
+    model="gpt-4o-mini-2024-07-18",
+    messages=[{"role": "user", "content": data1["question"][str(i)] + prompt},
+                {"role": "assistant", "content": result1[i]['output']},
+                {"role": "user", "content": text_for_translation}
+                ],
+    temperature=0.2
+)
+response_for_al = openai.ChatCompletion.create(
+    model="gpt-4o-mini-2024-07-18",
+    messages=[{"role": "user", "content": data1["question"][str(i)] + prompt},
+                {"role": "assistant", "content": result1[i]['output']},
+                {"role": "user", "content": text_for_translation},
+                {"role": "assistant", "content": response_for_trans["choices"][0]["message"]["content"]},
+                {"role": "user", "content": f'請回答"{response_for_trans["choices"][0]["message"]["content"]}"' + prompt}],
+    temperature=0.2
+)
+response = openai.ChatCompletion.create(
+    model="gpt-4o-mini-2024-07-18",
+    messages=[{"role": "user", "content": data1["question"][str(i)] + prompt},
+                {"role": "assistant", "content": result1[i]['output']},
+                {"role": "user", "content": text_for_translation},
+                {"role": "assistant", "content": response_for_trans["choices"][0]["message"]["content"]},
+                {"role": "user", "content": f'請回答"{response_for_trans["choices"][0]["message"]["content"]}"' + prompt},
+                {"role": "assistant", "content": response_for_al["choices"][0]["message"]["content"]},
+                {"role": "user", "content": text_for_compare}],
+    temperature=0.2
+)
+wrong in mgsm_te, correct in mgsm_en：66/250
+wrong in mgsm_en, correct in mgsm_te：6/250
+wrong in mgsm_te, wrong in mgsm_en：19/250
+correct in both：159/250
+
+mgsm_te：165/250
+mgsm_en：225/250
+------------------------------
+**After self reflection**
+wrong in mgsm_te, correct in mgsm_en：28/66
+wrong in mgsm_en, correct in mgsm_te：6/6
+wrong in mgsm_te, wrong in mgsm_en：3/19
+correct in both：157/159
+
+total：194/250
+
+
+
+experiment 13
