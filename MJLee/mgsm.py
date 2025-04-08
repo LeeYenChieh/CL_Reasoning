@@ -20,7 +20,7 @@ def handle_dir(dir, language, dir_from):
     cnt = 0
     result = []
     for i in tqdm(range(nums)):
-        text_for_translate = f'Please translate "{data['question'][str(i)]}" into {language} language.'
+        text_for_translate = f'Please translate "{data["question"][str(i)]}" into {language} language.'
         response_for_translate = openai.ChatCompletion.create(
             model="gpt-4o-mini-2024-07-18",
             messages=[{"role": "user", "content": text_for_translate}],
