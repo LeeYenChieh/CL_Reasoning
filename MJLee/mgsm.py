@@ -15,12 +15,16 @@ def handle_dir(dir, language, dir_from):
     df = pd.read_csv(f'./data/mgsm/{dir_from}.tsv', sep = '\t', nrows=nums, names=['question', 'answer'])
     df.to_json(f'./data/mgsm/{dir_from}_{nums}.json', index=False, indent=2)
     with open(f'./data/mgsm/{dir_from}_{nums}.json', 'r') as f:
+        data_from = json.load(f)
+    df = pd.read_csv(f'./data/mgsm/{dir}.tsv', sep = '\t', nrows=nums, names=['question', 'answer'])
+    df.to_json(f'./data/mgsm/{dir}_{nums}.json', index=False, indent=2)
+    with open(f'./data/mgsm/{dir}_{nums}.json', 'r') as f:
         data = json.load(f)
     
     cnt = 0
     result = []
     for i in tqdm(range(nums)):
-        text_for_translate = f'Please translate "{data["question"][str(i)] + prompt}" into {language} language.'
+        text_for_translate = f'There is a problem: \n"{data_from["question"][str(i)] + prompt}".\n\n After translating it into {language}, the result is "{data["question"][str(i)] + prompt}". Please check if this translation is correct and provide a version without any errors'
         response_for_translate = openai.ChatCompletion.create(
             model="gpt-4o-2024-08-06",
             messages=[{"role": "user", "content": text_for_translate}],
@@ -47,7 +51,7 @@ def handle_dir(dir, language, dir_from):
                         "question": text,
                         "correct": correct
                     })
-    with open(f'./MJLee/result/mgsm/gpt_{dir}_{nums}.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/result/mgsm/gpt4o_{dir}_{nums}.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
     print(f'{dir}：{cnt}/{nums}')
     return cnt
