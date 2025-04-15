@@ -67,7 +67,7 @@ def main():
         data1 = json.load(f)
     with open(f'./data/mgsm/{dir2}_{nums}.json', 'r') as f:
         data2 = json.load(f)
-    with open(f'./MJLee/result/mgsm/gpt4oMGSMOnly/{dir1}_{nums}.json', 'r') as f:
+    with open(f'./MJLee/result/mgsm/gpt4oMGSMOnly/gpt4o{dir1}_{nums}.json', 'r') as f:
         result1 = json.load(f)
     with open(f'./MJLee/result/mgsm/MGSM/{dir2}_{nums}.json', 'r') as f:
         result2 = json.load(f)
