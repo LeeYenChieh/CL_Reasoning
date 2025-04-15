@@ -514,3 +514,23 @@ wrong in mgsm_te, wrong in mgsm_en：5/19
 correct in both：159/159                      
 
 total：214/250
+
+
+
+experiment14
+text = f'There is a problem:\n\n{result1[i]["output_translate"] + prompt}\n\nWe have two answer.\n\nTne answer is "{result1[i]["output"]}"\n\nThe other answer is "{result2[i]["output"]}"\n\nPlease compare the two answers. If there are any errors in their calculations or steps, please correct them. If there are no errors, check whether both answers correctly address the question and whether their reasoning is logically sound. Finally, provide the solution and answer you believe to be correct.' + prompt
+wrong in mgsm_zh, correct in mgsm_en：22/250
+wrong in mgsm_en, correct in mgsm_zh：9/250
+wrong in mgsm_zh, wrong in mgsm_en：16/250
+correct in both：203/250
+
+mgsm_zh：212/250
+mgsm_en：225/250
+------------------------------
+**After self reflection**
+wrong in mgsm_zh, correct in mgsm_en：12/22
+wrong in mgsm_en, correct in mgsm_zh：7/9
+wrong in mgsm_zh, wrong in mgsm_en：3/16
+correct in both：203/203
+
+total：225/250

@@ -22,25 +22,31 @@ def self_reflection(data1, data2, result1, result2):
             messages=[{"role": "user", "content": text}],
             temperature=0.2
         )
+        type = ""
         correct = True if nfs.get_nums(str(data2['answer'][str(i)]))[-1] == nfs.get_nums(response["choices"][0]["message"]["content"])[-1] else False
         if result1[i]['correct'] and result2[i]['correct']:
             c1c2_nums += 1
             c1c2 += 1 if correct else 0
+            type = "both correct"
         elif result1[i]['correct'] and not result2[i]['correct']:
             w2c1_nums += 1
             w2c1 += 1 if correct else 0
+            type = f'{dir1} correct {dir2} wrong'
         elif not result1[i]['correct'] and not result2[i]['correct']:
             w1w2_nums += 1
             w1w2 += 1 if correct else 0
+            type = f'{dir1} wrong {dir2} correct'
         else:
             w1c2_nums += 1
             w1c2 += 1 if correct else 0
+            type = "both wrong"
 
         result.append({"index": i, 
                         "question": text,
                         "output": response["choices"][0]["message"]["content"],
                         "answer": data2['answer'][str(i)],
-                        "correct":correct
+                        "correct":correct,
+                        "type": type
         })
     with open(f'./MJLee/result/mgsm/experiment14.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
