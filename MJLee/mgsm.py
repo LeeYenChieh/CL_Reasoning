@@ -9,7 +9,7 @@ openai.api_key = api_key
 dirs = ['mgsm_zh', 'mgsm_bn', 'mgsm_de', 'mgsm_es', 'mgsm_fr', 'mgsm_ja', 'mgsm_ru', 'mgsm_sw', 'mgsm_te', 'mgsm_th']
 language = ['Chinese', 'Bengali', 'German', 'Spanish', 'French', 'Japanese', 'Russian', 'Swahili', 'Telugu', 'Thai']
 nums = 250
-prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字，數字必須為阿拉伯數字的格式" + lines
+prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字，數字必須為阿拉伯數字的格式"
 
 def translate_with_MGSM(dir, language, dir_from):
     df = pd.read_csv(f'./data/mgsm/{dir_from}.tsv', sep = '\t', nrows=nums, names=['question', 'answer'])
