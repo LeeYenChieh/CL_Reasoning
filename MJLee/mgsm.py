@@ -9,7 +9,6 @@ openai.api_key = api_key
 dirs = ['mgsm_zh', 'mgsm_bn', 'mgsm_de', 'mgsm_es', 'mgsm_fr', 'mgsm_ja', 'mgsm_ru', 'mgsm_sw', 'mgsm_te', 'mgsm_th']
 language = ['Chinese', 'Bengali', 'German', 'Spanish', 'French', 'Japanese', 'Russian', 'Swahili', 'Telugu', 'Thai']
 nums = 250
-lines = '\n' * 3
 prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字，數字必須為阿拉伯數字的格式" + lines
 
 def translate_with_MGSM(dir, language, dir_from):
@@ -25,13 +24,13 @@ def translate_with_MGSM(dir, language, dir_from):
     cnt = 0
     result = []
     for i in tqdm(range(nums)):
-        text_for_translate = f'There is a problem: \n"{lines + data_from["question"][str(i)] + prompt}".\n\n After translating it into {language}, the result is "{lines + data["question"][str(i)] + prompt}". Please check if this translation is correct and provide a version without any errors'
+        text_for_translate = f'There is a problem: \n"{data_from["question"][str(i)] + prompt}".\n\n After translating it into {language}, the result is "{data["question"][str(i)] + prompt}". Please check if this translation is correct and provide a version without any errors. Please don\'t output the original problem. Please don\'t solve the problem. You only need to output the translated problem.'
         response_for_translate = openai.ChatCompletion.create(
             model="gpt-4o-2024-08-06",
             messages=[{"role": "user", "content": text_for_translate}],
             temperature=0.2
         )
-        text = ''.join(response_for_translate["choices"][0]["message"]["content"].split('\n')[1:-1]) + prompt
+        text = response_for_translate["choices"][0]["message"]["content"] + prompt
         response = openai.ChatCompletion.create(
             model="gpt-4o-mini-2024-07-18",
             messages=[{"role": "user", "content": text}],
@@ -50,7 +49,6 @@ def translate_with_MGSM(dir, language, dir_from):
                         "output_translate": text,
                         "output": response["choices"][0]["message"]["content"],
                         "answer": data['answer'][str(i)],
-                        "question": text,
                         "correct": correct
                     })
     with open(f'./MJLee/result/mgsm/gpt4o_{dir}_{nums}.json', 'w', encoding='utf-8') as f:
