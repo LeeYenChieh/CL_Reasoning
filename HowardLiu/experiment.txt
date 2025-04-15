@@ -1,0 +1,8 @@
+prompt = "\nOutput the final answer at the last of your response. " \
+        "If the answer is a number, please output the number only. Arabic numerals only." \
+prompt_to_output_arabic_number = "(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)"
+text_for_translate = f'Please translate "{data['question'][str(i)]}" + and "{prompt}" into {language}. After translation, you should concat the two sentences together.' \
+            f'Please make sure the translation is accurate and fluent. It should have the same meaning with the original sentence.' \
+            f'You should be very careful about the grammar. Check the translated sentence again after you finish the translation. DO NOT MAKE ANY MISTAKE!' \
+            f'Please do not output any other content. ' \
+            f'Please do not output the answer. ' \
