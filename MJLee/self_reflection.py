@@ -6,32 +6,20 @@ import nums_from_string as nfs
 
 
 openai.api_key = api_key
-dir1 = 'mgsm_te'
+dir1 = 'mgsm_zh'
 dir2 = 'mgsm_en'
 nums = 250
-prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
+prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字，數字必須為阿拉伯數字的格式"
 
 def self_reflection(data1, data2, result1, result2):
     result = []
     c1c2, w2c1, w1w2, w1c2 = 0, 0, 0, 0
     c1c2_nums, w2c1_nums, w1w2_nums, w1c2_nums = 0, 0, 0, 0
     for i in tqdm(range(nums)):
-        text = f'請比較你輸出的兩個答案並輸出最終的答案。' + prompt
-        response_for_al = openai.ChatCompletion.create(
-            model="gpt-4o-mini-2024-07-18",
-            messages=[{"role": "user", "content": data1["question"][str(i)] + prompt},
-                        {"role": "assistant", "content": result1[i]['output']},
-                        {"role": "user", "content": data2["question"][str(i)] + prompt}
-                        ],
-            temperature=0.2
-        )
+        text = f'There is a problem:\n\n{result1["output_translate"] + prompt}\n\nWe have two answer.\n\nTne answer is "{result1[i]["output"]}"\n\nThe other answer is "{result2[i]["output"]}"\n\nPlease compare the two answers. If there are any errors in their calculations or steps, please correct them. If there are no errors, check whether both answers correctly address the question and whether their reasoning is logically sound. Finally, provide the solution and answer you believe to be correct.' + prompt
         response = openai.ChatCompletion.create(
             model="gpt-4o-mini-2024-07-18",
-            messages=[{"role": "user", "content": data1["question"][str(i)] + prompt},
-                        {"role": "assistant", "content": result1[i]['output']},
-                        {"role": "user", "content": data2["question"][str(i)] + prompt},
-                        {"role": "assistant", "content": response_for_al["choices"][0]["message"]["content"]},
-                        {"role": "user", "content": text}],
+            messages=[{"role": "user", "content": text}],
             temperature=0.2
         )
         correct = True if nfs.get_nums(str(data2['answer'][str(i)]))[-1] == nfs.get_nums(response["choices"][0]["message"]["content"])[-1] else False
@@ -49,13 +37,12 @@ def self_reflection(data1, data2, result1, result2):
             w1c2 += 1 if correct else 0
 
         result.append({"index": i, 
-                        "output_al": response_for_al["choices"][0]["message"]["content"],
-                        "output_final": response["choices"][0]["message"]["content"],
-                        "answer": data2['answer'][str(i)],
                         "question": text,
+                        "output": response["choices"][0]["message"]["content"],
+                        "answer": data2['answer'][str(i)],
                         "correct":correct
         })
-    with open(f'./MJLee/result/mgsm/experiment13.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/result/mgsm/experiment14.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
     print(f'wrong in {dir1}, correct in {dir2}：{w1c2_nums}/{nums}')
@@ -80,9 +67,9 @@ def main():
         data1 = json.load(f)
     with open(f'./data/mgsm/{dir2}_{nums}.json', 'r') as f:
         data2 = json.load(f)
-    with open(f'./MJLee/result/mgsm/{dir1}_{nums}.json', 'r') as f:
+    with open(f'./MJLee/result/mgsm/gpt4oMGSMOnly/{dir1}_{nums}.json', 'r') as f:
         result1 = json.load(f)
-    with open(f'./MJLee/result/mgsm/{dir2}_{nums}.json', 'r') as f:
+    with open(f'./MJLee/result/mgsm/MGSM/{dir2}_{nums}.json', 'r') as f:
         result2 = json.load(f)
 
     self_reflection(data1, data2, result1, result2)
