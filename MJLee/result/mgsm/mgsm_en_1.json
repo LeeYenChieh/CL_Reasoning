@@ -1,9 +1,0 @@
-[
-  {
-    "index": 0,
-    "output": "Janet\u2019s ducks lay 16 eggs per day. She eats 3 eggs for breakfast and uses 4 eggs for baking muffins. This totals:\n\n3 (breakfast) + 4 (muffins) = 7 eggs consumed per day.\n\nSo, the number of eggs she sells at the farmers' market is:\n\n16 (total eggs) - 7 (eggs consumed) = 9 eggs sold.\n\nSince she sells each egg for $2, her daily earnings from selling eggs is:\n\n9 eggs \u00d7 $2/egg = $18.\n\n\u56e0\u6b64\uff0c\u5979\u6bcf\u5929\u5728\u8fb2\u8cbf\u5e02\u5834\u7684\u6536\u5165\u662f\uff1a\n\n18",
-    "answer": 18,
-    "question": "Janet\u2019s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?\n\u8acb\u5728\u6700\u5f8c\u4e00\u884c\u8f38\u51fa\u7b54\u6848\uff0c\u7b54\u6848\u53ea\u9700\u8981\u5305\u542b\u6578\u5b57",
-    "correct": true
-  }
-]
