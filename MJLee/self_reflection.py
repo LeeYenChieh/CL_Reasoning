@@ -16,7 +16,7 @@ def self_reflection(data1, data2, result1, result2):
     c1c2, w2c1, w1w2, w1c2 = 0, 0, 0, 0
     c1c2_nums, w2c1_nums, w1w2_nums, w1c2_nums = 0, 0, 0, 0
     for i in tqdm(range(nums)):
-        text = f'There is a problem:\n\n{result1["output_translate"] + prompt}\n\nWe have two answer.\n\nTne answer is "{result1[i]["output"]}"\n\nThe other answer is "{result2[i]["output"]}"\n\nPlease compare the two answers. If there are any errors in their calculations or steps, please correct them. If there are no errors, check whether both answers correctly address the question and whether their reasoning is logically sound. Finally, provide the solution and answer you believe to be correct.' + prompt
+        text = f'There is a problem:\n\n{result1[i]["output_translate"] + prompt}\n\nWe have two answer.\n\nTne answer is "{result1[i]["output"]}"\n\nThe other answer is "{result2[i]["output"]}"\n\nPlease compare the two answers. If there are any errors in their calculations or steps, please correct them. If there are no errors, check whether both answers correctly address the question and whether their reasoning is logically sound. Finally, provide the solution and answer you believe to be correct.' + prompt
         response = openai.ChatCompletion.create(
             model="gpt-4o-mini-2024-07-18",
             messages=[{"role": "user", "content": text}],
