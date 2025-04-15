@@ -1,3 +1,4 @@
+MGSM
 mgsm_zh：203/250
 mgsm_en：225/250
 mgsm_bn：199/250
@@ -9,6 +10,32 @@ mgsm_ru：212/250
 mgsm_sw：197/250                 
 mgsm_te：165/250             
 mgsm_th：178/250
+
+gpt4omini
+
+gpt4o
+mgsm_zh：210/250 
+mgsm_bn：104/250        
+mgsm_de：217/250              
+mgsm_es：220/250             
+mgsm_fr：224/250                
+mgsm_ja：210/250                
+mgsm_ru：214/250               
+mgsm_sw：210/250               
+mgsm_te：152/250               
+mgsm_th：185/250
+
+gpt 4o with MGSM
+mgsm_zh：219/250
+mgsm_bn：207/250
+mgsm_de：223/250
+mgsm_es：235/250
+mgsm_fr：235/250
+mgsm_ja：201/250
+mgsm_ru：228/250
+mgsm_sw：211/250
+mgsm_te：208/250
+mgsm_th：213/250
 
 
 experiment 1
