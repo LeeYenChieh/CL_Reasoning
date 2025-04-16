@@ -9,7 +9,8 @@ openai.api_key = api_key
 dirs = ['mgsm_zh', 'mgsm_bn', 'mgsm_de', 'mgsm_es', 'mgsm_fr', 'mgsm_ja', 'mgsm_ru', 'mgsm_sw', 'mgsm_te', 'mgsm_th']
 language = ['Chinese', 'Bengali', 'German', 'Spanish', 'French', 'Japanese', 'Russian', 'Swahili', 'Telugu', 'Thai']
 nums = 250
-prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字，數字必須為阿拉伯數字的格式"
+prompt = "\nOutput the final answer at the last of your response. If the answer is a number, please output the number only. Arabic numerals only."
+prompt_to_output_arabic_number = "(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)"
 
 def translate_with_MGSM(dir, language, dir_from):
     df = pd.read_csv(f'./data/mgsm/{dir_from}.tsv', sep = '\t', nrows=nums, names=['question', 'answer'])
@@ -26,11 +27,11 @@ def translate_with_MGSM(dir, language, dir_from):
     for i in tqdm(range(nums)):
         text_for_translate = f'There is a problem: \n"{data_from["question"][str(i)] + prompt}".\n\n After translating it into {language}, the result is "{data["question"][str(i)] + prompt}". Please check if this translation is correct and provide a version without any errors. Please don\'t output the original problem. Please don\'t solve the problem. You only need to output the translated problem.'
         response_for_translate = openai.ChatCompletion.create(
-            model="gpt-4o-2024-08-06",
+            model="gpt-4.1-2025-04-14",
             messages=[{"role": "user", "content": text_for_translate}],
             temperature=0.2
         )
-        text = response_for_translate["choices"][0]["message"]["content"] + prompt
+        text = response_for_translate["choices"][0]["message"]["content"] + prompt + prompt_to_output_arabic_number
         response = openai.ChatCompletion.create(
             model="gpt-4o-mini-2024-07-18",
             messages=[{"role": "user", "content": text}],
