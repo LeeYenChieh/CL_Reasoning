@@ -45,9 +45,9 @@ def smart_load(filepath, nrows=None):
             answers.append(answer)
 
     return pd.DataFrame({'question': questions, 'answer': answers})
-#
+#'mgsm_gg_zh', 'mgsm_gg_bn', 'mgsm_gg_de', 'mgsm_gg_es', 'mgsm_gg_fr', 
 openai.api_key = api_key
-dirs = ['mgsm_gg_zh', 'mgsm_gg_bn', 'mgsm_gg_de', 'mgsm_gg_es', 'mgsm_gg_fr', 'mgsm_gg_ja', 'mgsm_gg_ru', 'mgsm_gg_sw', 'mgsm_gg_te', 'mgsm_gg_th']
+dirs = ['mgsm_gg_ja', 'mgsm_gg_ru', 'mgsm_gg_sw', 'mgsm_gg_te', 'mgsm_gg_th']
 language = ['Chinese', 'Bengali', 'German', 'Spanish', 'French', 'Japanese', 'Russian', 'Swahili', 'Telugu', 'Thai']
 nums = 250
 prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"

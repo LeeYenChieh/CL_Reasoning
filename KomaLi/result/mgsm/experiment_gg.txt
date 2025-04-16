@@ -1,11 +1,11 @@
-mgsm_gg_zh：206/250
+mgsm_gg_zh：181/250
 
-mgsm_gg_bn：121/250
-mgsm_gg_de：184/250
+mgsm_gg_bn：172/250
+mgsm_gg_de：203/250
 mgsm_gg_es：204/250
-mgsm_gg_fr：199/250
-mgsm_gg_ja：203/250
-mgsm_gg_ru：122/250
-mgsm_gg_sw：192/250
-mgsm_gg_te：198/250
-mgsm_gg_th：197/250
+mgsm_gg_fr：192/250
+mgsm_gg_ja：177/250
+mgsm_gg_ru：203/250
+mgsm_gg_sw：174/250
+mgsm_gg_te：143/250
+mgsm_gg_th：155/250
