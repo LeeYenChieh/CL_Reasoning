@@ -52,7 +52,7 @@ def find_inconsistent_values(data: dict, index):
 
 
 def main():
-    with open(f'./MJLee/result/mgsm/experiment17.json', 'r') as f:
+    with open(f'./MJLee/result/mgsm/experiment18.json', 'r') as f:
         outputs = json.load(f)
     cnt = {
         'Chinese version': 0,

@@ -112,3 +112,22 @@ wrong in mgsm_zh, wrong in mgsm_en：6/16
 correct in both：194/203
 
 total：219/250
+
+
+
+experiment 18
+wrong in mgsm_zh, correct in mgsm_en：22/250
+wrong in mgsm_en, correct in mgsm_zh：9/250
+wrong in mgsm_zh, wrong in mgsm_en：16/250
+correct in both：203/250
+
+mgsm_zh：212/250
+mgsm_en：225/250
+------------------------------
+**After self reflection**
+wrong in mgsm_zh, correct in mgsm_en：13/22
+wrong in mgsm_en, correct in mgsm_zh：9/9
+wrong in mgsm_zh, wrong in mgsm_en：7/16
+correct in both：194/203
+
+total：223/250
