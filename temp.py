@@ -6,13 +6,15 @@ language = ""
 LanguageProblem = ""
 
 
+x = f'Please ignore all your previous answers to this question. Think about it again from scratch and answer it as if you\'re seeing it for the first time.'
 
 text = f'There is a problem XXX, please translate it into English, French, and Japanese. During the translation, continuously compare the translation with the original problem to ensure accuracy. Do not attempt to solve the problem during the translation process; only focus on translation.\n' \
 f'After completing the translations, treat the four problems as separate problems and solve them in their respective languages. For example, solve the Chinese problem in Chinese, the English problem in English, and so on.\n' \
-f'When solving a problem in one language, do not refer to the answers in other languages. For example, do not refer to the English, French, or Japanese versions when solving the Chinese problem. Likewise, when solving the English problem, do not reference other versions.\n' \
+f'When solving a problem in one language, please ignore all your previous answers to this question. Think about it again from scratch and answer it as if you\'re seeing it for the first time. Do not refer to the answers in other languages. For example, do not refer to the English, French, or Japanese versions when solving the Chinese problem. Likewise, when solving the English problem, do not reference other versions.\n' \
 f'You must think during the problem-solving process; do not simply output the number without a solving process. At the end of each solution, output only the final answer, and the final answer must be in Arabic numeral format (0, 1, 2, 3, 4, 5, 6, 7, 8, 9).\n' \
 f'Once all four language versions are solved, compare the answers and processes to see if they are the same or different. If they differ, identify the incorrect process and answer. If they are the same, ensure the process and answer are correct.\n' \
 f'After comparison, confirm one final correct answer. At the very end of the output, only the final answer should be shown, and it must be in Arabic numeral format (0, 1, 2, 3, 4, 5, 6, 7, 8, 9).\n' \
+f'You must strictly follow the output format below.\n' \
 f'Format:\n' \
 f'Chinese version\n' \
 f'{{Chinese problem}}\n\n' \
