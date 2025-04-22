@@ -7,4 +7,30 @@ LanguageProblem = ""
 
 
 
-f'There is a problem:\n\n{ChineseProblem}\n\nWe have two answer.\n\nTne answer is "{ChineseOutput}"\n\nThe other answer is "{EnglishOutput}"\n\nPlease compare the two answers. If there are any errors in their calculations or steps, please correct them. If there are no errors, check whether both answers correctly address the question and whether their reasoning is logically sound. Finally, provide the solution and answer you believe to be correct.'
+text = f'There is a problem XXX, please translate it into English, French, and Japanese. During the translation, continuously compare the translation with the original problem to ensure accuracy. Do not attempt to solve the problem during the translation process; only focus on translation.\n' \
+f'After completing the translations, treat the four problems as separate problems and solve them in their respective languages. For example, solve the Chinese problem in Chinese, the English problem in English, and so on.\n' \
+f'When solving a problem in one language, do not refer to the answers in other languages. For example, do not refer to the English, French, or Japanese versions when solving the Chinese problem. Likewise, when solving the English problem, do not reference other versions.\n' \
+f'You must think during the problem-solving process; do not simply output the number without a solving process. At the end of each solution, output only the final answer, and the final answer must be in Arabic numeral format (0, 1, 2, 3, 4, 5, 6, 7, 8, 9).\n' \
+f'Once all four language versions are solved, compare the answers and processes to see if they are the same or different. If they differ, identify the incorrect process and answer. If they are the same, ensure the process and answer are correct.\n' \
+f'After comparison, confirm one final correct answer. At the very end of the output, only the final answer should be shown, and it must be in Arabic numeral format (0, 1, 2, 3, 4, 5, 6, 7, 8, 9).\n' \
+f'Format:\n' \
+f'Chinese version\n' \
+f'{{Chinese problem}}\n\n' \
+f'{{Chinese answer}}\n' \
+f'{{Chinese final answer}}\n\n' \
+f'English version\n' \
+f'{{English problem}}\n\n' \
+f'{{English answer}}\n' \
+f'{{English final answer}}\n\n' \
+f'Japanese version\n' \
+f'{{Japanese problem}}\n\n' \
+f'{{Japanese answer}}\n' \
+f'{{Japanese final answer}}\n\n' \
+f'French version\n' \
+f'{{French problem}}\n\n' \
+f'{{French answer}}\n' \
+f'{{French final answer}}\n\n' \
+f'{{compare answer}}\n' \
+f'{{final answer}}'
+
+print(text)

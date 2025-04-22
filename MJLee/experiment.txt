@@ -61,6 +61,17 @@ mgsm_sw：211/250
 mgsm_te：187/250
 mgsm_th：210/250
 
+gpt4.1 MGSM only
+mgsm_zh：223/250                  
+mgsm_bn：191/250              
+mgsm_de：228/250                
+mgsm_es：231/250               
+mgsm_fr：230/250
+mgsm_ja：224/250
+mgsm_ru：229/250
+mgsm_sw：212/250
+mgsm_te：212/250
+mgsm_th：225/250
 
 experiment 1
 dir1 = 'mgsm_zh'
