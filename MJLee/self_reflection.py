@@ -48,7 +48,7 @@ def self_reflection(data1, data2, result1, result2):
             messages=[{"role": "user", "content": text}],
             temperature=0.2
         )
-        print(response["choices"][0]["message"]["content"])
+        # print(response["choices"][0]["message"]["content"])
         type = ""
         correct = True if nfs.get_nums(str(data2['answer'][str(i)]))[-1] == nfs.get_nums(response["choices"][0]["message"]["content"])[-1] else False
         if result1[i]['correct'] and result2[i]['correct']:
