@@ -45,12 +45,14 @@ def smart_load(filepath, nrows=None):
             answers.append(answer)
 
     return pd.DataFrame({'question': questions, 'answer': answers})
-#'mgsm_gg_zh', 'mgsm_gg_bn', 'mgsm_gg_de', 'mgsm_gg_es', 'mgsm_gg_fr', 
+#
 openai.api_key = api_key
-dirs = ['mgsm_gg_ja', 'mgsm_gg_ru', 'mgsm_gg_sw', 'mgsm_gg_te', 'mgsm_gg_th']
+dirs = ['mgsm_zh']
+#dirs = ['mgsm_gg_zh', 'mgsm_gg_bn', 'mgsm_gg_de', 'mgsm_gg_es', 'mgsm_gg_fr', 'mgsm_gg_ja', 'mgsm_gg_ru', 'mgsm_gg_sw', 'mgsm_gg_te', 'mgsm_gg_th']
 language = ['Chinese', 'Bengali', 'German', 'Spanish', 'French', 'Japanese', 'Russian', 'Swahili', 'Telugu', 'Thai']
 nums = 250
-prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
+preprompt = "You are a middle school math teacher. Please explain the following problem in detail, including all the solution steps and verifications, and only keep numbers in the final output."
+# prompt = "\n請在輸出的最後輸出答案，最後的輸出只能有數字"
 
 def handle_dir(dir, language, dir_from):
     #df = pd.read_csv(f'./data/mgsm/{dir_from}.tsv', sep = '\t', nrows=nums, header=None, names=['question', 'answer'])
@@ -69,7 +71,7 @@ def handle_dir(dir, language, dir_from):
             temperature=0.2
         )'''
         # text = response_for_translate["choices"][0]["message"]["content"] + prompt
-        text = data['question'][str(i)] + prompt
+        text = preprompt + data['question'][str(i)]# + prompt
         response = openai.ChatCompletion.create(
             model="gpt-4o-mini-2024-07-18",
             messages=[{"role": "user", "content": text}],

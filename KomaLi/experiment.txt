@@ -95,3 +95,33 @@ twice the amount of fish in both aquariums: 兩水族箱總和的兩倍
 ->translate problem(maybe?)
 
 *剩下沒附註就是單純邏輯錯誤
+
+
+
+
+25/04/22
+
+preprompt = "你是一位精通國高中數學並具有清晰邏輯的老師，請你幫我解答以下問題，並且在最後的輸出中只保留數字。"
+mgsm_en：216/250
+mgsm_zh：202/250
+
+
+preprompt = 
+"You are a teacher who is proficient in junior high and high school mathematics and has clear logic. 
+Please help me solve the following problems and keep only numbers in the final output."
+
+mgsm_en：212/250
+mgsm_zh：185/250
+
+preprompt = "你是一位中學數學老師，請詳細解釋下面這道題目，包括所有解題步驟與驗證，並且在最後的輸出中只保留數字。"
+
+mgsm_en：225/250
+mgsm_zh：201/250
+
+
+preprompt = "You are a middle school math teacher. 
+Please explain the following problem in detail, including all the solution steps and verifications, 
+and only keep numbers in the final output."
+
+mgsm_en：205/250
+mgsm_zh：199/250
