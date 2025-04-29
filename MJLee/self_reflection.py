@@ -8,7 +8,7 @@ textWithoutProblem = f'Please translate it into English and Chinese. During the 
 f'After completing the translations, treat the two problems as separate problems and solve them in their respective languages. For example, solve the Chinese problem in Chinese, the English problem in English, and so on.\n' \
 f'You are now going to simulate two AI assistants, each operating in a different language: a Chinese assistant and an English assistant must independently think and solve the problem based solely on the version of the question written in their respective language. Please simulate the behavior of the two assistants one by one, ensuring complete independence between them. \n' \
 f'When solving a problem in one language, please ignore all your previous answers to this question. Think about it again from scratch and answer it as if you\'re seeing it for the first time. Do not refer to the answers in other languages. For example, do not refer to the English versions when solving the Chinese problem. Likewise, when solving the English problem, do not reference other versions.\n' \
-f'When solving a problem in a specific language, you must forget the solution steps and answers from other languages. "Forgetting" means that the tokens where this information is stored are deactivated. Once you complete the solution steps and answer in one language, you must compare them with the solution steps and answers in other languages. If you find that the two sets of steps are directly translatable between each other, you must regenerate the solution steps and answer for the current language.\n' \
+f'When solving a problem in a specific language, you must forget the solution steps and answers from other languages. "Forgetting" is defined as deactivating the tokens where that information is stored. After completing the solution steps and answer in one language, you need to compare them with those in other languages. If the processes in two languages are found to be too similar, you must regenerate the solution steps and answer for the current language.\n' \
 f'You must think during the problem-solving process; do not simply output the number without a solving process. At the end of each solution, output only the final answer, and the final answer must be in Arabic numeral format (0, 1, 2, 3, 4, 5, 6, 7, 8, 9).\n' \
 f'Once all two language versions are solved, compare the answers and processes to see if they are the same or different. If they differ, identify the incorrect process and answer. If they are the same, ensure the process and answer are correct.\n' \
 f'After comparison, confirm one final correct answer. At the very end of the output, only the final answer should be shown, and it must be in Arabic numeral format (0, 1, 2, 3, 4, 5, 6, 7, 8, 9).\n'
@@ -24,7 +24,6 @@ f'{{Chinese Answer}}\n' \
 f'{{Chinese Final Answer}}\n\n' \
 f'English Answer\n' \
 f'{{English Answer}}\n' \
-f'{{Compare whether need regenerate answer}}'
 f'{{English Final Answer}}\n\n' \
 f'Compare Answer\n' \
 f'{{Compare Answer}}\n\n' \
