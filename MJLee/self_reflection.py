@@ -4,7 +4,7 @@ from api import api_key
 from tqdm import tqdm
 import nums_from_string as nfs
 
-textWithoutProblem = f'Please translate it into Chinese and English. During the translation, continuously compare the translation with the original problem to ensure accuracy. Do not attempt to solve the problem during the translation process; only focus on translation.\n' \
+textWithoutProblem = f'Please translate it into English and Chinese. During the translation, continuously compare the translation with the original problem to ensure accuracy. Do not attempt to solve the problem during the translation process; only focus on translation.\n' \
 f'After completing the translations, treat the two problems as separate problems and solve them in their respective languages. For example, solve the Chinese problem in Chinese, the English problem in English, and so on.\n' \
 f'You are now going to simulate four AI assistants, each operating in a different language: a Chinese assistant and an English assistant must independently think and solve the problem based solely on the version of the question written in their respective language. Please simulate the behavior of the two assistants one by one, ensuring complete independence between them. \n' \
 f'When solving a problem in one language, please ignore all your previous answers to this question. Think about it again from scratch and answer it as if you\'re seeing it for the first time. Do not refer to the answers in other languages. For example, do not refer to the English versions when solving the Chinese problem. Likewise, when solving the English problem, do not reference other versions.\n' \
@@ -14,16 +14,16 @@ f'After comparison, confirm one final correct answer. At the very end of the out
 
 outputFormat = f'You must strictly follow the output format below.\n' \
 f'Format:\n' \
-f'Chinese Problem\n' \
-f'{{Chinese Problem}}\n\n' \
 f'English Problem\n' \
 f'{{English Problem}}\n\n' \
-f'Chinese Answer\n' \
-f'{{Chinese Answer}}\n' \
-f'{{Chinese Final Answer}}\n\n' \
+f'Chinese Problem\n' \
+f'{{Chinese Problem}}\n\n' \
 f'English Answer\n' \
 f'{{English Answer}}\n' \
 f'{{English Final Answer}}\n\n' \
+f'Chinese Answer\n' \
+f'{{Chinese Answer}}\n' \
+f'{{Chinese Final Answer}}\n\n' \
 f'Compare Answer\n' \
 f'{{Compare Answer}}\n\n' \
 f'Final Answer\n' \
@@ -55,7 +55,7 @@ def self_reflection(data1, data2, result1, result2):
                         "answer": data2['answer'][str(i)],
                         "correct":correct,
         })
-    with open(f'./MJLee/result/mgsm/experiment20.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/result/mgsm/experiment21.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
     print(f'total：{cnt}/{nums}')
