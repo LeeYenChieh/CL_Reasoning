@@ -2,7 +2,7 @@ import json
 import nums_from_string as nfs
 import re
 
-language_headers = ['Chinese version', 'English version', 'Japanese version', 'French version', 'compare answer', 'final answer']
+language_headers = ['Chinese version', 'English version', 'compare answer', 'final answer']
 
 def find_answer(text):
     # 用正則式將每個語言段分割出來
@@ -36,23 +36,8 @@ def find_answer(text):
     # 輸出結果
     return answers
 
-def find_inconsistent_values(data: dict, index):
-    if not data:
-        return []
-
-    # 取得所有的值組成的 set，若只有一個值，代表都相等
-    unique_values = set(data.values())
-
-    if len(unique_values) == 1:
-        return
-
-    # 否則，找出與多數不同的 key
-    print(f'❌ Values are not all equal. {index}')
-    print(data)
-
-
 def main():
-    with open(f'./MJLee/result/mgsm/experiment18.json', 'r') as f:
+    with open(f'./MJLee/result/mgsm/experiment19.json', 'r') as f:
         outputs = json.load(f)
     cnt = {
         'Chinese version': 0,
@@ -65,11 +50,18 @@ def main():
     i = 0
     for output in outputs:
         answers = find_answer(output["output"])
-        find_inconsistent_values(answers, output["index"])
         questionAnswer = nfs.get_nums(output["answer"])[0]
+        errorString = ""
         for lang, answer in answers.items():
             if questionAnswer == answer:
                 cnt[lang] += 1
+            else:
+                if errorString == "":
+                    errorString = "❌ error"
+                errorString += f' {lang}'
+        if errorString != "":
+            errorString += f' {output['index']}'
+            print(errorString)
     for lang, answer in cnt.items():
         print(f"{lang}: {answer}")
 

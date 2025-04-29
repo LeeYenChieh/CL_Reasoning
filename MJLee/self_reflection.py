@@ -4,41 +4,41 @@ from api import api_key
 from tqdm import tqdm
 import nums_from_string as nfs
 
-textWithoutProblem = f'Please translate it into English. During the translation, continuously compare the translation with the original problem to ensure accuracy. Do not attempt to solve the problem during the translation process; only focus on translation.\n' \
+textWithoutProblem = f'Please translate it into Chinese and English. During the translation, continuously compare the translation with the original problem to ensure accuracy. Do not attempt to solve the problem during the translation process; only focus on translation.\n' \
 f'After completing the translations, treat the two problems as separate problems and solve them in their respective languages. For example, solve the Chinese problem in Chinese, the English problem in English, and so on.\n' \
 f'You are now going to simulate four AI assistants, each operating in a different language: a Chinese assistant and an English assistant must independently think and solve the problem based solely on the version of the question written in their respective language. Please simulate the behavior of the two assistants one by one, ensuring complete independence between them. \n' \
 f'When solving a problem in one language, please ignore all your previous answers to this question. Think about it again from scratch and answer it as if you\'re seeing it for the first time. Do not refer to the answers in other languages. For example, do not refer to the English versions when solving the Chinese problem. Likewise, when solving the English problem, do not reference other versions.\n' \
 f'You must think during the problem-solving process; do not simply output the number without a solving process. At the end of each solution, output only the final answer, and the final answer must be in Arabic numeral format (0, 1, 2, 3, 4, 5, 6, 7, 8, 9).\n' \
 f'Once all two language versions are solved, compare the answers and processes to see if they are the same or different. If they differ, identify the incorrect process and answer. If they are the same, ensure the process and answer are correct.\n' \
-f'After comparison, confirm one final correct answer. At the very end of the output, only the final answer should be shown, and it must be in Arabic numeral format (0, 1, 2, 3, 4, 5, 6, 7, 8, 9).\n' \
-f'You must strictly follow the output format below.\n' \
+f'After comparison, confirm one final correct answer. At the very end of the output, only the final answer should be shown, and it must be in Arabic numeral format (0, 1, 2, 3, 4, 5, 6, 7, 8, 9).\n'
+
+outputFormat = f'You must strictly follow the output format below.\n' \
 f'Format:\n' \
-f'Chinese version\n' \
-f'{{Chinese problem}}\n\n' \
-f'{{Chinese answer}}\n' \
-f'{{Chinese final answer}}\n\n' \
-f'English version\n' \
-f'{{English problem}}\n\n' \
-f'{{English answer}}\n' \
-f'{{English final answer}}\n\n' \
-f'compare answer\n' \
-f'{{compare answer}}\n\n' \
-f'final answer\n' \
-f'{{final answer}}'
+f'Chinese Problem\n' \
+f'{{Chinese Problem}}\n\n' \
+f'English Problem\n' \
+f'{{English Problem}}\n\n' \
+f'Chinese Answer\n' \
+f'{{Chinese Answer}}\n' \
+f'{{Chinese Final Answer}}\n\n' \
+f'English Answer\n' \
+f'{{English Answer}}\n' \
+f'{{English Final Answer}}\n\n' \
+f'Compare Answer\n' \
+f'{{Compare Answer}}\n\n' \
+f'Final Answer\n' \
+f'{{Final Answer}}'
 
 openai.api_key = api_key
 dir1 = 'mgsm_zh'
 dir2 = 'mgsm_en'
 nums = 250
-prompt = "\nOutput the final answer at the last of your response. If the answer is a number, please output the number only. Arabic numerals only."
-prompt_to_output_arabic_number = "(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)"
 
 def self_reflection(data1, data2, result1, result2):
     result = []
-    c1c2, w2c1, w1w2, w1c2 = 0, 0, 0, 0
-    c1c2_nums, w2c1_nums, w1w2_nums, w1c2_nums = 0, 0, 0, 0
+    cnt = 0
     for i in tqdm(range(nums)):
-        text = f'There is a problem:\n\n{result1[i]["output_translate"]}\n\n{textWithoutProblem}'
+        text = f'There is a problem:\n\n{result1[i]["output_translate"]}\n\n{textWithoutProblem + outputFormat}'
         response = openai.ChatCompletion.create(
             model="gpt-4o-mini-2024-07-18",
             messages=[{"role": "user", "content": text}],
@@ -46,50 +46,19 @@ def self_reflection(data1, data2, result1, result2):
         )
         print(response["choices"][0]["message"]["content"])
         # print(response["choices"][0]["message"]["content"])
-        type = ""
         correct = True if nfs.get_nums(str(data2['answer'][str(i)]))[-1] == nfs.get_nums(response["choices"][0]["message"]["content"])[-1] else False
-        if result1[i]['correct'] and result2[i]['correct']:
-            c1c2_nums += 1
-            c1c2 += 1 if correct else 0
-            type = "both correct"
-        elif result1[i]['correct'] and not result2[i]['correct']:
-            w2c1_nums += 1
-            w2c1 += 1 if correct else 0
-            type = f'{dir1} correct {dir2} wrong'
-        elif not result1[i]['correct'] and not result2[i]['correct']:
-            w1w2_nums += 1
-            w1w2 += 1 if correct else 0
-            type = "both wrong"
-        else:
-            w1c2_nums += 1
-            w1c2 += 1 if correct else 0
-            type = f'{dir1} wrong {dir2} correct'
-
+        if correct:
+            cnt += 1
         result.append({"index": i, 
                         "question": text,
                         "output": response["choices"][0]["message"]["content"],
                         "answer": data2['answer'][str(i)],
                         "correct":correct,
-                        "type": type
         })
-    with open(f'./MJLee/result/mgsm/experiment19.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/result/mgsm/experiment20.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
-    print(f'wrong in {dir1}, correct in {dir2}：{w1c2_nums}/{nums}')
-    print(f'wrong in {dir2}, correct in {dir1}：{w2c1_nums}/{nums}')
-    print(f'wrong in {dir1}, wrong in {dir2}：{w1w2_nums}/{nums}')
-    print(f'correct in both：{c1c2_nums}/{nums}')
-    print()
-    print(f'{dir1}：{c1c2_nums + w2c1_nums}/{nums}')
-    print(f'{dir2}：{c1c2_nums + w1c2_nums}/{nums}')
-    print("-" * 30)
-    print("**After self reflection**")
-    print(f'wrong in {dir1}, correct in {dir2}：{w1c2}/{w1c2_nums}')
-    print(f'wrong in {dir2}, correct in {dir1}：{w2c1}/{w2c1_nums}')
-    print(f'wrong in {dir1}, wrong in {dir2}：{w1w2}/{w1w2_nums}')
-    print(f'correct in both：{c1c2}/{c1c2_nums}')
-    print()
-    print(f'total：{c1c2 + w1c2 + w2c1 + w1w2}/{nums}')
+    print(f'total：{cnt}/{nums}')
 
 
 def main():
