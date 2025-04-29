@@ -24,6 +24,7 @@ f'{{Chinese Answer}}\n' \
 f'{{Chinese Final Answer}}\n\n' \
 f'English Answer\n' \
 f'{{English Answer}}\n' \
+f'{{Compare whether need regenerate answer}}'
 f'{{English Final Answer}}\n\n' \
 f'Compare Answer\n' \
 f'{{Compare Answer}}\n\n' \
