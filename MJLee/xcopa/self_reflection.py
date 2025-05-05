@@ -54,7 +54,7 @@ def self_reflection(zh_data, en_data):
         result.append({"index": i, 
                         "question": text,
                         "output": response["choices"][0]["message"]["content"],
-                        "answer": f'choice {zh_data[i]['label'] + 1}',
+                        "answer": f'choice {zh_data[i]["label"] + 1}',
                         "correct":correct,
         })
     with open(f'./MJLee/xcopa/result/experiment1.json', 'w', encoding='utf-8') as f:
