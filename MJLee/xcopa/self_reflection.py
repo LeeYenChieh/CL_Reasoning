@@ -71,8 +71,8 @@ def load_jsonl(jsonl_file):
     return data
 
 def main():
-    zh_data = load_jsonl(f'./data/xcopa/data/zh/test_zh.jsonl')
-    en_data = load_jsonl(f'./data/xcopa/data-gmt/zh/test_zh.jsonl')
+    zh_data = load_jsonl(f'./data/xcopa/data/zh/test.zh.jsonl')
+    en_data = load_jsonl(f'./data/xcopa/data-gmt/zh/test.zh.jsonl')
 
     self_reflection(zh_data, en_data)
     
