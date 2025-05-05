@@ -48,7 +48,7 @@ def self_reflection(zh_data, en_data):
             temperature=0.2
         )
         print(response["choices"][0]["message"]["content"])
-        correct = True if zh_data[i]['label'] + 1 == nfs.get_nums(response["choices"][0]["message"]["content"])[-1] else False
+        correct = True if zh_data[i]["label"] + 1 == nfs.get_nums(response["choices"][0]["message"]["content"])[-1] else False
         if correct:
             cnt += 1
         result.append({"index": i, 
