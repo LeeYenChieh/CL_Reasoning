@@ -1,6 +1,6 @@
 import openai
 import json
-from ..api import api_key
+from MJLee.api import api_key
 from tqdm import tqdm
 import nums_from_string as nfs
 
