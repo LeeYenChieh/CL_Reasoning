@@ -253,3 +253,6 @@ f'Compare Answer\n' \
 f'{{Compare Answer}}\n\n' \
 f'Final Answer\n' \
 f'{{Final Answer}}'
+
+去跟之前分agent比對
+不同model

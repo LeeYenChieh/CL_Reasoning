@@ -2,7 +2,8 @@ import json
 import nums_from_string as nfs
 import re
 
-language_headers = ['Chinese version', 'English version', 'compare answer', 'final answer']
+# language_headers = ['Chinese version', 'English version', 'compare answer', 'final answer']
+language_headers = ['Chinese Answer', 'English Answer', 'Compare Answer', 'Final Answer']
 
 def find_answer(text):
     # 用正則式將每個語言段分割出來
@@ -37,15 +38,13 @@ def find_answer(text):
     return answers
 
 def main():
-    with open(f'./MJLee/result/mgsm/experiment19.json', 'r') as f:
+    with open(f'./MJLee/result/mgsm/experiment20.json', 'r') as f:
         outputs = json.load(f)
     cnt = {
-        'Chinese version': 0,
-        'English version': 0,
-        'Japanese version': 0,
-        'French version': 0,
-        'compare answer': 0,
-        'final answer': 0
+        'Chinese Answer': 0,
+        'English Answer': 0,
+        'Compare Answer': 0,
+        'Final Answer': 0
     }
     i = 0
     for output in outputs:
