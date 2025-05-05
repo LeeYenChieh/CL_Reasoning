@@ -14,16 +14,16 @@ f'After comparison, confirm one final correct answer. At the very end of the out
 
 outputFormat = f'You must strictly follow the output format below.\n' \
 f'Format:\n' \
-f'English Problem\n' \
-f'{{English Problem}}\n\n' \
 f'Chinese Problem\n' \
 f'{{Chinese Problem}}\n\n' \
-f'English Answer\n' \
-f'{{English Answer}}\n' \
-f'{{English Final Answer}}\n\n' \
+f'English Problem\n' \
+f'{{English Problem}}\n\n' \
 f'Chinese Answer\n' \
 f'{{Chinese Answer}}\n' \
 f'{{Chinese Final Answer}}\n\n' \
+f'English Answer\n' \
+f'{{English Answer}}\n' \
+f'{{English Final Answer}}\n\n' \
 f'Compare Answer\n' \
 f'{{Compare Answer}}\n\n' \
 f'Final Answer\n' \
