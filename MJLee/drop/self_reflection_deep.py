@@ -1,4 +1,4 @@
-import openai
+from openai import OpenAI
 import json
 from api import api_key
 from tqdm import tqdm
@@ -30,7 +30,7 @@ f'{{Compare Answer}}\n\n' \
 f'Final Answer\n' \
 f'{{Final Answer}}'
 
-openai.api_key = api_key
+client = OpenAI(api_key="api_key", base_url="https://api.deepseek.com")
 nums = 50
 
 def self_reflection(dataset):
@@ -41,9 +41,12 @@ def self_reflection(dataset):
         f'Answer questions based on the article \n' \
         f'Question: {dataset[i]["question"]}'
         text = f'There is a problem:\n\n{problem}\n\n{textWithoutProblem + outputFormat}'
-        response = openai.ChatCompletion.create(
-            model="gpt-4o-mini-2024-07-18",
-            messages=[{"role": "user", "content": text}],
+        response = client.chat.completions.create(
+            model="deepseek-chat",
+            messages=[
+                {"role": "user", "content": text},
+            ],
+            stream=False,
             temperature=0.2
         )
         print(problem)
