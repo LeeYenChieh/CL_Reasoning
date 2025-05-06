@@ -17,9 +17,10 @@ def self_reflection(data1, data2, result1, result2):
     for i in tqdm(range(nums)):
         problem = f'{result1[i]["output_translate"]}'
         response = client.chat.completions.create(
-            model="gpt-4.1-2025-04-14",
+            model="deepseek-chat",
             messages=[{"role": "system", "content": prompt},
                 {"role": "user", "content": problem}],
+            stream=False,
             temperature=0.2
         )
         print(response.choices[0].message.content)
