@@ -1,9 +1,7 @@
-from openai import OpenAI
-import json
+import openai
 from api import api_key
-from tqdm import tqdm
-import nums_from_string as nfs
-from datasets import load_dataset
+
+openai.api_key = api_key
 
 textWithoutProblem = f'Please translate it into Chinese and English. During the translation, continuously compare the translation with the original problem to ensure accuracy. Do not attempt to solve the problem during the translation process; only focus on translation.\n' \
 f'After completing the translations, treat the two problems as separate problems and solve them in their respective languages. For example, solve the Chinese problem in Chinese, the English problem in English, and so on.\n' \
@@ -30,57 +28,23 @@ f'{{Compare Answer}}\n\n' \
 f'Final Answer\n' \
 f'{{Final Answer}}'
 
-client = OpenAI(api_key="api_key", base_url="https://api.deepseek.com")
-nums = 50
-
-def self_reflection(dataset):
-    result = []
-    cnt = 0
-    for i in tqdm(range(nums)):
-        problem = f'There is a Paragraphs: {dataset[i]["passage"]}.\n' \
-        f'Answer questions based on the article \n' \
-        f'Question: {dataset[i]["question"]}'
-        text = f'There is a problem:\n\n{problem}\n\n{textWithoutProblem + outputFormat}'
-        response = client.chat.completions.create(
-            model="deepseek-chat",
-            messages=[
-                {"role": "user", "content": text},
-            ],
-            stream=False,
-            temperature=0.2
-        )
-        print(problem)
-        print("=" * 40)
-        print(response["choices"][0]["message"]["content"])
-        correct = True if int(dataset[i]["answers_spans"]["spans"][0]) == nfs.get_nums(response["choices"][0]["message"]["content"])[-1] else False
-        if correct:
-            cnt += 1
-        result.append({"index": i, 
-                        "question": text,
-                        "output": response["choices"][0]["message"]["content"],
-                        "answer": int(dataset[i]["answers_spans"]["spans"][0]),
-                        "correct":correct,
-        })
-    with open(f'./MJLee/drop/result/experiment3.json', 'w', encoding='utf-8') as f:
-        json.dump(result, f, indent=2, ensure_ascii=False)
-
-    print(f'total：{cnt}/{nums}')
-
-def get_nums_dataset(dataset):
-    newDataset = []
-    idx = 0
-    while len(newDataset) < nums:
-        if dataset[idx]["answers_spans"]["types"][0] == "number":
-            newDataset.append(dataset[idx])
-        idx += 1
-    return newDataset
+iteration = 10
 
 def main():
-    dataset = load_dataset("drop", split="validation")
-    numsDataset = get_nums_dataset(dataset)
-
-    self_reflection(numsDataset)
-    
+    text = f'我在嘗試一個實驗\n' \
+    f'該實驗為給model一個題目\n' \
+    f'model必須要先將題目翻譯成中文跟英文，並且在翻譯過程中不能解決該問題\n' \
+    f'翻譯完成後model需要解答中文的題目以及英文的題目\n' \
+    f'解答過程中不能互相參考，如解答中文題目時不能看model自己在解答英文題目時輸出了什麼，解答英文題目時不能看model自己在解答中文題目時輸出了什麼\n' \
+    f'我的prompt如下，目前prompt的問題為model每次在解答中文問題以及英文問題時輸出會完全一樣，只不過一個是中文答案一個是英文答案\n' \
+    f'請你幫我修改prompt以可以達到上述要求\n' \
+    f'Prompt: \n\n{textWithoutProblem + outputFormat}'
+    response = openai.ChatCompletion.create(
+        model="gpt-4o-mini-2024-07-18",
+        messages=[{"role": "user", "content": text}],
+        temperature=0.2
+    )
+    print(response["choices"][0]["message"]["content"])
 
 if __name__ == '__main__':
     main()
