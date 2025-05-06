@@ -1,5 +1,6 @@
 import openai
 from api import api_key
+import json
 
 openai.api_key = api_key
 
@@ -37,14 +38,15 @@ def main():
     f'翻譯完成後model需要解答中文的題目以及英文的題目\n' \
     f'解答過程中不能互相參考，如解答中文題目時不能看model自己在解答英文題目時輸出了什麼，解答英文題目時不能看model自己在解答中文題目時輸出了什麼\n' \
     f'我的prompt如下，目前prompt的問題為model每次在解答中文問題以及英文問題時輸出會完全一樣，只不過一個是中文答案一個是英文答案\n' \
-    f'請你幫我修改prompt以可以達到上述要求\n' \
-    f'Prompt: \n\n{textWithoutProblem + outputFormat}'
+    f'請你幫我修改prompt以可以達到上述要求\n'
+    currentPrompt = "你是一個協作組合，擁有兩個完全獨立的AI身份：\n\n- 「中文助手A」：只會讀寫中文，只能看到“中文問題”，完全不知道世界上有英文問題或任何英文內容存在。\n- 「English Assistant B」：只會讀寫英文，只能看到“英文問題”，完全不知道世界上有中文問題或任何中文內容存在。\n\n### 1. 翻譯階段\n- 請將原始問題，**只做語言轉換**，分別準確翻譯成中文和英文，不分析、不啟動推理、不添加註解。\n\n### 2. **獨立答題階段：徹底隔離！**\n**（1）請先完成下列之一，絕對不能預先看或思考另一語言問題──**\n- 中文助手A：僅閱讀「中文問題」，開始推理、分步解答、最終給出阿拉伯數字答案。\n- English Assistant B：僅閱讀「英文問題」，開始推理、分步解答、最終給出阿拉伯數字答案。\n\n**執行方式強調**：「你正在兩次單獨解題，每次只能帶著單一語言與認知環境。每位助手解題期間完全隔離，不能參考另一題的思路或答案，且不能預設兩邊相同或不同。」\n\n### 3. 比較與檢查\n- 匯總並並排呈現上述兩位助手的完整推理及答案。\n- 分析兩組解答是否一致，若有分歧請指出推理路徑差異及潛在錯誤理由；若一致則說明依據。\n\n### 4. 輸出格式嚴格遵循如下，且**不可在任何答題階段引用或參考另一語言內容**：\n\n```\n中文問題\n{{中文問題}}\n\n英文問題\n{{英文問題}}\n\n中文助手A思考過程\n{{A的詳細推理步驟}}\n\n中文助手A答案\n{{A的答案}}\n{{A的最終阿拉伯數字答案}}\n\nEnglish Assistant B Thought Process\n{{B's detailed reasoning steps}}\n\nEnglish Assistant B Answer\n{{B's answer}}\n{{B's final answer (Arabic numeral)}}\n\n比較答案\n{{比較過程、是否一致、若不一致其分歧原因}}\n\n最終答案\n{{最終正確答案（僅阿拉伯數字）}}\n```\n\n**請務必完成所有步驟再統一匯報，比較前，不能在任何階段暴露、討論或引用另一語言推理內容或答案。説明書與步驟內容也不能混雜。**"
     response = openai.ChatCompletion.create(
-        model="gpt-4o-mini-2024-07-18",
-        messages=[{"role": "user", "content": text}],
-        temperature=0.2
+        model="gpt-4.1-2025-04-14",
+        messages=[{"role": "user", "content": text + currentPrompt}],
     )
     print(response["choices"][0]["message"]["content"])
+    with open(f'./MJLee/drop/temp.json', 'w', encoding='utf-8') as f:
+        json.dump({"hi": response["choices"][0]["message"]["content"]}, f, indent=2, ensure_ascii=False)
 
 if __name__ == '__main__':
     main()
