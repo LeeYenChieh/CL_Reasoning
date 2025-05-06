@@ -42,7 +42,7 @@ def self_reflection(dataset):
         f'Question: {dataset[i]["question"]}'
         text = f'There is a problem:\n\n{problem}\n\n{textWithoutProblem + outputFormat}'
         response = openai.ChatCompletion.create(
-            model="gpt-4o-mini-2024-07-18",
+            model="deepseek-chat",
             messages=[{"role": "user", "content": text}],
             temperature=0.2
         )
@@ -58,7 +58,7 @@ def self_reflection(dataset):
                         "answer": int(dataset[i]["answers_spans"]["spans"][0]),
                         "correct":correct,
         })
-    with open(f'./MJLee/drop/result/experiment1.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/drop/result/experiment3.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
     print(f'total：{cnt}/{nums}')
