@@ -19,7 +19,7 @@ def self_reflection(dataset):
         f'Question: {dataset[i]["question"]}'
         response = client.chat.completions.create(
             model="deepseek-chat",
-            messages=[{"role": "developer", "content": prompt},
+            messages=[{"role": "system", "content": prompt},
                 {"role": "user", "content": problem}],
             stream=False,
             temperature=0.2
