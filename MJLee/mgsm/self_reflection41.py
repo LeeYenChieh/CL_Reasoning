@@ -32,7 +32,7 @@ def self_reflection(data1, data2, result1, result2):
                         "answer": data2['answer'][str(i)],
                         "correct":correct,
         })
-    with open(f'./MJLee/mgsm/result/experiment1.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/mgsm/result/experiment2.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
     print(f'total：{cnt}/{nums}')

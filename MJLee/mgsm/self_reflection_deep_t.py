@@ -21,7 +21,7 @@ def self_reflection(data1, data2, result1, result2):
             messages=[{"role": "system", "content": prompt},
                 {"role": "user", "content": problem}],
             stream=False,
-            temperature=0.2
+            # temperature=0.2
         )
         print(response.choices[0].message.content)
         correct = True if nfs.get_nums(str(data2['answer'][str(i)]))[-1] == nfs.get_nums(response.choices[0].message.content)[-1] else False
@@ -33,7 +33,7 @@ def self_reflection(data1, data2, result1, result2):
                         "answer": data2['answer'][str(i)],
                         "correct":correct,
         })
-    with open(f'./MJLee/mgsm/result/experiment3.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/mgsm/result/experiment7.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
     print(f'total：{cnt}/{nums}')
