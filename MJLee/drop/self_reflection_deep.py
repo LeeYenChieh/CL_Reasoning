@@ -26,13 +26,13 @@ def self_reflection(dataset):
         )
         print(problem)
         print("=" * 40)
-        print(response["choices"][0]["message"]["content"])
-        correct = True if int(dataset[i]["answers_spans"]["spans"][0]) == nfs.get_nums(response["choices"][0]["message"]["content"])[-1] else False
+        print(response.choices[0].message.content)
+        correct = True if int(dataset[i]["answers_spans"]["spans"][0]) == nfs.get_nums(response.choices[0].message.content)[-1] else False
         if correct:
             cnt += 1
         result.append({"index": i, 
                         "question": problem,
-                        "output": response["choices"][0]["message"]["content"],
+                        "output": response.choices[0].message.content,
                         "answer": int(dataset[i]["answers_spans"]["spans"][0]),
                         "correct":correct,
         })
