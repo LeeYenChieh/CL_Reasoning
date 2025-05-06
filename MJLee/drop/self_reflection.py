@@ -58,7 +58,7 @@ def self_reflection(dataset):
                         "answer": int(dataset[i]["answers_spans"]["spans"][0]),
                         "correct":correct,
         })
-    with open(f'./MJLee/drop/result/experiment3.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/drop/result/experiment3.json', 'w', encoding='utf-8') as f: 
         json.dump(result, f, indent=2, ensure_ascii=False)
 
     print(f'total：{cnt}/{nums}')
