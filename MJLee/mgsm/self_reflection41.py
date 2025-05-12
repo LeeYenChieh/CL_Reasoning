@@ -15,7 +15,7 @@ def self_reflection(data1, data2, result1, result2):
     result = []
     cnt = 0
     for i in tqdm(range(nums)):
-        problem = f'{result2[i]["output_translate"]}'
+        problem = f'{data2["question"][str(i)]}'
         response = client.chat.completions.create(
             model="gpt-4.1-2025-04-14",
             messages=[{"role": "developer", "content": prompt},
