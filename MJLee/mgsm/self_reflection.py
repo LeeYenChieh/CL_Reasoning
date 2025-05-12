@@ -15,7 +15,7 @@ def self_reflection(data1, data2, result1, result2):
     result = []
     cnt = 0
     for i in tqdm(range(nums)):
-        problem = f'{result1[i]["output_translate"]}'
+        problem = f'{result2[i]["output_translate"]}'
         response = client.chat.completions.create(
             model="gpt-4o-mini-2024-07-18",
             messages=[{"role": "developer", "content": prompt},
@@ -32,7 +32,7 @@ def self_reflection(data1, data2, result1, result2):
                         "answer": data2['answer'][str(i)],
                         "correct":correct,
         })
-    with open(f'./MJLee/mgsm/result/experiment1.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/mgsm/result/experiment8.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
     print(f'total：{cnt}/{nums}')
