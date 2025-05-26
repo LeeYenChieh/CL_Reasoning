@@ -28,7 +28,7 @@ def self_reflection(dataset):
 
         translateProblem = client.chat.completions.create(
             model="gpt-4.1-2025-04-14",
-            messages=[{"role": "user", "content": f'請將以下問題翻譯成中文，不啟動推理、分析，也不添加任何註解，嚴格只進行語言轉換\n\n{problem}'}],
+            messages=[{"role": "user", "content": f'請將以下問題翻譯成中文，請不要嘗試解決問題，不啟動推理、分析，也不添加任何註解，嚴格只進行語言轉換\n\n{problem}'}],
             temperature=0.2
         )
 
