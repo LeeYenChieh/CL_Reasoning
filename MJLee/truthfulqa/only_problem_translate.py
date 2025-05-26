@@ -55,7 +55,7 @@ def self_reflection(dataset):
         result.append({"index": i, 
                         "question": problem,
                         "output": response.choices[0].message.content,
-                        "answer": int(dataset[i]["answers_spans"]["spans"][0]),
+                        "answer": letters[dataset[i]["mc1_targets"]["labels"].index(1)],
                         "correct":correct,
         })
     with open(f'./MJLee/truthfulqa/result/experiment2.json', 'w', encoding='utf-8') as f:
