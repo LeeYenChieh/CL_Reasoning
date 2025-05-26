@@ -10,9 +10,12 @@ client = OpenAI(api_key=gpt_api_key)
 dir1 = 'mgsm_zh'
 dir2 = 'mgsm_en'
 nums = 250
+model = "gpt-4.1-2025-04-14"
 
 def self_reflection(data1, data2, result1, result2):
-    result = []
+    result = [{
+        "model": model
+    }]
     cnt = 0
     for i in tqdm(range(nums)):
         problem = f'{data2["question"][str(i)]}'
@@ -32,7 +35,7 @@ def self_reflection(data1, data2, result1, result2):
                         "answer": data2['answer'][str(i)],
                         "correct":correct,
         })
-    with open(f'./MJLee/mgsm/result/experiment9.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/mgsm/result/experiment2.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
     print(f'total：{cnt}/{nums}')

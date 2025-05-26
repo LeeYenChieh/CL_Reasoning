@@ -10,14 +10,17 @@ client = genai.Client(api_key=gemini_api_key)
 dir1 = 'mgsm_zh'
 dir2 = 'mgsm_en'
 nums = 250
+model="gemini-2.0-flash"
 
 def self_reflection(data1, data2, result1, result2):
-    result = []
+    result = [{
+        "model": model
+    }]
     cnt = 0
     for i in tqdm(range(nums)):
         problem = f'{result1[i]["output_translate"]}'
         response = client.models.generate_content(
-            model="gemini-2.0-flash", contents=f'{prompt}\n\n{problem}'
+            model=model, contents=f'{prompt}\n\n{problem}'
         )
         print(response.text)
         correct = True if nfs.get_nums(str(data2['answer'][str(i)]))[-1] == nfs.get_nums(response.text)[-1] else False

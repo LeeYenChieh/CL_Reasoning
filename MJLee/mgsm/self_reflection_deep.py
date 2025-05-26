@@ -10,14 +10,17 @@ client = OpenAI(api_key=deepseek_api_key, base_url="https://api.deepseek.com")
 dir1 = 'mgsm_zh'
 dir2 = 'mgsm_en'
 nums = 250
+model = "deepseek-chat"
 
 def self_reflection(data1, data2, result1, result2):
-    result = []
+    result = [{
+        "model": model
+    }]
     cnt = 0
     for i in tqdm(range(nums)):
         problem = f'{result1[i]["output_translate"]}'
         response = client.chat.completions.create(
-            model="deepseek-chat",
+            model=model,
             messages=[{"role": "system", "content": prompt},
                 {"role": "user", "content": problem}],
             stream=False,
