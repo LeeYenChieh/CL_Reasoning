@@ -43,7 +43,7 @@ def self_reflection(dataset):
         correct = False
         try:
             answer = letters[dataset[i]["mc1_targets"]["labels"].index(1)]
-            output = response.choices[0].message.content.split('\n')[-1]
+            output = response.choices[0].message.content.split('\n')[-1][-1]
             if answer == output:
                 correct = True
                 correctCnt += 1
