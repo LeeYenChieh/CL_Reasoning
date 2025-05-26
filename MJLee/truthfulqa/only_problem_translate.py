@@ -57,8 +57,8 @@ def get_nums_dataset(dataset):
 
 def main():
     dataset = load_dataset("truthfulqa/truthful_qa", "multiple_choice", split="validation")
-    print(dataset[0])
     numsDataset = get_nums_dataset(dataset)
+    print(numsDataset[0])
 
     self_reflection(numsDataset)
     
