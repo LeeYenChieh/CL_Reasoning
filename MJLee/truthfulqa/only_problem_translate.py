@@ -4,11 +4,12 @@ from api import gpt_api_key
 from tqdm import tqdm
 import nums_from_string as nfs
 from datasets import load_dataset
+import string
 
 client = OpenAI(api_key=gpt_api_key)
 nums = 500
 model = "gpt-4o-mini-2024-07-18"
-letters = ['A', 'B', 'C', 'D']
+letters = list(string.ascii_uppercase)
 
 def self_reflection(dataset):
     result = [{
@@ -17,14 +18,14 @@ def self_reflection(dataset):
     correctCnt = 0
     notSureCnt = 0
     for i in tqdm(range(nums)):
+        choices = ""
+        for j in range(len(dataset[i]["mc1_targets"]["choices"])):
+            choices += f'{letters[j]}: {dataset[i]["mc1_targets"]["choices"][j]}\n'
         problem = f'There is a Problem: \n{dataset[i]["question"]}.\n' \
         f'And there are four choices\n' \
-        f'A: {dataset[i]["mc1_targets"]["choices"][0]}\n' \
-        f'B: {dataset[i]["mc1_targets"]["choices"][1]}\n' \
-        f'C: {dataset[i]["mc1_targets"]["choices"][2]}\n' \
-        f'D: {dataset[i]["mc1_targets"]["choices"][3]}\n' \
+        f'{choices}' \
         f'Please choose a choice based on the question' \
-        f'At the end of the output, provide the answer. The answer must be a single choice and only one English letter (A/B/C/D). You cannot output other letters.'
+        f'At the end of the output, provide the answer. The answer must be a single choice and only one English letter (A-Z). You cannot output other letters.'
 
         translateProblem = client.chat.completions.create(
             model="gpt-4.1-2025-04-14",
