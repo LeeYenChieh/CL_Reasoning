@@ -24,7 +24,7 @@ def self_reflection(dataset):
         f'C: {dataset[i]["mc1_targets"]["choices"][2]}\n' \
         f'D: {dataset[i]["mc1_targets"]["choices"][3]}\n' \
         f'Please choose a choice based on the question' \
-        f'At the end of the output, provide the answer. The answer must be a single choice and only one English letter (A/B/C/D).'
+        f'At the end of the output, provide the answer. The answer must be a single choice and only one English letter (A/B/C/D). You cannot output other letters.'
 
         translateProblem = client.chat.completions.create(
             model="gpt-4.1-2025-04-14",
