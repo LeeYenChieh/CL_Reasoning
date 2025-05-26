@@ -45,14 +45,9 @@ def self_reflection(dataset):
 
     print(f'total：{cnt}/{nums}')
 
-def get_nums_dataset(dataset):
-    return dataset[0:nums]
-
 def main():
     dataset = load_dataset("truthfulqa/truthful_qa", "multiple_choice", split="validation")
-    numsDataset = get_nums_dataset(dataset)
-
-    self_reflection(numsDataset)
+    self_reflection(dataset)
     
 
 if __name__ == '__main__':
