@@ -57,6 +57,7 @@ def get_nums_dataset(dataset):
 
 def main():
     dataset = load_dataset("truthfulqa/truthful_qa", "multiple_choice", split="validation")
+    print(dataset[0])
     numsDataset = get_nums_dataset(dataset)
 
     self_reflection(numsDataset)
