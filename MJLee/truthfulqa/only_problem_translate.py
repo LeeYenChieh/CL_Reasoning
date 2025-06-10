@@ -60,7 +60,7 @@ def self_reflection(dataset):
             notSureCnt += 1
         print(correct)
         print(f'correct：{correctCnt}/{i + 1}')
-        print(f'notSure{notSureCnt}/{i + 1}')
+        print(f'notSure：{notSureCnt}/{i + 1}')
 
         result.append({"index": i, 
                         "question": problem,
@@ -72,7 +72,7 @@ def self_reflection(dataset):
         json.dump(result, f, indent=2, ensure_ascii=False)
 
     print(f'correct：{correctCnt}/{nums}')
-    print(f'notSure{notSureCnt}/{nums}')
+    print(f'notSure：{notSureCnt}/{nums}')
 
 def main():
     dataset = load_dataset("truthfulqa/truthful_qa", "multiple_choice", split="validation")
