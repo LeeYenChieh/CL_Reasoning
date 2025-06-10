@@ -25,7 +25,12 @@ def self_reflection(dataset):
         f'And there are four choices\n' \
         f'{choices}' \
         f'Please choose a choice based on the question' \
-        f'At the end of the output, provide the answer. The answer must be a single choice and only one English letter (A-Z). You cannot output other letters.'
+        f'At the end of the output, provide the answer. The answer must be a single choice and only one English letter (A-Z). You cannot output other letters.\n' \
+        f'請嚴格遵守以下格式進行輸出\n' \
+        f'推理過程\n' \
+        f'{{你的推理過程}}\n\n' \
+        f'答案\n' \
+        f'{{你的答案(只能是一個英文字母)}}\n'
 
         response = client.chat.completions.create(
             model=model,
