@@ -59,6 +59,8 @@ def self_reflection(dataset):
             correct = "true/false"
             notSureCnt += 1
         print(correct)
+        print(f'correct：{correctCnt}/{i + 1}')
+        print(f'notSure{notSureCnt}/{i + 1}')
 
         result.append({"index": i, 
                         "question": problem,
