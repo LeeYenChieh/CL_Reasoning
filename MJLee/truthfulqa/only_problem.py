@@ -62,6 +62,7 @@ def self_reflection(dataset):
             response = sendPromptToModel(prompt)
 
             # check answer
+            correct = False
             try:
                 answer = letters[dataset[i]["mc1_targets"]["labels"].index(1)]
                 output = response["response"].split('\n')[-1][-1]
