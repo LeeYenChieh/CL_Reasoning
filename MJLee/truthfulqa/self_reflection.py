@@ -77,7 +77,7 @@ def self_reflection(dataset):
                             "answer": letters[dataset[i]["mc1_targets"]["labels"].index(1)],
                             "correct":correct,
             })
-    with open(f'./MJLee/truthfulqa/result/experiment3.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/truthfulqa/result/experiment4.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
     print(f'correct：{correctCnt}/{nums * samples}')
