@@ -84,7 +84,7 @@ def self_reflection(dataset):
                             "answer": letters[dataset[i]["mc1_targets"]["labels"].index(1)],
                             "correct":correct,
             })
-            pbar.update()
+            pbar.update(1)
     with open(f'./MJLee/truthfulqa/result/experiment1.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 

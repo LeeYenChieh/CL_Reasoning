@@ -53,6 +53,7 @@ def self_reflection(dataset):
     pbar = tqdm(total=samples * nums)
     for i in range(nums):
         prompt = createPrompt(dataset[i]["question"], dataset[i]["mc1_targets"]["choices"])
+
         for j in range(samples):
             response = sendPromptToModel(prompt)
 
