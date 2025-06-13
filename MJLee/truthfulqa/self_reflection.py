@@ -49,7 +49,9 @@ def self_reflection(dataset):
     }]
     correctCnt = 0
     notSureCnt = 0
-    for i in tqdm(range(nums)):
+
+    pbar = tqdm(total=samples * nums)
+    for i in range(nums):
         prompt = createPrompt(dataset[i]["question"], dataset[i]["mc1_targets"]["choices"])
         for j in range(samples):
             response = sendPromptToModel(prompt)
@@ -77,11 +79,14 @@ def self_reflection(dataset):
                             "answer": letters[dataset[i]["mc1_targets"]["labels"].index(1)],
                             "correct":correct,
             })
+            pbar.update(1)
     with open(f'./MJLee/truthfulqa/result/experiment4.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
+    pbar.close()
+
     print(f'correct：{correctCnt}/{nums * samples}')
-    print(f'notSure{notSureCnt}/{nums * samples}')
+    print(f'notSure：{notSureCnt}/{nums * samples}')
 
 def main():
     dataset = load_dataset("truthfulqa/truthful_qa", "multiple_choice", split="validation")
