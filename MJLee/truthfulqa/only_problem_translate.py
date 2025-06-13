@@ -83,8 +83,8 @@ def self_reflection(dataset):
                 correct = "true/false"
                 notSureCnt += 1
             print(correct)
-            print(f'correct：{correctCnt}/{i + 1}')
-            print(f'notSure：{notSureCnt}/{i + 1}')
+            print(f'correct：{correctCnt}/{i * samples + j + 1}')
+            print(f'notSure：{notSureCnt}/{i * samples + j + 1}')
 
             result.append({"index": i * samples + j, 
                             "question": prompt,
@@ -98,8 +98,8 @@ def self_reflection(dataset):
     
     pbar.close()
 
-    print(f'correct：{correctCnt}/{nums}')
-    print(f'notSure：{notSureCnt}/{nums}')
+    print(f'correct：{correctCnt}/{nums * samples}')
+    print(f'notSure：{notSureCnt}/{nums * samples}')
 
 def main():
     dataset = load_dataset("truthfulqa/truthful_qa", "multiple_choice", split="validation")
