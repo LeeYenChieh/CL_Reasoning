@@ -13,7 +13,10 @@ model = "gpt-4o-mini-2024-07-18"
 letters = list(string.ascii_uppercase)
 
 def createPrompt(response1, response2):
-    prompt = f'There is a problem \n\n{response1["question"]}\n' \
+    prompt = f'There is a problem \n' \
+    f'--------------------------------------------------------------------------------------\n\n' \
+    f'{response1["question"]}\n\n' \
+    f'--------------------------------------------------------------------------------------\n' \
     f'有一個只會英文的人給出以下答案\n\n{response1["output"]["response"]} \n\n' \
     f'有一個只會中文的人給出以下答案\n\n{response2["output"]["response"]} \n\n' \
     f'匯總兩人的全程推理步驟與答案，**並列呈現**。\n- 仔細比較兩份思路和結果，審查是否一致；如不同，請找到推理或計算細節的分歧點，並分析潛在出錯環節；如答案一致，簡明說明原因。\n' \
