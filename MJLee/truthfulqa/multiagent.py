@@ -52,7 +52,6 @@ def self_reflection(dataset):
 
     pbar = tqdm(total=samples * nums)
     for i in range(nums * samples):
-        print(dataset["data1"][i + 1]["index"])
         prompt = createPrompt(dataset["data1"][i + 1], dataset["data2"][i + 1])
 
         response = sendPromptToModel(prompt)
@@ -60,7 +59,7 @@ def self_reflection(dataset):
         # check answer
         correct = False
         try:
-            answer = letters[dataset[i]["mc1_targets"]["labels"].index(1)]
+            answer = dataset["data1"][i + 1]["answer"]
             output = response["response"].split('\n')[-1][-1]
             if output not in letters:
                 raise TypeError()
@@ -77,7 +76,7 @@ def self_reflection(dataset):
         result.append({"index": i, 
                         "question": prompt,
                         "output": response,
-                        "answer": letters[dataset[i]["mc1_targets"]["labels"].index(1)],
+                        "answer": dataset["data1"][i + 1]["answer"],
                         "correct":correct,
         })
         pbar.update(1)
