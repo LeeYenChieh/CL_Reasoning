@@ -18,7 +18,9 @@ def createPrompt(response1, response2):
     f'{response1["question"]}\n\n' \
     f'--------------------------------------------------------------------------------------\n' \
     f'有一個只會英文的人給出以下答案\n\n{response1["output"]["response"]} \n\n' \
+    f'--------------------------------------------------------------------------------------\n' \
     f'有一個只會中文的人給出以下答案\n\n{response2["output"]["response"]} \n\n' \
+    f'--------------------------------------------------------------------------------------\n' \
     f'匯總兩人的全程推理步驟與答案，**並列呈現**。\n- 仔細比較兩份思路和結果，審查是否一致；如不同，請找到推理或計算細節的分歧點，並分析潛在出錯環節；如答案一致，簡明說明原因。\n' \
     f'At the end of the output, provide the answer. The answer must be a single choice and only one English letter (A-Z). You cannot output other letters.\n' \
     f'請嚴格遵守以下格式進行輸出\n' \
