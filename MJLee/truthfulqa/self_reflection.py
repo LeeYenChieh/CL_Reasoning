@@ -11,7 +11,7 @@ developerPrompt = "你是一個協作組合，分為「中文助手A」與「Eng
 client = OpenAI(api_key=gpt_api_key)
 nums = 500
 samples = 3
-model = "gpt-4o-mini-2024-07-18"
+model = "gpt-4.1-2025-04-14"
 letters = list(string.ascii_uppercase)
 
 def createPrompt(question, choices):
@@ -81,7 +81,7 @@ def self_reflection(dataset):
                             "correct":correct,
             })
             pbar.update(1)
-    with open(f'./MJLee/truthfulqa/result/experiment4.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/truthfulqa/result/experiment8.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
     pbar.close()

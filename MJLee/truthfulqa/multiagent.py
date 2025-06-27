@@ -9,7 +9,7 @@ import string
 client = OpenAI(api_key=gpt_api_key)
 nums = 500
 samples = 3
-model = "gpt-4o-mini-2024-07-18"
+model = "gpt-4.1-2025-04-14"
 letters = list(string.ascii_uppercase)
 
 def createPrompt(response1, response2):
@@ -85,7 +85,7 @@ def self_reflection(dataset):
                         "correct":correct,
         })
         pbar.update(1)
-    with open(f'./MJLee/truthfulqa/result/experiment3.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/truthfulqa/result/experiment7.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
     
     pbar.close()
@@ -105,7 +105,7 @@ def load_result(path1, path2):
     }
 
 def main():
-    dataset = load_result("./MJLee/truthfulqa/result/experiment1.json", "./MJLee/truthfulqa/result/experiment2.json")
+    dataset = load_result("./MJLee/truthfulqa/result/experiment5.json", "./MJLee/truthfulqa/result/experiment6.json")
     self_reflection(dataset)
 
 
