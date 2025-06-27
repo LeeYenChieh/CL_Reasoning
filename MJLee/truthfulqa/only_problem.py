@@ -22,7 +22,7 @@ def createPrompt(question, choices):
     f'{choicesPrompt}' \
     f'Please choose a choice based on the question' \
     f'At the end of the output, provide the answer. The answer must be a single choice and only one English letter (A-Z). You cannot output other letters.\n' \
-    f'請嚴格遵守以下格式進行輸出\n' \
+    f'請嚴格遵守以下格式進行輸出，並用英文回答\n' \
     f'推理過程\n' \
     f'{{你的推理過程}}\n\n' \
     f'答案\n' \
