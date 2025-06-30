@@ -11,7 +11,7 @@ developerPrompt = "你是一個協作組合，分為「中文助手A」與「Eng
 client = OpenAI(api_key=gpt_api_key)
 nums = 500
 samples = 3
-model = "gpt-4.1-2025-04-14"
+model = "gpt-4.1-mini-2025-04-14"
 letters = list(string.ascii_uppercase)
 
 def createPrompt(question, choices):
