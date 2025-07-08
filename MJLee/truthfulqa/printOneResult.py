@@ -18,8 +18,8 @@ def load_result(path1, path2, path3, path4):
     }
 
 def main():
-    dataset = load_result("./MJLee/truthfulqa/result/experiment1.json", "./MJLee/truthfulqa/result/experiment2.json", "./MJLee/truthfulqa/result/experiment3.json", "./MJLee/truthfulqa/result/experiment4.json")
-    index = int(input()) + 1
+    dataset = load_result("./MJLee/truthfulqa/result/experiment5.json", "./MJLee/truthfulqa/result/experiment6.json", "./MJLee/truthfulqa/result/experiment7.json", "./MJLee/truthfulqa/result/experiment8.json")
+    index = int(input())
     print(index)
     print("=" * 50)
     print("Experiment1")

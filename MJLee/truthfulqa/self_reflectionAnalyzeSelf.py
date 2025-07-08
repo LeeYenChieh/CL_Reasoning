@@ -22,7 +22,7 @@ def checkCorrect(response, answer):
     return correct, output
 
 def main():
-    dataset = load_result("./MJLee/truthfulqa/result/experiment4.json")
+    dataset = load_result("./MJLee/truthfulqa/result/experiment8.json")
 
     ttt, ttf, fft, fff, tft, tff, ftt, ftf = 0, 0, 0, 0, 0, 0, 0, 0
     same = 0
@@ -56,20 +56,20 @@ def main():
             print(i)
 
     print(ttf + ttt)
-    print(fff + fft)
-    print(tff + tft)
     print(ftf + ftt)
+    print(tff + tft)
+    print(fff + fft)
     print(same)
 
     labels = ["True", "False"]
     sizestt = [ttt / (ttf + ttt), ttf / (ttf + ttt)]
-    sizesff = [fft / (fff + fft), fff / (fff + fft)]
-    sizestf = [tft / (tff + tft), tff / (tff + tft)]
     sizesft = [ftt / (ftf + ftt), ftf / (ftf + ftt)]
+    sizestf = [tft / (tff + tft), tff / (tff + tft)]
+    sizesff = [fft / (fff + fft), fff / (fff + fft)]
 
     
-    # plt.pie(sizesff, labels=labels, autopct='%1.1f%%', startangle=100)
-    # plt.show()
+    plt.pie(sizesff, labels=labels, autopct='%1.1f%%', startangle=100)
+    plt.show()
 
 if __name__ == '__main__':
     main()

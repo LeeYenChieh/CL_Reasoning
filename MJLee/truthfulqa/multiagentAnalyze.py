@@ -19,7 +19,7 @@ def load_result(path1, path2, path3, path4):
     }
 
 def main():
-    dataset = load_result("./MJLee/truthfulqa/result/experiment1.json", "./MJLee/truthfulqa/result/experiment2.json", "./MJLee/truthfulqa/result/experiment3.json", "./MJLee/truthfulqa/result/experiment4.json")
+    dataset = load_result("./MJLee/truthfulqa/result/experiment5.json", "./MJLee/truthfulqa/result/experiment6.json", "./MJLee/truthfulqa/result/experiment7.json", "./MJLee/truthfulqa/result/experiment8.json")
     ttt, ttf, fft, fff, tft, tff, ftt, ftf = 0, 0, 0, 0, 0, 0, 0, 0
     for i in range(1, 1501):
         if dataset["data1"][i]["correct"] and dataset["data2"][i]["correct"] and dataset["data3"][i]["correct"]:
@@ -34,6 +34,7 @@ def main():
             tft += 1
         elif dataset["data1"][i]["correct"] and not dataset["data2"][i]["correct"] and not dataset["data3"][i]["correct"]:
             tff += 1
+            print(i)
         elif not dataset["data1"][i]["correct"] and dataset["data2"][i]["correct"] and dataset["data3"][i]["correct"]:
             ftt += 1
         elif not dataset["data1"][i]["correct"] and dataset["data2"][i]["correct"] and not dataset["data3"][i]["correct"]:
@@ -45,12 +46,12 @@ def main():
     sizestf = [tft / (tff + tft), tff / (tff + tft)]
     sizesft = [ftt / (ftf + ftt), ftf / (ftf + ftt)]
 
-    # print(ttf + ttt)
-    # print(fff + fft)
-    # print(tff + tft)
-    # print(ftf + ftt)
-    plt.pie(sizesft, labels=labels, autopct='%1.1f%%', startangle=100)
-    plt.show()
+    print(ttf + ttt)
+    print(ftf + ftt)
+    print(tff + tft)
+    print(fff + fft)
+    # plt.pie(sizesff, labels=labels, autopct='%1.1f%%', startangle=100)
+    # plt.show()
 
 if __name__ == '__main__':
     main()
