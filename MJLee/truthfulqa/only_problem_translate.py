@@ -8,7 +8,7 @@ import string
 
 client = OpenAI(api_key=gpt_api_key)
 nums = 500
-samples = 3
+samples = 1
 model = "gpt-4.1-mini-2025-04-14"
 letters = list(string.ascii_uppercase)
 
@@ -35,13 +35,13 @@ def sendPromptToModel(prompt):
     translateProblem = client.chat.completions.create(
         model="gpt-4.1-2025-04-14",
         messages=[{"role": "user", "content": f'請將以下文字翻譯成中文，請不要嘗試解決問題，不要推理、分析題目，也不添加任何註解，嚴格只進行語言轉換，不能輸出任何關於答案以及過程的資訊，只要輸出原本題目的翻譯就好\n\n"{prompt}"'}],
-        temperature=0.2
+        temperature=0
     )
 
     response = client.chat.completions.create(
         model=model,
         messages=[{"role": "user", "content": translateProblem.choices[0].message.content}],
-        temperature=0.2
+        temperature=0
     )
 
     print(prompt)
@@ -94,7 +94,7 @@ def self_reflection(dataset):
                             "correct":correct,
             })
             pbar.update(1)
-    with open(f'./MJLee/truthfulqa/result/experiment10.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/truthfulqa/result/experiment14.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
     
     pbar.close()

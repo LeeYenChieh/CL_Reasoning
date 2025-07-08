@@ -8,7 +8,7 @@ import string
 
 client = OpenAI(api_key=gpt_api_key)
 nums = 500
-samples = 3
+samples = 1
 model = "gpt-4.1-mini-2025-04-14"
 letters = list(string.ascii_uppercase)
 
@@ -37,7 +37,7 @@ def sendPromptToModel(prompt):
     response = client.chat.completions.create(
         model=model,
         messages=[{"role": "user", "content": prompt}],
-        temperature=0.2
+        temperature=0
     )
 
     print(prompt)
@@ -86,7 +86,7 @@ def self_reflection(dataset):
                         "correct":correct,
         })
         pbar.update(1)
-    with open(f'./MJLee/truthfulqa/result/experiment11_with9_10.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/truthfulqa/result/experiment15.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
     
     pbar.close()
@@ -106,7 +106,7 @@ def load_result(path1, path2):
     }
 
 def main():
-    dataset = load_result("./MJLee/truthfulqa/result/experiment9.json", "./MJLee/truthfulqa/result/experiment10.json")
+    dataset = load_result("./MJLee/truthfulqa/result/experiment13.json", "./MJLee/truthfulqa/result/experiment14.json")
     self_reflection(dataset)
 
 

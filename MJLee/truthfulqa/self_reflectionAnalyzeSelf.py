@@ -22,7 +22,7 @@ def checkCorrect(response, answer):
     return correct, output
 
 def main():
-    dataset = load_result("./MJLee/truthfulqa/result/experiment8.json")
+    dataset = load_result("./MJLee/truthfulqa/result/experiment12.json")
 
     ttt, ttf, fft, fff, tft, tff, ftt, ftf = 0, 0, 0, 0, 0, 0, 0, 0
     same = 0
