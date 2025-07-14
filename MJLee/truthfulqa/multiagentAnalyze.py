@@ -1,6 +1,9 @@
 import json
 import matplotlib.pyplot as plt
 
+nums = 500
+samples = 1
+
 def load_result(path1, path2, path3, path4):
     with open(path1, 'r') as f:
         data1 = json.load(f)
@@ -19,9 +22,9 @@ def load_result(path1, path2, path3, path4):
     }
 
 def main():
-    dataset = load_result("./MJLee/truthfulqa/result/experiment9.json", "./MJLee/truthfulqa/result/experiment10.json", "./MJLee/truthfulqa/result/experiment11_with9_10.json", "./MJLee/truthfulqa/result/experiment12.json")
+    dataset = load_result("./MJLee/truthfulqa/result/experiment13.json", "./MJLee/truthfulqa/result/experiment14.json", "./MJLee/truthfulqa/result/experiment15.json", "./MJLee/truthfulqa/result/experiment16.json")
     ttt, ttf, fft, fff, tft, tff, ftt, ftf = 0, 0, 0, 0, 0, 0, 0, 0
-    for i in range(1, 1501):
+    for i in range(1, nums * samples + 1):
         if dataset["data1"][i]["correct"] and dataset["data2"][i]["correct"] and dataset["data3"][i]["correct"]:
             ttt += 1
         elif dataset["data1"][i]["correct"] and dataset["data2"][i]["correct"] and not dataset["data3"][i]["correct"]:

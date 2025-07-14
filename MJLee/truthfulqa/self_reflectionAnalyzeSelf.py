@@ -2,6 +2,9 @@ import json
 import matplotlib.pyplot as plt
 import string
 
+nums = 500
+samples = 1
+
 def load_result(path):
     with open(path, 'r') as f:
         data = json.load(f)
@@ -22,11 +25,11 @@ def checkCorrect(response, answer):
     return correct, output
 
 def main():
-    dataset = load_result("./MJLee/truthfulqa/result/experiment12.json")
+    dataset = load_result("./MJLee/truthfulqa/result/experiment16.json")
 
     ttt, ttf, fft, fff, tft, tff, ftt, ftf = 0, 0, 0, 0, 0, 0, 0, 0
     same = 0
-    for i in range(1, 1501):
+    for i in range(1, nums * samples + 1):
         responses = dataset[i]["output"]["response"].split("—————————————")
         if len(responses) != 4:
             print(i)
