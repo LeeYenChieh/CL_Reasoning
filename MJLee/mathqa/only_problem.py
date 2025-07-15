@@ -44,7 +44,7 @@ def sendPromptToModel(prompt):
 
 
 def self_reflection(dataset):
-    print(len(dataset))
+    print(dataset)
     result = [{
         "model": model
     }]
