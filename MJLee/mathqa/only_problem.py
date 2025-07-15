@@ -43,7 +43,7 @@ def sendPromptToModel(prompt):
 
 
 def self_reflection(dataset):
-    print(dataset)
+    print(len(dataset))
     result = [{
         "model": model
     }]
@@ -96,7 +96,7 @@ def load_dataset(json_path):
     return data[0:nums]
 
 def main():
-    dataset = load_dataset("test.json", split="test")
+    dataset = load_dataset("test.json")
     self_reflection(dataset)
 
 
