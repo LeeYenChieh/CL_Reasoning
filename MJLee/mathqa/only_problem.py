@@ -44,6 +44,7 @@ def sendPromptToModel(prompt):
 
 
 def self_reflection(dataset):
+    print(len(dataset))
     result = [{
         "model": model
     }]
@@ -92,7 +93,6 @@ def self_reflection(dataset):
 
 def main():
     dataset = load_dataset("allenai/math_qa", split="test")
-    print(dataset[0])
     self_reflection(dataset[0:nums])
 
 
