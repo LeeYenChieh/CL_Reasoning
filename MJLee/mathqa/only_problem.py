@@ -3,7 +3,6 @@ import json
 from api import gpt_api_key
 from tqdm import tqdm
 import nums_from_string as nfs
-from datasets import load_dataset
 import string
 
 client = OpenAI(api_key=gpt_api_key)
@@ -91,9 +90,14 @@ def self_reflection(dataset):
     print(f'correct：{correctCnt}/{nums * samples}')
     print(f'notSure：{notSureCnt}/{nums * samples}')
 
+def load_dataset(json_path):
+    with open(f'./MJLee/mathqa/{json_path}', 'r') as f:
+        data = json.load(f)
+    return data[0:nums]
+
 def main():
-    dataset = load_dataset("allenai/math_qa", split="test")
-    self_reflection(dataset[0:nums])
+    dataset = load_dataset("test.json", split="test")
+    self_reflection(dataset)
 
 
 if __name__ == '__main__':
