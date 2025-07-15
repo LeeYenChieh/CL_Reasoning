@@ -112,10 +112,14 @@ def self_reflection(dataset):
     print(f'correct：{correctCnt}/{nums * samples}')
     print(f'notSure：{notSureCnt}/{nums * samples}')
 
+def load_dataset(json_path):
+    with open(f'./MJLee/mathqa/{json_path}', 'r') as f:
+        data = json.load(f)
+    return data[0:nums]
+
 def main():
-    dataset = load_dataset("truthfulqa/truthful_qa", "multiple_choice", split="validation")
+    dataset = load_dataset("test.json")
     self_reflection(dataset)
-    
 
 if __name__ == '__main__':
     main()
