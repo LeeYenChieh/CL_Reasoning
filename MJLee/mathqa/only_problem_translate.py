@@ -8,7 +8,7 @@ import string
 
 client = OpenAI(api_key=gpt_api_key)
 nums = 500
-samples = 1
+samples = 3
 model = "gpt-4.1-mini-2025-04-14"
 letters = list(string.ascii_lowercase)
 

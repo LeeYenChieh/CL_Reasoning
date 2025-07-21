@@ -26,3 +26,14 @@ developerPrompt = f'這邊有一個問題，你要用以下幾個階段去回答
     f'最終答案\n' \
     f'{{公認正確答案（僅一個英文字母(A-Z)）}}\n'
 
+
+{
+    "Problem": "a multiple choice test consists of 4 questions , and each question has 5 answer choices . in how many r ways can the test be completed if every question is unanswered ?",
+    "Rationale": "\"5 choices for each of the 4 questions , thus total r of 5 * 5 * 5 * 5 = 5 ^ 4 = 625 ways to answer all of them . answer : c .\"",
+    "annotated_formula": "power(5, 4)",
+    "category": "general",
+    "correct": "c",
+    "linear_formula": "power(n1,n0)|",
+    "options": "a ) 24 , b ) 120 , c ) 625 , d ) 720 , e ) 1024"
+}
+
