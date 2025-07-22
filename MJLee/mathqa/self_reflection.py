@@ -46,6 +46,7 @@ def createPrompt(question, choices):
     f'{choices}\n' \
     f'Please choose a choice based on the question\n' \
     f'At the end of the output, provide the answer. The answer must be a single choice and only one English letter (a-e). You cannot output other letters.\n' \
+    f'你必須嚴格按照格式進行輸出\n'
 
     return prompt
 
