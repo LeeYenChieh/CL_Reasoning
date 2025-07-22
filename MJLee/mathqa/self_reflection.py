@@ -60,6 +60,7 @@ def sendPromptToModel(prompt):
     response = client.chat.completions.create(
         model=model,
         messages=[{"role": "user", "content": developerPrompt + '\n' * 2 + translateProblem.choices[0].message.content}],
+        max_tokens=1024,
         temperature=0
     )
 

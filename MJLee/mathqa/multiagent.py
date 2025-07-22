@@ -36,6 +36,7 @@ def sendPromptToModel(prompt):
     response = client.chat.completions.create(
         model=model,
         messages=[{"role": "user", "content": prompt}],
+        max_tokens=1024,
         temperature=0
     )
 
