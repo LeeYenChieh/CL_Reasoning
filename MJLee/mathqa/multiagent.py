@@ -7,7 +7,7 @@ from datasets import load_dataset
 import string
 
 client = OpenAI(api_key=gpt_api_key)
-nums = 500
+nums = 3000
 samples = 3
 model = "gpt-4.1-mini-2025-04-14"
 letters = list(string.ascii_lowercase)
@@ -86,7 +86,7 @@ def self_reflection(dataset):
                         "correct":correct,
         })
         pbar.update(1)
-    with open(f'./MJLee/mathqa/result/experiment3.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/mathqa/result/experiment7.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
     
     pbar.close()

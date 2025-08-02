@@ -7,7 +7,7 @@ from datasets import load_dataset
 import string
 
 client = OpenAI(api_key=gpt_api_key)
-nums = 500
+nums = 3000
 samples = 3
 model = "gpt-4.1-mini-2025-04-14"
 letters = list(string.ascii_lowercase)
@@ -18,7 +18,7 @@ def createPrompt(question, choices):
     f'{choices}\n' \
     f'Please choose a choice based on the question\n' \
     f'At the end of the output, provide the answer. The answer must be a single choice and only one English letter (a-e). You cannot output other letters.\n' \
-    f'請嚴格遵守以下格式進行輸出，並用英文回答\n' \
+    f'請嚴格遵守以下格式進行輸出\n' \
     f'推理過程\n' \
     f'{{你的推理過程}}\n\n' \
     f'答案\n' \
@@ -90,7 +90,7 @@ def self_reflection(dataset):
                             "correct":correct,
             })
             pbar.update(1)
-    with open(f'./MJLee/mathqa/result/experiment2.json', 'w', encoding='utf-8') as f:
+    with open(f'./MJLee/mathqa/result/experiment6.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
     
     pbar.close()

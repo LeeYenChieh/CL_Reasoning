@@ -1,8 +1,8 @@
 import json
 import matplotlib.pyplot as plt
 
-nums = 500
-samples = 1
+nums = 3000
+samples = 3
 
 def load_result(path1, path2, path3, path4):
     with open(path1, 'r') as f:
