@@ -6,7 +6,7 @@ import nums_from_string as nfs
 import string
 
 client = OpenAI(api_key=gpt_api_key)
-nums = 3000
+nums = 2900
 samples = 3
 model = "gpt-4.1-mini-2025-04-14"
 letters = list(string.ascii_lowercase)

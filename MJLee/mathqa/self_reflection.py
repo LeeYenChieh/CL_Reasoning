@@ -35,7 +35,7 @@ developerPrompt = f'這邊有一個問題，你要用以下幾個階段去回答
     f'{{公認正確答案（僅一個英文字母(a-e)）}}\n'
 
 client = OpenAI(api_key=gpt_api_key)
-nums = 3000
+nums = 2900
 samples = 3
 model = "gpt-4.1-mini-2025-04-14"
 letters = list(string.ascii_lowercase)
