@@ -37,9 +37,9 @@ def main():
             tft += 1
         elif dataset["data1"][i]["correct"] and not dataset["data2"][i]["correct"] and not dataset["data3"][i]["correct"]:
             tff += 1
-            print(i)
         elif not dataset["data1"][i]["correct"] and dataset["data2"][i]["correct"] and dataset["data3"][i]["correct"]:
             ftt += 1
+            print(i)
         elif not dataset["data1"][i]["correct"] and dataset["data2"][i]["correct"] and not dataset["data3"][i]["correct"]:
             ftf += 1
 
