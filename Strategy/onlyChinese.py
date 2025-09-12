@@ -53,8 +53,8 @@ class OnlyChinese(Strategy):
                 "MyAnswer": self.parseAnswer(resultAnswer)
             })
 
-            log.logMessage(translateQuestion)
-            log.logMessage(resultAnswer)
+            log.logMessage(f'翻譯問題：\n{translateQuestion}')
+            log.logMessage(f'結果：\n{resultAnswer}')
             log.logMessage(f'My Answer: {result[-1]["MyAnswer"]}\nCorrect Answer: {answer[i]}')
 
             pbar.update()
