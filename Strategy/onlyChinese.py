@@ -10,15 +10,15 @@ class OnlyChinese(Strategy):
         super().__init__()
         self.name: str = "Only Chinese"
 
-    def translatePrompt(question: str) -> str:
+    def translatePrompt(self, question: str) -> str:
         prompt = "將以下文字翻譯成中文，不要嘗試解決問題，不要推理、分析題目，也不添加任何註解，嚴格只進行語言轉換，不能輸出任何關於答案以及過程的資訊，僅能輸出原本題目的翻譯\n\n"
         return prompt + question
 
-    def processPrompt() -> str:
+    def processPrompt(self) -> str:
         prompt = "\n解決該問題。"
         return prompt
 
-    def formatPrompt() -> str:
+    def formatPrompt(self) -> str:
         prompt = f'請嚴格遵守以下格式進行輸出\n' \
             f'推理過程\n' \
             f'{{你的推理過程}}\n\n' \
