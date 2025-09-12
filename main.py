@@ -41,6 +41,7 @@ def runExperiment(args):
 def main():
     args = parseArgs()
     if args.run:
+        print("Run Experiment Prepare")
         runExperiment(args)
 
 if __name__ == 'main':

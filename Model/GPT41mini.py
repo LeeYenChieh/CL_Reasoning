@@ -7,7 +7,7 @@ class GPT41mini(Model):
         super().__init__(tempature)
         self.name: str = "GPT 4.1 mini"
         self.modelName = "gpt-4.1-mini-2025-04-14"
-        self.client = OpenAI(api_key=gpt_apt_key)
+        self.client = OpenAI(api_key=gpt_api_key)
     
     def getRes(self, prompt) -> str:
         try:
