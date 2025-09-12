@@ -11,9 +11,9 @@ import json
 def parseArgs():
     parser = ArgumentParser()
     parser.add_argument("--run", action="store_true", help="Run Experiment")
-    parser.add_argument("-m", "--model", help="choose your model")
-    parser.add_argument("-d", "--dataset", help="choose your dataset")
-    parser.add_argument("-s", "--strategy", help="choose your strategy")
+    parser.add_argument("-m", "--model", choices=['gpt4.1mini', 'gpt4omini', 'deepseek', 'gemini', 'gemma'], help="choose your model")
+    parser.add_argument("-d", "--dataset", choices=['mathqa', 'commenseqa', 'mgsm', 'mmlu', 'truthfulqa', 'xcopa'], help="choose your dataset")
+    parser.add_argument("-s", "--strategy", choices=["onlyChinese", "onlyEnglish"], help="choose your strategy")
     parser.add_argument("--nums", help="Data Nums", type=int)
     parser.add_argument("--dirpath", help="your dir path")
     parser.add_argument("--filepath", help="your file path")
