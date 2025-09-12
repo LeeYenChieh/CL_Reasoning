@@ -1,6 +1,6 @@
 from openai import OpenAI
 from Model.Model import Model
-from api_key import gpt_apt_key
+from api_key import gpt_api_key
 
 class GPT41mini(Model):
     def __init__(self, tempature: int = 0):
