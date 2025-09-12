@@ -6,7 +6,7 @@ class DatasetFactory():
         pass
 
     def buildDataset(self, type, *args, **kwargs) -> Dataset:
-        print(*args, **kwargs)
+        print(args, kwargs)
         if type == 'mathqa':
             return MathQA(*args, **kwargs)
         else:
