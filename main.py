@@ -40,10 +40,9 @@ def runExperiment(args):
 
 def main():
     args = parseArgs()
-    print(args.run)
     if args.run:
         print("Run Experiment Prepare")
         runExperiment(args)
 
-if __name__ == 'main':
+if __name__ == '__main__':
     main()
