@@ -15,6 +15,14 @@ class Dataset:
     def getName(self) -> str:
         return self.name
 
+    def printName(self):
+        print(f'Dataset: {self.name}\n')
+        return
+    
+    def printDataNums(self):
+        print(f'Data Nums: {self.nums}\n')
+        print(f'Sample: {self.sample} times\n')
+
     def getData(self) -> list:
         return self.data[0:self.nums] * self.sample
     

@@ -1,11 +1,13 @@
 from Model.Model import Model
 from Dataset.Dataset import Dataset
 from Strategy.Strategy import Strategy
+from Log.Log import Log
 
 from tqdm import tqdm
 
 class OnlyEnglish(Strategy):
     def __init__(self):
+        super().__init__()
         self.name: str = "Only English"
 
     def translatePrompt(question: str) -> str:
@@ -28,7 +30,9 @@ class OnlyEnglish(Strategy):
         prompt = question + self.processPrompt() + self.formatPrompt()
         return prompt
 
-    def getRes(self, model: Model, dataset: Dataset, nums: int) -> list:
+    def getRes(self, model: Model, dataset: Dataset, log: Log) -> list:
+        log.logInfo(self, model, dataset)
+
         database = dataset.getData()
         answer = dataset.getAnswer()
         result = [{
@@ -53,11 +57,3 @@ class OnlyEnglish(Strategy):
         pbar.close()
 
         return result
-
-question = ""
-AC = ""
-AE = ""
-
-prompt = f'你剛剛對於\n{question}\n的回答是\n{AC}\n有沒有可能你的答案是錯的，正確的答案會是\n{AE}\n?'
-
-

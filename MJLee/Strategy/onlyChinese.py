@@ -1,11 +1,13 @@
 from Model.Model import Model
 from Dataset.Dataset import Dataset
 from Strategy.Strategy import Strategy
+from Log.Log import Log
 
 from tqdm import tqdm
 
 class OnlyChinese(Strategy):
     def __init__(self):
+        super().__init__()
         self.name: str = "Only Chinese"
 
     def translatePrompt(question: str) -> str:
@@ -28,7 +30,9 @@ class OnlyChinese(Strategy):
         prompt = question + self.processPrompt() + self.formatPrompt()
         return prompt
 
-    def getRes(self, model: Model, dataset: Dataset, nums: int) -> list:
+    def getRes(self, model: Model, dataset: Dataset, log: Log) -> list:
+        log.logInfo(self, model, dataset)
+
         database = dataset.getData()
         answer = dataset.getAnswer()
         result = [{

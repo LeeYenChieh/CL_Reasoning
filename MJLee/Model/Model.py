@@ -5,6 +5,10 @@ class Model:
 
     def getName(self) -> str:
         return self.name
+    
+    def printName(self):
+        print(f'Model： {self.name}\n')
+        return
 
     def getRes(self, prompt: str) -> str:
         return ""

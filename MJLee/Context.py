@@ -1,6 +1,9 @@
 from Model.Model import Model
 from Dataset.Dataset import Dataset
 
+from Log.Log import Log
+from Log.OneDatasetLog import OneDatasetLog
+
 from Strategy.Strategy import Strategy
 from Strategy.onlyChinese import OnlyChinese
 from Strategy.onlyEnglish import OnlyEnglish
@@ -8,12 +11,17 @@ from Strategy.onlyEnglish import OnlyEnglish
 class Context:
     def __init__(self):
         self.strategy: Strategy = None
+        self.log: Log = Log()
     
     def setStrategy(self, mode: str):
         if mode == "onlyChinese":
             self.strategy = OnlyChinese()
+            self.log = OneDatasetLog()
+
         elif mode == "onlyEnglish":
             self.strategy = OnlyEnglish()
+            self.log = OneDatasetLog()
+
         else:
             print("Strategy doesn't exist.")
             self.strategy = None

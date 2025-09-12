@@ -8,8 +8,6 @@ class GPT41mini(Model):
         self.modelName = "gpt-4.1-mini-2025-04-14"
         self.client = OpenAI(api_key=api_key)
     
-        print(f'Model: {self.name}\n')
-    
     def getRes(self, prompt) -> str:
         try:
             response = self.client.chat.completions.create(
