@@ -1,1 +1,1 @@
-mathqa_path = "./MJLee/mathqa/test.json"
+mathqa_path = "./data/mathqa.json"
