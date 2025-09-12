@@ -27,18 +27,20 @@ def runExperiment(args):
     model: Model = modeFactory.buildModel(args.model)
     datasetFactory = DatasetFactory()
     dataset: Dataset = datasetFactory.buildDataset(args.dataset, nums = args.nums) if args.nums else datasetFactory.buildDataset(args.dataset)
-    print(dataset.getDataNum())
 
     context = Context()
     context.setStrategy(args.strategy)
     result = context.runExperiment(model, dataset)
 
+    path = ""
     if args.dirpath:
-        with open(f'{args.dirpath}/{model.getName()}_{dataset.getName()}_{context.getStrategyName()}.json', 'w', encoding='utf-8') as f:
-            json.dump(result, f, indent=2, ensure_ascii=False)
+        path = f'{args.dirpath}/{model.getName()}_{dataset.getName()}_{context.getStrategyName()}.json'
     elif args.filepath:
-        with open(f'{args.filepath}', 'w', encoding='utf-8') as f:
-            json.dump(result, f, indent=2, ensure_ascii=False)
+        path = f'{args.filepath}'
+    else:
+        path = f'{model.getName()}_{dataset.getName()}_{context.getStrategyName()}.json'
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump(result, f, indent=2, ensure_ascii=False)
 
 def main():
     args = parseArgs()
