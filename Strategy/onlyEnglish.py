@@ -53,9 +53,9 @@ class OnlyEnglish(Strategy):
                 "MyAnswer": self.parseAnswer(resultAnswer)
             })
 
-            Log.logMessage(message=translateQuestion)
-            Log.logMessage(message=resultAnswer)
-            Log.logMessage(message=f'My Answer: {result[-1]["MyAnswer"]}\nCorrect Answer: {answer[i]}')
+            log.logMessage(translateQuestion)
+            log.logMessage(resultAnswer)
+            log.logMessage(f'My Answer: {result[-1]["MyAnswer"]}\nCorrect Answer: {answer[i]}')
 
             pbar.update()
         
