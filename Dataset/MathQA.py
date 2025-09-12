@@ -5,7 +5,6 @@ import json
 class MathQA(Dataset):
     def __init__(self, nums = 0, sample = 1):
         super().__init__(nums, sample)
-        print(nums)
         self.name: str = "MathQA"
 
         with open(mathqa_path, 'r') as f:
