@@ -3,7 +3,7 @@ from Dataset.path import mathqa_path
 import json
 
 class MathQA(Dataset):
-    def __init__(self, nums = 0, sample = 1):
+    def __init__(self, nums = -1, sample = 1):
         super().__init__(nums, sample)
         self.name: str = "MathQA"
 
@@ -14,6 +14,9 @@ class MathQA(Dataset):
         for odata in originData:
             self.data.append(self.createQuestion(odata["Problem"], odata["options"]))
             self.answer.append(odata["correct"])
+        
+        if self.nums == -1 or self.nums > len(self.data):
+            self.nums = len(self.data)
 
     def createQuestion(self, question, choices) -> str:
         result = f'There is a Problem: \n{question}.\n' \

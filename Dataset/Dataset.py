@@ -3,10 +3,7 @@ class Dataset():
         self.name: str = ""
         self.data: list = []
         self.answer: list = []
-
         self.nums: int = nums
-        if self.nums > len(self.data) or nums == -1:
-            self.nums = len(self.data)
         self.sample: int = sample
 
     def getDataNum(self) -> int:
