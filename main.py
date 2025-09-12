@@ -23,8 +23,8 @@ def parseArgs():
     return args
 
 def runExperiment(args):
-    modeFactory = ModelFactory()
-    model: Model = modeFactory.buildModel(args.model)
+    modelFactory = ModelFactory()
+    model: Model = modelFactory.buildModel(args.model)
     datasetFactory = DatasetFactory()
     dataset: Dataset = datasetFactory.buildDataset(args.dataset, nums = args.nums) if args.nums else datasetFactory.buildDataset(args.dataset)
 
