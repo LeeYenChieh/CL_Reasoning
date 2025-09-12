@@ -27,7 +27,7 @@ def runExperiment(args):
     model: Model = modeFactory.buildModel(args.model)
     datasetFactory = DatasetFactory()
     dataset: Dataset = datasetFactory.buildDataset(args.dataset, nums = args.nums) if args.nums else datasetFactory.buildDataset(args.dataset)
-    print(dataset.getDataNum)
+    print(dataset.getDataNum())
 
     context = Context()
     context.setStrategy(args.strategy)
