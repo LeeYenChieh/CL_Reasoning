@@ -4,12 +4,12 @@ from Log.Log import Log
 
 import re
 
-class Strategy:
+class Strategy():
     def __init__(self):
         self.name: str = ""
     
     def printName(self):
-        print(f'Strategy {self.name}\n')
+        print(f'Strategy {self.name}')
 
     def parseAnswer(self, answer: str) -> str:
         result: str = ""
@@ -17,6 +17,9 @@ class Strategy:
         if match:
             result = match.group(1)
         return result
+    
+    def getName(self) -> str:
+        return self.name
 
     def getRes(self, model: Model, dataset: Dataset, log: Log) -> list:
         return []

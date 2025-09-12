@@ -8,7 +8,7 @@ from Strategy.Strategy import Strategy
 from Strategy.onlyChinese import OnlyChinese
 from Strategy.onlyEnglish import OnlyEnglish
 
-class Context:
+class Context():
     def __init__(self):
         self.strategy: Strategy = None
         self.log: Log = Log()
@@ -25,9 +25,15 @@ class Context:
         else:
             print("Strategy doesn't exist.")
             self.strategy = None
+    
+    def getStrategyName(self) -> str:
+        return self.strategy.getName()
+    
+    def setLog(self, mode: str):
+        pass
 
-    def runExperiment(self, model: Model, dataset: Dataset):
+    def runExperiment(self, model: Model, dataset: Dataset) -> list:
         if(not self.strategy):
             print("You need to set strategy first!")
             return
-        self.strategy.getRes(model, dataset)
+        return self.strategy.getRes(model, dataset, self.log)

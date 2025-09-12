@@ -2,7 +2,7 @@ from Strategy.Strategy import Strategy
 from Model.Model import Model
 from Dataset.Dataset import Dataset
 
-class Log:
+class Log():
     def __init__(self):
         pass
     
@@ -10,4 +10,6 @@ class Log:
         pass
     
     def logMessage(self, message: str):
+        print('=' * 30)
         print(f'Log: {message}')
+        print('=' * 30)

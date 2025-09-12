@@ -1,0 +1,1 @@
+mathqa_path = "./MJLee/mathqa/test.json"

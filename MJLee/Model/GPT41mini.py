@@ -16,7 +16,6 @@ class GPT41mini(Model):
                 max_tokens=1024,
                 temperature=0
             )
-            print(f'{prompt}\n{'=' * 50}\n{response.choices[0].message.content}')
             return response.choices[0].message.content
         except:
             return ""

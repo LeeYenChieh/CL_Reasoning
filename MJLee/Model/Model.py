@@ -1,4 +1,4 @@
-class Model:
+class Model():
     def __init__(self, tempature: int = 0):
         self.tempature: int = tempature
         self.name: str = ""
@@ -7,7 +7,7 @@ class Model:
         return self.name
     
     def printName(self):
-        print(f'Model： {self.name}\n')
+        print(f'Model： {self.name}')
         return
 
     def getRes(self, prompt: str) -> str:

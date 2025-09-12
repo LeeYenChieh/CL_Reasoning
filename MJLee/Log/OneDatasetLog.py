@@ -5,8 +5,10 @@ class OneDatasetLog(Log):
         super().__init__()
     
     def logInfo(self, strategy, model, dataset):
-        print(f'Log Information\n')
+        print('=' * 30)
+        print(f'Log Information')
         strategy.printName()
         model.printName()
         dataset.printName()
         dataset.printDataNums()
+        print('=' * 30)
