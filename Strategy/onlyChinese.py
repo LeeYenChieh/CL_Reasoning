@@ -34,6 +34,7 @@ class OnlyChinese(Strategy):
         log.logInfo(self, model, dataset)
 
         database = dataset.getData()
+        print(database)
         answer = dataset.getAnswer()
         result = [{
             "Model": model.getName(),
