@@ -25,8 +25,8 @@ def parseArgs():
 def runExperiment(args):
     modeFactory = ModelFactory()
     model: Model = modeFactory.buildModel(args.model)
-    datasetFactory = DatasetFactory(nums = args.nums) if args.nums else DatasetFactory()
-    dataset: Dataset = datasetFactory.buildDataset(args.dataset)
+    datasetFactory = DatasetFactory()
+    dataset: Dataset = datasetFactory.buildDataset(args.dataset, nums = args.nums) if args.nums else datasetFactory.buildDataset(args.dataset)
 
     context = Context()
     context.setStrategy(args.strategy)
