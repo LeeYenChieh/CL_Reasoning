@@ -10,15 +10,15 @@ class OnlyEnglish(Strategy):
         super().__init__()
         self.name: str = "Only English"
 
-    def translatePrompt(question: str) -> str:
+    def translatePrompt(self, question: str) -> str:
         prompt = "Translate the following text into English. Do not attempt to solve the problem, do not reason or analyze the question, and do not add any comments. Strictly perform language conversion only. Do not output any information about the answer or the process, only output the translation of the original question.\n\n"
         return prompt + question
 
-    def processPrompt() -> str:
+    def processPrompt(self) -> str:
         prompt = "\nSolve the problem."
         return prompt
 
-    def formatPrompt() -> str:
+    def formatPrompt(self) -> str:
         prompt = f'Please strictly follow the format below for output\n' \
             f'Reasoning process\n' \
             f'{{your reasoning process}}\n\n' \
@@ -44,17 +44,17 @@ class OnlyEnglish(Strategy):
         pbar = tqdm(total=dataset.getDataNum())
         for i in range(dataset.getDataNum()):
             translateQuestion = model.getRes(self.translatePrompt(database[i]))
-            result = model.getRes(self.getPrompt(translateQuestion))
+            resultAnswer = model.getRes(self.getPrompt(translateQuestion))
             result.append({
                 "Question": database[i],
                 "Translated": translateQuestion,
-                "Result": result,
+                "Result": resultAnswer,
                 "Answer": answer[i],
-                "MyAnswer": self.parseAnswer(result)
+                "MyAnswer": self.parseAnswer(resultAnswer)
             })
 
             Log.logMessage(translateQuestion)
-            Log.logMessage(result)
+            Log.logMessage(resultAnswer)
             Log.logMessage(f'My Answer: {result[-1]["MyAnswer"]}\nCorrect Answer: {answer[i]}')
 
             pbar.update()

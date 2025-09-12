@@ -43,20 +43,18 @@ class OnlyChinese(Strategy):
 
         pbar = tqdm(total=dataset.getDataNum())
         for i in range(dataset.getDataNum()):
-            print(database[i])
-            print(self.translatePrompt(database[i]))
             translateQuestion = model.getRes(self.translatePrompt(database[i]))
-            result = model.getRes(self.getPrompt(translateQuestion))
+            resultAnswer = model.getRes(self.getPrompt(translateQuestion))
             result.append({
                 "Question": database[i],
                 "Translated": translateQuestion,
-                "Result": result,
+                "Result": resultAnswer,
                 "Answer": answer[i],
-                "MyAnswer": self.parseAnswer(result)
+                "MyAnswer": self.parseAnswer(resultAnswer)
             })
 
             Log.logMessage(translateQuestion)
-            Log.logMessage(result)
+            Log.logMessage(resultAnswer)
             Log.logMessage(f'My Answer: {result[-1]["MyAnswer"]}\nCorrect Answer: {answer[i]}')
 
             pbar.update()
