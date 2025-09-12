@@ -1,8 +1,7 @@
-from Strategy.Strategy import Strategy
-from Model.Model import Model
-from Dataset.Dataset import Dataset
-
 class Log():
+    from Strategy.Strategy import Strategy
+    from Model.Model import Model
+    from Dataset.Dataset import Dataset
     def __init__(self):
         pass
     
