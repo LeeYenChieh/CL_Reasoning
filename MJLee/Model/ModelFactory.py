@@ -5,8 +5,8 @@ class ModelFactory():
     def __init__(self):
         pass
 
-    def buildModel(self, type) -> Model:
+    def buildModel(self, type, *args, **kwargs) -> Model:
         if type == 'gpt4.1mini':
-            return GPT41mini()
+            return GPT41mini(*args, **kwargs)
         else:
             return None
