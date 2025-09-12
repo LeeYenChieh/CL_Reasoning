@@ -14,6 +14,7 @@ def parseArgs():
     parser.add_argument("-m", "--model", help="choose your model")
     parser.add_argument("-d", "--dataset", help="choose your dataset")
     parser.add_argument("-s", "--strategy", help="choose your strategy")
+    parser.add_argument("--nums", help="Data Nums", type=int)
     parser.add_argument("--dirpath", help="your dir path")
     parser.add_argument("--filepath", help="your file path")
 
@@ -24,7 +25,7 @@ def parseArgs():
 def runExperiment(args):
     modeFactory = ModelFactory()
     model: Model = modeFactory.buildModel(args.model)
-    datasetFactory = DatasetFactory()
+    datasetFactory = DatasetFactory(nums = args.nums) if args.nums else DatasetFactory()
     dataset: Dataset = datasetFactory.buildDataset(args.dataset)
 
     context = Context()

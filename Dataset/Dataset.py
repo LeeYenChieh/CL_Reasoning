@@ -1,5 +1,5 @@
 class Dataset():
-    def __init__(self, nums: int = 0, sample: int = 1):
+    def __init__(self, nums: int = -1, sample: int = 1):
         self.name: str = ""
         self.data: list = []
         self.answer: list = []
