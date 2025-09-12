@@ -6,8 +6,8 @@
   },
   {
     "Question": "There is a Problem: \na shopkeeper sold an article offering a discount of 5 % and earned a profit of 31.1 % . what would have been the percentage of profit earned if no discount had been offered ?.\nAnd there are 5 choices\na ) 38 , b ) 27.675 , c ) 30 , d ) data inadequate , e ) none of these\nPlease choose a choice based on the question\nAt the end of the output, provide the answer. The answer must be a single choice and only one English letter (a-e). You cannot output other letters.\n",
-    "Translated": "有一個問題：\n一位店主以5%的折扣出售一件商品，並獲得了31.1%的利潤。如果沒有提供折扣，利潤百分比會是多少？\n有五個選項：\na) 38，b) 27.675，c) 30，d) 資料不足，e) 以上皆非\n請根據問題選擇一個選項\n在輸出結尾，提供答案。答案必須是一個單一選項，且僅限一個英文字母（a-e）。不得輸出其他字母。",
-    "Result": "推理過程  \n設商品的成本價為 \\( C \\)，標價為 \\( P \\)。  \n店主以5%的折扣出售，售價為 \\( 0.95P \\)。  \n根據題意，折扣後的售價比成本價高31.1%，即：  \n\\[\n0.95P = C \\times (1 + 0.311) = 1.311C\n\\]  \n由此可得標價 \\( P \\)：  \n\\[\nP = \\frac{1.311C}{0.95} = 1.38C\n\\]  \n若沒有折扣，售價為 \\( P = 1.38C \\)，利潤百分比為：  \n\\[\n\\frac{P - C}{C} \\times 100\\% = (1.38 - 1) \\times 100\\% = 38\\%\n\\]  \n\n答案  \na",
+    "Translated": "有一個問題：\n一位店主以5%的折扣出售一件商品，並獲得了31.1%的利潤。如果沒有提供折扣，利潤百分比會是多少？\n有五個選項：\na) 38，b) 27.675，c) 30，d) 資料不足，e) 以上皆非\n請根據問題選擇一個選項。\n答案必須是一個單一選項，且僅能輸出一個英文字母（a-e）。不能輸出其他字母。",
+    "Result": "推理過程  \n設商品的成本價為 \\( C \\)，標價為 \\( P \\)。  \n店主以5%的折扣出售，實際售價為 \\( 0.95P \\)。  \n根據題意，折扣後的利潤率為31.1%，即  \n\\[\n\\frac{0.95P - C}{C} = 0.311\n\\]  \n整理得  \n\\[\n0.95P - C = 0.311C \\implies 0.95P = 1.311C \\implies P = \\frac{1.311C}{0.95} = 1.38C\n\\]  \n因此，標價 \\( P \\) 是成本的1.38倍。  \n\n若不打折，售價為 \\( P = 1.38C \\)，利潤率為  \n\\[\n\\frac{P - C}{C} = \\frac{1.38C - C}{C} = 0.38 = 38\\%\n\\]  \n\n答案  \na",
     "Answer": "a",
     "MyAnswer": "a"
   }
