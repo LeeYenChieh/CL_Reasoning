@@ -1,6 +1,4 @@
 data/mgsm
 data/MMMLU
 data/xcopa
-MJLee/*/api.py
-MJLee/*/api_key.py
-KomaLi/api.py
+MJLee/api_key.py
