@@ -43,6 +43,7 @@ class OnlyChinese(Strategy):
 
         pbar = tqdm(total=dataset.getDataNum())
         for i in range(dataset.getDataNum()):
+            print(database[i])
             print(self.translatePrompt(database[i]))
             translateQuestion = model.getRes(self.translatePrompt(database[i]))
             result = model.getRes(self.getPrompt(translateQuestion))
