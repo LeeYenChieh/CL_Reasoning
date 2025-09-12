@@ -34,7 +34,6 @@ class OnlyChinese(Strategy):
         log.logInfo(self, model, dataset)
 
         database = dataset.getData()
-        print(database)
         answer = dataset.getAnswer()
         result = [{
             "Model": model.getName(),
@@ -44,6 +43,7 @@ class OnlyChinese(Strategy):
 
         pbar = tqdm(total=dataset.getDataNum())
         for i in range(dataset.getDataNum()):
+            print(self.translatePrompt(database[i]))
             translateQuestion = model.getRes(self.translatePrompt(database[i]))
             result = model.getRes(self.getPrompt(translateQuestion))
             result.append({
