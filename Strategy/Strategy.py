@@ -22,7 +22,7 @@ class Strategy():
             return result
         
         # Fallback to original pattern matching
-        match = re.search(r"([A-Za-z])\s*$", answer)
+        match = re.search(r"[A-Za-z](?!.*[A-Za-z])", answer)
         if match:
             result = match.group(1)
         return result
