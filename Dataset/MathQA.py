@@ -23,5 +23,6 @@ class MathQA(Dataset):
                 f'And there are 5 choices\n' \
                 f'{choices}\n' \
                 f'Please choose a choice based on the question\n' \
-                f'At the end of the output, provide the answer. The answer must be a single choice and only one English letter (a-e). You cannot output other letters.\n'
+                f'At the end of your response, provide your answer in this exact JSON format: {{"answer": "your_letter_choice"}}\n' \
+                f'The answer must be a single English letter (a-e).\n'
         return result

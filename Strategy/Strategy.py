@@ -12,7 +12,16 @@ class Strategy():
         print(f'Strategy {self.name}')
 
     def parseAnswer(self, answer: str) -> str:
+        import json
         result: str = ""
+        
+        # Try to extract JSON format first: {"answer": "value"}
+        json_match = re.search(r'\{"answer":\s*"([^"]+)"\}', answer)
+        if json_match:
+            result = json_match.group(1).strip().lower()
+            return result
+        
+        # Fallback to original pattern matching
         match = re.search(r"([a-z])\s*$", answer)
         if match:
             result = match.group(1)

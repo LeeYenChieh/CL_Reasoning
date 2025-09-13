@@ -11,7 +11,7 @@ class OnlyEnglish(Strategy):
         self.name: str = "Only English"
 
     def translatePrompt(self, question: str) -> str:
-        prompt = "Translate the following text into English. Do not attempt to solve the problem, do not reason or analyze the question, and do not add any comments. Strictly perform language conversion only. Do not output any information about the answer or the process, only output the translation of the original question.\n\n"
+        prompt = "Translate the following text into English. If the text is already in English, just output it as-is without any modifications. Translate the entire question including all instructions and JSON format requirements. However, do NOT provide any actual JSON answer - only translate the text. Do not attempt to solve the problem, do not reason or analyze the question, and do not add any comments. Strictly perform language conversion only.\n\n"
         return prompt + question
 
     def processPrompt(self) -> str:
@@ -22,8 +22,7 @@ class OnlyEnglish(Strategy):
         prompt = f'Please strictly follow the format below for output\n' \
             f'Reasoning process\n' \
             f'{{your reasoning process}}\n\n' \
-            f'Answer\n' \
-            f'{{your answer (must be a single English letter)}}\n'
+            f'Your response must end with the exact JSON format specified in the question above.\n'
         return prompt
 
     def getPrompt(self, question: str) -> str:

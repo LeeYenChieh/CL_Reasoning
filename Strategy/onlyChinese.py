@@ -11,7 +11,7 @@ class OnlyChinese(Strategy):
         self.name: str = "Only Chinese"
 
     def translatePrompt(self, question: str) -> str:
-        prompt = "將以下文字翻譯成中文，不要嘗試解決問題，不要推理、分析題目，也不添加任何註解，嚴格只進行語言轉換，不能輸出任何關於答案以及過程的資訊，僅能輸出原本題目的翻譯\n\n"
+        prompt = "將以下文字翻譯成中文。翻譯整個問題，包括所有說明和JSON格式要求。但是不要提供任何實際的JSON答案 - 只翻譯文字。不要嘗試解決問題，不要推理、分析題目，嚴格只進行語言轉換。\n\n"
         return prompt + question
 
     def processPrompt(self) -> str:
@@ -22,8 +22,7 @@ class OnlyChinese(Strategy):
         prompt = f'請嚴格遵守以下格式進行輸出\n' \
             f'推理過程\n' \
             f'{{你的推理過程}}\n\n' \
-            f'答案\n' \
-            f'{{你的答案(只能是一個英文字母)}}\n'
+            f'你的回答必須以上述問題中指定的確切JSON格式結束。\n'
         return prompt
 
     def getPrompt(self, question: str) -> str:
