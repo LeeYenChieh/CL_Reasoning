@@ -1,7 +1,7 @@
 data/mgsm
 data/MMMLU
 data/xcopa
-MJLee/api_key.py
+api_key.py
 __pycache__
 */__pycache__
 */*/__pycache__
