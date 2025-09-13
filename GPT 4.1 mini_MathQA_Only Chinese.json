@@ -5,9 +5,16 @@
     "Strategy": "Only Chinese"
   },
   {
-    "Question": "There is a Problem: \na shopkeeper sold an article offering a discount of 5 % and earned a profit of 31.1 % . what would have been the percentage of profit earned if no discount had been offered ?.\nAnd there are 5 choices\na ) 38 , b ) 27.675 , c ) 30 , d ) data inadequate , e ) none of these\nPlease choose a choice based on the question\nAt the end of the output, provide the answer. The answer must be a single choice and only one English letter (a-e). You cannot output other letters.\n",
-    "Translated": "有一個問題：\n一位店主以5%的折扣出售一件商品，並獲得了31.1%的利潤。如果沒有提供折扣，利潤百分比會是多少？\n有五個選項：\na) 38，b) 27.675，c) 30，d) 資料不足，e) 以上皆非\n請根據問題選擇一個選項。\n答案必須是一個單一選項，且僅能輸出一個英文字母（a-e）。不能輸出其他字母。",
-    "Result": "推理過程  \n設商品的成本價為 \\( C \\)，標價為 \\( P \\)。  \n店主以5%的折扣出售，實際售價為 \\( 0.95P \\)。  \n根據題意，折扣後的利潤率為31.1%，即  \n\\[\n\\frac{0.95P - C}{C} = 0.311\n\\]  \n整理得  \n\\[\n0.95P - C = 0.311C \\implies 0.95P = 1.311C \\implies P = \\frac{1.311C}{0.95} = 1.38C\n\\]  \n因此，標價 \\( P \\) 是成本的1.38倍。  \n\n若不打折，售價為 \\( P = 1.38C \\)，利潤率為  \n\\[\n\\frac{P - C}{C} = \\frac{1.38C - C}{C} = 0.38 = 38\\%\n\\]  \n\n答案  \na",
+    "Question": "There is a Problem: \na shopkeeper sold an article offering a discount of 5 % and earned a profit of 31.1 % . what would have been the percentage of profit earned if no discount had been offered ?.\nAnd there are 5 choices\na ) 38 , b ) 27.675 , c ) 30 , d ) data inadequate , e ) none of these\nPlease choose a choice based on the question\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (a-e).\n",
+    "Translated": "有一個問題：  \n一位店主以5%的折扣出售一件商品，並獲得了31.1%的利潤。如果沒有提供折扣，利潤百分比會是多少？  \n有5個選項：  \na) 38 ，b) 27.675 ，c) 30 ，d) 資料不足 ，e) 以上皆非  \n請根據問題選擇一個選項。  \n在回答的最後，請以以下精確的JSON格式提供您的答案：{\"answer\": \"your_letter_choice\"}  \n答案必須是一個英文字母（a-e）。",
+    "Result": "推理過程  \n設商品的成本價為 \\( C \\)，標價為 \\( P \\)。  \n店主以5%的折扣出售，售價為 \\( 0.95P \\)。  \n根據題意，折扣後的售價比成本價高31.1%，即利潤率為31.1%。  \n利潤率定義為：  \n\\[\n\\frac{\\text{售價} - \\text{成本}}{\\text{成本}} = 31.1\\% = 0.311\n\\]\n\n代入折扣後售價：  \n\\[\n\\frac{0.95P - C}{C} = 0.311\n\\]\n\n整理得：  \n\\[\n0.95P - C = 0.311C \\implies 0.95P = 1.311C \\implies P = \\frac{1.311C}{0.95}\n\\]\n\n計算 \\( P \\) 與 \\( C \\) 的比值：  \n\\[\nP = 1.38C\n\\]\n\n若沒有折扣，售價為 \\( P = 1.38C \\)，利潤率為：  \n\\[\n\\frac{P - C}{C} = \\frac{1.38C - C}{C} = 0.38 = 38\\%\n\\]\n\n因此，若沒有折扣，利潤率為38%。\n\n{\"answer\": \"a\"}",
+    "Answer": "a",
+    "MyAnswer": "a"
+  },
+  {
+    "Question": "There is a Problem: \nwhat will be the difference between simple and compound interest at 14 % per annum on a sum of rs . 1000 after 4 years ?.\nAnd there are 5 choices\na ) 129 , b ) 130 , c ) 124 , d ) 133 , e ) 145\nPlease choose a choice based on the question\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (a-e).\n",
+    "Translated": "有一個問題：\n在年利率14%的情況下，1000盧比本金4年後，單利和複利之間的差額是多少？\n並且有5個選項\na) 129，b) 130，c) 124，d) 133，e) 145\n請根據問題選擇一個選項\n在回答的最後，請以以下精確的JSON格式提供您的答案：{\"answer\": \"your_letter_choice\"}\n答案必須是一個英文字母（a-e）。",
+    "Result": "推理過程  \n本金P = 1000盧比  \n年利率r = 14% = 0.14  \n時間t = 4年  \n\n1. 計算單利利息（Simple Interest, SI）  \nSI = P × r × t = 1000 × 0.14 × 4 = 560盧比  \n\n2. 計算複利金額（Compound Interest, CI）  \n複利總額A = P × (1 + r)^t = 1000 × (1 + 0.14)^4  \n先計算(1 + 0.14)^4 = 1.14^4  \n1.14^2 = 1.2996  \n1.14^4 = (1.2996)^2 ≈ 1.2996 × 1.2996 ≈ 1.6895  \n\n所以，A ≈ 1000 × 1.6895 = 1689.5盧比  \n\n複利利息 = A - P = 1689.5 - 1000 = 689.5盧比  \n\n3. 計算複利利息與單利利息的差額  \n差額 = 複利利息 - 單利利息 = 689.5 - 560 = 129.5盧比  \n\n在選項中最接近129.5的是129（選項a）。  \n\n{\"answer\": \"a\"}",
     "Answer": "a",
     "MyAnswer": "a"
   }
