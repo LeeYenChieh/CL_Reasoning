@@ -30,7 +30,7 @@ class MGSM(Dataset):
             f"There is a math word problem:\n"
             f"{question}\n\n"
             f"At the end, provide the final numeric answer in this exact JSON format:\n"
-            f'{{"answer": number}}\n'
+            f'{{"answer": "number"}}\n'
             f"The answer must be a single number."
         )
         return result
