@@ -24,7 +24,7 @@ class OnlyChinese(Strategy):
         prompt = f'請嚴格遵守以下格式進行輸出\n' \
             f'推理過程\n' \
             f'{{你的推理過程}}\n\n' \
-            f'你的回答必須以上述問題中指定的確切JSON格式結束。\n'
+            f'{{你的答案，必須完全符合上述問題指定的 JSON 格式，不能添加多餘文字或解釋}}\n'
         return prompt
 
     def getPrompt(self, question: str) -> str:

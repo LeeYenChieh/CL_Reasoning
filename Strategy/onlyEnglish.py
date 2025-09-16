@@ -24,7 +24,7 @@ class OnlyEnglish(Strategy):
         prompt = f'Please strictly follow the format below for output\n' \
             f'Reasoning process\n' \
             f'{{your reasoning process}}\n\n' \
-            f'Your response must end with the exact JSON format specified in the question above.\n'
+            f'{{Your final Answer, Your response must end with the exact JSON format specified in the question above.}}\n'
         return prompt
 
     def getPrompt(self, question: str) -> str:
