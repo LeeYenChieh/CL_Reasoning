@@ -5,6 +5,12 @@ class Dataset():
         self.answer: list = []
         self.nums: int = nums
         self.sample: int = sample
+    
+    def getNums(self) -> int:
+        return self.nums
+    
+    def getSamples(self) -> int:
+        return self.sample
 
     def getDataNum(self) -> int:
         return self.nums * self.sample

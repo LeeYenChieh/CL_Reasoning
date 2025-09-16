@@ -37,7 +37,9 @@ class OnlyChinese(Strategy):
         result = [{
             "Model": model.getName(),
             "Dataset": dataset.getName(),
-            "Strategy": self.name
+            "Strategy": self.name,
+            "Data Nums": dataset.getNums(),
+            "Data Samples": dataset.getSamples()
         }]
 
         pbar = tqdm(total=dataset.getDataNum())
