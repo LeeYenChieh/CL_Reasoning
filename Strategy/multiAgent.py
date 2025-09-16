@@ -13,11 +13,11 @@ class MultiAgent(Strategy):
         self.name: str = MultiAgent.NAME
     
     def AC_Wrong_AE_Correct_Prompt(self, chinese_question, chinese_answer, english_answer):
-        prompt = f'你剛剛對於以下問題\n```\n{chinese_question}\n```\n的答案是\n```\n{chinese_answer}\n```\n有沒有可能你的答案是錯的，正確答案是\n```\n{english_answer}\n```\n?'
+        prompt = f'你剛剛對於以下問題有一個答案1，有沒有可能答案1是錯的，正確答案是答案2?\n```\n問題：\n{chinese_question}\n```\n\n```\n答案1：\n{chinese_answer}\n```\n\n```\n答案2：\n{english_answer}\n```\n'
         return prompt
     
     def AE_Wrong_AC_Correct_Prompt(self, english_question, english_answer, chinese_answer):
-        prompt = f'The answer you just gave to the following question\n```\n{english_question}\n```\nwas\n```\n{english_answer}\n```\nsomething might be wrong, can the answer be\n```\n{chinese_answer}\n```\n?'
+        prompt = f'The answer you just gave to the following question was answer1, something might be wrong, can the answer be answer2?\n```\nqueston: \n{english_question}\n```\n\n```\nAnswer1：\n{english_answer}\n```\n\n```\nAnswer2：\n{chinese_answer}\n```\n?'
         return prompt
     
     def chooseOnePrompt(self, chinese_question, chinese_answer, english_answer):
