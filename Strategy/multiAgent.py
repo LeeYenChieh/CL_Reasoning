@@ -68,8 +68,6 @@ class MultiAgent(Strategy):
             log.logMessage(f'\nNums or Samples of Data in path1 or path2 doesn\'t match your setting!')
             return []
 
-        database = dataset.getData()
-        answer = dataset.getAnswer()
         result = [{
             "Model": model.getName(),
             "Dataset": dataset.getName(),
@@ -84,7 +82,7 @@ class MultiAgent(Strategy):
             chinese_answer, english_answer = data1[i + 1]["MyAnswer"], data2[i + 1]["MyAnswer"]
             correct_answer = data2[i + 1]["Answer"]
 
-            prompt1, prompt2 = "", ""
+            prompt1, prompt2, prompt3 = "", "", ""
             resultOutput1, resultOutput2, resultOutput3 = "", "", ""
             myAnswer = ""
 
