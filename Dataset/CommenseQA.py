@@ -37,6 +37,6 @@ class CommenseQA(Dataset):
             f"Please choose a choice based on the question.\n"
             f"At the end of your response, provide your answer in this exact JSON format: "
             f'{{"answer": "your_letter_choice"}}\n'
-            f"The answer must be a single English letter ({labels[0].lower()}-{labels[-1].lower()}).\n"
+            f"The answer must be a single English letter ({labels[0]}-{labels[-1]}).\n"
         )
         return result
