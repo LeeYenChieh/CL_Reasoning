@@ -13,7 +13,7 @@ class OnlyEnglish(Strategy):
         self.name: str = OnlyEnglish.NAME
 
     def translatePrompt(self, question: str) -> str:
-        prompt = f'Translate the text inside the following triple quotation marks into English. If the text is already in English, just output it as-is without any modifications. Translate the entire question including all instructions and JSON format requirements. However, do NOT provide any actual JSON answer - only translate the text. Do not attempt to solve the problem, do not reason or analyze the question, and do not add any comments. Strictly perform language conversion only.\n```\n{question}\n```\n'
+        prompt = f'Translate the text inside the following triple quotation marks into English. Never include the instructions asking the model to perform the translation in the output. If the text is already in English, just output it as-is without any modifications. Translate the entire question including all instructions and JSON format requirements. However, do NOT provide any actual JSON answer - only translate the text. Do not attempt to solve the problem, do not reason or analyze the question, and do not add any comments. Strictly perform language conversion only.\n```\n{question}\n```\n'
         return prompt
 
     def processPrompt(self) -> str:

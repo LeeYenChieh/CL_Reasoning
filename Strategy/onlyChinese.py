@@ -13,7 +13,7 @@ class OnlyChinese(Strategy):
         self.name: str = OnlyChinese.NAME
 
     def translatePrompt(self, question: str) -> str:
-        prompt = f'將以下三個引號內的文字翻譯成中文。翻譯整個問題，包括所有說明和JSON格式要求。但是不要提供任何實際的JSON答案 - 只翻譯文字。不要嘗試解決問題，不要推理、分析題目，嚴格只進行語言轉換。\n```\n{question}\n```\n'
+        prompt = f'將以下三個引號內的文字翻譯成中文。翻譯整個問題，包括所有說明和JSON格式要求，絕對不要把要求模型翻譯相關的指令輸出。但是不要提供任何實際的JSON答案 - 只翻譯文字。不要嘗試解決問題，不要推理、分析題目，嚴格只進行語言轉換。\n```\n{question}\n```\n'
         return prompt + question
 
     def processPrompt(self) -> str:
