@@ -18,7 +18,7 @@ class Strategy():
         # Try to extract JSON format first: {"answer": "value"}
         json_match = re.search(r'\{"answer":\s*"([^"]+)"\}', answer)
         if json_match:
-            result = json_match.group(1).strip().lower()
+            result = json_match.group(1).strip()
             return result
         
         # Fallback to original pattern matching
