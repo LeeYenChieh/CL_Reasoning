@@ -27,5 +27,5 @@ class MMLU(Dataset):
                 f'{choices_str}\n' \
                 f'Please choose a choice based on the question\n' \
                 f'At the end of your response, provide your answer in this exact JSON format: {{"answer": "your_letter_choice"}}\n' \
-                f'The answer must be a single English letter (a-d).\n'
+                f'The answer must be a single English letter (A-D).\n'
         return result
