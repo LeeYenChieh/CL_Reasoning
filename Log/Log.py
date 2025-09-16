@@ -11,5 +11,5 @@ class Log():
     
     def logMessage(self, message: str):
         print('=' * 30)
-        print(f'Log: {message}')
+        print(f'Log: \n{message}')
         print('=' * 30)

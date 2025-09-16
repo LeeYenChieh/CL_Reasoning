@@ -3,6 +3,7 @@ from Dataset.Dataset import Dataset
 
 from Log.Log import Log
 from Log.OneDatasetLog import OneDatasetLog
+from Log.TwoAgentLog import TwoAgentLog
 
 from Strategy.Strategy import Strategy
 from Strategy.onlyChinese import OnlyChinese
@@ -25,6 +26,7 @@ class Context():
 
         elif mode == "multiAgent":
             self.strategy = MultiAgent()
+            self.log = TwoAgentLog()
 
         else:
             print("Strategy doesn't exist.")
