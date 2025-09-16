@@ -78,7 +78,7 @@ class MultiAgent(Strategy):
 
         pbar = tqdm(total=dataset.getDataNum())
         for i in range(dataset.getDataNum()):
-            chinese_question, english_question, chinese_result, english_result = data1[i + 1]["Translated"], data1[i + 1]["Result"], data2[i + 1]["Translated"], data2[i + 1]["Result"]
+            chinese_question, english_question, chinese_result, english_result = data1[i + 1]["Translated"], data2[i + 1]["Translated"], data1[i + 1]["Result"], data2[i + 1]["Result"]
             chinese_answer, english_answer = data1[i + 1]["MyAnswer"], data2[i + 1]["MyAnswer"]
             correct_answer = data2[i + 1]["Answer"]
 
