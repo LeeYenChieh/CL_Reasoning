@@ -15,7 +15,7 @@ class MMLU(Dataset):
         for _, row in df.iterrows():
             choices = [row['A'], row['B'], row['C'], row['D']]
             self.data.append(self.createQuestion(row['question'], choices))
-            self.answer.append(row['answer'].lower())  # Convert to lowercase for consistency
+            self.answer.append(row['answer'])  # Convert to lowercase for consistency
         
         if self.nums == -1 or self.nums > len(self.data):
             self.nums = len(self.data)
@@ -27,5 +27,5 @@ class MMLU(Dataset):
                 f'{choices_str}\n' \
                 f'Please choose a choice based on the question\n' \
                 f'At the end of your response, provide your answer in this exact JSON format: {{"answer": "your_letter_choice"}}\n' \
-                f'The answer must be a single English letter (A-D).\n'
+                f'The answer must be a single English letter (a-d).\n'
         return result
