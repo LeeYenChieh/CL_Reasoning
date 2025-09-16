@@ -1,5 +1,5 @@
 data/mgsm
-data/mmlu
+data/mmlu*
 data/xcopa
 api_key.py
 __pycache__
