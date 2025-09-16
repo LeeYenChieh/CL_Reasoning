@@ -1,12 +1,37 @@
 from Dataset.Dataset import Dataset
+from Dataset.path import mgsm_en_path
+import json
 
 class MGSM(Dataset):
-    def __init__(self, nums = -1, sample = 1):
+    def __init__(self, nums=-1, sample=1):
         super().__init__(nums, sample)
         self.name: str = "MGSM"
+
+        # 載入 MGSM 數據
+        with open(mgsm_en_path, 'r', encoding='utf-8') as f:
+            originData = json.load(f)
+
         self.data: list = []
         self.answer: list = []
-        # You should get data and answer here
+
+        for odata in originData:
+            self.data.append(self.createQuestion(odata["question"]))
+            # MGSM 取最終數字答案
+            self.answer.append(odata.get("answer_number"))
 
         if self.nums == -1 or self.nums > len(self.data):
             self.nums = len(self.data)
+
+    def createQuestion(self, question: str) -> str:
+        """
+        生成 prompt，要求模型 step-by-step 解題，最後輸出 JSON 數字答案
+        """
+        result = (
+            f"There is a math word problem:\n"
+            f"{question}\n\n"
+            f"Please solve it step by step, explaining your reasoning.\n"
+            f"At the end, provide the final numeric answer in this exact JSON format:\n"
+            f'{{"answer": number}}\n'
+            f"The answer must be a single integer or decimal."
+        )
+        return result

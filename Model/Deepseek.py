@@ -1,9 +1,32 @@
 from Model.Model import Model
+from openai import OpenAI
+from api_key import deepseek_api_key
 
 class Deepseek(Model):
     def __init__(self, tempature: int = 0):
         super().__init__(tempature)
         self.name: str = "Deepseek"
-    
+        self.modelName = "deepseek-reasoner"
+        self.client = OpenAI(
+            api_key=deepseek_api_key,
+            base_url="https://api.deepseek.com"
+        )
+
     def getRes(self, prompt) -> str:
-        return ""
+        print("Sending request to Deepseek...")
+        print(f"Model: {self.modelName}")
+        print(f"Prompt: {prompt[:100]}...")  # 只印前 100 字
+
+        try:
+            response = self.client.chat.completions.create(
+                model=self.modelName,
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=1024,
+                temperature=self.tempature,
+                stream=False
+            )
+            return response.choices[0].message.content
+        except Exception as e:
+            print(f"Error in Deepseek model: {e}")
+            return ""
+
