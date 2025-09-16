@@ -7,6 +7,7 @@ from Log.OneDatasetLog import OneDatasetLog
 from Strategy.Strategy import Strategy
 from Strategy.onlyChinese import OnlyChinese
 from Strategy.onlyEnglish import OnlyEnglish
+from Strategy.multiAgent import MultiAgent
 
 class Context():
     def __init__(self):
@@ -22,6 +23,9 @@ class Context():
             self.strategy = OnlyEnglish()
             self.log = OneDatasetLog()
 
+        elif mode == "multiAgent":
+            self.strategy = MultiAgent()
+
         else:
             print("Strategy doesn't exist.")
             self.strategy = None
@@ -32,8 +36,8 @@ class Context():
     def setLog(self, mode: str):
         pass
 
-    def runExperiment(self, model: Model, dataset: Dataset) -> list:
+    def runExperiment(self, model: Model, dataset: Dataset, *args, **kwargs) -> list:
         if(not self.strategy):
             print("You need to set strategy first!")
             return
-        return self.strategy.getRes(model, dataset, self.log)
+        return self.strategy.getRes(model, dataset, self.log, *args, **kwargs)

@@ -6,9 +6,11 @@ from Log.Log import Log
 from tqdm import tqdm
 
 class OnlyEnglish(Strategy):
+    NAME = "Only English"
+
     def __init__(self):
         super().__init__()
-        self.name: str = "Only English"
+        self.name: str = OnlyEnglish.NAME
 
     def translatePrompt(self, question: str) -> str:
         prompt = "Translate the following text into English. If the text is already in English, just output it as-is without any modifications. Translate the entire question including all instructions and JSON format requirements. However, do NOT provide any actual JSON answer - only translate the text. Do not attempt to solve the problem, do not reason or analyze the question, and do not add any comments. Strictly perform language conversion only.\n\n"
