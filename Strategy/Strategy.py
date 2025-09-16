@@ -12,7 +12,7 @@ class Strategy():
         print(f'Strategy {self.name}')
 
     def parseAnswer(self, answer: str) -> str:
-        import json
+        print(answer)
         result: str = ""
         
         # Try to extract JSON format first: {"answer": "value"}
