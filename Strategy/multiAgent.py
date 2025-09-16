@@ -24,6 +24,14 @@ class MultiAgent(Strategy):
         prompt = f'對於以下問題\n```\n{chinese_question}\n```\n有一個中文答案跟一個英文答案，分別是\n```\n{chinese_answer}\n```\n以及\n```\n{english_answer}\n```\n請根據問題挑選出一個比較正確的答案'
         return prompt
     
+    def chineseProcessingPrompt(self):
+        prompt = f'一步一步推理，找出答案1可能錯誤的地方，如果沒有錯，則指出答案2錯誤的地方'
+        return prompt
+
+    def englishProcessingPrompt(self):
+        prompt = f'Reason step by step to find possible errors in Answer 1; if there are none, then point out the errors in Answer 2.'
+        return prompt
+    
     def chineseFormatPrompt(self):
         prompt = f'請嚴格遵守以下格式進行輸出\n' \
             f'推理過程\n' \
@@ -40,8 +48,8 @@ class MultiAgent(Strategy):
         return prompt
     
     def getPrompt(self, chinese_question, english_question, chinese_answer, english_answer):
-        prompt1 = self.AC_Wrong_AE_Correct_Prompt(chinese_question, chinese_answer, english_answer) + self.chineseFormatPrompt()
-        prompt2 = self.AE_Wrong_AC_Correct_Prompt(english_question, english_answer, chinese_answer) + self.englishFormatPrompt()
+        prompt1 = self.AC_Wrong_AE_Correct_Prompt(chinese_question, chinese_answer, english_answer) + self.chineseProcessingPrompt() + self.chineseFormatPrompt()
+        prompt2 = self.AE_Wrong_AC_Correct_Prompt(english_question, english_answer, chinese_answer) + self.englishProcessingPrompt() + self.englishFormatPrompt()
         prompt3 = self.chooseOnePrompt(chinese_question, chinese_answer, english_answer) + self.chineseFormatPrompt()
         return prompt1, prompt2, prompt3
     
