@@ -17,7 +17,7 @@ class OnlyEnglish(Strategy):
         return prompt + question
 
     def processPrompt(self) -> str:
-        prompt = "\nSolve the problem."
+        prompt = "\nYou have to solve the question.\n"
         return prompt
 
     def formatPrompt(self) -> str:
