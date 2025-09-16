@@ -13,7 +13,7 @@ class MultiAgent(Strategy):
         self.name: str = MultiAgent.NAME
     
     def AC_Wrong_AE_Correct_Prompt(self, chinese_question, chinese_answer, english_answer):
-        prompt = f'你剛剛對於以下問題有一個答案1，有沒有可能答案1是錯的，正確答案是答案2?\n```\n問題：\n{chinese_question}\n```\n\n```\n答案1：\n{chinese_answer}\n```\n\n```\n答案2：\n{english_answer}\n```\n'
+        prompt = f'你剛剛對於以下問題有一個答案1，答案1有可能是錯的，正確答案會不會是答案2?\n```\n問題：\n{chinese_question}\n```\n\n```\n答案1：\n{chinese_answer}\n```\n\n```\n答案2：\n{english_answer}\n```\n'
         return prompt
     
     def AE_Wrong_AC_Correct_Prompt(self, english_question, english_answer, chinese_answer):
@@ -21,22 +21,25 @@ class MultiAgent(Strategy):
         return prompt
     
     def chooseOnePrompt(self, chinese_question, chinese_answer, english_answer):
-        prompt = f'對於以下問題\n```\n{chinese_question}\n```\n有一個中文答案跟一個英文答案，分別是\n```\n{chinese_answer}\n```\n以及\n```\n{english_answer}\n```\n請根據問題挑選出一個比較正確的答案'
+        prompt = f'對於以下問題\n```\n{chinese_question}\n```\n有一個中文答案跟一個英文答案，分別是\n```\n{chinese_answer}\n```\n以及\n```\n{english_answer}\n```\n根據問題，仔細比較兩個答案，逐步說明你的推理過程，最後只選出一個更正確的答案，並嚴格按照指定的輸出格式回答。'
         return prompt
     
     def chineseProcessingPrompt(self):
-        prompt = f'一步一步推理，找出答案1可能錯誤的地方，如果沒有錯，則指出答案2錯誤的地方'
+        prompt = f'逐步、詳細推理，不得跳過任何步驟。先檢查答案1的正確性，如果找到錯誤，請解釋原因；若答案1完全正確，則必須指出答案2的錯誤之處。'
         return prompt
 
     def englishProcessingPrompt(self):
-        prompt = f'Reason step by step to find possible errors in Answer 1; if there are none, then point out the errors in Answer 2.'
+        prompt = f'You must reason step by step, without skipping any details. First, check whether Answer 1 is correct.\n' \
+            f'If you find mistakes in Answer 1, explain them clearly and compare with Answer 2.\n' \
+            f'If Answer 1 is correct, you must explicitly point out the mistakes in Answer 2.\n'
         return prompt
     
     def chineseFormatPrompt(self):
         prompt = f'請嚴格遵守以下格式進行輸出\n' \
             f'推理過程\n' \
             f'{{你的推理過程}}\n\n' \
-            f'你的回答必須以上述問題中指定的確切JSON格式結束。\n'
+            f'最終答案\n' \
+            f'{{你的答案，必須完全符合上述問題指定的 JSON 格式，不能添加多餘文字或解釋}}\n'
 
         return prompt
     
@@ -44,7 +47,8 @@ class MultiAgent(Strategy):
         prompt = f'Please strictly follow the format below for output\n' \
             f'Reasoning process\n' \
             f'{{your reasoning process}}\n\n' \
-            f'Your response must end with the exact JSON format specified in the question above.\n'
+            f'Final Answer' \
+            f'{{Your final Answer, Your response must end with the exact JSON format specified in the question above.}}\n'
         return prompt
     
     def getPrompt(self, chinese_question, english_question, chinese_answer, english_answer):
