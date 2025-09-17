@@ -102,7 +102,7 @@
     "Translated": "有一個數學應用題：\nKylar 去商店為他的新公寓買玻璃杯。一個玻璃杯的價格是 5 美元，但每第二個玻璃杯的價格只需原價的 60%。Kylar 想買 16 個玻璃杯。他需要付多少錢？\n\n最後，請以以下精確的 JSON 格式提供最終數字答案：\n{\"answer\": \"number\"}\n答案必須是一個單一的數字。",
     "Result": "推理過程  \n一個玻璃杯的價格是 5 美元。  \n每第二個玻璃杯的價格是原價的 60%，即 5 × 0.6 = 3 美元。  \nKylar 想買 16 個玻璃杯。  \n玻璃杯成對購買，每對兩個杯子價格為 5 + 3 = 8 美元。  \n16 個杯子有 16 ÷ 2 = 8 對。  \n總價為 8 對 × 8 美元/對 = 64 美元。\n\n最終答案  \n{\"answer\": 64}",
     "Answer": 64,
-    "MyAnswer": ""
+    "MyAnswer": "64"
   },
   {
     "Question": "There is a math word problem:\nToulouse has twice as many sheep as Charleston. Charleston has 4 times as many sheep as Seattle. How many sheep do Toulouse, Charleston, and Seattle have together if Seattle has 20 sheep?\n\nAt the end, provide the final numeric answer in this exact JSON format:\n{\"answer\": \"number\"}\nThe answer must be a single number.",
@@ -270,7 +270,7 @@
     "Translated": "有一個數學應用題：\nGloria 正在買鞋，當她看到一雙符合她鞋子預算的靴子。然而，她必須在這雙靴子和兩雙高跟鞋之間做選擇，這兩雙高跟鞋加起來比靴子便宜五美元。如果一雙高跟鞋的價格是33美元，另一雙是前者的兩倍，那麼靴子的價格是多少美元？\n\n最後，請以以下精確的 JSON 格式提供最終的數字答案：\n{\"answer\": \"number\"}\n答案必須是一個單一的數字。",
     "Result": "推理過程  \n已知一雙高跟鞋的價格是33美元，另一雙是前者的兩倍，即 33 × 2 = 66 美元。  \n兩雙高跟鞋加起來的價格是 33 + 66 = 99 美元。  \n題目說兩雙高跟鞋加起來比靴子便宜5美元，表示靴子的價格比兩雙高跟鞋多5美元。  \n所以靴子的價格是 99 + 5 = 104 美元。\n\n最終答案  \n{\"answer\": 104}",
     "Answer": 104,
-    "MyAnswer": ""
+    "MyAnswer": "104"
   },
   {
     "Question": "There is a math word problem:\nDarrell and Allen's ages are in the ratio of 7:11. If their total age now is 162, calculate Allen's age 10 years from now.\n\nAt the end, provide the final numeric answer in this exact JSON format:\n{\"answer\": \"number\"}\nThe answer must be a single number.",
@@ -830,7 +830,7 @@
     "Translated": "有一個數學應用題：\n當地一個加油站的汽油售價是每加侖3.00美元。一家應用程式公司提供每加侖0.20美元的現金回饋，如果你在這個加油站加油。如果有人購買10加侖的汽油，扣除現金回饋後，他們的汽油費用是多少？\n\n最後，請以以下精確的JSON格式提供最終數字答案：\n{\"answer\": \"number\"}\n答案必須是一個單一數字。",
     "Result": "推理過程\n汽油售價是每加侖3.00美元，購買10加侖的汽油，總價為3.00美元/加侖 × 10加侖 = 30.00美元。應用程式公司提供每加侖0.20美元的現金回饋，10加侖的回饋總額為0.20美元/加侖 × 10加侖 = 2.00美元。扣除現金回饋後，實際支付的費用為30.00美元 - 2.00美元 = 28.00美元。\n\n最終答案\n{\"answer\": \"28.00\"}",
     "Answer": 28,
-    "MyAnswer": "28.00"
+    "MyAnswer": "28"
   },
   {
     "Question": "There is a math word problem:\nMarcell and Beatrice are having a contest to see who can eat the most fruit roll-ups, so they unroll as many as they can find. Unfortunately, someone makes a mistake and Beatrice's was two roll-ups wide and 24 rolls up long while Marcell's was 3 roll-ups wide and 14 roll-ups long. If they both ate their entire amount, how many did they eat on average?\n\nAt the end, provide the final numeric answer in this exact JSON format:\n{\"answer\": \"number\"}\nThe answer must be a single number.",
@@ -900,7 +900,7 @@
     "Translated": "有一個數學應用題：\nAdrien的總薪水比Lylah高出30%。四年後，他的薪水增加了，賺取的金額比四年前多了40%。如果Adrien和Lylah的薪水同時增加，且Adrien四年前賺了40000美元，請計算他們兩人在四年後的總薪水是多少？\n\n最後，請以以下精確的JSON格式提供最終數字答案：\n{\"answer\": \"number\"}\n答案必須是一個單一數字。",
     "Result": "推理過程  \n1. 設四年前Adrien的薪水為A，四年前Lylah的薪水為L。  \n2. 題目給出Adrien四年前賺了40000美元，即A = 40000。  \n3. Adrien的總薪水比Lylah高出30%，表示：  \n   A = L × 1.3  \n   代入A = 40000，得：  \n   40000 = L × 1.3  \n   L = 40000 / 1.3 ≈ 30769.23美元（四年前Lylah的薪水）  \n4. 四年後，Adrien的薪水增加了40%，即四年後Adrien的薪水為：  \n   A_4 = 40000 × 1.4 = 56000美元  \n5. 題目說Adrien和Lylah的薪水同時增加，但沒有給出Lylah的增加比例。  \n   由於題目只說Adrien的薪水增加了40%，且兩人薪水同時增加，推測Lylah的薪水也增加40%。  \n6. 四年後Lylah的薪水為：  \n   L_4 = 30769.23 × 1.4 ≈ 43076.92美元  \n7. 兩人在四年後的總薪水為：  \n   Total = A_4 + L_4 = 56000 + 43076.92 = 99076.92美元  \n8. 四捨五入到整數為99077美元。\n\n最終答案  \n{\"answer\": 99077}",
     "Answer": 95200,
-    "MyAnswer": ""
+    "MyAnswer": "99077"
   },
   {
     "Question": "There is a math word problem:\nMiguel uses 2 pads of paper a week for his drawing. If there are 30 sheets of paper on a pad of paper, how many sheets of paper does he use every month?\n\nAt the end, provide the final numeric answer in this exact JSON format:\n{\"answer\": \"number\"}\nThe answer must be a single number.",

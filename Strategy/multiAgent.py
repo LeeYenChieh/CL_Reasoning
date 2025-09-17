@@ -98,7 +98,7 @@ class MultiAgent(Strategy):
             resultOutput1, resultOutput2, resultOutput3 = "", "", ""
             myAnswer = ""
 
-            if chinese_answer == english_answer:
+            if dataset.compareTwoAnswer(chinese_answer, english_answer):
                 myAnswer = chinese_answer
 
                 log.logMessage(f'問題：{chinese_question}')
@@ -115,7 +115,7 @@ class MultiAgent(Strategy):
                 log.logMessage(f'結果1：{resultOutput1}')
                 log.logMessage(f'結果2：{resultOutput2}')
 
-                if myResultAnswer1 == myResultAnswer2:
+                if dataset.compareTwoAnswer(myResultAnswer1, myResultAnswer2):
                     myAnswer = myResultAnswer1
 
                     log.logMessage(f'結果：兩個Agent有相同結果！')
