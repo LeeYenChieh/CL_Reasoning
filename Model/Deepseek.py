@@ -21,7 +21,7 @@ class Deepseek(Model):
             response = self.client.chat.completions.create(
                 model=self.modelName,
                 messages=[{"role": "user", "content": prompt}],
-                max_tokens=1024,
+                max_tokens=4096,
                 temperature=self.tempature,
                 stream=False
             )
