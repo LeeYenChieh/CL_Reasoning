@@ -36,8 +36,11 @@ class MGSM(Dataset):
         return result
     
     def compareTwoAnswer(self, answer1: str, answer2: str):
-        if ('.' in answer1 or '.' in answer2) and float(answer1) == float(answer2):
-            return True
-        elif not ('.' in answer1 or '.' in answer2) and int(answer1) == int(answer2):
-            return True
+        try:
+            if ('.' in answer1 or '.' in answer2) and float(answer1) == float(answer2):
+                return True
+            elif not ('.' in answer1 or '.' in answer2) and int(answer1) == int(answer2):
+                return True
+        except:
+            return False
         return False
