@@ -3,9 +3,11 @@ from Model.Model import Model
 from api_key import gemini_api_key
 
 class Gemma(Model):
+    NAME = "Gemma"
+
     def __init__(self, tempature: int = 0):
         super().__init__(tempature)
-        self.name: str = "Gemma"
+        self.name: str = Gemma.NAME
         self.modelName = "models/gemma-3-27b-it"  # Using strongest Gemma model
         genai.configure(api_key=gemini_api_key)
         self.model = genai.GenerativeModel(self.modelName)

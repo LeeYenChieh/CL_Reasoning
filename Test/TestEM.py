@@ -1,0 +1,23 @@
+from File.File import File
+from Log.Log import Log
+from Dataset.DatasetType import DatasetType
+
+from Test.Test import Test
+
+class TestEM(Test):
+    def __init__(self):
+        super().__init__()
+        self.name: str = "Test Exact Match"
+
+    def runTest(self, fileList: list[File], log: Log):
+        for file in fileList:
+            log.logInfo(file)
+            DatasetClass = DatasetType.DATASET_MAP[file.getDatasetName()]
+            data = file.getData()
+            total = file.getDataNums()
+            cnt = 0
+
+            for i in range(total):
+                if DatasetClass.compareTwoAnswer(str(data[i]["Answer"]), str(data[i]["MyAnswer"])):
+                    cnt += 1
+            log.logMessage(f'Performance\n{cnt} / {total}\n{cnt * 100 / total}%')

@@ -3,9 +3,11 @@ from openai import OpenAI
 from api_key import deepseek_api_key
 
 class Deepseek(Model):
+    NAME = "Deepseek"
+
     def __init__(self, tempature: int = 0):
         super().__init__(tempature)
-        self.name: str = "Deepseek"
+        self.name: str = Deepseek.NAME
         self.modelName = "deepseek-reasoner"
         self.client = OpenAI(
             api_key=deepseek_api_key,

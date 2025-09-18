@@ -6,22 +6,24 @@ from Dataset.MMLU import MMLU
 from Dataset.TruthfulQA import TruthfulQA
 from Dataset.XCOPA import XCOPA
 
+from Dataset.DatasetType import DatasetType
+
 class DatasetFactory():
     def __init__(self):
         pass
 
     def buildDataset(self, type, *args, **kwargs) -> Dataset:
-        if type == 'mathqa':
+        if type == DatasetType.MATHQA:
             return MathQA(*args, **kwargs)
-        elif type == 'commenseqa':
+        elif type == DatasetType.COMMENSEQA:
             return CommenseQA(*args, **kwargs)
-        elif type == 'mgsm':
+        elif type == DatasetType.MGSM:
             return MGSM(*args, **kwargs)
-        elif type == 'mmlu':
+        elif type == DatasetType.MMLU:
             return MMLU(*args, **kwargs)
-        elif type == 'truthfulqa':
+        elif type == DatasetType.TRUTHFULQA:
             return TruthfulQA(*args, **kwargs)
-        elif type == 'xcopa':
+        elif type == DatasetType.XCOPA:
             return XCOPA(*args, **kwargs)
         else:
             print('Dataset doesn\'t exist!')

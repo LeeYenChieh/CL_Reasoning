@@ -7,9 +7,11 @@ import string
 letters = list(string.ascii_uppercase)
 
 class TruthfulQA(Dataset):
+    NAME = "TruthfulQA"
+
     def __init__(self, nums = -1, sample = 1):
         super().__init__(nums, sample)
-        self.name: str = "TruthfulQA"
+        self.name: str = TruthfulQA.NAME
 
         self.data: list = []
         self.answer: list = []

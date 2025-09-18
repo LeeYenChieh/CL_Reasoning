@@ -3,9 +3,11 @@ from Dataset.path import commenseqa_path
 import json
 
 class CommenseQA(Dataset):
+    NAME = "CommenseQA"
+    
     def __init__(self, nums=-1, sample=1):
         super().__init__(nums, sample)
-        self.name: str = "CommenseQA"
+        self.name: str = CommenseQA.NAME
 
         with open(commenseqa_path, "r") as f:
             originData = json.load(f)

@@ -3,9 +3,11 @@ from Dataset.path import mmlu_path
 import pandas as pd
 
 class MMLU(Dataset):
+    NAME = "MMLU"
+
     def __init__(self, nums = -1, sample = 1):
         super().__init__(nums, sample)
-        self.name: str = "MMLU"
+        self.name: str = MMLU.NAME
 
         self.data: list = []
         self.answer: list = []

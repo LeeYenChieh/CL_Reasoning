@@ -6,7 +6,8 @@ class Dataset():
         self.nums: int = nums
         self.sample: int = sample
     
-    def compareTwoAnswer(self, answer1, answer2):
+    @staticmethod
+    def compareTwoAnswer(answer1, answer2):
         if answer1 == answer2:
             return True
         return False

@@ -3,9 +3,11 @@ from Model.Model import Model
 from api_key import gpt_api_key
 
 class GPT4omini(Model):
+    NAME = "GPT 4o mini"
+    
     def __init__(self, tempature: int = 0):
         super().__init__(tempature)
-        self.name: str = "GPT 4o mini"
+        self.name: str = GPT4omini.NAME
         self.modelName = "gpt-4o-mini-2024-07-18"
         self.client = OpenAI(api_key=gpt_api_key)
     

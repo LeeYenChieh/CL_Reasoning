@@ -5,20 +5,22 @@ from Model.Deepseek import Deepseek
 from Model.Gemini import Gemini
 from Model.Gemma import Gemma
 
+from Model.ModelType import ModelType
+
 class ModelFactory():
     def __init__(self):
         pass
 
     def buildModel(self, type, *args, **kwargs) -> Model:
-        if type == 'gpt4.1mini':
+        if type == ModelType.GPT41MINI:
             return GPT41mini(*args, **kwargs)
-        elif type == 'gpt4omini':
+        elif type == ModelType.GPT4OMINI:
             return GPT4omini(*args, **kwargs)
-        elif type == 'deepseek':
+        elif type == ModelType.DEEPSEEK:
             return Deepseek(*args, **kwargs)
-        elif type == 'gemini':
+        elif type == ModelType.GEMINI:
             return Gemini(*args, **kwargs)
-        elif type == 'gemma':
+        elif type == ModelType.GEMMA:
             return Gemma(*args, **kwargs)
         else:
             print('Model doesn\'t exist!')

@@ -3,9 +3,11 @@ from Dataset.path import mgsm_en_path
 import json
 
 class MGSM(Dataset):
+    NAME = "MGSM"
+
     def __init__(self, nums=-1, sample=1):
         super().__init__(nums, sample)
-        self.name: str = "MGSM"
+        self.name: str = MGSM.NAME
 
         # 載入 MGSM 數據
         with open(mgsm_en_path, 'r', encoding='utf-8') as f:
@@ -35,7 +37,8 @@ class MGSM(Dataset):
         )
         return result
     
-    def compareTwoAnswer(self, answer1: str, answer2: str):
+    @staticmethod
+    def compareTwoAnswer(answer1: str, answer2: str):
         try:
             if ('.' in answer1 or '.' in answer2) and float(answer1) == float(answer2):
                 return True

@@ -10,21 +10,23 @@ from Strategy.onlyChinese import OnlyChinese
 from Strategy.onlyEnglish import OnlyEnglish
 from Strategy.multiAgent import MultiAgent
 
-class Context():
+from Strategy.StrategyType import StrategyType
+
+class RunContext():
     def __init__(self):
         self.strategy: Strategy = None
         self.log: Log = Log()
     
     def setStrategy(self, mode: str):
-        if mode == "onlyChinese":
+        if mode == StrategyType.ONLYCHINESE:
             self.strategy = OnlyChinese()
             self.log = OneDatasetLog()
 
-        elif mode == "onlyEnglish":
+        elif mode == StrategyType.ONLYENGLISH:
             self.strategy = OnlyEnglish()
             self.log = OneDatasetLog()
 
-        elif mode == "multiAgent":
+        elif mode == StrategyType.MULTIAGENT:
             self.strategy = MultiAgent()
             self.log = TwoAgentLog()
 

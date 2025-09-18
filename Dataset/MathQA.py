@@ -3,9 +3,11 @@ from Dataset.path import mathqa_path
 import json
 
 class MathQA(Dataset):
+    NAME = "MathQA"
+
     def __init__(self, nums = -1, sample = 1):
         super().__init__(nums, sample)
-        self.name: str = "MathQA"
+        self.name: str = MathQA.NAME
 
         with open(mathqa_path, 'r') as f:
             originData = json.load(f)

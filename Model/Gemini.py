@@ -3,9 +3,11 @@ from Model.Model import Model
 from api_key import gemini_api_key
 
 class Gemini(Model):
+    NAME = "Gemini"
+
     def __init__(self, tempature: int = 0):
         super().__init__(tempature)
-        self.name: str = "Gemini"
+        self.name: str = Gemini.NAME
         self.modelName: str = "models/gemini-1.5-pro"  # 用新版 Gemini Pro
         genai.configure(api_key=gemini_api_key)
         self.model = genai.GenerativeModel(self.modelName)
