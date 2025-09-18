@@ -32,9 +32,9 @@ def parseArgs():
 
     parser.add_argument("-t", "--testmode", choices=TEST_LIST, help="choose your test stratey")
     parser.add_argument("--testfile", help="The file need to be test")
-    parser.add_argument("--testmodel", nargs="+", help="The model you want to test")
-    parser.add_argument("--testdataset", nargs="+", help="The dataset you want to test")
-    parser.add_argument("--teststrategy", nargs="+", help="The strategy you want to test")
+    parser.add_argument("--testmodel", choices=MODEL_LIST, nargs="+", help="The model you want to test")
+    parser.add_argument("--testdataset", choices=DATASET_LIST, nargs="+", help="The dataset you want to test")
+    parser.add_argument("--teststrategy", choices=STRATEGY_LIST, nargs="+", help="The strategy you want to test")
 
     args = parser.parse_args()
     return args
@@ -76,6 +76,7 @@ def main():
         runExperiment(args)
     if args.test:
         print("Test Performance")
+        textExperiment(args)
 
 if __name__ == '__main__':
     main()
