@@ -14,7 +14,7 @@ class DatasetType(str, Enum):
     TRUTHFULQA = "truthfulqa"
     XCOPA = "xcopa"
     
-    DATASET_LIST = [d.value for d in (MATHQA, COMMENSEQA, MGSM, MMLU, TRUTHFULQA, XCOPA)]
+    DATASET_LIST = [d for d in (MATHQA, COMMENSEQA, MGSM, MMLU, TRUTHFULQA, XCOPA)]
     DATASET_MAP = {
         _MathQA.NAME: _MathQA,
         _CommenseQA.NAME: _CommenseQA,
