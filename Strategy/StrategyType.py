@@ -1,7 +1,7 @@
 from enum import Enum
-from Strategy.onlyChinese import _OnlyChinese
-from Strategy.onlyEnglish import _OnlyEnglish
-from Strategy.multiAgent import _MultiAgent
+from Strategy.onlyChinese import OnlyChinese as _OnlyChinese
+from Strategy.onlyEnglish import OnlyEnglish as _OnlyEnglish
+from Strategy.multiAgent import MultiAgent as _MultiAgent
 
 class StrategyType(str, Enum):
     ONLYCHINESE = "onlyChinese"
