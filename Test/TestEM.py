@@ -14,6 +14,7 @@ class TestEM(Test):
             log.logInfo(file)
             DatasetClass = DATASET_MAP[file.getDatasetName()]
             data = file.getData()
+            print(data)
             total = file.getDataNums()
             cnt = 0
 
