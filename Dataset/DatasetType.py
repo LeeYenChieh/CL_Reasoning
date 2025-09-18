@@ -13,22 +13,26 @@ class DatasetType(str, Enum):
     MMLU = "mmlu"
     TRUTHFULQA = "truthfulqa"
     XCOPA = "xcopa"
-    
-    DATASET_LIST = [d for d in (MATHQA, COMMENSEQA, MGSM, MMLU, TRUTHFULQA, XCOPA)]
+
+    # 直接用 value 取字串列表
+    DATASET_LIST = [d.value for d in (MATHQA, COMMENSEQA, MGSM, MMLU, TRUTHFULQA, XCOPA)]
+
+    # key 改成字串，對應 dataset class
     DATASET_MAP = {
-        _MathQA.NAME: _MathQA,
-        _CommenseQA.NAME: _CommenseQA,
-        _MGSM.NAME: _MGSM,
-        _MMLU.NAME: _MMLU,
-        _TruthfulQA.NAME: _TruthfulQA,
-        _XCOPA.NAME: _XCOPA
-    }
-    DATASET_NAME_DICT = {
-        MATHQA: _MathQA.NAME,
-        COMMENSEQA: _CommenseQA.NAME,
-        MGSM: _MGSM.NAME,
-        MMLU: _MMLU.NAME,
-        TRUTHFULQA: _TruthfulQA.NAME,
-        XCOPA: _XCOPA.NAME
+        MATHQA.value: _MathQA,
+        COMMENSEQA.value: _CommenseQA,
+        MGSM.value: _MGSM,
+        MMLU.value: _MMLU,
+        TRUTHFULQA.value: _TruthfulQA,
+        XCOPA.value: _XCOPA
     }
 
+    # key 改成字串，對應 dataset 名稱
+    DATASET_NAME_DICT = {
+        MATHQA.value: _MathQA.NAME,
+        COMMENSEQA.value: _CommenseQA.NAME,
+        MGSM.value: _MGSM.NAME,
+        MMLU.value: _MMLU.NAME,
+        TRUTHFULQA.value: _TruthfulQA.NAME,
+        XCOPA.value: _XCOPA.NAME
+    }

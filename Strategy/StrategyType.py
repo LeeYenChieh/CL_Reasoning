@@ -8,9 +8,12 @@ class StrategyType(str, Enum):
     ONLYENGLISH = "onlyEnglish"
     MULTIAGENT = "multiAgent"
 
-    STRATEGY_LIST = [s for s in (ONLYCHINESE, ONLYENGLISH, MULTIAGENT)]
+    # 直接取出 value，會是字串
+    STRATEGY_LIST = [s.value for s in (ONLYCHINESE, ONLYENGLISH, MULTIAGENT)]
+
+    # 用字串當 key，比較方便查
     STRATEGY_NAME_DICT = {
-        ONLYCHINESE: _OnlyChinese.NAME,
-        ONLYENGLISH: _OnlyEnglish.NAME,
-        MULTIAGENT: _MultiAgent.NAME
+        ONLYCHINESE.value: _OnlyChinese.NAME,
+        ONLYENGLISH.value: _OnlyEnglish.NAME,
+        MULTIAGENT.value: _MultiAgent.NAME
     }
