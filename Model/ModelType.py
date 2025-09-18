@@ -13,11 +13,11 @@ class ModelType(str, Enum):
     GEMINI = 'gemini'
     GEMMA = 'gemma'
     
-    MODEL_LIST = [m.value for m in (GPT41MINI, GPT4OMINI, DEEPSEEK, GEMINI, GEMMA)]
-    MODEL_NAME_DICT = {
-        GPT41MINI.value: _GPT41mini.NAME,
-        GPT4OMINI.value: _GPT4omini.NAME,
-        DEEPSEEK.value: _Deepseek.NAME,
-        GEMINI.value: _Gemini.NAME,
-        GEMMA.value: _Gemma.NAME
-    }
+MODEL_LIST = [m.value for m in ModelType]
+MODEL_NAME_DICT = {
+    ModelType.GPT41MINI.value: _GPT41mini.NAME,
+    ModelType.GPT4OMINI.value: _GPT4omini.NAME,
+    ModelType.DEEPSEEK.value: _Deepseek.NAME,
+    ModelType.GEMINI.value: _Gemini.NAME,
+    ModelType.GEMMA.value: _Gemma.NAME
+}

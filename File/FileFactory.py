@@ -1,9 +1,9 @@
 import json
 from File.File import File
 
-from Model.ModelType import ModelType
-from Dataset.DatasetType import DatasetType
-from Strategy.StrategyType import StrategyType
+from Model.ModelType import MODEL_NAME_DICT, MODEL_LIST
+from Dataset.DatasetType import DATASET_NAME_DICT, DATASET_LIST
+from Strategy.StrategyType import STRATEGY_NAME_DICT, STRATEGY_LIST
 
 class FileFactory():
     def __init__(self):
@@ -22,17 +22,17 @@ class FileFactory():
     
     def getFileBySetting(self, model: list=None, dataset: list=None, strategy: list=None) -> list:
         if model == None:
-            model = ModelType.MODEL_LIST
+            model = MODEL_LIST
         if dataset == None:
-            dataset = DatasetType.DATASET_LIST
+            dataset = DATASET_LIST
         if strategy == None:
-            strategy = StrategyType.STRATEGY_LIST
+            strategy = STRATEGY_LIST
         
         result = []
         for m in model:
             for d in dataset:
                 for s in strategy:
-                    path = f'result/{ModelType.MODEL_NAME_DICT[m]}_{DatasetType.DATASET_NAME_DICT[d]}_{StrategyType.STRATEGY_NAME_DICT[s]}.json'
+                    path = f'result/{MODEL_NAME_DICT[m]}_{DATASET_NAME_DICT[d]}_{STRATEGY_NAME_DICT[s]}.json'
                     newFile = self.getFileByPath(path)
                     if newFile:
                         result.append(newFile)

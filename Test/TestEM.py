@@ -1,6 +1,6 @@
 from File.File import File
 from Log.Log import Log
-from Dataset.DatasetType import DatasetType
+from Dataset.DatasetType import DATASET_MAP
 
 from Test.Test import Test
 
@@ -12,7 +12,7 @@ class TestEM(Test):
     def runTest(self, fileList: list[File], log: Log):
         for file in fileList:
             log.logInfo(file)
-            DatasetClass = DatasetType.DATASET_MAP[file.getDatasetName()]
+            DatasetClass = DATASET_MAP[file.getDatasetName()]
             data = file.getData()
             total = file.getDataNums()
             cnt = 0

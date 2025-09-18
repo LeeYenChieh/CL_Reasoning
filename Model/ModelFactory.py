@@ -12,15 +12,15 @@ class ModelFactory():
         pass
 
     def buildModel(self, type, *args, **kwargs) -> Model:
-        if type == ModelType.GPT41MINI:
+        if type == ModelType.GPT41MINI.value:
             return GPT41mini(*args, **kwargs)
-        elif type == ModelType.GPT4OMINI:
+        elif type == ModelType.GPT4OMINI.value:
             return GPT4omini(*args, **kwargs)
-        elif type == ModelType.DEEPSEEK:
+        elif type == ModelType.DEEPSEEK.value:
             return Deepseek(*args, **kwargs)
-        elif type == ModelType.GEMINI:
+        elif type == ModelType.GEMINI.value:
             return Gemini(*args, **kwargs)
-        elif type == ModelType.GEMMA:
+        elif type == ModelType.GEMMA.value:
             return Gemma(*args, **kwargs)
         else:
             print('Model doesn\'t exist!')

@@ -14,25 +14,25 @@ class DatasetType(str, Enum):
     TRUTHFULQA = "truthfulqa"
     XCOPA = "xcopa"
 
-    # 直接用 value 取字串列表
-    DATASET_LIST = [d.value for d in (MATHQA, COMMENSEQA, MGSM, MMLU, TRUTHFULQA, XCOPA)]
+# 直接用 value 取字串列表
+DATASET_LIST = [d.value for d in DatasetType]
 
-    # key 改成字串，對應 dataset class
-    DATASET_MAP = {
-        MATHQA.value: _MathQA,
-        COMMENSEQA.value: _CommenseQA,
-        MGSM.value: _MGSM,
-        MMLU.value: _MMLU,
-        TRUTHFULQA.value: _TruthfulQA,
-        XCOPA.value: _XCOPA
-    }
+# key 改成字串，對應 dataset class
+DATASET_MAP = {
+    DatasetType.MATHQA.value: _MathQA,
+    DatasetType.COMMENSEQA.value: _CommenseQA,
+    DatasetType.MGSM.value: _MGSM,
+    DatasetType.MMLU.value: _MMLU,
+    DatasetType.TRUTHFULQA.value: _TruthfulQA,
+    DatasetType.XCOPA.value: _XCOPA
+}
 
-    # key 改成字串，對應 dataset 名稱
-    DATASET_NAME_DICT = {
-        MATHQA.value: _MathQA.NAME,
-        COMMENSEQA.value: _CommenseQA.NAME,
-        MGSM.value: _MGSM.NAME,
-        MMLU.value: _MMLU.NAME,
-        TRUTHFULQA.value: _TruthfulQA.NAME,
-        XCOPA.value: _XCOPA.NAME
-    }
+# key 改成字串，對應 dataset 名稱
+DATASET_NAME_DICT = {
+    DatasetType.MATHQA.value: _MathQA.NAME,
+    DatasetType.COMMENSEQA.value: _CommenseQA.NAME,
+    DatasetType.MGSM.value: _MGSM.NAME,
+    DatasetType.MMLU.value: _MMLU.NAME,
+    DatasetType.TRUTHFULQA.value: _TruthfulQA.NAME,
+    DatasetType.XCOPA.value: _XCOPA.NAME
+}
