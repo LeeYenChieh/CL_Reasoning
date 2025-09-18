@@ -1,0 +1,709 @@
+[
+  {
+    "Model": "Gemma",
+    "Dataset": "CommenseQA",
+    "Strategy": "Only Chinese",
+    "Data Nums": 100,
+    "Data Samples": 1
+  },
+  {
+    "Question": "There is a Question: \nThe sanctions against the school were a punishing blow, and they seemed to what the efforts the school had made to change?\nAnd there are 5 choices:\nA) ignore, B) enforce, C) authoritarian, D) yell at, E) avoid\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一个问题：\n对学校的制裁是一个严厉的打击，而且似乎与学校为改变所做的努力有什么关系？\n并且有5个选项：\nA) 忽视，B) 强制执行，C) 专制的，D) 责骂，E) 避免\n请根据问题选择一个选项。\n在你的回答的结尾，请以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母选择\"}\n答案必须是一个单独的英文字母（A-E）。\n",
+    "Result": "推理过程：\n问题指出制裁是一个“严厉的打击”，并且质疑制裁与学校为改变所做的努力之间的关系。这意味着制裁是不公平的，或者与学校的努力不成比例。\n\n*   **A) 忽视**：忽视意味着不理会，这与制裁的“严厉打击”相矛盾。\n*   **B) 强制执行**：强制执行只是描述了制裁的实施方式，并没有解释为什么制裁与学校的努力之间存在问题。\n*   **C) 专制的**：专制意味着专断和不公正。如果制裁是专制的，那么它可能是不公平的，并且与学校的努力无关。这与问题描述的情况相符。\n*   **D) 责骂**：责骂是一种轻微的批评，与“严厉打击”不符。\n*   **E) 避免**：避免意味着防止制裁发生，这与问题描述的制裁已经发生的事实相矛盾。\n\n因此，最合适的答案是“专制的”，因为它暗示了制裁是不公正的，并且与学校的努力无关。\n\n最终答案\n{\"answer\": \"C\"}",
+    "Answer": "A",
+    "MyAnswer": "C"
+  },
+  {
+    "Question": "There is a Question: \nSammy wanted to go to where the people were.  Where might he go?\nAnd there are 5 choices:\nA) race track, B) populated areas, C) the desert, D) apartment, E) roadblock\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\nSammy 想去人多的地方。他可能會去哪裡？\n並且有 5 個選項：\nA) 賽道，B) 人口稠密地區，C) 沙漠，D) 公寓，E) 路障\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母 (A-E)。\n",
+    "Result": "推理過程\nSammy 想去人多的地方。我們需要從選項中找出人最多的地方。\nA) 賽道：賽道在比賽時人很多，但平時可能人很少。\nB) 人口稠密地區：人口稠密地區本質上就是人很多的地區。\nC) 沙漠：沙漠通常人很少。\nD) 公寓：公寓住著人，但通常不是特別多，而且是相對封閉的。\nE) 路障：路障是為了阻擋人或車輛，本身並不是人多的地方。\n\n因此，人口稠密地區是最符合題目要求的選項。\n\n最終答案\n{\"answer\": \"B\"}",
+    "Answer": "B",
+    "MyAnswer": "B"
+  },
+  {
+    "Question": "There is a Question: \nTo locate a choker not located in a jewelry box or boutique where would you go?\nAnd there are 5 choices:\nA) jewelry store, B) neck, C) jewlery box, D) jewelry box, E) boutique\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n為了找到一個不在首飾盒或精品店的項圈，你會去哪裡？\n並且有5個選項：\nA) 首飾店，B) 脖子，C) 首飾盒，D) 首飾盒，E) 精品店\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題問的是「為了找到一個不在首飾盒或精品店的項圈，你會去哪裡？」。選項A、C和D都是首飾盒或首飾店，選項E是精品店，因此都不符合條件。選項B是脖子，項圈通常戴在脖子上，所以如果不在首飾盒或精品店，項圈可能就在脖子上。\n\n最終答案\n{\"answer\": \"B\"}",
+    "Answer": "A",
+    "MyAnswer": "B"
+  },
+  {
+    "Question": "There is a Question: \nGoogle Maps and other highway and street GPS services have replaced what?\nAnd there are 5 choices:\nA) united states, B) mexico, C) countryside, D) atlas, E) oceans\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\nGoogle 地圖和其他高速公路和街道 GPS 服務取代了什麼？\n並且有 5 個選項：\nA) 美國，B) 墨西哥，C) 鄉村，D) 地圖集，E) 海洋\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"your_letter_choice\"}\n答案必須是一個單一的英文字母 (A-E)。\n",
+    "Result": "推理過程\nGoogle 地圖和其他 GPS 服務提供數位化的導航，取代了過去人們使用紙質地圖集來尋找方向的方式。其他選項與此問題無關。\n\n最終答案\n{\"answer\": \"D\"}",
+    "Answer": "D",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nThe fox walked from the city into the forest, what was it looking for?\nAnd there are 5 choices:\nA) pretty flowers., B) hen house, C) natural habitat, D) storybook, E) dense forest\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一个问题：\n狐狸从城市走到森林里，它在寻找什么？\n并且有5个选项：\nA) 美丽的花朵，B) 鸡舍，C) 自然栖息地，D) 故事书，E) 茂密的森林\n请根据问题选择一个选项。\n在你的回答的结尾，请以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母选择\"}\n答案必须是一个单独的英文字母（A-E）。\n",
+    "Result": "推理过程：\n狐狸是野生动物，通常生活在森林中。从城市走到森林，最合理的解释是它在寻找适合自己生存的自然栖息地。美丽的花朵虽然好看，但对狐狸的生存帮助不大。鸡舍是狐狸可能会光顾的地方，但不是它“寻找”的目的地，更像是偶然的发现。故事书和茂密的森林过于宽泛，不如“自然栖息地”更能体现狐狸的需求。\n\n最终答案\n{\"answer\": \"C\"}\n",
+    "Answer": "C",
+    "MyAnswer": "C"
+  },
+  {
+    "Question": "There is a Question: \nWhat home entertainment equipment requires cable?\nAnd there are 5 choices:\nA) radio shack, B) substation, C) cabinet, D) television, E) desk\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n哪種家庭娛樂設備需要纜線？\n並且有5個選項：\nA) 收音機商店，B) 變電站，C) 櫥櫃，D) 電視機，E) 辦公桌\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題詢問哪種家庭娛樂設備需要纜線。\nA) 收音機商店是商店，不是設備。\nB) 變電站是電力設施，不是娛樂設備。\nC) 櫥櫃是儲物家具，不是娛樂設備。\nD) 電視機通常需要纜線（例如同軸電纜、HDMI電纜）才能接收訊號。\nE) 辦公桌是家具，不是娛樂設備。\n\n因此，正確答案是電視機。\n\n最終答案\n{\"answer\": \"D\"}",
+    "Answer": "D",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nThe only baggage the woman checked was a drawstring bag, where was she heading with it?\nAnd there are 5 choices:\nA) garbage can, B) military, C) jewelry store, D) safe, E) airport\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n這位女士唯一託運的行李是一個抽繩袋，她正要去哪裡呢？\n並且有5個選項：\nA) 垃圾桶，B) 軍隊，C) 珠寶店，D) 保險箱，E) 機場\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n抽繩袋通常用於攜帶輕便的物品，例如運動服裝、泳衣或日常用品。在給定的選項中，只有機場是人們需要攜帶個人物品旅行的地方。其他選項（垃圾桶、軍隊、珠寶店、保險箱）都不需要或通常不涉及攜帶一個簡單的抽繩袋。\n\n最終答案\n{\"answer\": \"E\"}",
+    "Answer": "E",
+    "MyAnswer": "E"
+  },
+  {
+    "Question": "There is a Question: \nThe forgotten leftovers had gotten quite old, he found it covered in mold in the back of his what?\nAnd there are 5 choices:\nA) carpet, B) refrigerator, C) breadbox, D) fridge, E) coach\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n被遺忘的剩菜已經變得相當陳舊，他發現它在他的什麼地方長滿了黴菌？\n並且有5個選項：\nA) 地毯，B) 冰箱，C) 面包盒，D) 冰箱，E) 教練\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"your_letter_choice\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題描述了被遺忘的剩菜長滿了黴菌。黴菌通常在潮濕、溫暖且有食物來源的地方生長。\nA) 地毯：地毯可能會有食物碎屑，但通常不是剩菜的主要存放地點。\nB) 冰箱：冰箱是存放剩菜的常見地點，如果剩菜被遺忘，且冰箱溫度不夠低，就容易長黴菌。\nC) 面包盒：通常存放麵包，不太可能存放剩菜。\nD) 冰箱：與B選項相同，是存放剩菜的常見地點，容易長黴菌。\nE) 教練：與剩菜無關。\n\nB和D選項相同，但題目要求選擇一個選項，因此選擇較常見的選項B。\n\n最終答案\n{\"answer\": \"B\"}",
+    "Answer": "B",
+    "MyAnswer": "B"
+  },
+  {
+    "Question": "There is a Question: \nWhat do people use to absorb extra ink from a fountain pen?\nAnd there are 5 choices:\nA) shirt pocket, B) calligrapher's hand, C) inkwell, D) desk drawer, E) blotter\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n人們用什麼來吸收鋼筆上多餘的墨水？\n並且有5個選項：\nA) 襯衫口袋，B) 書法家的手，C) 墨水瓶，D) 辦公桌抽屜，E) 吸墨紙\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"your_letter_choice\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題詢問的是用來吸收鋼筆上多餘墨水的東西。\nA) 襯衫口袋：襯衫口袋可能會被墨水弄髒，但不是用來吸收墨水的。\nB) 書法家的手：書法家可能會沾到墨水，但手不是用來吸收多餘墨水的。\nC) 墨水瓶：墨水瓶是儲存墨水的地方，不是吸收多餘墨水的。\nD) 辦公桌抽屜：辦公桌抽屜是儲物的地方，不是用來吸收墨水的。\nE) 吸墨紙：吸墨紙專門用來吸收鋼筆上多餘的墨水，以防止墨水滴落或弄髒其他東西。\n\n因此，正確答案是E。\n\n最終答案\n{\"answer\": \"E\"}",
+    "Answer": "E",
+    "MyAnswer": "E"
+  },
+  {
+    "Question": "There is a Question: \nWhere is a business restaurant likely to be located?\nAnd there are 5 choices:\nA) town, B) at hotel, C) mall, D) business sector, E) yellow pages\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n一家商務餐廳很可能位於哪裡？\n並且有5個選項：\nA) 城鎮，B) 在飯店，C) 商場，D) 商業區，E) 黃頁\n請根據問題選擇一個選項。\n在您的回答的結尾，請以完全相同的JSON格式提供您的答案：{\"answer\": \"your_letter_choice\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n商務餐廳的目的是為商務人士提供用餐場所，通常與商業活動相關。\nA) 城鎮：城鎮範圍太廣，不一定有商業活動。\nB) 在飯店：飯店可能會有餐廳，但未必是專門為商務人士設計的。\nC) 商場：商場主要以零售為主，商務餐廳的可能性較低。\nD) 商業區：商業區集中了辦公樓、公司等，是商務活動的中心，因此很可能會有商務餐廳。\nE) 黃頁：黃頁是資訊目錄，不是地點。\n\n因此，最合理的答案是商業區。\n\n最終答案\n{\"answer\": \"D\"}",
+    "Answer": "D",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nWhere do you put your grapes just before checking out?\nAnd there are 5 choices:\nA) mouth, B) grocery cart, C) super market, D) fruit basket, E) fruit market\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n你在結帳之前把葡萄放在哪裡？\n並且有5個選項：\nA) 嘴巴，B) 購物車，C) 超市，D) 水果籃，E) 水果市場\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題問的是在結帳*之前*把葡萄放在哪裡。\nA) 嘴巴：結帳前吃掉葡萄是不合理的。\nB) 購物車：這是最合理的答案，因為購物車是你在超市購物時存放物品的地方，直到結帳。\nC) 超市：太過籠統，葡萄在超市的各個位置都可能存在，但結帳前最直接存放的地方是購物車。\nD) 水果籃：水果籃通常在家裡，而不是在結帳前。\nE) 水果市場：水果市場是購買葡萄的地方，而不是結帳前存放葡萄的地方。\n\n最終答案\n{\"answer\": \"B\"}\n",
+    "Answer": "B",
+    "MyAnswer": "B"
+  },
+  {
+    "Question": "There is a Question: \nBefore getting a divorce, what did the wife feel who was doing all the work?\nAnd there are 5 choices:\nA) harder, B) anguish, C) bitterness, D) tears, E) sadness\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n在離婚之前，那個做所有工作的妻子有什麼感覺？\n並且有5個選項：\nA) 更辛苦，B) 痛苦，C) 苦澀，D) 眼淚，E) 悲傷\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題詢問的是離婚前，承擔所有家務的妻子感受。雖然痛苦、悲傷、眼淚都可能存在，但「苦澀」更能體現長期付出未被認可、關係逐漸破裂的複雜情緒。辛苦是狀態，而苦澀是這種狀態帶來的深刻感受。\n\n最終答案\n{\"answer\": \"C\"}",
+    "Answer": "C",
+    "MyAnswer": "C"
+  },
+  {
+    "Question": "There is a Question: \nJohnny sat on a bench and relaxed after doing a lot of work on his hobby.  Where is he?\nAnd there are 5 choices:\nA) state park, B) bus depot, C) garden, D) gym, E) rest area\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\nJohnny 在長凳上坐著，在完成很多愛好工作後放鬆。 他在哪裡？\n並且有 5 個選項：\nA) 州立公園，B) 公交車站，C) 花園，D) 健身房，E) 休息區\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"your_letter_choice\"}\n答案必須是一個單一的英文字母 (A-E)。\n",
+    "Result": "推理過程\n問題描述 Johnny 在長凳上坐著，完成愛好工作後放鬆。我們需要找出最有可能的地點。\nA) 州立公園：州立公園通常有長凳，人們可以在那裡放鬆和從事愛好工作。\nB) 公交車站：公交車站通常不適合放鬆或從事愛好工作，而且通常很擁擠。\nC) 花園：花園可能會有長凳，適合放鬆和從事愛好工作，例如園藝。\nD) 健身房：健身房通常不適合放鬆，而且主要用於鍛煉。\nE) 休息區：休息區是一個通用的術語，可以指許多不同的地方，但通常暗示一個專門用於休息的地方，這與 Johnny 完成愛好工作後放鬆的描述相符。\n\n州立公園和花園都是合理的選擇，但休息區更廣泛，更符合“完成愛好工作後放鬆”的描述。\n\n最終答案\n{\"answer\": \"E\"}",
+    "Answer": "C",
+    "MyAnswer": "E"
+  },
+  {
+    "Question": "There is a Question: \nJames was cooling off two quickly.  He would die if he didn't find some way to stop what?\nAnd there are 5 choices:\nA) loss of heat, B) revenge, C) expansion, D) relaxation, E) calm down\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\nJames 正在過快地降溫。如果他找不到辦法阻止它，他就會死。阻止什麼？\n並且有5個選項：\nA) 熱量流失，B) 復仇，C) 膨脹，D) 放鬆，E) 冷靜下來\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題指出James正在過快地降溫，並且如果他找不到辦法阻止它，他就會死。這意味著問題詢問的是導致James降溫的原因，以及他需要阻止什麼。\nA) 熱量流失：如果James正在流失熱量，他就會降溫。阻止熱量流失可以阻止他降溫。\nB) 復仇：復仇與降溫無關。\nC) 膨脹：膨脹與降溫無關。\nD) 放鬆：放鬆與降溫無關。\nE) 冷靜下來：冷靜下來與降溫無關。\n\n因此，正確的答案是A) 熱量流失。\n\n最終答案\n{\"answer\": \"A\"}",
+    "Answer": "A",
+    "MyAnswer": "A"
+  },
+  {
+    "Question": "There is a Question: \nOf all the rooms in a house it was his favorite, the aromas always drew him to the what?\nAnd there are 5 choices:\nA) yard, B) basement, C) kitchen, D) living room, E) garden\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一个问题：\n在房子里所有的房间中，这是他最喜欢的，那些香味总是吸引他去哪里？\n并且有5个选项：\nA) 院子，B) 地下室，C) 厨房，D) 客厅，E) 花园\n请根据问题选择一个选项。\n在你的回答的结尾，请以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母选择\"}\n答案必须是一个单独的英文字母（A-E）。\n",
+    "Result": "推理过程：\n问题描述了一个房间，其香味总是吸引某人。在给定的选项中，厨房通常是气味最集中的地方，因为烹饪活动会产生各种香味。其他选项（院子、地下室、客厅、花园）虽然可能有一些气味，但通常不如厨房那样具有吸引力。\n\n最终答案\n{\"answer\": \"C\"}\n",
+    "Answer": "C",
+    "MyAnswer": "C"
+  },
+  {
+    "Question": "There is a Question: \nBill is stuck in marsh when a man comes up to him peaking Cajun, where is he?\nAnd there are 5 choices:\nA) low lands, B) new york, C) forest, D) louisiana, E) everglades\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n比爾被困在沼澤裡，此時一個說著卡戎語（Cajun）的人走近他，他在哪裡？\n並且有5個選項：\nA) 低地，B) 紐約，C) 森林，D) 路易斯安那州，E) 大沼澤地\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題提到一個人說著卡戎語（Cajun）。卡戎語是路易斯安那州卡戎人的方言。因此，比爾最有可能被困在路易斯安那州。沼澤地是路易斯安那州的一個常見地形，而低地和大沼澤地是路易斯安那州的一部分，但路易斯安那州是更準確的答案。紐約和森林與卡戎語沒有直接關聯。\n\n最終答案\n{\"answer\": \"D\"}",
+    "Answer": "D",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nWhat is it called when you slowly cook using a grill?\nAnd there are 5 choices:\nA) backyard, B) restaurant, C) crockpot, D) neighbor's house, E) barbeque\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n當你用烤架慢慢烹飪時，這叫做什麼？\n並且有5個選項：\nA) 後院，B) 餐廳，C) 慢燉鍋，D) 鄰居家，E) 烤肉\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題問的是用烤架慢慢烹飪的烹飪方式是什麼。\nA) 後院是地點，不是烹飪方式。\nB) 餐廳是地點，不是烹飪方式。\nC) 慢燉鍋是用來慢慢烹飪的器具，但不是烤架上的烹飪方式。\nD) 鄰居家是地點，不是烹飪方式。\nE) 烤肉指的是在烤架上慢慢烹飪的過程。\n\n最終答案\n{\"answer\": \"E\"}",
+    "Answer": "E",
+    "MyAnswer": "E"
+  },
+  {
+    "Question": "There is a Question: \nWhat type of person typically contracts illness?\nAnd there are 5 choices:\nA) hospital, B) head, C) sick person, D) elderly person, E) doctor's office\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n通常哪種類型的人會感染疾病？\n並且有5個選項：\nA) 醫院，B) 頭部，C) 病人，D) 老年人，E) 診所\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題詢問「通常哪種類型的人會感染疾病？」。\nA) 醫院是地點，不是人。\nB) 頭部是身體部位，不是人。\nC) 病人是指已經生病的人，但並非所有病人都是「通常」會感染疾病的人，而是已經感染了。\nD) 老年人由於免疫系統功能下降，更容易感染疾病。\nE) 診所是地點，不是人。\n\n因此，老年人是最容易感染疾病的人群。\n\n最終答案\n{\"answer\": \"D\"}",
+    "Answer": "D",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nWhere would you expect to find a pizzeria while shopping?\nAnd there are 5 choices:\nA) chicago, B) street, C) little italy, D) food court, E) capital cities\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n在購物時，你預期在哪裡能找到披薩店？\n並且有5個選項：\nA) 芝加哥，B) 街道，C) 小意大利，D) 美食廣場，E) 首都城市\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n披薩店通常位於人們聚集的地方，方便購買和享用。\nA) 芝加哥是一個城市，雖然以披薩聞名，但並非購物時預期會找到披薩店的特定地點。\nB) 街道是一個太廣泛的概念，不具體。\nC) 小意大利通常有許多意大利餐廳，包括披薩店，因此是一個合理的選擇。\nD) 美食廣場是購物中心或大型購物場所中常見的餐飲區，通常會有各種餐飲選擇，包括披薩。\nE) 首都城市是一個城市，和芝加哥類似，不具體指向購物時的披薩店位置。\n\n在購物時，美食廣場和小意大利都是可能找到披薩店的地方。但美食廣場更常見於購物中心等購物場所，因此更符合問題的預期。\n\n最終答案\n{\"answer\": \"D\"}",
+    "Answer": "D",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nWhen eating everything on the tasting menu, what does one tend to feel?\nAnd there are 5 choices:\nA) full stomach, B) getting full, C) gaining weight, D) sick, E) satisfaction\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n當吃完品嚐菜單上的所有食物時，人們通常會感覺如何？\n並且有5個選項：\nA) 肚子飽了，B) 正在變飽，C) 體重增加，D) 感到噁心，E) 滿足\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題詢問的是吃完菜單上所有食物後人們通常的感受。\nA) 肚子飽了：這是最直接和常見的感受。\nB) 正在變飽：這描述的是過程，而不是最終感受。\nC) 體重增加：體重增加是長期累積的結果，不是立即的感受。\nD) 感到噁心：雖然可能發生，但並非普遍感受，特別是如果食物美味且適量。\nE) 滿足：滿足感可能存在，但通常伴隨著飽腹感。\n\n因此，最普遍和直接的感受是肚子飽了。\n\n最終答案\n{\"answer\": \"A\"}",
+    "Answer": "B",
+    "MyAnswer": "A"
+  },
+  {
+    "Question": "There is a Question: \nWhat does playing soccer for a long time lead to?\nAnd there are 5 choices:\nA) excitement, B) fatigue, C) anger, D) hurting, E) getting tired\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n長時間踢足球會導致什麼？\n並且有5個選項：\nA) 興奮，B) 疲勞，C) 憤怒，D) 受傷，E) 感到疲倦\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n長時間踢足球是一項體力消耗的運動。雖然可能會讓人興奮，但更直接和常見的結果是身體疲勞，甚至可能導致受傷。選項A（興奮）和C（憤怒）是情緒反應，不一定總是發生。選項E（感到疲倦）與選項B（疲勞）意思相近，但“疲勞”更準確地描述了長時間體力活動的結果。因此，最直接和普遍的結果是疲勞和受傷。在選項中，受傷是長時間踢足球的潛在後果，而疲勞是必然的結果。\n\n最終答案\n{\"answer\": \"B\"}",
+    "Answer": "E",
+    "MyAnswer": "B"
+  },
+  {
+    "Question": "There is a Question: \nWhich entrance would you use if you do not want to use the back entrance?\nAnd there are 5 choices:\nA) side, B) main, C) anterior, D) current, E) front\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一个问题：\n如果你不想使用后门，你会使用哪个入口？\n并且有5个选项：\nA) 侧面，B) 主要，C) 前方，D) 当前，E) 前面\n请根据问题选择一个选项。\n在你的回答的结尾，请以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母选择\"}\n答案必须是一个单独的英文字母（A-E）。\n",
+    "Result": "推理过程：\n问题问的是“如果你不想使用后门，你会使用哪个入口？”后门通常是秘密或非官方的入口。因此，选择一个公开且正常的入口是合理的。\n\n*   **A) 侧面:** 侧面入口可能不太常用，但仍然是一个入口。\n*   **B) 主要:** 主要入口是最常用的，也是最公开的入口。\n*   **C) 前方:** “前方”比较模糊，不明确是否是入口。\n*   **D) 当前:** “当前”指的是时间，不是入口。\n*   **E) 前面:** “前面”也比较模糊，不明确是否是入口。\n\n主要入口是最直接和最安全的替代方案，因为它不是秘密入口。\n\n最终答案\n{\"answer\": \"B\"}\n",
+    "Answer": "B",
+    "MyAnswer": "B"
+  },
+  {
+    "Question": "There is a Question: \nYou can share files with someone if you have a connection to a what?\nAnd there are 5 choices:\nA) freeway, B) radio, C) wires, D) computer network, E) electrical circuit\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一个问题：\n如果你与某个东西有连接，你就可以与某人共享文件，那么这个东西是什么？\n并且有5个选项：\nA) 高速公路，B) 收音机，C) 电线，D) 计算机网络，E) 电路\n请根据问题选择一个选项。\n在你的回答的结尾，请以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母选择\"}\n答案必须是一个单独的英文字母（A-E）。\n",
+    "Result": "推理过程\n问题描述的是一种能够连接你和他人，从而实现文件共享的媒介。\nA) 高速公路：用于交通运输，与文件共享无关。\nB) 收音机：用于广播信息，不能直接共享文件。\nC) 电线：用于传输电力或信号，本身不能共享文件，需要配合其他设备。\nD) 计算机网络：例如互联网，可以连接不同设备，实现文件共享。\nE) 电路：是电子设备中的基本组成部分，不能直接实现文件共享。\n\n因此，计算机网络是最符合题意的选项。\n\n最终答案\n{\"answer\": \"D\"}\n",
+    "Answer": "D",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nThe accelerator was controller via a hand throttle, and the foot pedals controlled the steering in the small what?\nAnd there are 5 choices:\nA) car, B) fuel system, C) accelerate, D) boat, E) airplane\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n加速器通過手動油門控制，腳踏板控制小型什麼的轉向？\n並且有5個選項：\nA) 汽車，B) 燃料系統，C) 加速，D) 船，E) 飛機\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題描述了一種加速器通過手動油門控制，腳踏板控制小型轉向的交通工具。\nA) 汽車：汽車通常使用腳踏板控制油門和剎車，方向盤控制轉向，不符合描述。\nB) 燃料系統：燃料系統是交通工具的一部分，不是交通工具本身。\nC) 加速：加速是動作，不是交通工具。\nD) 船：船通常使用手動油門控制速度，腳踏板或舵輪控制轉向，符合描述。\nE) 飛機：飛機使用操縱桿控制多個方面，包括油門和轉向，不符合腳踏板控制小型轉向的描述。\n\n因此，最符合描述的是船。\n\n最終答案\n{\"answer\": \"D\"}",
+    "Answer": "E",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nSean was lying about the body, but he was very scared.  He constantly worried about what?\nAnd there are 5 choices:\nA) the reward money, B) hurt feelings, C) being found out, D) problems, E) trouble\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\nSean 在說謊關於屍體的事情，但他非常害怕。他一直擔心什麼？\n並且有 5 個選項：\nA) 獎金，B) 受傷的心情，C) 被發現，D) 問題，E) 麻煩\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母 (A-E)。\n",
+    "Result": "推理過程\n問題指出 Sean 在說謊關於屍體的事情，並且他非常害怕。這表示他擔心的是說謊被揭穿的後果。選項 A (獎金) 與害怕說謊無關。選項 B (受傷的心情) 雖然可能，但不如擔心被揭穿更直接地與說謊和屍體有關。選項 D (問題) 太過籠統。選項 E (麻煩) 也是一個可能的結果，但「被發現」更直接地指向說謊的本質。因此，最合理的答案是 Sean 擔心他的謊言被發現。\n\n最終答案\n{\"answer\": \"C\"}",
+    "Answer": "C",
+    "MyAnswer": "C"
+  },
+  {
+    "Question": "There is a Question: \nThe drug kingpin told his man to run errands, this was code to go to all the dealers to do what they had?\nAnd there are 5 choices:\nA) park, B) make time for, C) receive instructions, D) take money, E) leave work\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n毒梟告訴他的手下跑腿，這是代碼，意思是去所有販毒者那裡做他們有的什麼？\n並且有5個選項：\nA) 停車，B) 騰出時間，C) 接收指示，D) 收錢，E) 下班\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n毒梟讓手下“跑腿”通常是指去完成一些非法任務，例如收取貨款、傳遞信息或取貨。在販毒的背景下，“做他們有的”最有可能指的是收取毒資。選項A、B、E都與毒品交易無關，選項C雖然可能，但不如D直接。因此，D“收錢”是最合理的答案。\n\n最終答案\n{\"answer\": \"D\"}",
+    "Answer": "D",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nThough he could've kept going his body appreciated the rest, it had been constantly what during the day?\nAnd there are 5 choices:\nA) walk, B) lay down, C) working, D) moving, E) exercise\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n儘管他本可以繼續，他的身體卻很感激這段休息，它白天一直處於什麼狀態？\n並且有5個選項：\nA) 走路，B) 躺下，C) 工作，D) 移動，E) 鍛鍊\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題指出，儘管他本可以繼續，他的身體卻很感激這段休息。這意味著他的身體之前一直在活動，並且需要休息。選項中，走路、工作、移動和鍛鍊都涉及活動，而躺下則表示休息狀態。因此，他的身體白天一直處於走路、工作、移動或鍛鍊的狀態，然後才得到休息。最符合“一直處於”狀態且需要休息的選項是工作或鍛鍊，但工作不一定會讓身體“感激”休息，而鍛鍊後身體通常會需要休息。因此，最合理的答案是鍛鍊。\n\n最終答案\n{\"answer\": \"E\"}",
+    "Answer": "D",
+    "MyAnswer": "E"
+  },
+  {
+    "Question": "There is a Question: \nToo many people want exotic snakes.  The demand is driving what to carry them?\nAnd there are 5 choices:\nA) ditch, B) shop, C) north america, D) pet shops, E) outdoors\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一个问题：\n太多人想要奇异的蛇。 需求正在驱动什么来运输它们？\n并且有5个选项：\nA) 沟渠，B) 商店，C) 北美洲，D) 宠物店，E) 户外\n请根据问题选择一个选项。\n在你的回答的结尾，请以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母选择\"}\n答案必须是一个单独的英文字母（A-E）。\n",
+    "Result": "推理过程：\n问题指出“太多人想要奇异的蛇”，并且询问是什么在驱动运输这些蛇。这意味着我们需要找到一个能够解释蛇从一个地方运到另一个地方的原因或场所。\n\nA) 沟渠：沟渠是蛇可能存在的地方，但不是运输的驱动因素。\nB) 商店：商店是销售蛇的地方，但不是运输的驱动因素。\nC) 北美洲：北美洲是一个地理区域，不能解释运输的驱动因素。\nD) 宠物店：宠物店是奇异蛇的常见销售地点。人们对奇异蛇的需求会驱动宠物店从其他地方（例如繁殖者或进口商）运输蛇。\nE) 户外：户外是蛇可能存在的地方，但不是运输的驱动因素。\n\n因此，宠物店（D）是最佳答案，因为需求驱动宠物店从其他地方运输蛇来满足顾客的需求。\n\n最终答案\n{\"answer\": \"D\"}",
+    "Answer": "D",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nJoe suffered many consequences from stabbing a stranger to death.   Among them, the family of the victim did something to him. What was that?\nAnd there are 5 choices:\nA) knife wounds, B) buy a gun, C) bleeding, D) jail time, E) law suit\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\nJoe因為刺殺陌生人而遭受了許多後果。其中，受害者的家人對他做了一件事。那件事是什麼？\n並且有5個選項：\nA) 刀傷，B) 買槍，C) 出血，D) 監禁，E) 訴訟\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題描述了Joe刺殺陌生人後，受害者家屬對他採取的一項行動。選項中，A（刀傷）、B（買槍）、C（出血）描述的是事件發生的過程或Joe的行為，與受害者家屬的行動無關。D（監禁）是法律系統的結果，而非受害者家屬直接採取行動。E（訴訟）是受害者家屬為了追究Joe的法律責任而可能採取的一項行動。因此，最符合問題描述的選項是訴訟。\n\n最終答案\n{\"answer\": \"E\"}",
+    "Answer": "E",
+    "MyAnswer": "E"
+  },
+  {
+    "Question": "There is a Question: \nTo prevent any glare during the big football game he made sure to clean the dust of his what?\nAnd there are 5 choices:\nA) television, B) attic, C) corner, D) they cannot clean corner and library during football match they cannot need that, E) ground\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n為了防止在大型足球比賽期間出現眩光，他確保清潔了他什麼的東西上的灰塵？\n並且有5個選項：\nA) 電視，B) 閣樓，C) 角落，D) 他們在足球比賽期間不能清潔角落和圖書館，他們不需要那樣，E) 地面\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題問的是為了防止眩光，他清潔了什麼東西上的灰塵。眩光通常是由於光線反射造成的。在選項中，只有電視螢幕會因為灰塵而影響光線反射，產生眩光。其他選項（閣樓、角落、地面）與眩光沒有直接關係。\n\n最終答案\n{\"answer\": \"A\"}",
+    "Answer": "A",
+    "MyAnswer": "A"
+  },
+  {
+    "Question": "There is a Question: \nI have something in my head I want to share, what ways can I do that?\nAnd there are 5 choices:\nA) write an essay, B) organize thoughts, C) speak information, D) summarize main points, E) have information\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n我腦海裡有一些想分享的東西，有哪些方法可以做到？\n並且有5個選項：\nA) 寫一篇論文，B) 整理思緒，C) 說出信息，D) 總結要點，E) 擁有信息\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題詢問的是如何分享腦海中的想法。選項A（寫論文）和C（說出信息）是直接分享想法的方式。選項B（整理思緒）是分享前的準備，選項D（總結要點）也是分享前的準備，選項E（擁有信息）則只是保持信息，並未分享。在直接分享想法的方式中，問題沒有指定分享的具體形式，因此選擇C（說出信息）更為直接和通用。\n\n最終答案\n{\"answer\": \"C\"}\n",
+    "Answer": "C",
+    "MyAnswer": "C"
+  },
+  {
+    "Question": "There is a Question: \nHe wanted a house that was gated off from other places, where should he start looking?\nAnd there are 5 choices:\nA) neighborhood, B) subdivision, C) city, D) suburbs, E) street\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n他想要一棟與其他地方隔離的房子，他應該從哪裡開始尋找？\n並且有5個選項：\nA) 社區，B) 分區，C) 城市，D) 郊區，E) 街道\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題要求尋找與其他地方隔離的房子。\nA) 社區：通常意味著鄰近的房屋和共同設施，不符合隔離的要求。\nB) 分區：分區規定了土地的使用方式，但不能保證房屋的隔離性。\nC) 城市：城市通常人口密集，房屋之間距離較近，不符合隔離的要求。\nD) 郊區：郊區的房屋密度比城市低，但仍然可能與其他房屋鄰近。\nE) 街道：街道只是一個道路，不能提供房屋隔離性的信息。\n\n雖然郊區可能比城市更接近隔離，但沒有任何選項能直接保證房屋的隔離性。然而，在郊區尋找土地或房產時，更容易找到較大面積的土地，從而實現隔離。因此，郊區是最佳選擇。\n\n最終答案\n{\"answer\": \"D\"}",
+    "Answer": "B",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nWhere in Southern Europe would you find many canals?\nAnd there are 5 choices:\nA) michigan, B) new york, C) amsterdam, D) venice, E) bridge\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n在南歐的哪裡你會發現許多運河？\n並且有5個選項：\nA) 密歇根，B) 紐約，C) 阿姆斯特丹，D) 威尼斯，E) 橋樑\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題詢問在南歐哪裡可以找到許多運河。\nA) 密歇根是美國的一個州，不在南歐。\nB) 紐約是美國的一個州，不在南歐。\nC) 阿姆斯特丹位於荷蘭，雖然有運河，但不在南歐。\nD) 威尼斯位於義大利，義大利是南歐國家，以其運河而聞名。\nE) 橋樑是建築物，不是地點。\n\n因此，正確答案是威尼斯。\n\n最終答案\n{\"answer\": \"D\"}",
+    "Answer": "D",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nWhat would a camper need to do before he or she can start cooking food?\nAnd there are 5 choices:\nA) make breakfast, B) go hiking, C) pack or bag, D) light fire, E) grab a match\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n一個露營者在開始烹飪食物之前需要做什麼？\n並且有5個選項：\nA) 準備早餐，B) 去徒步旅行，C) 整理或打包，D) 生火，E) 拿一根火柴\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選擇\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題詢問露營者在開始烹飪食物*之前*需要做什麼。烹飪食物需要火，而生火是烹飪食物的準備步驟。選項D“生火”最符合這個要求。其他選項，如準備早餐（A）、徒步旅行（B）、整理或打包（C）和拿一根火柴（E）都可能在烹飪之前或之後發生，但並非烹飪的直接準備步驟。拿火柴只是生火的一部分，並不是完整的準備。\n\n最終答案\n{\"answer\": \"D\"}",
+    "Answer": "D",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nWhat could happen to a paper if you leave it outside even if it does not move?\nAnd there are 5 choices:\nA) one material often recycled, B) ripped, C) saturated with water, D) one dimensional, E) crumpled\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n如果你把紙張放在外面，即使它沒有移動，會發生什麼？\n並且有5個選項：\nA) 一種經常被回收的材料，B) 撕裂，C) 飽含水分，D) 一維的，E) 揉皺\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選擇\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n紙張暴露在戶外，即使沒有移動，也會受到環境因素的影響。最顯著的影響是水分，例如雨水或露水，會使紙張濕透。其他選項不太可能發生，除非有風或其他外力作用。紙張本身並不會自動撕裂、揉皺或改變其維度。雖然紙張可以被回收，但這不是暴露在戶外的直接結果。\n\n最終答案\n{\"answer\": \"C\"}",
+    "Answer": "C",
+    "MyAnswer": "C"
+  },
+  {
+    "Question": "There is a Question: \nMark's semen was very thick, but after his vasectomy it was also what?\nAnd there are 5 choices:\nA) blank, B) sparse, C) thin, D) clear, E) free flowing\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\nMark的精液非常濃稠，但在他做完輸精管結紮手術後，它又怎麼樣了？\n並且有5個選項：\nA) 空白的，B) 稀疏的，C) 稀薄的，D) 清澈的，E) 自由流動的\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"your_letter_choice\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n輸精管結紮手術是切斷或封閉輸精管，阻止精子從睾丸釋放。然而，大部分的精液量並非來自精子，而是來自精囊腺和前列腺液。這些腺體仍然會產生液體，但精子會被身體吸收。因此，手術後精液的體積會減少，並且會變得更稀薄，因為它不再含有精子。濃稠的精液通常是精子濃度高的結果。\n\n最終答案\n{\"answer\": \"B\"}",
+    "Answer": "D",
+    "MyAnswer": "B"
+  },
+  {
+    "Question": "There is a Question: \nWhat is a great place to lay in the sun?\nAnd there are 5 choices:\nA) in the basement, B) west, C) solar system, D) beach, E) beans\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n在陽光下躺著的好地方是哪裡？\n並且有5個選項：\nA) 在地下室，B) 西方，C) 太陽系，D) 海灘，E) 豆子\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題詢問在陽光下躺著的好地方。\nA) 地下室：地下室沒有陽光。\nB) 西方：西方是一個方向，不是一個地方。\nC) 太陽系：太陽系太過廣闊，不適合躺著。\nD) 海灘：海灘通常陽光充足，適合躺著。\nE) 豆子：豆子是物品，不適合躺著。\n\n因此，海灘是最適合在陽光下躺著的地方。\n\n最終答案\n{\"answer\": \"D\"}",
+    "Answer": "D",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nWhere would you find a seafood restaurant in the east coast of North America?\nAnd there are 5 choices:\nA) maine, B) boston, C) beach town, D) coastal cities, E) ocean\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n在北美洲的東海岸，你可以在哪裡找到海鮮餐廳？\n並且有5個選項：\nA) 緬因州，B) 波士頓，C) 海灘小鎮，D) 沿海城市，E) 海洋\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題詢問在北美洲東海岸可以找到海鮮餐廳的地方。所有選項都可能存在海鮮餐廳，但有些選項比其他選項更具體且更常與海鮮相關聯。\nA) 緬因州以其龍蝦而聞名，是海鮮的熱門目的地。\nB) 波士頓是一個沿海城市，以其新鮮的海鮮，尤其是蛤蜊濃湯而聞名。\nC) 海灘小鎮是一個廣泛的術語，可能或可能沒有海鮮餐廳。\nD) 沿海城市是一個廣泛的術語，但通常會提供海鮮。\nE) 海洋本身不是一個地點，而是一個水體。\n\n雖然B和D都是正確的答案，但緬因州（A）以其海鮮而聞名，因此是最佳答案。\n\n最終答案\n{\"answer\": \"A\"}",
+    "Answer": "A",
+    "MyAnswer": "A"
+  },
+  {
+    "Question": "There is a Question: \nThe president is the leader of what institution?\nAnd there are 5 choices:\nA) walmart, B) white house, C) country, D) corporation, E) government\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一个问题：\n总统是什么机构的领导者？\n并且有5个选项：\nA) 沃尔玛，B) 白宫，C) 国家，D) 公司，E) 政府\n请根据问题选择一个选项。\n在你的回答的结尾，请以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母选择\"}\n答案必须是一个单独的英文字母（A-E）。\n",
+    "Result": "推理过程：\n总统是国家的最高领导人。白宫是总统的官邸和办公场所，但总统领导的不是白宫，而是整个国家。沃尔玛是公司，公司不是总统领导的机构。政府是总统领导的机构，但“国家”比“政府”更准确地描述了总统所领导的整体。\n\n最终答案\n{\"answer\": \"C\"}\n",
+    "Answer": "E",
+    "MyAnswer": "C"
+  },
+  {
+    "Question": "There is a Question: \nSitting to close while watching TV can cause what sort of pain?\nAnd there are 5 choices:\nA) brain problems, B) laziness, C) get fat, D) headache, E) laughter\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n離電視太近地坐著會導致哪種疼痛？\n並且有5個選項：\nA) 大腦問題，B) 懶惰，C) 變胖，D) 頭痛，E) 笑聲\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n離電視太近地坐著會導致眼睛疲勞，進而可能引發頭痛。其他選項與此情況無關：大腦問題通常有其他症狀，懶惰是一種行為而非疼痛，變胖是體重增加，笑聲是一種反應而非疼痛。\n\n最終答案\n{\"answer\": \"D\"}",
+    "Answer": "D",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nWhere is a bald eagle safe?\nAnd there are 5 choices:\nA) pine tree, B) open country, C) in washington, D) wildlife refuge, E) sky\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n禿鷹在哪裡是安全的？\n並且有5個選項：\nA) 松樹，B) 開闊地，C) 在華盛頓，D) 野生動物保護區，E) 天空\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n這個問題是一個謎語。禿鷹是鳥類，它們在空中最安全，因為它們可以飛翔並避開地面上的危險。其他選項都不提供禿鷹安全的地方：松樹可以讓它們容易受到捕食者的攻擊，開闊地讓它們暴露無遺，華盛頓是一個城市，野生動物保護區雖然保護動物，但並非禿鷹唯一安全的場所。\n\n最終答案\n{\"answer\": \"E\"}",
+    "Answer": "D",
+    "MyAnswer": "E"
+  },
+  {
+    "Question": "There is a Question: \nThe game promised it was free, but the child's parents soon found themselves doing what for microtransactions?\nAnd there are 5 choices:\nA) costly, B) captive, C) contained, D) paying, E) caught\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n這個遊戲承諾是免費的，但這個孩子的父母很快發現自己為了微交易在做什麼？\n並且有5個選項：\nA) 昂貴的，B) 被俘虜的，C) 受限的，D) 付款的，E) 被抓住的\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題描述了一個“免費”遊戲，但父母為了遊戲內的微交易付出了代價。微交易是指在遊戲中購買額外物品或功能的付費行為。因此，父母為了遊戲付出了“付款”。選項A“昂貴的”描述了結果，但不是父母所做的行為。選項B“被俘虜的”和E“被抓住的”與遊戲無關。選項C“受限的”描述了可能發生的情況，但不是父母所做的行為。選項D“付款的”最準確地描述了父母為了微交易所做的行為。\n\n最終答案\n{\"answer\": \"D\"}",
+    "Answer": "D",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nWhat kind of driving leads to accidents?\nAnd there are 5 choices:\nA) stressful, B) dangerous, C) fun, D) illegal, E) deadly\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n哪種駕駛行為導致事故？\n並且有5個選項：\nA) 壓力大的，B) 危險的，C) 有趣的，D) 非法的，E) 致命的\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題詢問的是導致事故的駕駛行為。\nA) 壓力大的駕駛行為可能增加事故風險，但並非直接導致事故。\nB) 危險的駕駛行為直接與事故風險相關。\nC) 有趣的駕駛行為與事故無關。\nD) 非法的駕駛行為可能包括危險行為，但並非所有非法行為都會導致事故。\nE) 致命的駕駛行為是事故的結果，而非原因。\n\n因此，最直接導致事故的駕駛行為是危險的駕駛行為。\n\n最終答案\n{\"answer\": \"B\"}\n",
+    "Answer": "B",
+    "MyAnswer": "B"
+  },
+  {
+    "Question": "There is a Question: \nWhat is eating too much dinner likely to result in?\nAnd there are 5 choices:\nA) tiredness, B) living longer, C) stomach ache, D) illness, E) acid reflux\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n吃太多晚餐很可能導致什麼結果？\n並且有5個選項：\nA) 疲勞，B) 活得更長，C) 胃痛，D) 生病，E) 反酸\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n吃太多晚餐會導致消化不良，進而可能引起疲勞、胃痛或反酸。雖然吃太多不一定會直接導致生病，但長期下來會增加患病的風險。活得更長與吃太多晚餐沒有直接關係，反而可能適得其反。因此，最直接且常見的結果是疲勞、胃痛或反酸。在這些選項中，胃痛和反酸是最直接的結果，而疲勞是間接的結果。考慮到選項的直接性，胃痛和反酸都是合理的答案。但反酸更常直接與晚餐過量有關。\n\n最終答案\n{\"answer\": \"E\"}",
+    "Answer": "C",
+    "MyAnswer": "E"
+  },
+  {
+    "Question": "There is a Question: \nWhat is a person chatting with friends likely hoping to accomplish?\nAnd there are 5 choices:\nA) gathering of information, B) communication, C) feel relaxed, D) kill boredom, E) social bonding\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n一個人與朋友聊天，最有可能希望達成什麼目的？\n並且有5個選項：\nA) 獲取信息，B) 交流，C) 感到放鬆，D) 消磨時間，E) 建立社交聯繫\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n雖然所有選項都可能在某種程度上是人們與朋友聊天的目的，但“交流”是最核心和最普遍的目的。聊天本身就是一種交流形式，包含信息的交換、情感的分享、以及彼此的互動。其他選項可以被視為交流的結果或副產品。例如，獲取信息是交流的一部分，放鬆和消磨時間可能是交流帶來的感受，建立社交聯繫則是在交流中加強的。因此，交流是最根本的目的。\n\n最終答案\n{\"answer\": \"B\"}\n",
+    "Answer": "E",
+    "MyAnswer": "B"
+  },
+  {
+    "Question": "There is a Question: \nJame's bare feet were burned as he walked, because the sunshine had made the surface hot.  Where might he have been?\nAnd there are 5 choices:\nA) disneyland, B) snow, C) windowsill, D) street, E) summer\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\nJame's 赤腳在行走時被燙傷了，因為陽光使地面變得炎熱。他可能在哪裡？\n並且有 5 個選項：\nA) 迪士尼樂園，B) 雪地，C) 窗台，D) 街道，E) 夏天\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母 (A-E)。\n",
+    "Result": "推理過程\n問題描述了Jame's赤腳被炎熱的地面燙傷。這意味著地面必須是炎熱的，並且Jame's是赤腳行走的。\nA) 迪士尼樂園：迪士尼樂園的地面可能很熱，但通常人們會穿鞋。\nB) 雪地：雪地是冷的，不會燙傷腳。\nC) 窗台：窗台通常不會讓人赤腳行走，而且通常不會足夠熱到燙傷腳。\nD) 街道：在陽光下，街道的地面（例如柏油路）會變得非常炎熱，並且人們可能會赤腳行走。\nE) 夏天：夏天只是一個季節，不是一個地點。\n\n因此，最有可能的答案是街道。\n\n最終答案\n{\"answer\": \"D\"}",
+    "Answer": "D",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nA fox was thirsty searching for water during the drought, where was he?\nAnd there are 5 choices:\nA) painting, B) hen house, C) california, D) virginia, E) movie hall\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n一隻狐狸在乾旱期間尋找水，它在哪裡？\n並且有5個選項：\nA) 畫作，B) 雞舍，C) 加利福尼亞，D) 維吉尼亞，E) 影院\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n這個問題是一個謎語，利用了“尋找水”的雙關語。狐狸在“加利福尼亞”尋找水，因為“加利福尼亞”這個地名可以拆解為“加利福尼亞” (California)，而“加利福尼亞” (California) 聽起來像“call if you need water”。其他選項與尋找水的概念無關。\n\n最終答案\n{\"answer\": \"C\"}",
+    "Answer": "C",
+    "MyAnswer": "C"
+  },
+  {
+    "Question": "There is a Question: \nWhat might be the result of a season of successful skiing?\nAnd there are 5 choices:\nA) finish line, B) broken bones, C) broken legs, D) chapped lips, E) healthy body\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n一個成功的滑雪季節可能會帶來什麼樣的結果？\n並且有5個選項：\nA) 終點線，B) 骨折，C) 腿骨折，D) 嘴唇乾裂，E) 健康的身體\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n一個成功的滑雪季節意味著享受滑雪的樂趣，並且身體狀況良好。雖然滑雪有受傷的風險（如骨折），但“成功”的季節意味著避免了這些負面結果。終點線與滑雪無關，嘴唇乾裂是滑雪時可能發生的輕微不適，但並非成功的結果。因此，最合適的答案是健康的身體。\n\n最終答案\n{\"answer\": \"E\"}\n",
+    "Answer": "E",
+    "MyAnswer": "E"
+  },
+  {
+    "Question": "There is a Question: \nThe sensor would just the distance then set off an alarm, the installation expert explained it was called a what kind of sensor?\nAnd there are 5 choices:\nA) near, B) closeness, C) here, D) proximity, E) this\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一个问题：\n传感器只是测量距离然后触发警报，安装专家解释说它被称为哪种类型的传感器？\n并且有5个选项：\nA) near（近的）, B) closeness（接近）, C) here（这里）, D) proximity（邻近）, E) this（这个）\n请根据问题选择一个选项。\n在你的回答的结尾，请以完全相同的JSON格式提供你的答案：{\"answer\": \"your_letter_choice\"}\n答案必须是一个单独的英文字母（A-E）。\n",
+    "Result": "推理过程：\n问题描述的是一个传感器测量距离并触发警报。这种传感器专门用于检测物体是否在一定范围内，而不需要实际接触。\n* A) near (近的) - 只是一个形容词，不代表传感器类型。\n* B) closeness (接近) - 也是一个形容词，不代表传感器类型。\n* C) here (这里) - 表示位置，与传感器功能无关。\n* D) proximity (邻近) - 正确描述了这种传感器的功能，即检测物体之间的邻近程度。邻近传感器正是通过测量距离来判断物体是否在预设范围内。\n* E) this (这个) - 指示代词，与传感器类型无关。\n\n因此，最合适的答案是 proximity。\n\n最终答案\n{\"answer\": \"D\"}",
+    "Answer": "D",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nThe man was eating lunch, but rushed when he looked at his watch, why did he rush?\nAnd there are 5 choices:\nA) gain weight, B) late for work, C) heartburn, D) bad breath, E) early for work\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n這個男人正在吃午餐，但當他看表時，匆忙起來，他為什麼匆忙？\n並且有5個選項：\nA) 增重，B) 遲到上班，C) 胃灼熱，D) 口臭，E) 早到上班\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n這個問題描述了一個男人正在吃午餐，但看到時間後變得匆忙。這暗示他需要趕去做某事。\nA) 增重：與匆忙無關。\nB) 遲到上班：這是一個合理的解釋，因為看到時間後他可能意識到自己要遲到了。\nC) 胃灼熱：雖然胃灼熱可能讓人不舒服，但通常不會讓人匆忙起來。\nD) 口臭：口臭不會讓人匆忙。\nE) 早到上班：如果他早到，他不會匆忙。\n\n因此，最合理的答案是B。\n\n最終答案\n{\"answer\": \"B\"}",
+    "Answer": "B",
+    "MyAnswer": "B"
+  },
+  {
+    "Question": "There is a Question: \nThe evacuation became mandatory, so what came on the TV?\nAnd there are 5 choices:\nA) advisory, B) mandate, C) soap opera, D) elective, E) optional\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一个问题：\n疏散变成了强制性的，那么电视上出现了什么？\n并且有5个选项：\nA) 建议，B) 命令，C) 肥皂剧，D) 选修的，E) 可选的\n请根据问题选择一个选项。\n在你的回答的结尾，请以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母选择\"}\n答案必须是一个单独的英文字母（A-E）。\n",
+    "Result": "推理过程：\n问题指出疏散“变成了强制性的”。“强制性”意味着不是建议或可选的，而是必须服从的。电视上出现的内容会反映这种强制性，因此会是“命令”。肥皂剧和选修的与强制性疏散无关。\n\n最终答案\n{\"answer\": \"B\"}",
+    "Answer": "A",
+    "MyAnswer": "B"
+  },
+  {
+    "Question": "There is a Question: \nThe person gave a good hands on what to show how to do the work?\nAnd there are 5 choices:\nA) demonstration, B) garage, C) building, D) barn, E) synagogue\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n這個人給出了很好的實踐指導，來展示如何完成工作？\n並且有5個選項：\nA) 演示，B) 車庫，C) 建築，D) 穀倉，E) 猶太教堂\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題詢問的是誰給出了很好的實踐指導來展示如何完成工作。選項中，“演示” (A) 最符合這個描述。演示通常涉及展示如何做某事，提供實踐指導。其他選項（車庫、建築、穀倉、猶太教堂）都是地點，與提供指導無直接關聯。\n\n最終答案\n{\"answer\": \"A\"}",
+    "Answer": "A",
+    "MyAnswer": "A"
+  },
+  {
+    "Question": "There is a Question: \nWhere would you see some people doing jumping jacks?\nAnd there are 5 choices:\nA) military base, B) opera, C) water fountain, D) bus stop, E) church\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n你會在哪裡看到一些人做跳躍運動（開合跳）？\n並且有5個選項：\nA) 軍事基地，B) 歌劇院，C) 噴泉，D) 公車站，E) 教堂\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n開合跳是一種體能訓練，通常在需要體能鍛鍊的場所進行。\nA) 軍事基地：軍人需要進行體能訓練，開合跳是常見的訓練項目。\nB) 歌劇院：歌劇院是表演藝術場所，不適合做體能訓練。\nC) 噴泉：噴泉是觀賞場所，不適合做體能訓練。\nD) 公車站：公車站是候車場所，不適合做體能訓練。\nE) 教堂：教堂是宗教場所，不適合做體能訓練。\n因此，最有可能看到人們做開合跳的地方是軍事基地。\n\n最終答案\n{\"answer\": \"A\"}",
+    "Answer": "A",
+    "MyAnswer": "A"
+  },
+  {
+    "Question": "There is a Question: \nThe body guard was good at his duties, he made the person who hired him what?\nAnd there are 5 choices:\nA) better job, B) irritated, C) feel safe, D) save money, E) headache\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n這位保鏢擅長他的職責，他讓雇傭他的人感覺如何？\n並且有5個選項：\nA) 更好的工作，B) 惱火，C) 感到安全，D) 節省金錢，E) 頭痛\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n保鏢的職責是保護雇主。如果保鏢擅長他的職責，那麼雇主最直接的感受應該是安全。其他選項，例如更好的工作、節省金錢、惱火或頭痛，並不是保鏢職責直接產生的結果。\n\n最終答案\n{\"answer\": \"C\"}",
+    "Answer": "C",
+    "MyAnswer": "C"
+  },
+  {
+    "Question": "There is a Question: \nLearning languages is difficult.  Even in a full immersion environment you're likely to make mistakes, mistakes will cause misinterpretation, which will be uncomfortable, which will cause what?,\nAnd there are 5 choices:\nA) better communication, B) overthinking, C) frustration, D) misunderstandings, E) headaches\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n學習語言很困難。即使在完全沉浸式的環境中，你也很可能犯錯，錯誤會導致誤解，這會讓人不舒服，這會導致什麼？\n並且有5個選項：\nA) 更好的溝通，B) 過度思考，C) 沮喪，D) 誤解，E) 頭痛\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"your_letter_choice\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題描述了學習語言的困難，以及錯誤、誤解和不適感之間的關聯。問題詢問的是這些負面體驗最終會導致什麼。\n\nA) 更好的溝通：與問題描述的負面體驗相反。\nB) 過度思考：雖然可能發生，但並非必然結果，且不如其他選項直接。\nC) 沮喪：錯誤和誤解確實會讓人感到沮喪，因為它們阻礙了有效的溝通和學習進度。\nD) 誤解：這是問題中已經提到的原因，而不是結果。\nE) 頭痛：與語言學習的心理過程無直接關聯。\n\n因此，最合乎邏輯的答案是沮喪，因為持續的錯誤和不適感會導致學習者感到灰心和沮喪。\n\n最終答案\n{\"answer\": \"C\"}",
+    "Answer": "C",
+    "MyAnswer": "C"
+  },
+  {
+    "Question": "There is a Question: \nJim enjoyed killing people, but he did it too often and the cops found out.  What might the cops do to him?\nAnd there are 5 choices:\nA) going to jail, B) going to prison, C) beat him up, D) get arrested, E) die\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\nJim 喜歡殺人，但他太常這麼做，警察發現了。警察可能會對他做什麼？\n並且有 5 個選項：\nA) 進監獄，B) 進獄，C) 揍他，D) 被逮捕，E) 死亡\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母 (A-E)。\n",
+    "Result": "推理過程\nJim 喜歡殺人且被警察發現，這意味著他犯下了嚴重的犯罪行為。\n選項 A) 進監獄：如果 Jim 被判有罪，他可能會被判處監禁。\n選項 B) 進獄：與 A 相同，指監禁。\n選項 C) 揍他：警察不能私自懲罰嫌疑人，這是不合法的。\n選項 D) 被逮捕：逮捕是調查的初步步驟，但並非最終結果。\n選項 E) 死亡：除非 Jim 在抵抗逮捕時對警察構成直接威脅，否則警察不會處決他。\n\n最有可能的結果是 Jim 會被逮捕並接受審判，如果被判有罪，則會被判處監禁。選項 A 和 B 都是正確的，但 A 更常用。\n\n最終答案\n{\"answer\": \"A\"}",
+    "Answer": "D",
+    "MyAnswer": "A"
+  },
+  {
+    "Question": "There is a Question: \nWhere is there usually a fiddle playing?\nAnd there are 5 choices:\nA) music store, B) dance hall, C) orchestra, D) symphony, E) tennessee\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n小提琴通常在哪裡演奏？\n有5個選項：\nA) 樂器店，B) 舞廳，C) 管弦樂團，D) 交響樂團，E) 田納西州\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n小提琴是一種樂器，通常在需要演奏音樂的場合使用。\nA) 樂器店：雖然小提琴在樂器店出售，但通常不是演奏的地方。\nB) 舞廳：小提琴偶爾會在舞廳演奏，但不是最常見的場所。\nC) 管弦樂團：管弦樂團經常使用小提琴。\nD) 交響樂團：交響樂團也是經常使用小提琴的。\nE) 田納西州：田納西州是一個地點，而不是演奏小提琴的場所。\n\n管弦樂團和交響樂團都是小提琴常見的演奏場所，但交響樂團更為正式和常見。因此，交響樂團是更合適的答案。\n\n最終答案\n{\"answer\": \"D\"}",
+    "Answer": "C",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nWhat is the only was to recover from exhaustion?\nAnd there are 5 choices:\nA) mediate, B) have rest, C) stay in bed, D) run out of steam, E) go to sleep\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一个问题：\n从疲惫中恢复的唯一方法是什么？\n并且有5个选项：\nA) 冥想，B) 休息，C) 卧床，D) 精疲力尽，E) 睡觉\n请根据问题选择一个选项。\n在你的回答的结尾，请以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母选择\"}\n答案必须是一个单独的英文字母（A-E）。\n",
+    "Result": "推理过程\n问题询问从疲惫中恢复的唯一方法。\nA) 冥想可以帮助缓解压力，但并非从疲惫中恢复的唯一方法。\nB) 休息是一个广泛的概念，可以包括许多活动，但并非总是能有效恢复疲惫。\nC) 卧床是休息的一种形式，但并非总是最有效的恢复方式。\nD) 精疲力尽是疲惫的状态，而不是恢复方法。\nE) 睡觉是身体和精神恢复的主要方式，是解决疲惫问题的最直接和根本方法。\n\n因此，睡觉是恢复疲惫的唯一方法。\n\n最终答案\n{\"answer\": \"E\"}\n",
+    "Answer": "B",
+    "MyAnswer": "E"
+  },
+  {
+    "Question": "There is a Question: \nWhat would you do if you want to be able to earn money?\nAnd there are 5 choices:\nA) apply for job, B) stand in line, C) take care of proposals, D) pass course, E) play the lottery\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n如果你想賺錢，你會怎麼做？\n並且有5個選項：\nA) 申請工作，B) 排隊，C) 處理提案，D) 通過課程，E) 買彩票\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n賺錢最可靠的方式是透過勞動或技能。申請工作(A)是直接提供勞動以換取報酬的方式。排隊(B)通常沒有直接報酬，除非是特定情況下的排隊活動（例如，參與促銷活動）。處理提案(C)可能需要時間和精力，且不保證成功。通過課程(D)可以提升技能，但需要時間和金錢投入，且提升技能後才能賺錢。買彩票(E)是機率極低的賭博行為，不屬於可靠的賺錢方式。因此，申請工作是最直接且合理的選擇。\n\n最終答案\n{\"answer\": \"A\"}\n",
+    "Answer": "A",
+    "MyAnswer": "A"
+  },
+  {
+    "Question": "There is a Question: \nWhat is a grumpy person likely to have?\nAnd there are 5 choices:\nA) headache, B) understand themselves, C) compliments, D) own house, E) happiness\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n一個脾氣暴躁的人很可能會有什麼？\n並且有5個選項：\nA) 頭痛，B) 了解自己，C) 讚美，D) 自己的房子，E) 幸福\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n脾氣暴躁的人通常會因為情緒波動而導致身體不適。頭痛是常見的壓力或情緒反應。其他選項，例如了解自己、讚美、自己的房子和幸福，與脾氣暴躁沒有直接的因果關係，甚至可能相反。\n\n最終答案\n{\"answer\": \"A\"}",
+    "Answer": "A",
+    "MyAnswer": "A"
+  },
+  {
+    "Question": "There is a Question: \nWhat do drugs do?\nAnd there are 5 choices:\nA) damage, B) cloud mind, C) lower i.q, D) cause illness, E) cause accidents\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n毒品會做什麼？\n並且有5個選項：\nA) 損害，B) 混淆思緒，C) 降低智商，D) 導致疾病，E) 導致事故\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n毒品會對身體和心理造成多方面的負面影響。選項A「損害」是一個廣泛的描述，涵蓋了毒品可能造成的各種傷害，包括身體器官的損害、心理健康的損害，以及社會關係的損害。選項B「混淆思緒」是毒品常見的影響之一，但並非毒品的所有影響。選項C「降低智商」是長期毒品使用的可能結果，但並非所有毒品都會導致此情況。選項D「導致疾病」也是毒品可能造成的結果，但同樣並非所有毒品都會導致疾病。選項E「導致事故」是毒品影響判斷力造成的結果，但並非毒品的所有影響。因此，最全面的答案是「損害」，它涵蓋了毒品可能造成的各種負面影響。\n\n最終答案\n{\"answer\": \"A\"}\n",
+    "Answer": "E",
+    "MyAnswer": "A"
+  },
+  {
+    "Question": "There is a Question: \nA beaver can destroy a machines functionality if they build their dam in this?\nAnd there are 5 choices:\nA) strip club, B) pocket, C) millpond, D) ontario, E) lake or river\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一个问题：\n如果海狸在此处筑坝，它们可以破坏机器的功能吗？\n并且有5个选项：\nA) 夜总会，B) 口袋，C) 磨坊池，D) 安大略，E) 湖泊或河流\n请根据问题选择一个选项。\n在你的回答的结尾，请以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母选择\"}\n答案必须是一个英文字母（A-E）。\n",
+    "Result": "推理过程：\n海狸筑坝会改变水流，并可能导致水位上升。如果机器位于水边，海狸筑坝可能会淹没或损坏机器。选项中，磨坊池（C）是专门用于利用水力驱动磨坊的，因此机器（磨坊）最有可能受到海狸筑坝的影响。其他选项（夜总会、口袋、安大略、湖泊或河流）与机器的直接关联性较弱。\n\n最终答案\n{\"answer\": \"C\"}",
+    "Answer": "C",
+    "MyAnswer": "C"
+  },
+  {
+    "Question": "There is a Question: \nThey decided to hash things out over drinks, after enough booze they were able to get close on a few things and what?\nAnd there are 5 choices:\nA) reach tentative agreement, B) suicide, C) examine thing, D) commit murder, E) stay in bed\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n他們決定在喝酒時解決問題，在喝了足夠的酒後，他們在一些事情上得以接近，然後呢？\n並且有5個選項：\nA) 達成初步協議，B) 自殺，C) 檢查事情，D) 犯殺人罪，E) 待在床上\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題描述了人們在喝酒後，在一些事情上取得進展。雖然喝酒可能導致不理智的行為，但問題的語氣暗示著一種解決問題的嘗試，而不是直接的暴力或絕望行為。\n\n*   **A) 達成初步協議:** 這是最合理的結果。喝酒可能降低防禦心理，使人們更容易妥協和達成協議。\n*   **B) 自殺:** 雖然酒精與自殺風險有關，但問題的描述並未暗示這種極端情況。\n*   **C) 檢查事情:** 這太籠統，沒有說明他們在喝酒後取得了什麼進展。\n*   **D) 犯殺人罪:** 問題的語氣不指向暴力犯罪。\n*   **E) 待在床上:** 這沒有說明他們在喝酒後取得了什麼進展。\n\n因此，最符合問題描述的選項是達成初步協議。\n\n最終答案\n{\"answer\": \"A\"}",
+    "Answer": "A",
+    "MyAnswer": "A"
+  },
+  {
+    "Question": "There is a Question: \nWhere could a fungus grow and not be disturbed by sunlight?\nAnd there are 5 choices:\nA) under rocks, B) manhattan, C) toenails, D) grocery store, E) fallen tree\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n真菌可以在哪裡生長，並且不受陽光干擾？\n並且有5個選項：\nA) 岩石下，B) 曼哈頓，C) 指甲，D) 超市，E) 倒下的樹\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題詢問真菌可以在哪裡生長，且不受陽光干擾。\nA) 岩石下：岩石下通常是陰暗潮濕的環境，適合真菌生長。\nB) 曼哈頓：曼哈頓是城市，陽光充足，不適合真菌大量生長。\nC) 指甲：指甲是人體的一部分，通常是陰暗且潮濕的，適合真菌生長，例如灰指甲。\nD) 超市：超市通常光線充足，且環境相對乾燥，不適合真菌大量生長。\nE) 倒下的樹：倒下的樹木部分區域會被遮蔽，但也會有陽光照射，不完全不受陽光干擾。\n\n比較之下，岩石下和指甲都是較佳的選擇。但指甲是人體的一部分，更符合不受陽光干擾的條件。岩石下可能會有間接陽光。\n\n最終答案\n{\"answer\": \"C\"}",
+    "Answer": "A",
+    "MyAnswer": "C"
+  },
+  {
+    "Question": "There is a Question: \nCan you name a good reason for attending school?\nAnd there are 5 choices:\nA) get smart, B) boredom, C) colds and flu, D) taking tests, E) spend time\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n你能說出一個上學的好理由嗎？\n並且有5個選項：\nA) 變得聰明，B) 無聊，C) 感冒和流感，D) 參加考試，E) 消磨時間\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題詢問上學的一個好理由。\nA) 變得聰明 - 這是上學的一個明確的好處。\nB) 無聊 - 這不是上學的好理由，反而可能是上學的負面感受。\nC) 感冒和流感 - 這是一個不上學的理由，而不是好理由。\nD) 參加考試 - 考試是學習過程的一部分，但並不是上學本身的好理由。\nE) 消磨時間 - 這不是上學的好理由，暗示上學沒有實際目的。\n\n因此，最合適的答案是A。\n\n最終答案\n{\"answer\": \"A\"}\n",
+    "Answer": "A",
+    "MyAnswer": "A"
+  },
+  {
+    "Question": "There is a Question: \nWhat state south of Kentucky and north of Alabama will you find people playing the fiddle?\nAnd there are 5 choices:\nA) alabama, B) tennessee, C) violin case, D) music store, E) bow and strings\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n在肯塔基州以南、阿拉巴馬州以北的哪個州，你會發現人們在拉小提琴？\n有5個選項：\nA) 阿拉巴馬州，B) 田納西州，C) 小提琴盒，D) 樂器店，E) 琴弓和琴弦\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題問的是在肯塔基州以南、阿拉巴馬州以北的州，人們在拉小提琴。\n選項A是阿拉巴馬州，在肯塔基州以南，但問題要求在阿拉巴馬州*以北*的州。\n選項B是田納西州，位於肯塔基州以南和阿拉巴馬州以北。田納西州以其鄉村音樂傳統而聞名，而小提琴是鄉村音樂的重要樂器。\n選項C、D和E都不是州。\n\n因此，答案是田納西州。\n\n最終答案\n{\"answer\": \"B\"}",
+    "Answer": "B",
+    "MyAnswer": "B"
+  },
+  {
+    "Question": "There is a Question: \nThough she made the cut years ago, its figurative scars would never what?\nAnd there are 5 choices:\nA) joining, B) put together, C) stitch, D) heal, E) paste\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一个问题：\n尽管她几年前就做出了选择，但其隐喻性的伤痕永远不会怎样？\n并且有5个选项：\nA) joining（加入），B) put together（拼凑），C) stitch（缝合），D) heal（治愈），E) paste（粘贴）\n请根据问题选择一个选项。\n在你的回答的结尾，请以完全相同的JSON格式提供你的答案：{\"answer\": \"your_letter_choice\"}\n答案必须是一个英文字母（A-E）。\n",
+    "Result": "推理过程：\n问题描述的是一种选择带来的“隐喻性的伤痕”，并且这种伤痕是“永远不会”被某种行为所影响的。这意味着我们需要选择一个表示无法完全修复或消除的动作。\n\n*   **A) joining (加入)**：与伤痕的永久性无关。\n*   **B) put together (拼凑)**：暗示了某种修复，但可能不完美，但问题强调“永远不会”。\n*   **C) stitch (缝合)**：类似于拼凑，暗示修复，但问题强调“永远不会”。\n*   **D) heal (治愈)**：与问题中“永远不会”的描述相矛盾，因为治愈意味着伤痕会消失。\n*   **E) paste (粘贴)**：粘贴是表面上的连接，无法真正修复深层的伤痕，并且暗示了伤痕仍然存在。这与“隐喻性的伤痕永远不会”的描述最吻合。\n\n因此，最合适的答案是E。\n\n最终答案\n{\"answer\": \"E\"}",
+    "Answer": "D",
+    "MyAnswer": "E"
+  },
+  {
+    "Question": "There is a Question: \nWhat does sex often make happen in people?\nAnd there are 5 choices:\nA) making love, B) feel good, C) happyness, D) wonderful thing, E) cloud judgment\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n性行為經常在人們身上產生什麼樣的影響？\n並且有5個選項：\nA) 產生愛意，B) 感覺良好，C) 幸福，D) 美妙的事情，E) 蒙蔽判斷\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題詢問性行為*經常*在人們身上產生的影響。雖然愛意、感覺良好、幸福和美妙的事情都可能在性行為中產生，但這些並非總是發生，且性行為本身並不保證這些結果。然而，性行為確實可能蒙蔽判斷，尤其是在涉及權力不平衡、酒精或藥物濫用等情況下。因此，從“經常”發生的影響來看，蒙蔽判斷是最符合的選項。\n\n最終答案\n{\"answer\": \"E\"}\n",
+    "Answer": "B",
+    "MyAnswer": "E"
+  },
+  {
+    "Question": "There is a Question: \nWhere would you see people in uniform playing with a ball?\nAnd there are 5 choices:\nA) hole, B) television, C) sporting goods store, D) pool table, E) sporting event\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一个问题：\n你会在哪里看到穿着制服的人们玩球？\n并且有5个选项：\nA) 洞，B) 电视，C) 运动用品店，D) 台球桌，E) 体育赛事\n请根据问题选择一个选项。\n在你的回答的结尾，请以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母选择\"}\n答案必须是一个单独的英文字母（A-E）。\n",
+    "Result": "推理过程：\n问题问的是“在哪里看到穿着制服的人们玩球”。\nA) 洞：与穿着制服的人们玩球无关。\nB) 电视：电视上会转播体育赛事，体育赛事中经常有穿着制服的人们玩球。\nC) 运动用品店：运动用品店里卖球和制服，但看不到人们玩球。\nD) 台球桌：台球桌上玩的是台球，通常不需要穿着制服。\nE) 体育赛事：体育赛事是穿着制服的人们玩球最直接的场所。\n\n因此，最合适的答案是体育赛事。\n\n最终答案\n{\"answer\": \"E\"}\n",
+    "Answer": "E",
+    "MyAnswer": "E"
+  },
+  {
+    "Question": "There is a Question: \nWhat kind of place could have a seafood restaurant?\nAnd there are 5 choices:\nA) new york, B) coastal cities, C) city, D) coastal cities, E) boston\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n哪種類型的地點可能會有海鮮餐廳？\n並且有5個選項：\nA) 紐約，B) 沿海城市，C) 城市，D) 沿海城市，E) 波士頓\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題詢問哪種類型的地點可能會有海鮮餐廳。海鮮餐廳最有可能位於靠近海洋的地區，以便獲得新鮮的海鮮。選項A（紐約）是一個大城市，但並非沿海城市。選項C（城市）太過籠統，不一定靠近海洋。選項D（沿海城市）與選項B相同，但重複了。選項E（波士頓）是一個沿海城市，因此很可能會有海鮮餐廳。因此，沿海城市（選項B和D）是最合適的答案。由於選項B和D相同，選擇其中一個即可。\n\n最終答案\n{\"answer\": \"B\"}",
+    "Answer": "C",
+    "MyAnswer": "B"
+  },
+  {
+    "Question": "There is a Question: \nWho was the head of the branch yelling at?\nAnd there are 5 choices:\nA) owner, B) foot, C) subordinate, D) base, E) point\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一个问题：\n树枝的负责人正在对谁大喊大叫？\n并且有5个选项：\nA) 老板，B) 脚，C) 下属，D) 基地，E) 点\n请根据问题选择一个选项。\n在你的回答的结尾，请以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母选择\"}\n答案必须是一个单独的英文字母（A-E）。\n",
+    "Result": "推理过程：\n问题问的是“树枝的负责人”在对谁大喊大叫。树枝的负责人是树干，树干负责管理树枝和树叶等下属部分。因此，树枝的负责人（树干）会对树枝或树叶（下属）大喊大叫。选项C“下属”最符合这个逻辑。\n\n最终答案\n{\"answer\": \"C\"}\n",
+    "Answer": "C",
+    "MyAnswer": "C"
+  },
+  {
+    "Question": "There is a Question: \nHe made another call, he did this all day hoping people would what well to his offer?\nAnd there are 5 choices:\nA) hang up, B) respond, C) contact, D) answer, E) attracting ducks\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n他又打了一個電話，他整天都這樣做，希望人們對他的提議做出什麼樣的回應？\n有5個選項：\nA) 掛斷，B) 回應，C) 聯繫，D) 接聽，E) 吸引鴨子\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題描述一個人不斷地打電話，希望得到某種回應。選項中，\"回應\" (B) 是最直接且符合語境的答案。他希望人們對他的提議做出回應，無論是同意、拒絕還是其他形式的回應。其他選項不符合他持續打電話的目的：掛斷 (A) 是對方做的，聯繫 (C) 是他主動做的，接聽 (D) 只是電話接通的行為，吸引鴨子 (E) 毫無意義。\n\n最終答案\n{\"answer\": \"B\"}",
+    "Answer": "B",
+    "MyAnswer": "B"
+  },
+  {
+    "Question": "There is a Question: \nShe needs to visit a bookshop after buying the latest fashion, where should she look?\nAnd there are 5 choices:\nA) student union, B) mall, C) department store, D) library, E) town or city\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一个问题：\n她在购买最新时尚之后需要去书店，她应该在哪里找？\n并且有5个选项：\nA) 学生会，B) 商场，C) 百货商店，D) 图书馆，E) 城镇或城市\n请根据问题选择一个选项。\n在你的回答的结尾，请以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母选择\"}\n答案必须是一个单独的英文字母（A-E）。\n",
+    "Result": "推理过程：\n问题描述的是一个女性在购买最新时尚之后需要去书店。选项中，商场和百货商店通常会同时包含服装店和书店。学生会和图书馆主要与学习相关，城镇或城市范围太大，不具体指向书店。因此，最合理的答案是商场或百货商店。考虑到问题中“最新时尚”的描述，百货商店通常会更注重时尚潮流，因此更符合题意。\n\n最终答案\n{\"answer\": \"C\"}",
+    "Answer": "B",
+    "MyAnswer": "C"
+  },
+  {
+    "Question": "There is a Question: \nWhere could you see an advertisement while reading news?\nAnd there are 5 choices:\nA) television, B) bus, C) email, D) web page, E) la ville\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n在閱讀新聞時，你可以在哪裡看到廣告？\n並且有5個選項：\nA) 電視，B) 公車，C) 電子郵件，D) 網頁，E) 城市\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題詢問在閱讀新聞時，可以在哪裡看到廣告。\nA) 電視：雖然新聞可以在電視上播放，但電視本身不是閱讀新聞的媒介。\nB) 公車：公車上可能有廣告，但與閱讀新聞無直接關聯。\nC) 電子郵件：電子郵件中可能會收到新聞連結，但廣告通常會出現在新聞網站或應用程式中，而不是直接在電子郵件中。\nD) 網頁：閱讀線上新聞時，網頁上通常會顯示各種廣告。\nE) 城市：城市本身不是閱讀新聞的媒介，雖然城市裡可能有新聞和廣告，但與問題不符。\n\n因此，最合適的答案是網頁。\n\n最終答案\n{\"answer\": \"D\"}\n",
+    "Answer": "D",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nWhat is required to be good at playing tennis?\nAnd there are 5 choices:\nA) tennis racket, B) skill, C) competition, D) tennis court, E) legs\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n要擅長打網球需要什麼？\n並且有5個選項：\nA) 網球拍，B) 技術，C) 競爭，D) 網球場，E) 腿\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n要擅長打網球，需要多方面的條件。網球拍（A）是必要的工具，但僅有網球拍不夠。網球場（D）是打網球的場所，但也不是擅長的關鍵。腿（E）的強壯有助於移動，但也不是決定性的因素。競爭（C）可以激勵進步，但並非擅長的本質。技術（B）包含了發球、接發球、正手、反手、截擊、放小球等各個方面，是決定網球水平的核心要素。因此，技術是最重要的。\n\n最終答案\n{\"answer\": \"B\"}",
+    "Answer": "B",
+    "MyAnswer": "B"
+  },
+  {
+    "Question": "There is a Question: \nWhat state is the John Davis  Lodge toll road found in?\nAnd there are 5 choices:\nA) new jersey, B) eastern united states, C) good repair, D) connecticut, E) arizona\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\nJohn Davis Lodge 收費公路位於哪個州？\n有 5 個選項：\nA) 新澤西，B) 美國東部，C) 良好維修狀態，D) 康涅狄格州，E) 亞利桑那州\n請根據問題選擇一個選項。\n在您的回答的末尾，請以完全相同的 JSON 格式提供您的答案：{\"answer\": \"your_letter_choice\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\nJohn Davis Lodge 收費公路，也稱為 Merritt Parkway，位於康涅狄格州。其他選項不正確。新澤西州有自己的收費公路系統，美國東部是一個區域，良好維修狀態描述的是公路的狀況，亞利桑那州位於美國西部。\n\n最終答案\n{\"answer\": \"D\"}",
+    "Answer": "D",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nThe man went to clown college, he had always want to run away with the what?\nAnd there are 5 choices:\nA) circus, B) carnival, C) surprise, D) spoons, E) party\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一个问题：\n这个男人去了小丑学院，他一直想和什么一起逃跑？\n有5个选项：\nA) 马戏团，B) 嘉年华，C) 惊喜，D) 勺子，E) 派对\n请根据问题选择一个选项。\n在你的回答的结尾，请以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母选择\"}\n答案必须是一个单独的英文字母（A-E）。\n",
+    "Result": "推理过程：\n这个问题是一个脑筋急转弯。小丑学院的学员通常会学习各种小丑技巧，其中一个经典技巧是“逃跑勺子”。这个梗源于一个关于小丑的笑话，讲述了小丑如何用勺子逃跑。因此，最合理的答案是勺子。\n\n最终答案\n{\"answer\": \"D\"}\n",
+    "Answer": "A",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nJamie wanted to reduce her waist size, but all of her efforts failed miserably.  She continued to do what?\nAnd there are 5 choices:\nA) gain weight, B) augment, C) dispare, D) make larger, E) expand\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\nJamie想要減小她的腰圍，但她所有的努力都徹底失敗了。她繼續做什麼？\n並且有5個選項：\nA) 增加體重，B) 擴大，C) 絕望，D) 變大，E) 膨脹\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題指出Jamie想要減小腰圍，但她的努力都失敗了。選項中，A、B、D、E都與減小腰圍的目的相反，表示腰圍會變大。C表示情緒上的反應，與腰圍本身沒有直接關係。因此，最符合問題情境的選項是C，表示Jamie在努力失敗後感到絕望。\n\n最終答案\n{\"answer\": \"C\"}",
+    "Answer": "A",
+    "MyAnswer": "C"
+  },
+  {
+    "Question": "There is a Question: \nJames felt himself losing consciousness.  He was frightened.  He didn't want this.  He was scared of what?\nAnd there are 5 choices:\nA) death, B) coma, C) peace, D) forgetfulness, E) loss of life\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\nJames 感到自己正在失去意識。他感到害怕。他不想要這樣。他害怕什麼？\n並且有 5 個選項：\nA) 死亡，B) 昏迷，C) 平靜，D) 遺忘，E) 喪失生命\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母 (A-E)。\n",
+    "Result": "推理過程\nJames 感到害怕失去意識，這表示他對失去意識的結果感到恐懼。選項 A (死亡) 和 E (喪失生命) 都是失去意識的可能結果，但問題的重點是 James *正在* 失去意識，而非已經死亡。選項 B (昏迷) 描述了失去意識的狀態，但並未解釋他為何感到害怕。選項 D (遺忘) 可能是失去意識的結果之一，但並非最直接的恐懼來源。選項 C (平靜) 與害怕的情緒相反。最直接的恐懼是失去對自身狀態的控制，以及對死亡的潛在恐懼。雖然昏迷不一定導致死亡，但失去意識本身會讓人聯想到死亡的可能性，因此死亡是最合理的答案。\n\n最終答案\n{\"answer\": \"A\"}",
+    "Answer": "A",
+    "MyAnswer": "A"
+  },
+  {
+    "Question": "There is a Question: \nIf someone is aloof and self-important, what is their experience when meeting people?\nAnd there are 5 choices:\nA) stress, B) nervousness, C) smile, D) being bored, E) making new friends\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n如果一個人孤傲且自命不凡，他們在遇到人們時的體驗是什麼？\n並且有5個選項：\nA) 壓力，B) 緊張，C) 微笑，D) 感到無聊，E) 結交新朋友\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n孤傲且自命不凡的人通常認為自己比別人優越。因此，他們在與人互動時，可能會因為需要維持這種優越感，或者擔心他人無法理解自己而感到壓力。他們可能需要不斷地評估對方是否“配得上”與自己交流，或者需要壓抑自己的真實情感以保持高冷的形象。緊張也是可能的，因為他們可能害怕被揭穿，或者害怕與他人產生真正的連結，因為這可能意味著他們需要放下防備。微笑和結交新朋友的可能性較低，因為這兩種行為都暗示著平等的互動和親和力，與孤傲自命不凡的性格不符。感到無聊是可能的，但壓力通常是更直接和更強烈的體驗。\n\n最終答案\n{\"answer\": \"A\"}",
+    "Answer": "D",
+    "MyAnswer": "A"
+  },
+  {
+    "Question": "There is a Question: \nHe was receiving workman's compensation, he had tripped over a metal rod while building where?\nAnd there are 5 choices:\nA) factory, B) construction site, C) engine, D) insides of skyscraper's walls, E) shops\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n他正在領取工傷補償，他在哪裡建造時被一根金屬桿絆倒了？\n並且有5個選項：\nA) 工廠，B) 建築工地，C) 發動機，D) 摩天大樓的牆壁內部，E) 商店\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題描述的是工傷補償，並且受傷原因是絆倒在金屬桿上。\nA) 工廠：工廠通常有金屬桿，且存在工傷風險。\nB) 建築工地：建築工地通常有金屬桿，且存在工傷風險。\nC) 發動機：發動機本身不太可能會有金屬桿讓人絆倒。\nD) 摩天大樓的牆壁內部：雖然可能存在金屬桿，但通常不是直接暴露讓人絆倒的。\nE) 商店：商店通常不會有暴露的金屬桿讓人絆倒。\n\n建築工地和工廠都是可能發生工傷的場所，且都有可能存在金屬桿。但建築工地更符合“建造”的語境，因為工廠是生產場所，而建築工地是建造場所。\n\n最終答案\n{\"answer\": \"B\"}",
+    "Answer": "B",
+    "MyAnswer": "B"
+  },
+  {
+    "Question": "There is a Question: \nJohn and James spent most of their time communicating with each other on their project.  The time required to communicate slowed their what?\nAnd there are 5 choices:\nA) static, B) train of thought., C) progress, D) transfer of information, E) collaboration\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\nJohn 和 James 花費了大部分時間在他們的項目上互相溝通。溝通所需的時間減慢了他們的什麼？\n並且有 5 個選項：\nA) 靜態，B) 思維流程，C) 進度，D) 信息傳輸，E) 協作\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母 (A-E)。\n",
+    "Result": "推理過程\n問題指出 John 和 James 花費了大量時間在溝通上，而溝通時間過長會減慢某個方面。選項中，進度最直接受到溝通時間的影響。如果他們花費大量時間溝通，而不是實際工作，那麼他們的項目進度自然會減慢。靜態、思維流程、信息傳輸和協作雖然可能與溝通有關，但並非溝通時間過長直接導致的結果。\n\n最終答案\n{\"answer\": \"C\"}",
+    "Answer": "C",
+    "MyAnswer": "C"
+  },
+  {
+    "Question": "There is a Question: \nWhen you play around with your dog they will have?\nAnd there are 5 choices:\nA) alive, B) health, C) fun, D) playing dead, E) black\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n當你和你的狗玩耍時，牠們會擁有什麼？\n並且有5個選項：\nA) 活著，B) 健康，C) 樂趣，D) 假死，E) 黑色\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題問的是當你和狗玩耍時，牠們會擁有什麼。\nA) 活著 - 牠們玩耍時當然是活著的，但這不是玩耍的特徵。\nB) 健康 - 健康是好事，但玩耍不一定代表牠們健康。\nC) 樂趣 - 玩耍的目的是讓牠們感到快樂和享受，所以牠們會擁有樂趣。\nD) 假死 - 牠們不會假死。\nE) 黑色 - 牠們的毛色可能是黑色，但這與玩耍無關。\n\n因此，最合適的答案是樂趣。\n\n最終答案\n{\"answer\": \"C\"}",
+    "Answer": "C",
+    "MyAnswer": "C"
+  },
+  {
+    "Question": "There is a Question: \nWhere would a person keep a book while it's being read?\nAnd there are 5 choices:\nA) closet, B) library of congress, C) classroom, D) in bed, E) desk\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一个问题：\n一个人在阅读时会把书放在哪里？\n并且有5个选项：\nA) 壁橱，B) 美国国会图书馆，C) 教室，D) 在床上，E) 书桌\n请根据问题选择一个选项。\n在你的回答的结尾，请以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母选择\"}\n答案必须是一个单独的英文字母（A-E）。\n",
+    "Result": "推理过程\n问题问的是“一个人在阅读时会把书放在哪里？”选项中，壁橱通常用来存放物品，美国国会图书馆是存放大量书籍的地方，教室是学习场所，书桌是学习和阅读的常用场所，床上是休息场所，但也可以阅读。考虑到阅读时最方便和常见的放置书籍的位置，书桌和床上都是合理的选择。但是，书桌更专注于阅读活动，而床上更多是休息活动，虽然也可以阅读，但不是主要目的。因此，书桌是最佳答案。\n\n最终答案\n{\"answer\": \"E\"}\n",
+    "Answer": "E",
+    "MyAnswer": "E"
+  },
+  {
+    "Question": "There is a Question: \nThe student needed to  get some new pencils, where did he go?\nAnd there are 5 choices:\nA) store, B) classroom, C) backpack, D) cabinet, E) teacher\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n學生需要一些新的鉛筆，他去了哪裡？\n並且有5個選項：\nA) 商店，B) 教室，C) 背包，D) 櫥櫃，E) 老師\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n學生需要新的鉛筆，通常會去商店購買。教室、背包、櫥櫃和老師都不是購買鉛筆的地方。\n\n最終答案\n{\"answer\": \"A\"}",
+    "Answer": "A",
+    "MyAnswer": "A"
+  },
+  {
+    "Question": "There is a Question: \nShe loved buying products, she was driven by her what to shop more than any practical needs?\nAnd there are 5 choices:\nA) desire, B) money, C) time, D) credit, E) spending money\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一个问题：\n她喜欢购买产品，是什么驱动她去购物，而不是任何实际的需求？\n并且有5个选项：\nA) 渴望，B) 金钱，C) 时间，D) 信用，E) 花钱\n请根据问题选择一个选项。\n在你的回答的结尾，请以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母选择\"}\n答案必须是一个英文字母（A-E）。\n",
+    "Result": "推理过程：\n问题询问的是驱动她购物的因素，而非实际需求。\nA) 渴望：渴望是一种强烈想要某物的愿望，即使没有实际需求，也可能导致购物。这与问题描述相符。\nB) 金钱：金钱是购物的手段，而非驱动力。\nC) 时间：时间可能影响购物决策，但不是主要驱动力。\nD) 信用：信用是支付方式，而非驱动力。\nE) 花钱：花钱是购物的结果，而非驱动力。\n\n因此，最合适的答案是渴望。\n\n最终答案\n{\"answer\": \"A\"}\n",
+    "Answer": "A",
+    "MyAnswer": "A"
+  },
+  {
+    "Question": "There is a Question: \nHow does getting paid feel?\nAnd there are 5 choices:\nA) income tax, B) satisfaction, C) sorrow, D) ocean, E) bill collectors to happy\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n拿到薪水是什麼感覺？\n並且有5個選項：\nA) 收入稅，B) 滿足感，C) 悲傷，D) 海洋，E) 讓收款人感到高興\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題詢問的是「拿到薪水是什麼感覺」。\nA) 收入稅：薪水需要繳納所得稅，但稅收本身不是一種感覺。\nB) 滿足感：拿到薪水通常會讓人感到滿足，因為努力工作得到了回報。\nC) 悲傷：通常拿到薪水不會讓人感到悲傷。\nD) 海洋：海洋與拿到薪水沒有直接關聯。\nE) 讓收款人感到高興：這是描述薪水的結果，而不是感覺本身。\n\n最符合問題的答案是滿足感。\n\n最終答案\n{\"answer\": \"B\"}\n",
+    "Answer": "B",
+    "MyAnswer": "B"
+  },
+  {
+    "Question": "There is a Question: \nThe fat man refused to accept what was possible, he complained that he what the simplest activities?\nAnd there are 5 choices:\nA) no go, B) unlikely, C) unable, D) cant do, E) impossibility\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n那個胖子拒絕接受什麼是可能的，他抱怨他無法做最簡單的活動？\n並且有5個選項：\nA) 不行，B) 不太可能，C) 無法，D) 做不到，E) 不可能性\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題描述了一個拒絕接受可能性的胖子，並抱怨無法完成簡單的活動。這暗示著他對自身能力的否定，以及對事情發生的悲觀預期。\nA) 不行 - 比較直接，但略顯粗魯，不一定能表達抱怨的意味。\nB) 不太可能 - 意味著存在一些可能性，與抱怨的程度不符。\nC) 無法 - 強調了能力上的限制，符合抱怨無法完成活動的描述。\nD) 做不到 - 與“無法”類似，但更口語化，不如“無法”正式。\nE) 不可能性 - 指的是事情本身不可能發生，而不是指他個人無法做到。\n\n“無法”最能體現這個胖子拒絕接受自己可以做到任何事情，並抱怨自己能力不足的狀態。\n\n最終答案\n{\"answer\": \"C\"}",
+    "Answer": "D",
+    "MyAnswer": "C"
+  },
+  {
+    "Question": "There is a Question: \nWhere can meat last a long time?\nAnd there are 5 choices:\nA) backery, B) ham sandwich, C) fridge, D) butcher shop, E) freezer\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一个问题：\n肉可以在哪里保存很长时间？\n并且有5个选项：\nA) 面包店，B) 火腿三明治，C) 冰箱，D) 肉店，E) 冷冻柜\n请根据问题选择一个选项。\n在你的回答的结尾，请以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母选择\"}\n答案必须是一个单独的英文字母（A-E）。\n",
+    "Result": "推理过程\n问题询问肉类可以保存很长时间的地方。\nA) 面包店主要销售面包，不适合长期保存肉类。\nB) 火腿三明治是熟食，保质期短。\nC) 冰箱可以短期保存肉类，但时间有限。\nD) 肉店主要销售肉类，但通常是新鲜肉，不适合长期保存。\nE) 冷冻柜可以将肉类冷冻，从而实现长期保存。\n\n因此，冷冻柜是最佳选择。\n\n最终答案\n{\"answer\": \"E\"}\n",
+    "Answer": "E",
+    "MyAnswer": "E"
+  },
+  {
+    "Question": "There is a Question: \nWhat group of musicians will include someone playing the cello?\nAnd there are 5 choices:\nA) ocean, B) symphony, C) band, D) music store, E) music shop\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n哪一個音樂團體會包含演奏大提琴的人？\n並且有5個選項：\nA) 海洋，B) 交響樂團，C) 樂隊，D) 樂器店，E) 音樂商店\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n大提琴是一種弦樂器，通常在古典音樂中演奏。\nA) 海洋：與音樂無直接關聯。\nB) 交響樂團：交響樂團是大型管弦樂團，通常包含大提琴組。\nC) 樂隊：樂隊通常包含吉他、貝斯、鼓等樂器，較少使用大提琴。\nD) 樂器店：樂器店是銷售樂器的商店，本身不是音樂團體。\nE) 音樂商店：音樂商店是銷售音樂產品的商店，本身不是音樂團體。\n\n因此，交響樂團最有可能包含演奏大提琴的人。\n\n最終答案\n{\"answer\": \"B\"}",
+    "Answer": "B",
+    "MyAnswer": "B"
+  },
+  {
+    "Question": "There is a Question: \nWhere do bees congregate with red flowerS?\nAnd there are 5 choices:\nA) trash can, B) honey, C) bouquet of flowers, D) rose garden, E) field of flowers\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n蜜蜂在哪裡聚集在紅色的花朵旁？\n並且有5個選項：\nA) 垃圾桶，B) 蜂蜜，C) 花束，D) 玫瑰園，E) 花田\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n蜜蜂以花蜜為食，而花蜜存在於花朵中。問題問的是蜜蜂在哪裡聚集在紅色的花朵旁。\nA) 垃圾桶：蜜蜂不會聚集在垃圾桶旁。\nB) 蜂蜜：蜂蜜是蜜蜂製造的，蜜蜂不會聚集在蜂蜜旁尋找花蜜。\nC) 花束：花束是切下來的花，蜜蜂可能會短暫停留，但不是聚集地。\nD) 玫瑰園：玫瑰通常是紅色的，蜜蜂會聚集在玫瑰園中尋找花蜜。\nE) 花田：花田可能包含紅色的花朵，但不如玫瑰園專注於紅色花朵。\n\n因此，最合適的答案是玫瑰園。\n\n最終答案\n{\"answer\": \"D\"}",
+    "Answer": "D",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nWhat is someone who gets angry after getting drunk likely to participate in?\nAnd there are 5 choices:\nA) violence, B) falling down, C) vomiting, D) vomiting, E) lower standards\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n喝醉酒後容易發怒的人很可能參與什麼？\n並且有5個選項：\nA) 暴力，B) 摔倒，C) 嘔吐，D) 嘔吐，E) 降低標準\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題問的是喝醉酒後容易發怒的人*很可能*參與什麼。雖然喝醉酒可能導致摔倒、嘔吐或降低標準，但發怒通常是暴力行為的前兆或直接原因。酒精會降低抑制力，使人更容易表現出攻擊性行為。因此，暴力是最有可能的結果。\n\n最終答案\n{\"answer\": \"A\"}",
+    "Answer": "A",
+    "MyAnswer": "A"
+  },
+  {
+    "Question": "There is a Question: \nThe teacher told all the students that listening was key, it was the main way they would gain what?\nAnd there are 5 choices:\nA) empathy, B) anxiety, C) knowlege, D) falling down, E) hear things\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n老師告訴所有學生，傾聽是關鍵，這是他們獲取什麼的主要途徑？\n並且有5個選項：\nA) 同理心，B) 焦慮，C) 知識，D) 摔倒，E) 聽到東西\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題問的是傾聽是獲取什麼的主要途徑。\nA) 同理心：傾聽可以幫助理解他人，培養同理心，但並非傾聽的唯一目的。\nB) 焦慮：傾聽通常不會直接導致焦慮。\nC) 知識：傾聽是獲取知識的主要途徑之一，特別是在學習環境中。\nD) 摔倒：傾聽與摔倒沒有直接關係。\nE) 聽到東西：這是一個循環定義，傾聽的結果就是聽到東西，但並非傾聽的目的。\n\n因此，最合適的答案是知識。老師強調傾聽的重要性，通常是為了讓學生更好地學習和獲取知識。\n\n最終答案\n{\"answer\": \"C\"}",
+    "Answer": "C",
+    "MyAnswer": "C"
+  },
+  {
+    "Question": "There is a Question: \nStanley had a dream that was very vivid and scary. He had trouble telling it from what?\nAnd there are 5 choices:\nA) reality, B) imagination, C) dreamworker, D) nightmare, E) awake\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n斯坦利做了一個非常生動且可怕的夢。他很難將它與什麼區分開來？\n並且有5個選項：\nA) 現實，B) 想像，C) 夢境工作者，D) 噩夢，E) 醒來\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題指出斯坦利很難將夢境與某事物區分開來。選項A（現實）是可能的，但問題強調夢境的生動和可怕，這更指向夢境的性質。選項B（想像）太過寬泛，想像可以是有意識的。選項C（夢境工作者）是一個心理學概念，但並非斯坦利難以區分的事物。選項D（噩夢）描述了夢的*類型*，而不是斯坦利難以區分的事物。選項E（醒來）與問題無關。最合適的答案是現實，因為夢境經常與現實混淆，尤其是在夢境非常逼真時。\n\n最終答案\n{\"answer\": \"A\"}",
+    "Answer": "A",
+    "MyAnswer": "A"
+  },
+  {
+    "Question": "There is a Question: \nThe city's community garden was demolished for yet another what?\nAnd there are 5 choices:\nA) wasteland, B) ocean, C) desert, D) parking lot, E) flowers\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n這個城市的社區花園又被拆除來建造什麼？\n並且有5個選項：\nA) 荒地，B) 海洋，C) 沙漠，D) 停車場，E) 花朵\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n社區花園通常被拆除以用於更實用的用途，例如停車場或建築物。選項A（荒地）和C（沙漠）不太可能取代花園，因為它們沒有實際用途。選項B（海洋）和E（花朵）更不可能取代花園。因此，最合理的答案是停車場。\n\n最終答案\n{\"answer\": \"D\"}",
+    "Answer": "D",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nWHat do cats get into when they are ripping things apart?\nAnd there are 5 choices:\nA) dog's mouth, B) floor, C) garage, D) trouble, E) nature\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n當貓咪把東西撕碎時，牠們會陷入什麼境地？\n並且有5個選項：\nA) 狗的嘴，B) 地板，C) 車庫，D) 麻煩，E) 大自然\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題問的是當貓咪把東西撕碎時，牠們會陷入什麼境地。撕碎東西通常會讓貓咪惹麻煩，例如被主人責罵或懲罰。其他選項，例如狗的嘴、地板、車庫和大自然，與貓咪撕碎東西後會發生的情況沒有直接關聯。因此，最合適的答案是「麻煩」。\n\n最終答案\n{\"answer\": \"D\"}",
+    "Answer": "D",
+    "MyAnswer": "D"
+  },
+  {
+    "Question": "There is a Question: \nWhat is a good result of losing weight?\nAnd there are 5 choices:\nA) increased energy, B) healthier, C) loose skin, D) beauty, E) death\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n減肥一個好的結果是什麼？\n並且有5個選項：\nA) 能量增加，B) 更健康，C) 皮膚鬆弛，D) 美麗，E) 死亡\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n減肥的良好結果應該是正面的、改善健康的。\nA) 能量增加：減肥通常會讓人感覺更有活力，因為身體負擔減輕。\nB) 更健康：減肥可以降低患心血管疾病、糖尿病等疾病的風險，因此更健康是減肥的良好結果。\nC) 皮膚鬆弛：皮膚鬆弛是減肥的常見副作用，不是一個好的結果。\nD) 美麗：美麗是主觀的，雖然減肥可能讓人感覺更好看，但並非減肥的本質目的或必然結果。\nE) 死亡：死亡絕對不是一個好的結果。\n\n因此，A和B都是好的結果，但“更健康”更全面地涵蓋了減肥帶來的益處，也更符合問題的本質。\n\n最終答案\n{\"answer\": \"B\"}\n",
+    "Answer": "B",
+    "MyAnswer": "B"
+  },
+  {
+    "Question": "There is a Question: \nA person lived in my what?\nAnd there are 5 choices:\nA) demonstration, B) conference, C) building, D) garage, E) mouth\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n一個人住在我的什麼裡？\n並且有5個選項：\nA) 演示，B) 會議，C) 建築，D) 車庫，E) 嘴巴\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n這個謎語是一個文字遊戲。問題問「一個人住在我的什麼裡？」。答案是「嘴巴」，因為「人」可以住在「嘴巴」裡（指牙齒）。其他選項都不符合這個邏輯。\n\n最終答案\n{\"answer\": \"E\"}",
+    "Answer": "D",
+    "MyAnswer": "E"
+  },
+  {
+    "Question": "There is a Question: \nThe skin was cut while chopping onions, where was this skin likely cut?\nAnd there are 5 choices:\nA) good health, B) finger, C) meat, D) body, E) own family\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n在切洋蔥時，皮膚被割傷了，這個皮膚最有可能在哪裡被割傷？\n並且有5個選項：\nA) 良好的健康，B) 手指，C) 肉，D) 身體，E) 自己的家人\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n問題描述了在切洋蔥時皮膚被割傷的情況。切洋蔥通常是用刀具在手上操作，因此最有可能被割傷的部位是手指。其他選項與切洋蔥的過程無關，或者描述的範圍過於廣泛（例如“身體”）。\n\n最終答案\n{\"answer\": \"B\"}",
+    "Answer": "B",
+    "MyAnswer": "B"
+  },
+  {
+    "Question": "There is a Question: \nWhat might you feel after doing housework for hours?\nAnd there are 5 choices:\nA) anger, B) not boredom, C) stress, D) boredom, E) anxiety\nPlease choose a choice based on the question.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_letter_choice\"}\nThe answer must be a single English letter (A-E).\n",
+    "Translated": "有一個問題：\n長時間做家務後，你可能會感覺如何？\n並且有5個選項：\nA) 憤怒，B) 不感到無聊，C) 壓力，D) 無聊，E) 焦慮\n請根據問題選擇一個選項。\n在你的回答的結尾，請以完全相同的JSON格式提供你的答案：{\"answer\": \"你的字母選項\"}\n答案必須是一個單一的英文字母（A-E）。\n",
+    "Result": "推理過程\n長時間做家務通常是重複性的、耗費體力的，而且可能讓人感到疲憊和沮喪。雖然可能偶爾會感到無聊（D），但更常見的是感到壓力（C）和疲勞。憤怒（A）和焦慮（E）可能在某些情況下出現，但並非普遍感受。壓力更直接地反映了長時間體力勞動帶來的身心負擔。\n\n最終答案\n{\"answer\": \"C\"}",
+    "Answer": "C",
+    "MyAnswer": "C"
+  }
+]

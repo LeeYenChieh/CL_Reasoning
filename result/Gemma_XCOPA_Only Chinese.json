@@ -1,0 +1,709 @@
+[
+  {
+    "Model": "Gemma",
+    "Dataset": "XCOPA",
+    "Strategy": "Only Chinese",
+    "Data Nums": 100,
+    "Data Samples": 1
+  },
+  {
+    "Question": "There is a premise: \nThe item is wrapped in bubble wrap.\nWhat is the cause?\nChoice 1: It is very fragile.\nChoice 2: It is very small.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n物品被氣泡膜包裹。\n原因是什麼？\n選項 1：它非常易碎。\n選項 2：它非常小。\n請根據前提選擇最合適的選項。\n在你的回答的末尾，以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n氣泡膜的主要用途是提供緩衝保護，以防止物品在運輸或搬運過程中損壞。易碎物品特別需要這種保護，因為它們容易因撞擊而破裂。雖然小物品也可能需要保護，但氣泡膜更常被用來保護易碎物品。因此，最合適的選項是物品非常易碎。\n\n最終答案\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nI emptied my pocket.\nWhat is the effect?\nChoice 1: I found a ticket stub.\nChoice 2: I found a weapon.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n我清空了我的口袋。\n什麼是結果？\n選項 1：我找到了一張票根。\n選項 2：我找到了一件武器。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是“我清空了我的口袋”。這意味著口袋裡原本有東西，然後我把所有東西都拿出來了。選項1描述了在清空口袋的過程中找到了一張票根，這是一個合理的結果，因為票根通常會被放在口袋裡。選項2描述了找到了一件武器，雖然有可能，但相對於票根來說，武器通常不會隨身攜帶在口袋裡，因此可能性較低。因此，選項1更符合常理。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nTermites invaded the house.\nWhat is the effect?\nChoice 1: The termites disappeared from the house.\nChoice 2: Termites ate through the wood in the house.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n白蟻侵入了房子。\n是什麼效果？\n選項 1：白蟻從房子裡消失了。\n選項 2：白蟻啃食了房子裡的木頭。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是白蟻侵入了房子。白蟻侵入通常意味著它們會以木材為食，造成損壞。選項 1 說白蟻消失了，這與侵入的行為不符。選項 2 說白蟻啃食了木頭，這與白蟻侵入的典型行為一致。因此，選項 2 是最合適的。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe passenger arrives at the border.\nWhat is the effect?\nChoice 1: The patrol checked their passports.\nChoice 2: Patrol officers accused them of smuggling.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n乘客到達邊境。\n是什麼結果？\n選項 1：巡邏隊檢查了他們的護照。\n選項 2：巡邏警察指控他們走私。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n乘客到達邊境，最常見且合乎邏輯的後續行動是巡邏隊檢查他們的護照以驗證其身份和入境權。雖然走私的可能性存在，但這不是到達邊境後的標準程序。檢查護照是例行公事。\n\n最終答案\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe office is closed.\nWhat is the cause?\nChoice 1: It was a holiday.\nChoice 2: It was summer.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n办公室已关闭。\n原因是什么？\n选项 1：是节日。\n选项 2：是夏天。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理过程\n办公室关闭的原因有很多，节日和夏天都可能导致办公室关闭。但是，夏天只是一个季节，办公室通常不会整个夏天都关闭。而节日通常会导致办公室关闭，例如法定节假日。因此，节日是更直接和常见的办公室关闭原因。\n\n最终答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe girl was exhausted.\nWhat is the cause?\nChoice 1: She played checkers.\nChoice 2: She skipped the rope.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n女孩很疲憊。\n是什麼原因？\n选项 1：她玩了跳棋。\n选项 2：她跳绳了。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理過程\n跳棋通常是一種相對靜態的活動，需要的體力較少。跳繩則是一種高強度的運動，需要消耗大量的體力。由於女孩很疲憊，跳繩比跳棋更能解釋她的疲憊狀態。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThere is no place for the woman to line up.\nWhat is the cause?\nChoice 1: More and more people began to line up.\nChoice 2: She walked out of the team.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這個女人沒有排隊的位置。\n是什麼原因造成的？\n選項 1：越來越多的人開始排隊。\n選項 2：她走出了隊伍。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提指出這個女人“沒有排隊的位置”。這意味著她原本可能沒有在隊伍中，或者她曾經在隊伍中但現在不在了。\n\n選項 1 說“越來越多的人開始排隊”。這會導致隊伍變長，但不會直接解釋為什麼這個女人沒有位置。她可能原本就在隊伍後面，或者根本不在隊伍中。\n\n選項 2 說“她走出了隊伍”。這直接解釋了為什麼她沒有排隊的位置——因為她選擇離開了隊伍。\n\n因此，選項 2 是最合適的解釋。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe girl squeezed her nose.\nWhat is the cause?\nChoice 1: The baby drools on the bib.\nChoice 2: The baby soiled his diaper.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n女孩捏了捏她的鼻子。\n原因是什麼？\n选项 1：婴儿的口水弄湿了围兜。\n选项 2：婴儿弄脏了尿布。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理過程\n女孩捏鼻子通常是為了避免聞到不好的氣味。選項1描述了嬰兒的口水弄濕了圍兜，這可能產生異味，因此女孩捏鼻子是合理的反應。選項2描述了嬰兒弄髒了尿布，這也會產生異味，但口水弄濕圍兜的氣味可能更直接且令人不悅，因此捏鼻子的可能性更高。\n\n最終答案\n{\"answer\": \"1\"}",
+    "Answer": "2",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe band played their hit song.\nWhat is the effect?\nChoice 1: The audience clapped their hands to the music.\nChoice 2: The audience was politely silent.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n乐队演奏了他们的热门歌曲。\n是什么效果？\n选项 1：观众随着音乐拍手。\n选项 2：观众彬彬有礼地保持沉默。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理过程：\n乐队演奏热门歌曲通常会引起观众的积极反应。拍手是一种常见的表达喜爱和参与的方式。保持沉默则不太符合热门歌曲的氛围，除非是某种特殊的音乐会形式（例如古典音乐会）。因此，选项1更符合常理。\n\n最终答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe girl wanted to thank her math teacher.\nWhat is the effect?\nChoice 1: The girl was detained after school.\nChoice 2: The girl brought an apple to the teacher.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這個女孩想感謝她的數學老師。\n是什麼結果？\n選項 1：這個女孩放學後被留校察看。\n選項 2：這個女孩給老師帶了一個蘋果。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是女孩想感謝她的數學老師。感謝老師通常會採取積極友好的行為，例如送禮物或口頭表達感謝。選項1描述的是負面行為（留校察看），與感謝老師的意圖不符。選項2描述的是送蘋果，這是一種常見的表達感謝的方式。因此，選項2更符合前提。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe young campers are scared.\nWhat is the cause?\nChoice 1: Their camp consultant told them a ghost story.\nChoice 2: They toasted marshmallows on the campfire.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n年輕的露營者們感到害怕。\n是什麼原因造成的？\n選項 1：他們的露營輔導員給他們講了鬼故事。\n選項 2：他們在篝火上烤了棉花糖。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是年輕的露營者感到害怕。選項1提到鬼故事，鬼故事通常會讓人感到害怕。選項2提到烤棉花糖，這通常是一種令人愉悅的活動，不太可能導致害怕。因此，選項1更符合前提。\n\n最終答案\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe man bumped his head.\nWhat is the effect?\nChoice 1: He was lost in thought.\nChoice 2: He had a concussion.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這個男人撞到了頭。\n是什麼效果？\n選項 1：他陷入了沉思。\n選項 2：他得了腦震盪。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n撞到頭可能導致多種後果，從輕微的頭痛到嚴重的腦部損傷。沉思是一種心理狀態，雖然撞頭可能觸發思考，但並非直接或必然的結果。腦震盪是一種常見的腦部損傷，直接由頭部撞擊引起，症狀包括頭痛、頭暈、混亂等。因此，在撞到頭的前提下，腦震盪是更直接和更可能發生的效果。\n\n最終答案\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nMy check was declined.\nWhat is the cause?\nChoice 1: My bank account is empty.\nChoice 2: I got a raise.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n我的支票被拒絕了。\n原因是什麼？\n選項 1：我的銀行帳戶是空的。\n選項 2：我加薪了。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n支票被拒絕通常是因為帳戶沒有足夠的資金來支付支票上的金額。加薪不會導致支票被拒絕，反而會增加帳戶裡的資金。因此，最合適的選項是銀行帳戶是空的。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe man's email inbox was flooded with spam.\nWhat is the effect?\nChoice 1: He deleted the spam.\nChoice 2: He sent mass emails.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這個男人的電子郵件收件箱被垃圾郵件淹沒了。\n是什麼效果？\n選項 1：他刪除了垃圾郵件。\n選項 2：他發送了大量電子郵件。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"your_choice_number\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是這個男人的電子郵件收件箱被垃圾郵件淹沒了。這意味著他收到了大量的垃圾郵件。選項 1 描述了他刪除垃圾郵件，這是一個對被垃圾郵件淹沒的收件箱的合理反應。選項 2 描述了他發送了大量電子郵件，這與收件箱被垃圾郵件淹沒沒有直接關係。因此，選項 1 是最合適的。\n\n最終答案\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe sailor was quarantined.\nWhat is the cause?\nChoice 1: He was exposed to this disease.\nChoice 2: He recovered from the illness.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n水手被隔離了。\n原因是什麼？\n选项 1：他接触了这种疾病。\n选项 2：他从疾病中康复了。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理過程\n如果水手被隔離，通常是因為他可能帶有傳染性疾病，以防止疾病傳播。選項1“他接觸了這種疾病”直接說明了隔離的原因，符合常理。選項2“他從疾病中康復了”意味著他不再具有傳染性，因此不需要隔離。因此，選項1更符合前提。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe girl remembered the password.\nWhat is the cause?\nChoice 1: She memorized it to herself.\nChoice 2: She forgot to write it down.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這個女孩記住了密碼。\n是什麼原因？\n選項 1：她自己記住了它。\n選項 2：她忘記把它寫下來了。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是“這個女孩記住了密碼”。這意味著密碼已經存在於她的記憶中。選項1“她自己記住了它”直接說明了密碼存在於她的記憶中，符合前提。選項2“她忘記把它寫下來了”描述的是一個沒有記錄密碼的行為，並不能直接解釋她*記住了*密碼的原因。雖然她可能因為忘記寫下來而需要依靠記憶，但這並不是她記住密碼的根本原因。因此，選項1更直接地符合前提。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nI poured water into the glass.\nWhat is the effect?\nChoice 1: This quenched my thirst.\nChoice 2: The glass became full.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n我往玻璃杯裡倒水。\n是什麼效果？\n選項 1：這解了我的口渴。\n選項 2：玻璃杯裝滿了。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是「我往玻璃杯裡倒水」。這個動作的直接結果是玻璃杯裡的水位上升，最終可能導致玻璃杯裝滿。雖然喝水可以解渴，但前提並沒有提到我喝了水，只是描述了倒水的行為。因此，最直接、最符合前提的結果是玻璃杯裝滿。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nWhen his friend finished speaking, the man remained silent.\nWhat is the cause?\nChoice 1: He wants to support his friends.\nChoice 2: He was thinking about what his friend said.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n當他的朋友講完話後，這個男人保持沉默。\n是什麼原因？\n選項 1：他想支持他的朋友。\n選項 2：他正在思考他的朋友說的話。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提只說明了這個男人在朋友講完話後保持沉默，並沒有提供任何關於他沉默的原因。選項1（支持朋友）和選項2（思考朋友的話）都可能導致沉默。然而，僅僅保持沉默本身，更符合正在思考的行為。支持朋友通常會伴隨一些行為，例如點頭、眼神交流或口頭回應，而沉默則更可能是內在的思考過程。因此，選項2更符合前提的描述。\n\n最終答案\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe accident was my fault.\nWhat is the effect?\nChoice 1: I feel guilty.\nChoice 2: I sued.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n事故是我的錯。\n是什麼結果？\n選項 1：我感到內疚。\n選項 2：我提起訴訟。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是事故是我的錯。如果事故是我的錯，最直接和自然的結果是感到內疚。提起訴訟通常發生在事故責任不明確或對方有過錯的情況下，與前提不符。因此，選項 1 比選項 2 更合適。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe chain broke.\nWhat is the cause?\nChoice 1: The chain is wrapped around the tire.\nChoice 2: A section of the chain is broken.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n鏈條斷了。\n是什麼原因？\n選項 1：鏈條纏繞在輪胎上。\n選項 2：鏈條的一部分斷裂了。\n請根據前提選擇最合適的選項。\n在你的回答的末尾，以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是“鏈條斷了”。這意味著鏈條不再是一個完整的、連續的結構。選項1描述的是鏈條纏繞，這並未說明鏈條本身斷裂。選項2直接說明鏈條的一部分斷裂，這與前提完全一致。因此，選項2是更合適的解釋。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe couple decided to compromise.\nWhat is the cause?\nChoice 1: They are tired of arguing.\nChoice 2: They avoid discussing this issue.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這對夫婦決定妥協。\n是什麼原因？\n選項 1：他們厭倦了爭吵。\n選項 2：他們避免討論這個問題。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n妥協意味著雙方都放棄了一些東西以達成協議。如果他們避免討論問題（選項2），那就不是妥協，而是逃避。厭倦爭吵（選項1）是一個常見的妥協動機，因為人們會為了和平而放棄一些要求。因此，選項1更符合“妥協”的前提。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe woman decided to run for public office.\nWhat is the effect?\nChoice 1: She hired a campaign planner.\nChoice 2: She testified in court.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這位女士決定競選公職。\n是什麼結果？\n選項 1：她聘請了一名競選策劃人。\n選項 2：她在法庭上作證。\n請根據前提選擇最合適的選項。\n在您的回答的末尾，請以完全相同的 JSON 格式提供您的答案：{\"answer\": \"your_choice_number\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n這位女士決定競選公職，這意味著她需要組織和規劃競選活動。聘請競選策劃人是競選活動的常見且合理的步驟，可以幫助她制定策略、籌集資金、管理宣傳等。她在法庭上作證與競選公職沒有直接的因果關係，雖然她可能在其他情況下需要作證，但這不是競選公職的必然結果。因此，選項 1 比選項 2 更合適。\n\n最終答案\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe man expected the weather to be very cold during his journey.\nWhat is the effect?\nChoice 1: He packed his warm clothes into his suitcase.\nChoice 2: He travels with a large suitcase.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這個男人預期他的旅途中天氣會非常寒冷。\n是什麼效果？\n選項 1：他把他的保暖衣物打包進了他的行李箱。\n選項 2：他帶著一個大行李箱旅行。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是這個男人預期旅途中天氣會非常寒冷。因此，他會採取措施來應對寒冷的天氣。選項 1，打包保暖衣物，是直接應對寒冷天氣的合理行為。選項 2，帶著一個大行李箱，雖然可能與打包保暖衣物有關，但並非必然結果。他可能因為其他原因而帶大行李箱。因此，選項 1 是更直接、更合適的結果。\n\n最終答案\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe student knows the answer to this question.\nWhat is the effect?\nChoice 1: He raised his hand.\nChoice 2: It is lazy.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n學生知道這個問題的答案。\n是什麼效果？\n選項 1：他舉起了手。\n選項 2：他很懶惰。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是學生知道問題的答案。選項1描述了一個學生知道答案後可能發生的行為（舉手）。選項2描述的是一個性格特徵，與學生是否知道答案沒有直接關聯。雖然懶惰的學生可能不舉手，但知道答案並不意味著一定會懶惰。因此，選項1是更直接、更合理的結果。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe man's eyes were crying.\nWhat is the cause?\nChoice 1: His eyes went dark.\nChoice 2: He put on goggles.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這個男人的眼睛在流淚。\n是什麼原因？\n選項 1：他的眼睛變暗了。\n選項 2：他戴上了護目鏡。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是這個男人在流淚。流淚通常是由於情緒（例如悲傷、快樂）或物理刺激（例如灰塵、異物）引起的。\n選項 1 說他的眼睛變暗了，眼睛變暗本身並不會導致流淚。\n選項 2 說他戴上了護目鏡，護目鏡可以防止異物進入眼睛，但本身不會導致流淚。然而，如果戴護目鏡之前眼睛已經有異物或刺激，戴上護目鏡可能會加劇刺激，導致流淚。但更直接的原因是眼睛本身有刺激，而不是戴護目鏡這個動作。\n\n因此，最合適的選項是1，因為眼睛變暗可能暗示著眼睛受到刺激或不適，從而導致流淚。雖然這不是流淚的直接原因，但比戴護目鏡更接近。\n\n最終答案\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThis player has won five consecutive games.\nWhat is the effect?\nChoice 1: Her opponent accused her of cheating.\nChoice 2: Her opponent felt sorry for her.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這位玩家已經連續贏了五場比賽。\n是什麼效果？\n選項 1：她的對手指控她作弊。\n選項 2：她的對手為她感到遺憾。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"your_choice_number\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n連續贏五場比賽，尤其是在競爭性遊戲中，很容易引起懷疑。人們通常會認為如此持續的成功不太可能完全歸因於技巧和運氣，因此作弊的指控是更合理的反應。為人感到遺憾的可能性較低，因為輸家通常會感到沮喪或不滿，而不是同情。\n\n最終答案\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe teacher tore up the student's test paper.\nWhat is the cause?\nChoice 1: He caught the student cheating.\nChoice 2: The student's answer is wrong.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n老師撕掉了學生的試卷。\n是什麼原因？\n選項 1：他抓到學生作弊了。\n選項 2：學生的答案是錯的。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n老師撕掉試卷通常不是因為答案錯誤，而是因為更嚴重的行為。作弊是老師會非常嚴肅處理的行為，撕掉試卷可以視為一種懲罰和警示。答案錯誤通常只會被扣分或退回修改，不會直接撕掉。因此，選項1更符合常理。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nI stopped talking.\nWhat is the cause?\nChoice 1: I lost my voice.\nChoice 2: I was out of breath.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n我停止了說話。\n是什麼原因？\n選項 1：我失去了聲音。\n選項 2：我喘不過氣來。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是“我停止了說話”。這意味著說話的能力被中斷。\n選項1“我失去了聲音”直接導致無法說話。\n選項2“我喘不過氣來”會讓人難以說話，但並不一定完全停止說話。喘不過氣來可能導致說話困難或斷斷續續，但失去聲音則完全阻止說話。由於前提是“停止了說話”，失去聲音是更直接和更合適的原因。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "2",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe frozen food is thawed.\nWhat is the cause?\nChoice 1: I put it in the microwave.\nChoice 2: I covered it with plastic wrap.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n冷凍食品解凍了。\n是什麼原因？\n選項 1：我把它放進微波爐裡了。\n選項 2：我用保鮮膜蓋住了它。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n冷凍食品解凍，最直接的原因是受到了熱量。微波爐是產生熱量的設備，因此將冷凍食品放入微波爐裡會使其解凍。用保鮮膜蓋住冷凍食品並不能使其解凍，反而可能延緩解凍速度。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe employee pretends to be sick.\nWhat is the cause?\nChoice 1: He has stomach cramps.\nChoice 2: He wants to take a day off.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n員工假裝生病。\n原因是什麼？\n選項 1：他有胃痛。\n選項 2：他想請一天假。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是員工*假裝*生病。這意味著員工實際上並沒有生病，而是為了某種目的而表現得像生病一樣。選項1說他有胃痛，這表示他實際上生病了，與前提矛盾。選項2說他想請一天假，這解釋了為什麼他會假裝生病，符合前提。因此，選項2是最合適的。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe girl fell into the swimming pool.\nWhat is the cause?\nChoice 1: She runs on the pool deck.\nChoice 2: She jumped off the diving board.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n女孩掉進了游泳池。\n是什麼原因？\n选项 1：她在泳池甲板上奔跑。\n选项 2：她从跳板上跳下。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理過程\n前提只說明女孩掉進了游泳池，沒有提供任何關於她如何掉進去的額外信息。選項1描述了她在泳池甲板上奔跑，這是一個可能導致意外掉入游泳池的情況。選項2描述了她從跳板上跳下，這是一個有意的行為，通常不會被視為“掉進”游泳池，而是“跳進”游泳池。因此，選項1更符合“掉進”游泳池的意外情況。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "2",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe movie tickets are sold out.\nWhat is the cause?\nChoice 1: This is the first day of the movie.\nChoice 2: The review of this movie is poor.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n電影票已經售罄。\n是什麼原因？\n選項 1：這是電影的首映日。\n選項 2：這部電影的評價很差。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n電影票售罄可能有多種原因。首映日通常會吸引大量觀眾，導致售罄。而評價差的電影通常會導致票房低迷，不太可能售罄，反而會出現退票或空座的情況。因此，首映日是更合理的解釋。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe man lost weight.\nWhat is the effect?\nChoice 1: People isolate him.\nChoice 2: People praised him.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這個男人減肥了。\n是什麼結果？\n選項 1：人們孤立他。\n選項 2：人們讚揚他。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n減肥通常會帶來正面的結果，例如健康改善和自信提升。雖然偶爾會有人因為嫉妒或不理解而孤立減肥的人，但更常見的情況是人們會讚揚他們的努力和成果。因此，讚揚的可能性更高。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe girl's hand blistered.\nWhat is the cause?\nChoice 1: She typed a letter.\nChoice 2: She climbed up a rope.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n女孩的手起水泡了。\n是什麼原因？\n选项 1：她打了一封信。\n选项 2：她爬了一根绳子。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理過程\n手起水泡通常是由於皮膚長時間受到摩擦或壓力造成的。\n選項1，打信，需要長時間握筆，筆與手指的摩擦可能導致水泡。\n選項2，爬繩子，需要雙手緊抓繩子，繩子與手掌的摩擦也會導致水泡。\n但爬繩子通常比打信需要更大的力量和更強的摩擦，更容易起水泡。因此，選項2更符合前提。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nCircus performers juggling while riding a unicycle.\nWhat is the effect?\nChoice 1: The audience cheered in surprise.\nChoice 2: The acrobats flew around from the sky.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n马戏团表演者在骑独轮车的同时玩杂耍。\n是什么效果？\n选项 1：观众惊讶地欢呼。\n选项 2：杂技演员从空中飞来飞去。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理过程：\n前提描述的是马戏团表演者在骑独轮车的同时玩杂耍。这是一种需要高超技巧的表演，观众看到这种表演很可能会感到惊讶并欢呼。选项2描述的是杂技演员从空中飞来飞去，这虽然也是马戏团常见的表演，但与骑独轮车玩杂耍没有直接的因果关系。因此，选项1更符合前提描述的效果。\n\n最终答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nI lost my patience.\nWhat is the cause?\nChoice 1: My friend keeps me waiting.\nChoice 2: My friend arrived on time.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n我失去了耐心。\n是什麼原因？\n选项 1：我的朋友一直让我等待。\n选项 2：我的朋友准时到达。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理過程\n如果一個人失去了耐心，通常是因為某事讓他們感到沮喪或延遲。選項1描述了朋友讓等待的情況，這很可能導致一個人失去耐心。選項2描述了朋友準時到達，這不太可能導致一個人失去耐心，反而可能讓人感到滿意。因此，選項1更符合“失去耐心”的前提。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe warring nations demand peace.\nWhat is the effect?\nChoice 1: They developed nuclear weapons.\nChoice 2: They agreed on a treaty.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n交戰的國家要求和平。\n是什麼結果？\n選項 1：他們研發了核武器。\n選項 2：他們達成了一項條約。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是交戰的國家要求和平。這意味著他們希望結束衝突。選項1，研發核武器，通常是為了增強戰爭能力，與追求和平的目標相悖。選項2，達成一項條約，是結束衝突、實現和平的直接方式。因此，達成一項條約是更符合前提的結果。\n\n最終答案\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe man took sleeping pills.\nWhat is the effect?\nChoice 1: He became lethargic.\nChoice 2: He has a fever.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這個男人服用了安眠藥。\n效果是什麼？\n選項 1：他變得昏昏欲睡。\n選項 2：他發燒了。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n安眠藥的主要作用是讓人感到昏昏欲睡，從而幫助入睡。發燒通常不是安眠藥的副作用。因此，選項 1 比選項 2 更符合前提。\n\n最終答案\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe woman bumped into the sofa.\nWhat is the effect?\nChoice 1: The legs of the sofa are loose.\nChoice 2: She bruised her knee.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這位女士撞到了沙發。\n是什麼結果？\n選項 1：沙發的腿鬆了。\n選項 2：她的膝蓋瘀傷了。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是女士撞到了沙發。這意味著撞擊力作用於沙發。沙發的腿鬆了是沙發受到撞擊的直接結果。女士的膝蓋瘀傷了是女士受到撞擊的結果，但前提只說明了女士撞到了沙發，沒有說明沙發撞了她。因此，沙發的腿鬆了是更直接和更合理的結果。\n\n最終答案\n{\"answer\": \"1\"}",
+    "Answer": "2",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe boy squeezed a balloon.\nWhat is the effect?\nChoice 1: The balloon burst.\nChoice 2: The balloon flew away.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n男孩擠壓了一個氣球。\n效果是什麼？\n選項 1：氣球爆了。\n選項 2：氣球飛走了。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n男孩擠壓氣球，擠壓會施加壓力。氣球在承受一定壓力後通常會爆裂，而不是飛走。因此，最合適的效果是氣球爆了。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe travelers checked into their hotel room.\nWhat is the effect?\nChoice 1: They opened the suitcase.\nChoice 2: They went to the airport.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n旅行者們辦理了酒店入住。\n是什麼結果？\n選項 1：他們打開了行李箱。\n選項 2：他們去了機場。\n請根據前提選擇最合適的選項。\n在你的回答的末尾，以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是旅行者們辦理了酒店入住。入住酒店後，最直接和合理的行為是整理行李，打開行李箱是整理行李的第一步。去機場通常發生在旅行開始或結束時，與酒店入住沒有直接的因果關係。因此，選項 1 比選項 2 更合適。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nI bit a peach.\nWhat is the effect?\nChoice 1: The peach is broken.\nChoice 2: The juice spilled out.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n我咬了一口桃子。\n是什麼結果？\n选项 1：桃子被咬坏了。\n选项 2：果汁流了出来。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理過程\n前提是“我咬了一口桃子”。咬一口桃子，最直接的结果是桃子本身受到了物理上的破坏，即被咬坏了。虽然咬桃子可能会导致果汁流出，但这并非必然结果，例如可能只是轻轻咬了一口。因此，桃子被咬坏了是更直接、更确定的结果。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "2",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nMy hands are sticky.\nWhat is the cause?\nChoice 1: I ate donuts.\nChoice 2: I love sweets.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n我的手很黏。\n原因是什麼？\n選項 1：我吃了甜甜圈。\n選項 2：我喜歡甜食。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是手很黏。吃了甜甜圈（選項1）會導致手黏，因為甜甜圈通常會沾上糖霜。喜歡甜食（選項2）只是說明一個偏好，並不能直接導致手黏。因此，選項1更直接地解釋了手黏的原因。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nI pushed the door.\nWhat is the effect?\nChoice 1: The door opened.\nChoice 2: The door is locked.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n我推了门。\n什么会是结果？\n选项 1：门开了。\n选项 2：门是锁着的。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理過程\n前提是“我推了门”。 推门这个动作通常是为了打开门。虽然门可能被锁住，但前提只说明了推门这个行为，并没有说明门的状态。最直接和常见的推门的结果是门开了。因此，选项1更符合前提的直接结果。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nRadicals boycotted these products.\nWhat is the cause?\nChoice 1: The product passed the quality assurance test.\nChoice 2: The products are made by child labor.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n激進分子抵制了這些產品。\n是什麼原因？\n選項 1：該產品通過了質量保證測試。\n選項 2：這些產品是由童工生產的。\n請根據前提選擇最合適的選項。\n在您的回答的末尾，請以完全相同的 JSON 格式提供您的答案：{\"answer\": \"your_choice_number\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n激進分子通常抵制那些涉及不道德或有害行為的產品。質量保證測試（選項 1）通常是積極的，不會引發抵制。而童工生產（選項 2）是一種不道德的行為，激進分子很可能會抵制使用童工生產的產品。因此，選項 2 更符合激進分子抵制產品的原因。\n\n最終答案\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nI drilled a hole in the wall.\nWhat is the effect?\nChoice 1: A mouse crawled out of the hole.\nChoice 2: Dust blows out from the hole.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n我在牆上鑽了一個洞。\n是什麼效果？\n選項 1：一隻老鼠從洞裡爬出來了。\n選項 2：灰塵從洞裡吹出來了。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"your_choice_number\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n在牆上鑽洞，最直接且常見的結果是會產生灰塵。雖然有可能會引來老鼠，但這並非必然發生，而灰塵是鑽孔的直接物理結果。因此，選項2更符合前提的直接效果。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe woman envied her sister.\nWhat is the cause?\nChoice 1: Her sister is very happy.\nChoice 2: Her sister is divorced.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這位女性羨慕她的姐姐。\n是什麼原因？\n選項 1：她的姐姐非常快樂。\n選項 2：她的姐姐離婚了。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n羨慕通常源於對他人擁有的、自己缺乏的事物的渴望。快樂是一種普遍被追求的狀態，因此羨慕他人快樂是很常見的。離婚通常會帶來痛苦和負面情緒，不太可能成為羨慕的理由。因此，選項1更符合「羨慕」的前提。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nI spilled wine on my shirt.\nWhat is the effect?\nChoice 1: I put on an apron.\nChoice 2: I changed my shirt.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n我不小心把酒灑在襯衫上了。\n這是什麼結果？\n選項 1：我穿上圍裙。\n選項 2：我換了襯衫。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n灑了酒在襯衫上，最直接的解決方案是換掉弄髒的襯衫。穿圍裙雖然可以避免弄髒其他衣物，但無法解決襯衫已經被酒弄髒的事實。因此，換襯衫是更合適的選擇。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe cashier opened the cash register.\nWhat is the cause?\nChoice 1: The customer rummaged through his wallet.\nChoice 2: The customer handed over the money.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n收銀員打開了收銀機。\n是什麼原因？\n選項 1：顧客在翻找他的錢包。\n選項 2：顧客遞交了錢。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n收銀員打開收銀機通常是為了處理交易。顧客在翻找錢包（選項1）可能還沒有完成交易的準備階段，而顧客遞交了錢（選項2）則表示交易已經開始，收銀員需要打開收銀機來完成交易。因此，顧客遞交了錢是收銀員打開收銀機更直接的原因。\n\n最終答案\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nStreet musicians attracted a group of people.\nWhat is the effect?\nChoice 1: People gave him change.\nChoice 2: He drove the crowd away.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n街头音乐家吸引了一群人。\n是什么效果？\n选项 1：人们给了他零钱。\n选项 2：他驱散了人群。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理过程：\n街头音乐家吸引了一群人，通常是因为他的音乐受到人们的喜爱。当人们喜欢街头音乐家的表演时，他们通常会通过给予零钱来表达他们的欣赏和支持。驱散人群与吸引人群的现象相悖。因此，最合理的效果是人们给了他零钱。\n\n最终答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe little boy cried to his nanny.\nWhat is the cause?\nChoice 1: He missed his parents.\nChoice 2: It's snack time.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n小男孩向他的保姆哭泣。\n原因是什麼？\n选项 1：他想念他的父母。\n选项 2：是零食时间了。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理過程\n小男孩哭泣通常表示他感到悲傷、沮喪或需要安慰。想念父母是常見的讓孩子哭泣的原因，尤其是在與父母分離時。零食時間雖然可能引起孩子興奮或要求，但通常不會直接導致哭泣，除非他被拒絕給予零食。因此，想念父母是更可能的原因。\n\n最終答案\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe pilot's radar spotted a storm.\nWhat is the effect?\nChoice 1: The pilot avoided the storm.\nChoice 2: The pilot flew through the storm.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n飛行員的雷達發現了一場暴風雨。\n是什麼效果？\n選項 1：飛行員避開了暴風雨。\n選項 2：飛行員飛穿了暴風雨。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n飛行員發現暴風雨後，最合理的行動是避免它。飛穿暴風雨會帶來危險，而雷達的目的是為了幫助飛行員避開惡劣天氣。因此，選項 1 比選項 2 更合適。\n\n最終答案\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe tree has fallen leaves.\nWhat is the effect?\nChoice 1: The leaves have changed color.\nChoice 2: The leaves are stacked on the ground.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n樹上有落葉。\n是什麼結果？\n選項 1：樹葉變了顏色。\n選項 2：樹葉堆積在地上。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是樹上有落葉，這意味著樹葉已經從樹上脫落。落葉是樹葉變色、乾燥後脫落的結果。雖然落葉最終會堆積在地上，但「樹上有落葉」更直接地暗示了樹葉已經經歷了變色的過程，然後才脫落。因此，樹葉變色是更直接的結果。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "2",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe boy wanted to play a prank.\nWhat is the effect?\nChoice 1: He decided to play a card game with his sister.\nChoice 2: He decided to tease his sister.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這個男孩想惡作劇。\n是什麼結果？\n選項 1：他決定和姐姐玩紙牌遊戲。\n選項 2：他決定逗弄他的姐姐。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是這個男孩想惡作劇。惡作劇意味著做一些小小的、通常是無害的、旨在逗弄或欺騙他人的事情。選項 1 描述的是一個友好的活動，與惡作劇無關。選項 2 描述的是逗弄姐姐，這符合惡作劇的定義。因此，選項 2 是最合適的結果。\n\n最終答案\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe child complained that he must go to the bathroom.\nWhat is the effect?\nChoice 1: Father gave him soda.\nChoice 2: His father parked the car at the gas station.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n孩子抱怨他必須去洗手間。\n是什麼結果？\n選項 1：父親給了他汽水。\n選項 2：他的父親在加油站停車了。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n孩子抱怨要上廁所，這表示他有生理需求。父親給他汽水（選項 1）與這個需求無直接關聯，甚至可能加劇上廁所的頻率。父親在加油站停車（選項 2）則提供了一個孩子可以上廁所的機會，因為加油站通常設有洗手間。因此，選項 2 比選項 1 更合適。\n\n最終答案\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe child sprinkled fish food into the water tank.\nWhat is the effect?\nChoice 1: The fish jumped out of the tank.\nChoice 2: The fish swam towards food.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n孩子往水箱裡撒了魚食。\n效果是什麼？\n選項 1：魚跳出了水箱。\n選項 2：魚游向食物。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n孩子往水箱裡撒了魚食，魚是生物，需要食物生存。因此，最合理的反應是魚會游向食物。魚跳出水箱的可能性較低，除非水箱環境有其他特殊情況（例如水質惡劣、受到驚嚇等），但前提條件中沒有提及。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nWomen's political views have changed.\nWhat is the effect?\nChoice 1: She changed parties.\nChoice 2: She participated in the protest.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n女性的政治觀點已經改變。\n是什麼效果？\n選項 1：她換了政黨。\n選項 2：她參與了抗議活動。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提指出女性的政治觀點已經改變。這意味著她對政治議題的看法發生了轉變。\n選項 1，換了政黨，是政治觀點改變的直接且常見的結果。如果一個人的政治觀點改變，他們很可能會選擇一個更能代表他們新觀點的政黨。\n選項 2，參與了抗議活動，是政治觀點改變的*一種*表現形式，但並非必然結果。改變觀點的人可能選擇以其他方式表達他們的觀點，例如投票、寫信給代表、或參與政治討論。抗議活動是更積極的行動，不一定會伴隨所有政治觀點的改變。\n\n因此，選項 1 比選項 2 更直接地反映了政治觀點改變的結果。\n\n最終答案\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe sink in the bathroom is clogged.\nWhat is the effect?\nChoice 1: I turn on the tap.\nChoice 2: I poured sewer cleaner into the sink.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n浴室的水槽堵塞了。\n是什麼結果？\n選項 1：我打開水龍頭。\n選項 2：我往水槽裡倒了下水道清潔劑。\n請根據前提選擇最合適的選項。\n在你的回答的末尾，以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n水槽堵塞了，如果打開水龍頭（選項1），水無法排走，會導致積水，問題會更嚴重。如果倒入下水道清潔劑（選項2），有機會疏通堵塞，解決問題。因此，選項2更合適。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe passengers got off the train.\nWhat is the cause?\nChoice 1: The train arrived at the station.\nChoice 2: The train whistle.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n乘客下車了。\n是什麼原因？\n选项 1：火车到达站台。\n选项 2：火车鸣笛。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理過程\n乘客下車最直接的原因是火车到达目的地站台。火车鸣笛可能提示列车即将到达或有其他情况，但并不能直接导致乘客下车。因此，选项1更符合前提。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe man pressed the wet mouth of the envelope.\nWhat is the effect?\nChoice 1: He stamped the envelope.\nChoice 2: He sealed the envelope.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這個男人按壓了信封潮濕的封口。\n效果是什麼？\n選項 1：他蓋了郵戳在信封上。\n選項 2：他封好了信封。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提說明這個男人按壓了信封潮濕的封口。這意味著他正在試圖關閉信封，使其密封。按壓潮濕的封口是封信的行為。蓋郵戳是信件寄送的行為，與封信本身不同。因此，最合適的選項是信封被封好了。\n\n最終答案\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nFriends lost contact.\nWhat is the cause?\nChoice 1: They enjoy each other's company.\nChoice 2: They moved to different cities.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n朋友失去了聯繫。\n是什麼原因？\n选项 1：他们享受彼此的陪伴。\n选项 2：他们搬到了不同的城市。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理過程\n前提是朋友失去了聯繫。選項1說他們享受彼此的陪伴，這與失去聯繫相矛盾。選項2說他們搬到了不同的城市，這是一個合理的解釋，因為距離和生活環境的改變可能導致聯繫減少。因此，選項2更符合前提。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe accountant mismanaged the company's funds.\nWhat is the effect?\nChoice 1: She was fired.\nChoice 2: She took maternity leave.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n會計師管理不善公司的資金。\n是什麼結果？\n選項 1：她被解僱了。\n選項 2：她去產假了。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提指出會計師管理不善公司的資金。管理不善資金通常會導致負面後果，例如財務損失、法律問題或聲譽受損。在這種情況下，最合理的結果是會計師會因為不當行為而被解僱。產假與管理不善資金沒有直接關聯。\n\n最終答案\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nI look at the clock.\nWhat is the cause?\nChoice 1: I heard the ticking of the clock.\nChoice 2: I want to check the time.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n我看了看時鐘。\n是什麼原因？\n選項 1：我聽到了時鐘的滴答聲。\n選項 2：我想查看時間。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是“我看了看時鐘”。這意味著我將視線集中在時鐘上。選項1說我聽到了時鐘的滴答聲，這可能導致我去看時鐘，但並非必然。選項2說我想查看時間，這直接解釋了為什麼我會去看時鐘。因此，選項2是更直接和更合適的解釋。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nMy hands tightened.\nWhat is the cause?\nChoice 1: I wrote the paper by hand.\nChoice 2: My wife and I held hands.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n我的手緊握了起來。\n是什麼原因？\n选项 1：我用手写了论文。\n选项 2：我和我的妻子握着手。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理過程\n前提是“我的手紧握起来”。这意味着手处于一个握紧的状态。\n选项1“我用手写了论文”可能导致手部疲劳，但并不必然导致手紧握。写论文时，手可能只是握着笔，而不是紧握。\n选项2“我和我的妻子握着手”直接导致手紧握的状态。\n\n因此，选项2更符合前提。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "1",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe bolts are tightened.\nWhat is the cause?\nChoice 1: I replaced the bolts.\nChoice 2: I twisted the wrench.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n螺栓被擰緊了。\n是什麼原因造成的？\n选项 1：我更换了螺栓。\n选项 2：我擰了扳手。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理過程\n前提是螺栓被擰緊了。選項1說我更換了螺栓，更換螺栓並不一定意味著螺栓被擰緊，可能只是換上一個新的未擰緊的螺栓。選項2說我擰了扳手，擰扳手是擰緊螺栓的直接行為。因此，選項2更直接地解釋了螺栓被擰緊的原因。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe couple signed an apartment lease.\nWhat is the effect?\nChoice 1: The couple moved into the apartment.\nChoice 2: The city government sentenced the apartment to a dilapidated building.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這對夫婦簽訂了公寓租賃合同。\n是什麼結果？\n選項 1：這對夫婦搬進了公寓。\n選項 2：市政府將公寓認定為危房。\n請根據前提選擇最合適的選項。\n在您的回答的末尾，請以完全相同的 JSON 格式提供您的答案：{\"answer\": \"your_choice_number\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n簽訂租賃合同意味著租戶（這對夫婦）和房東達成協議，允許租戶居住在公寓中。最直接和預期的結果是租戶搬進公寓。市政府認定公寓為危房是一個獨立事件，與簽訂租賃合同沒有直接因果關係。\n\n最終答案\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe woman was sitting outside the porch.\nWhat is the cause?\nChoice 1: She wants to watch the sunset.\nChoice 2: She thought she saw lightning.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n那個女人正坐在門廊外面。\n是什麼原因？\n選項 1：她想看日落。\n選項 2：她以為自己看到了閃電。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提只說明女人坐在門廊外面。這是一個相對中性的行為，沒有提供關於她動機的任何線索。選項1（她想看日落）是一個常見的、合理的理由，人們會坐在門廊外面。選項2（她以為自己看到了閃電）暗示了恐懼或擔憂，而前提中沒有任何暗示。因此，選項1比選項2更符合前提。\n\n最終答案\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe man was wearing a life jacket in the water.\nWhat is the cause?\nChoice 1: He can't swim.\nChoice 2: The water is very shallow.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這個男人在水中穿著救生衣。\n是什麼原因？\n選項 1：他不擅長游泳。\n選項 2：水很淺。\n請根據前提選擇最合適的選項。\n在你的回答的末尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提說明這個男人在水中穿著救生衣。救生衣的主要目的是為了安全，尤其是在不擅長游泳或水域存在危險的情況下。雖然水淺的情況下穿救生衣並非不可能，但並非必要。因此，不擅長游泳是更直接和常見的原因。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe woman made a typo in the word processor.\nWhat is the effect?\nChoice 1: She deleted the file.\nChoice 2: She pressed the backspace key.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這位女士在文字處理器中打錯了字。\n效果是什麼？\n選項 1：她刪除了檔案。\n選項 2：她按下了退格鍵。\n請根據前提選擇最合適的選項。\n在您的回答的結尾，請以完全相同的 JSON 格式提供您的答案：{\"answer\": \"your_choice_number\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提指出這位女士在文字處理器中打錯了字。打錯字後，最直接的反應通常是使用退格鍵來修正錯誤。刪除檔案是更嚴重的操作，且與打錯字沒有直接關聯。因此，按退格鍵是更合理的結果。\n\n最終答案\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe girl brags to her friend.\nWhat is the cause?\nChoice 1: Her grades are not good.\nChoice 2: She won the game.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這個女孩向她的朋友炫耀。\n是什麼原因？\n选项 1：她的成绩不好。\n选项 2：她赢得了比赛。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理過程\n炫耀通常是為了展示自己擁有的優勢或成就。成绩不好通常不会被炫耀，反而会隐藏。赢得比赛则是一个值得炫耀的成就。因此，选项2更符合“炫耀”的前提。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe lawn is muddy.\nWhat is the cause?\nChoice 1: It rained all night.\nChoice 2: There are weeds everywhere.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n草坪是泥濘的。\n是什麼原因造成的？\n選項 1：整夜都在下雨。\n選項 2：到處都是雜草。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n泥濘的草坪通常是由水分造成的。下雨會使草坪變得泥濘。雜草的存在不會直接導致草坪泥濘。因此，整夜下雨是草坪泥濘的最合理原因。\n\n最終答案\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe woman overslept.\nWhat is the cause?\nChoice 1: She stayed in the hotel for one night.\nChoice 2: She forgot to set the alarm clock.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這位女士睡過頭了。\n是什麼原因？\n選項 1：她在那家飯店住了一晚。\n選項 2：她忘了設定鬧鐘。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n睡過頭的原因有很多，但前提只說明了這位女士睡過頭了。選項1描述了她在哪裡睡覺，但沒有解釋她為什麼睡過頭。選項2直接解釋了她睡過頭的原因——她忘了設定鬧鐘。因此，選項2更直接地解釋了前提。\n\n最終答案\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe man put on sunscreen.\nWhat is the cause?\nChoice 1: He sits in the shadows.\nChoice 2: He went to the beach.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這個男人塗了防曬霜。\n是什麼原因？\n選項 1：他坐在陰影裡。\n選項 2：他去了海灘。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n塗抹防曬霜通常是為了保護皮膚免受陽光傷害。雖然在陰影裡也能受到一些紫外線照射，但通常不需要塗抹防曬霜。去海灘則通常會暴露在強烈的陽光下，因此塗抹防曬霜是必要的。因此，去海灘是塗抹防曬霜更合理的原因。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe researchers proved this theory.\nWhat is the effect?\nChoice 1: The researchers withdrew this theory.\nChoice 2: The public accepted this theory.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n研究人員證明了這個理論。\n是什麼效果？\n選項 1：研究人員撤回了這個理論。\n選項 2：公眾接受了這個理論。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提表明研究人員已經證明了這個理論是正確的。如果一個理論被證明，那麼最可能的效果是公眾會接受它。研究人員不會在證明理論後撤回它。\n\n最終答案\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe fans booed in the game.\nWhat is the cause?\nChoice 1: The game enters overtime.\nChoice 2: The referee made a wrong judgment.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n球迷在比賽中噓聲。\n是什麼原因？\n選項 1：比賽進入加時賽。\n選項 2：裁判做出了錯誤的判斷。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n球迷在比賽中噓聲通常是表達不滿。加時賽雖然可能緊張，但通常不會直接引發噓聲，除非加時賽中的某些判罰或情況讓球迷不滿。而裁判做出錯誤的判斷，直接影響比賽結果，更容易引發球迷的噓聲，表達對判罰的不滿和抗議。因此，選項2更符合球迷噓聲的原因。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nI entered my combination code on the lock.\nWhat is the effect?\nChoice 1: I locked it.\nChoice 2: The lock is unlocked.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n我輸入了我的密碼到鎖上。\n效果是什麼？\n選項 1：我鎖上了它。\n選項 2：鎖被解鎖了。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提說明你輸入了密碼到鎖上。輸入密碼通常是為了解鎖，而不是鎖上。因此，最合適的效果是鎖被解鎖了。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe crowd is increasing.\nWhat is the effect?\nChoice 1: The father handed his son some money.\nChoice 2: The father holds his son's hand.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n人群正在增加。\n是什麼效果？\n選項 1：父親給了兒子一些錢。\n選項 2：父親牽著兒子的手。\n請根據前提選擇最合適的選項。\n在你的回答的末尾，以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是人群正在增加。這意味著社會規模擴大，人與人之間的關係可能變得更加複雜。選項1描述的是一種經濟行為，金錢的轉移，與人口增長沒有直接的因果關係。選項2描述的是一種親情關係，父親牽著兒子的手，代表著家庭的連結和保護。在人口增長的情況下，家庭關係的重要性可能會更加凸顯，因為在一個更大的社會中，家庭可以提供安全感和歸屬感。因此，選項2更符合人口增長帶來的社會效應。\n\n最終答案\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nSnow blocked the driveway.\nWhat is the effect?\nChoice 1: I gathered the snow into a snowball.\nChoice 2: I shoveled the snow away.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n雪堵住了車道。\n是什麼效果？\n选项 1：我把雪堆成雪球。\n选项 2：我铲掉了雪。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理過程\n前提是雪堵住了車道。這意味著車道無法通行。選項1是把雪堆成雪球，這並不能解決車道被堵的問題，反而可能增加更多雪。選項2是鏟掉雪，這直接解決了車道被堵的問題，使車道恢復通行。因此，選項2是最合適的。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe kayaker was paddling.\nWhat is the effect?\nChoice 1: The kayak reached the shore.\nChoice 2: The kayak encountered wind and waves.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n皮划艇运动员正在划桨。\n是什么效果？\n选项 1：皮划艇到达了岸边。\n选项 2：皮划艇遇到了风和浪。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理過程\n前提是皮划艇运动员正在划桨。划桨的目的是为了移动皮划艇。选项1“皮划艇到达了岸边”是划桨可能导致的结果，是划桨的一个效果。选项2“皮划艇遇到了风和浪”描述的是皮划艇可能遇到的环境因素，与划桨本身没有直接的因果关系。因此，选项1更符合“效果”的定义。\n\n最终答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe girl's bicycle got out of control.\nWhat is the effect?\nChoice 1: She released the handlebar.\nChoice 2: She hit the fence.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n女孩的自行车失控了。\n是什么结果？\n选项 1：她松开了车把。\n选项 2：她撞到了栅栏。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理過程\n自行车失控通常意味着骑车者失去了对自行车的控制。这可能是由于多种原因造成的，但“她松开了车把”是导致失控的直接原因之一。而“她撞到了栅栏”是失控的*结果*，而不是原因。因此，最合适的选项是她松开了车把，导致自行车失控。\n\n最终答案\n{\"answer\": \"1\"}\n",
+    "Answer": "2",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nI turned on the fan.\nWhat is the effect?\nChoice 1: Sprinkle water on my skin.\nChoice 2: I feel a cool breeze.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n我打開了風扇。\n是什麼效果？\n選項 1：在我的皮膚上灑水。\n選項 2：我感覺到涼風。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n風扇的作用是產生氣流，使人體表面的汗液蒸發加快，從而帶走熱量，讓人感覺涼爽。選項1描述的是灑水，與風扇的功能無關。選項2描述的是感覺到涼風，這是風扇直接產生的效果。因此，選項2更符合前提。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe surfer returned to the beach.\nWhat is the cause?\nChoice 1: They were drenched.\nChoice 2: They saw a shark.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n衝浪者回到了海灘。\n是什麼原因？\n選項 1：他們全身濕透了。\n選項 2：他們看到了一條鯊魚。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n衝浪者回到海灘的原因有很多，但最直接和常見的原因是衝浪結束，他們需要回到陸地上。全身濕透是衝浪的必然結果，因此是他們回到海灘的合理原因。看到鯊魚雖然可能導致衝浪者回到海灘，但並非每次衝浪結束都會遇到鯊魚，因此不如全身濕透那麼普遍和直接。\n\n最終答案\n{\"answer\": \"1\"}",
+    "Answer": "2",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nI pulled off the drain plug in the bathtub.\nWhat is the effect?\nChoice 1: The water drains from the bathtub.\nChoice 2: Water splashed on the floor.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n我拔掉了浴缸的排水塞。\n是什麼效果？\n選項 1：浴缸里的水排空了。\n選項 2：水濺到了地板上。\n請根據前提選擇最合適的選項。\n在你的回答的末尾，以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n拔掉浴缸的排水塞，其主要目的是讓浴缸里的水流出。雖然在某些情況下，如果水流過大或浴缸邊緣較低，可能會導致水濺出，但最直接和主要的效果是水排空。因此，選項1更符合前提的直接結果。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe husband feels guilty for cheating on his wife.\nWhat is the effect?\nChoice 1: He accused her of being unfaithful.\nChoice 2: He confessed his infidelity to her.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n丈夫因為出軌而感到內疚。\n是什麼結果？\n選項 1：他指責她不忠。\n選項 2：他向她坦白了自己的不忠。\n請根據前提選擇最合適的選項。\n在你的回答的末尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n丈夫因出軌感到內疚，這意味著他意識到自己的錯誤行為。內疚感通常會驅使人們想要彌補錯誤或尋求寬恕。指責妻子不忠（選項1）是一種轉移責任、逃避內疚的方式，與內疚感本身並不相符。相反，坦白不忠（選項2）是承認錯誤、承擔責任的行為，更符合內疚感可能導致的結果。因此，選項2更合適。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe ink on the poster was wiped away.\nWhat is the cause?\nChoice 1: I waited for the ink to dry.\nChoice 2: I spilled water on the poster.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n海報上的墨水被擦掉了。\n是什麼原因？\n选项 1：我等墨水变干。\n选项 2：我不小心把水洒在海报上。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理過程\n前提是海報上的墨水被擦掉了。選項1說“我等墨水變乾”，墨水變乾不會導致墨水被擦掉，反而會讓墨水固定在海報上。選項2說“我不小心把水灑在海報上”，水會溶解墨水，導致墨水被擦掉或模糊。因此，選項2更符合前提。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe child yelled.\nWhat is the cause?\nChoice 1: He had a nightmare.\nChoice 2: He wet the bed.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n孩子哭了喊叫。\n是什麼原因？\n选项 1：他做了一个噩梦。\n选项 2：他尿湿了床。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理過程\n孩子哭喊的原因有很多，噩夢和尿床都可能導致孩子哭喊。然而，噩夢通常會伴隨更複雜的言語或動作，而尿床的孩子哭喊可能更多是驚嚇或不舒服。單純從「孩子哭了喊叫」這個前提來看，噩夢的可能性更廣泛，也更常見。因此，選項1更符合一般情況。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe boy put his feet on the table.\nWhat is the effect?\nChoice 1: Father sat down at the table.\nChoice 2: His father educated him.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n男孩把腳放在桌子上。\n是什麼結果？\n選項 1：父親坐在桌子旁。\n選項 2：他的父親教育了他。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是男孩把腳放在桌子上。這是一個不恰當的行為。選項1描述了一個場景，但沒有說明這個行為會導致什麼。選項2描述了這個行為的直接後果——父親的教育。因此，選項2是更合適的結果。\n\n最終答案\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nMy friend turned his head in my direction.\nWhat is the cause?\nChoice 1: I called his name.\nChoice 2: I waved my arms.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n我的朋友轉過頭朝著我的方向。\n是什麼原因？\n选项 1：我叫了他的名字。\n选项 2：我挥舞了手臂。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理過程\n朋友轉頭看向我，最直接的原因可能是因為我引起了他的注意。叫他的名字或揮舞手臂都是引起注意的方式。然而，叫名字通常會更直接地促使對方轉頭看向你，因為名字本身就具有指向性。揮舞手臂可能只是引起他的視線移動，不一定會讓他直接看向你。因此，選項1更為合理。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe government oppresses its citizens.\nWhat is the effect?\nChoice 1: The citizens launched a rebellion.\nChoice 2: Citizens register to vote.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n政府壓迫其公民。\n是什麼效果？\n選項 1：公民發動叛亂。\n選項 2：公民登記投票。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n政府壓迫其公民通常會導致不滿和抵抗。雖然公民登記投票是一種和平的抵抗形式，但當壓迫達到一定程度時，更直接的反應，例如叛亂，更有可能發生。登記投票可能被視為一種長期的策略，但它可能不足以立即應對壓迫。叛亂是直接對抗壓迫的行為，因此在政府壓迫公民的前提下，更符合邏輯。\n\n最終答案\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe boy got lost in the woods.\nWhat is the effect?\nChoice 1: He set up a tent.\nChoice 2: He screamed for help.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n男孩在樹林裡迷路了。\n是什麼結果？\n選項 1：他搭建了帳篷。\n選項 2：他呼救。\n請根據前提選擇最合適的選項。\n在你的回答的末尾，以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n男孩在樹林裡迷路了，最直接且合理的反應是尋求幫助。搭建帳篷雖然是生存技能，但迷路後首要任務是脫困，而非安頓下來。呼救是更直接且可能更快獲得救援的方式。\n\n最終答案\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThis woman has traveled abroad.\nWhat is the cause?\nChoice 1: She wants to learn to paint.\nChoice 2: She wants to learn about other cultures.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這位女士去國外旅行了。\n是什麼原因？\n選項 1：她想學習繪畫。\n選項 2：她想了解其他文化。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提只說明這位女士去國外旅行了，並沒有提供任何關於她旅行目的的資訊。選項1和選項2都可能是旅行的原因。然而，了解其他文化是旅行的一個更普遍和常見的原因，而學習繪畫通常需要更具體的安排和目的性。因此，選項2更符合一般情況。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe man is jealous of his colleague.\nWhat is the cause?\nChoice 1: His colleague was promoted.\nChoice 2: His colleague worked late.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這個男人嫉妒他的同事。\n是什麼原因？\n選項 1：他的同事被晉升了。\n選項 2：他的同事工作到很晚。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n嫉妒通常源於對他人擁有的某種東西的渴望，或者認為自己應該擁有而沒有得到。同事被晉升意味著同事獲得了更高的地位、薪水或認可，這很容易引起嫉妒。同事工作到很晚可能只是因為工作需要，或者個人選擇，不一定會直接引發嫉妒。因此，選項1更符合“嫉妒”的前提。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe man witnessed aliens.\nWhat is the cause?\nChoice 1: He had hallucinations at that time.\nChoice 2: He was meditating.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這個男人目睹了外星人。\n是什麼原因？\n選項 1：他當時產生了幻覺。\n選項 2：他當時在冥想。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是這個男人目睹了外星人。我們需要找出最可能的原因。選項1是幻覺，這意味著他所看到的是虛假的，是大腦產生的。選項2是冥想，雖然冥想可以讓人產生特殊的體驗，但通常不會是看到外星人這種具體的、外部的視覺體驗。在沒有其他信息的情況下，幻覺比冥想更可能導致一個人“目睹”外星人。\n\n最終答案\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe man's hair turned golden.\nWhat is the cause?\nChoice 1: He put bleach in his hair.\nChoice 2: He put shampoo in his hair.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這個男人的頭髮變成了金色。\n是什麼原因？\n選項 1：他往頭髮裡塗了漂白劑。\n選項 2：他往頭髮裡塗了洗髮水。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n頭髮變金色通常是透過化學過程去除或改變頭髮的色素所致。漂白劑的確可以做到這一點，而洗髮水的主要功能是清潔頭髮，不會改變頭髮的顏色。因此，選項 1 比選項 2 更合理。\n\n最終答案\n{\"answer\": \"1\"}\n",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe artist created a new work.\nWhat is the cause?\nChoice 1: She criticized her previous work.\nChoice 2: She felt a burst of inspiration.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n這位藝術家創作了一件新的作品。\n是什麼原因？\n選項 1：她批評了她以前的作品。\n選項 2：她感到一股靈感湧現。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n藝術家創作新作品的原因有很多，但前提只給出一個藝術家創作了新作品的事實。選項1，批評以前的作品，可能*導致*創作新作品，但並非必然。藝術家可能只是想探索新的想法或技巧。選項2，靈感湧現，是一個更直接、更常見的創作動機。靈感通常會直接促使藝術家開始新的作品。因此，選項2更符合前提。\n\n最終答案\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe son left the house.\nWhat is the cause?\nChoice 1: He was discharged from the army.\nChoice 2: He is going to college.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n兒子離開了家。\n是什麼原因？\n選項 1：他從軍隊退伍了。\n選項 2：他要去上大學了。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n兒子離開家，可能的原因有很多。選項1描述的是從軍隊退伍，這意味著他完成了服役，需要重新適應社會生活，因此離開家是合理的。選項2描述的是去上大學，這也意味著他需要離開家去新的地方學習生活，同樣是合理的。\n\n然而，僅從「兒子離開了家」這個前提來看，兩個選項都可能成立，沒有足夠的信息判斷哪個選項更合適。但通常來說，大學是年輕人離開家庭的一個常見原因，而退伍士兵可能也會選擇回家，所以選項2更普遍。\n\n最終答案\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe book fell off the shelf.\nWhat is the cause?\nChoice 1: The shelf is full of dust.\nChoice 2: An earthquake shook the bookshelves.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n书从书架上掉了下来。\n是什么原因？\n选项 1：书架上积满了灰尘。\n选项 2：地震摇晃了书架。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的选项编号\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理過程\n书从书架上掉下来，最直接的原因应该是外力作用或者书架本身的不稳定。灰尘积累虽然可能导致书与书架之间的摩擦力减小，但通常不足以直接导致书掉落。地震摇晃则是一种明显的外力作用，可以直接导致书架晃动，从而使书掉落。因此，地震摇晃书架是更直接、更合理的解释。\n\n最终答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThere is a power outage in my house.\nWhat is the effect?\nChoice 1: I turned on a light.\nChoice 2: I reset the circuit breaker.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n我家停電了。\n什麼是結果？\n選項 1：我打開了燈。\n選項 2：我重置了斷路器。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n如果停電了，打開燈是沒有用的，因為沒有電力供應。重置斷路器是解決停電問題的常見方法，可以恢復電力供應。因此，重置斷路器是更合適的結果。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nWe took a roller coaster.\nWhat is the cause?\nChoice 1: It looks scary.\nChoice 2: It looks very interesting.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n我們坐了過山車。\n是什麼原因？\n選項 1：它看起來很嚇人。\n選項 2：它看起來非常有趣。\n請根據前提選擇最合適的選項。\n在你的回答的結尾，請以完全相同的 JSON 格式提供你的答案：{\"answer\": \"你的選項編號\"}\n答案必須是“1”或“2”。\n",
+    "Result": "推理過程\n前提是“我們坐了過山車”。這意味著我們已經採取了行動，坐了過山車。選項1說它看起來很嚇人，這可能是一個原因，但並非必然。選項2說它看起來非常有趣，這也是一個可能的原因，而且更符合人們主動去體驗過山車的動機。通常人們會因為覺得有趣而選擇坐過山車，而不是因為覺得嚇人。因此，選項2更合適。\n\n最終答案\n{\"answer\": \"2\"}\n",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe popcorn bag began to crack.\nWhat is the cause?\nChoice 1: I poured the butter into the bag.\nChoice 2: I heated it in the microwave.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "有一個前提：\n爆米花袋子開始破裂。\n是什麼原因？\n选项 1：我把黄油倒进了袋子里。\n选项 2：我在微波炉里加热了它。\n请根据前提选择最合适的选项。\n在你的回答的结尾，请以完全相同的 JSON 格式提供你的答案：{\"answer\": \"your_choice_number\"}\n答案必须是“1”或“2”。\n",
+    "Result": "推理過程\n爆米花袋子破裂的原因通常是內部壓力過大。選項1提到加入黃油，雖然黃油會融化，但不太可能直接導致袋子破裂。選項2提到微波爐加熱，微波爐加熱會使爆米花中的水分迅速汽化，產生大量蒸汽，導致袋內壓力急劇增加，最終可能導致袋子破裂。因此，微波爐加熱是更可能導致爆米花袋子破裂的原因。\n\n最終答案\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  }
+]

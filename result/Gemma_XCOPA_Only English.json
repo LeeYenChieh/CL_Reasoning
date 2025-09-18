@@ -1,0 +1,709 @@
+[
+  {
+    "Model": "Gemma",
+    "Dataset": "XCOPA",
+    "Strategy": "Only English",
+    "Data Nums": 100,
+    "Data Samples": 1
+  },
+  {
+    "Question": "There is a premise: \nThe item is wrapped in bubble wrap.\nWhat is the cause?\nChoice 1: It is very fragile.\nChoice 2: It is very small.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe item is wrapped in bubble wrap.\nWhat is the cause?\nChoice 1: It is very fragile.\nChoice 2: It is very small.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nBubble wrap is primarily used to protect items during shipping or handling. While small items *can* be wrapped in bubble wrap, the main reason for using it is to prevent breakage of fragile items. A small item could be protected with other methods, but fragility almost always necessitates bubble wrap.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nI emptied my pocket.\nWhat is the effect?\nChoice 1: I found a ticket stub.\nChoice 2: I found a weapon.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nI emptied my pocket.\nWhat is the effect?\nChoice 1: I found a ticket stub.\nChoice 2: I found a weapon.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states a simple action: emptying one's pocket. This action doesn't inherently suggest anything about the *type* of items that would be found. However, ticket stubs are common pocket contents, while weapons are not. It's far more likely someone would find a ticket stub when emptying their pocket than a weapon. Therefore, choice 1 is the more appropriate effect.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nTermites invaded the house.\nWhat is the effect?\nChoice 1: The termites disappeared from the house.\nChoice 2: Termites ate through the wood in the house.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise: \nTermites invaded the house.\nWhat is the effect?\nChoice 1: The termites disappeared from the house.\nChoice 2: Termites ate through the wood in the house.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states that termites *invaded* the house. Invasion implies unwanted presence and activity. Termites are known for consuming wood. Therefore, it's logical to assume they would cause damage by eating through the wood. Choice 1 states the termites disappeared, which contradicts the premise of an invasion.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe passenger arrives at the border.\nWhat is the effect?\nChoice 1: The patrol checked their passports.\nChoice 2: Patrol officers accused them of smuggling.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise: \nThe passenger arrives at the border.\nWhat is the effect?\nChoice 1: The patrol checked their passports.\nChoice 2: Patrol officers accused them of smuggling.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states a passenger arrives at the border. This is a standard situation where border patrol would routinely check identification documents like passports. Accusations of smuggling are not a guaranteed or typical immediate effect of simply *arriving* at the border; they would require further suspicion or evidence. Therefore, checking passports is the more logical and common effect.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe office is closed.\nWhat is the cause?\nChoice 1: It was a holiday.\nChoice 2: It was summer.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe office is closed.\nWhat is the cause?\nChoice 1: It was a holiday.\nChoice 2: It was summer.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the office is closed. Both options could be causes, but a holiday is a more direct and common reason for an office closure. Summer might lead to reduced staff or altered hours, but doesn't necessarily mean a complete closure. A holiday *implies* a complete closure.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe girl was exhausted.\nWhat is the cause?\nChoice 1: She played checkers.\nChoice 2: She skipped the rope.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe girl was exhausted.\nWhat is the cause?\nChoice 1: She played checkers.\nChoice 2: She skipped the rope.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nBoth playing checkers and skipping rope could cause exhaustion, but skipping rope is a significantly more physically demanding activity than playing checkers. Exhaustion implies a greater level of physical or mental fatigue. Therefore, skipping rope is a more likely cause of exhaustion than playing checkers.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThere is no place for the woman to line up.\nWhat is the cause?\nChoice 1: More and more people began to line up.\nChoice 2: She walked out of the team.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThere is no place for the woman to line up.\nWhat is the cause?\nChoice 1: More and more people began to line up.\nChoice 2: She walked out of the team.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states there's no place for the woman *to line up*. This implies the line is full or overcrowded. Choice 1, \"More and more people began to line up,\" directly explains how the line could become full, leaving no space for her. Choice 2, \"She walked out of the team,\" explains why *she* is no longer in line, but doesn't explain why there's no space *for* her to join. Therefore, Choice 1 is the more logical cause.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "2",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe girl squeezed her nose.\nWhat is the cause?\nChoice 1: The baby drools on the bib.\nChoice 2: The baby soiled his diaper.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe girl squeezed her nose.\nWhat is the cause?\nChoice 1: The baby drools on the bib.\nChoice 2: The baby soiled his diaper.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states a girl squeezed her nose. This action is typically done to block an unpleasant smell. While both choices involve a baby and potentially unpleasant smells, a soiled diaper (Choice 2) is far more likely to produce a strong, offensive odor that would cause someone to squeeze their nose than drool on a bib (Choice 1). Drool is generally not strongly odorous.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe band played their hit song.\nWhat is the effect?\nChoice 1: The audience clapped their hands to the music.\nChoice 2: The audience was politely silent.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe band played their hit song.\nWhat is the effect?\nChoice 1: The audience clapped their hands to the music.\nChoice 2: The audience was politely silent.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the band played their *hit song*. Hit songs are generally well-received and enjoyed by audiences. Therefore, it's more likely the audience would react positively, such as clapping, rather than remaining silent. Politeness doesn't necessarily equate to enjoyment, and a hit song usually evokes a more enthusiastic response.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe girl wanted to thank her math teacher.\nWhat is the effect?\nChoice 1: The girl was detained after school.\nChoice 2: The girl brought an apple to the teacher.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe girl wanted to thank her math teacher.\nWhat is the effect?\nChoice 1: The girl was detained after school.\nChoice 2: The girl brought an apple to the teacher.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the girl *wanted* to thank her math teacher. This implies a positive action stemming from that desire. Choice 1, being detained, is a negative consequence and doesn't logically follow from wanting to express gratitude. Choice 2, bringing an apple, is a common and appropriate way to show thanks to a teacher. Therefore, Choice 2 is the most logical effect of the premise.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe young campers are scared.\nWhat is the cause?\nChoice 1: Their camp consultant told them a ghost story.\nChoice 2: They toasted marshmallows on the campfire.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe young campers are scared.\nWhat is the cause?\nChoice 1: Their camp counselor told them a ghost story.\nChoice 2: They toasted marshmallows on the campfire.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the campers are scared. Toasted marshmallows (Choice 2) are generally a pleasant activity and wouldn't typically cause fear. However, a ghost story (Choice 1) is *designed* to frighten people. Therefore, a ghost story is a much more plausible cause for the campers' fear.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe man bumped his head.\nWhat is the effect?\nChoice 1: He was lost in thought.\nChoice 2: He had a concussion.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe man bumped his head.\nWhat is the effect?\nChoice 1: He was lost in thought.\nChoice 2: He had a concussion.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nBumping one's head can have a range of effects, from minor discomfort to serious injury. While being \"lost in thought\" *could* happen after a head bump (perhaps due to disorientation), it's not a direct or typical consequence. A concussion, however, is a common and direct medical effect of bumping one's head, especially if the bump was significant. Therefore, a concussion is the more appropriate effect given the premise.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nMy check was declined.\nWhat is the cause?\nChoice 1: My bank account is empty.\nChoice 2: I got a raise.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nMy check was declined.\nWhat is the cause?\nChoice 1: My bank account is empty.\nChoice 2: I got a raise.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nA declined check indicates insufficient funds or an issue with the account. Getting a raise would *add* funds, making a decline less likely. An empty bank account directly explains why a check would be declined. Therefore, choice 1 is the most appropriate cause.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe man's email inbox was flooded with spam.\nWhat is the effect?\nChoice 1: He deleted the spam.\nChoice 2: He sent mass emails.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe man's email inbox was flooded with spam.\nWhat is the effect?\nChoice 1: He deleted the spam.\nChoice 2: He sent mass emails.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the man *received* a lot of spam. A logical effect of receiving spam is that he would attempt to deal with it, and deleting it is a common way to do so. Sending mass emails (Choice 2) is something that *causes* spam, not an effect of receiving it. Therefore, deleting the spam is the more appropriate effect.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe sailor was quarantined.\nWhat is the cause?\nChoice 1: He was exposed to this disease.\nChoice 2: He recovered from the illness.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe sailor was quarantined.\nWhat is the cause?\nChoice 1: He was exposed to this disease.\nChoice 2: He recovered from the illness.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nQuarantine is used to separate and restrict the movement of people who have been *exposed* to a contagious disease to see if they become sick. It's a preventative measure. Someone who has *recovered* from an illness would not typically be quarantined; they would be considered no longer a threat. Therefore, exposure to a disease is the most logical cause for a sailor being quarantined.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe girl remembered the password.\nWhat is the cause?\nChoice 1: She memorized it to herself.\nChoice 2: She forgot to write it down.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe girl remembered the password.\nWhat is the cause?\nChoice 1: She memorized it to herself.\nChoice 2: She forgot to write it down.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the girl *remembered* the password. This implies she had to have known it at some point and retained that knowledge. Choice 1, \"She memorized it to herself,\" directly explains how she would remember it – through the act of memorization. Choice 2, \"She forgot to write it down,\" explains why she *didn't* have a written reminder, but doesn't explain how she remembered it in the first place. Remembering implies prior learning or memorization.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nI poured water into the glass.\nWhat is the effect?\nChoice 1: This quenched my thirst.\nChoice 2: The glass became full.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nI poured water into the glass.\nWhat is the effect?\nChoice 1: This quenched my thirst.\nChoice 2: The glass became full.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states an action: pouring water into a glass. We need to identify the most direct and immediate effect of this action.\n\nChoice 1, \"This quenched my thirst,\" is a *possible* outcome, but it relies on an additional action (drinking the water) and a personal state (being thirsty). It's not a direct consequence of simply pouring water into a glass.\n\nChoice 2, \"The glass became full,\" is a direct and inevitable consequence of pouring water into a glass. The water occupies space within the glass, and as you continue pouring, the glass will fill up.\n\nTherefore, Choice 2 is the most appropriate effect based solely on the given premise.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nWhen his friend finished speaking, the man remained silent.\nWhat is the cause?\nChoice 1: He wants to support his friends.\nChoice 2: He was thinking about what his friend said.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise: \nWhen his friend finished speaking, the man remained silent.\nWhat is the cause?\nChoice 1: He wants to support his friends.\nChoice 2: He was thinking about what his friend said.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the man *remained silent* after his friend finished speaking. This silence doesn't inherently indicate support (Choice 1). While support *could* be a reason for silence in some contexts, it's not the most direct interpretation of simply \"remaining silent.\" Choice 2, that he was thinking about what his friend said, is a much more natural and common reason for someone to be silent immediately after another person speaks. It suggests processing and consideration, which aligns directly with the act of remaining silent.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe accident was my fault.\nWhat is the effect?\nChoice 1: I feel guilty.\nChoice 2: I sued.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe accident was my fault.\nWhat is the effect?\nChoice 1: I feel guilty.\nChoice 2: I sued.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the accident was the speaker's fault. This naturally leads to feelings of remorse and responsibility. Feeling guilty is a direct emotional consequence of acknowledging fault. Suing someone, on the other hand, implies seeking compensation, which is inconsistent with admitting fault. Therefore, feeling guilty is the more appropriate effect.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe chain broke.\nWhat is the cause?\nChoice 1: The chain is wrapped around the tire.\nChoice 2: A section of the chain is broken.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe chain broke.\nWhat is the cause?\nChoice 1: The chain is wrapped around the tire.\nChoice 2: A section of the chain is broken.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states \"The chain broke.\" This implies a loss of structural integrity within the chain itself. Choice 1, \"The chain is wrapped around the tire,\" describes a state of being, not a cause of breaking. Choice 2, \"A section of the chain is broken,\" directly explains *how* the chain broke – a part of it is no longer connected. Therefore, Choice 2 is the most appropriate cause.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe couple decided to compromise.\nWhat is the cause?\nChoice 1: They are tired of arguing.\nChoice 2: They avoid discussing this issue.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe couple decided to compromise.\nWhat is the cause?\nChoice 1: They are tired of arguing.\nChoice 2: They avoid discussing this issue.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nCompromise inherently suggests a resolution to a disagreement. People compromise *because* they want to resolve a conflict, and a common reason for wanting to resolve a conflict is being tired of arguing. Avoiding discussion (Choice 2) would likely *prevent* a compromise, not lead to one. A compromise implies a discussion happened and a middle ground was found.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe woman decided to run for public office.\nWhat is the effect?\nChoice 1: She hired a campaign planner.\nChoice 2: She testified in court.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise: \nThe woman decided to run for public office.\nWhat is the effect?\nChoice 1: She hired a campaign planner.\nChoice 2: She testified in court.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states a woman decided to run for public office. This decision would logically lead to actions related to *running* for office. Hiring a campaign planner (Choice 1) is a direct and necessary step in a political campaign. Testifying in court (Choice 2) has no inherent connection to running for office; it could happen to anyone regardless of their political aspirations. Therefore, Choice 1 is the most appropriate effect of the premise.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe man expected the weather to be very cold during his journey.\nWhat is the effect?\nChoice 1: He packed his warm clothes into his suitcase.\nChoice 2: He travels with a large suitcase.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise: \nThe man expected the weather to be very cold during his journey.\nWhat is the effect?\nChoice 1: He packed his warm clothes into his suitcase.\nChoice 2: He travels with a large suitcase.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the man *expected* cold weather. This expectation would logically lead him to prepare for it. Packing warm clothes is a direct preparation for cold weather. Traveling with a large suitcase is not necessarily a consequence of expecting cold weather; he might have a large suitcase for other reasons. Therefore, choice 1 is the most appropriate effect of the premise.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe student knows the answer to this question.\nWhat is the effect?\nChoice 1: He raised his hand.\nChoice 2: It is lazy.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe student knows the answer to this question.\nWhat is the effect?\nChoice 1: He raised his hand.\nChoice 2: It is lazy.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the student *knows* the answer. Knowing the answer doesn't inherently imply laziness (Choice 2). However, knowing the answer might lead the student to *indicate* they know it, and raising a hand is a common way to do so (Choice 1). While a student might not *always* raise their hand when they know the answer, it's a much more direct and logical consequence of knowing the answer than being lazy. Laziness is a character trait and isn't directly caused by knowing an answer.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe man's eyes were crying.\nWhat is the cause?\nChoice 1: His eyes went dark.\nChoice 2: He put on goggles.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe man's eyes were crying.\nWhat is the cause?\nChoice 1: His eyes went dark.\nChoice 2: He put on goggles.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states \"The man's eyes were crying.\" Crying involves tears coming from the eyes. Choice 1, \"His eyes went dark,\" doesn't explain why tears would be present. Choice 2, \"He put on goggles,\" could *prevent* crying by protecting the eyes, or might cause some irritation leading to tears, but it's not a direct cause of the emotional state usually associated with crying. However, the premise simply states the *effect* (crying eyes) and asks for a cause. While goggles *could* cause tears, it's less directly related to the act of crying than simply experiencing an emotional state that leads to tears. The premise doesn't give us enough information to determine the emotional cause, but it's more logical to assume crying is a natural response to something, rather than being caused by goggles.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThis player has won five consecutive games.\nWhat is the effect?\nChoice 1: Her opponent accused her of cheating.\nChoice 2: Her opponent felt sorry for her.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise: \nThis player has won five consecutive games.\nWhat is the effect?\nChoice 1: Her opponent accused her of cheating.\nChoice 2: Her opponent felt sorry for her.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nWinning five consecutive games suggests the player is skilled. An opponent is more likely to react with suspicion (cheating accusation) than pity. While an opponent *could* feel sorry for her, it's less probable given the consistent winning streak. A losing streak might elicit sympathy, but a winning streak often raises questions about how the wins are achieved.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe teacher tore up the student's test paper.\nWhat is the cause?\nChoice 1: He caught the student cheating.\nChoice 2: The student's answer is wrong.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe teacher tore up the student's test paper.\nWhat is the cause?\nChoice 1: He caught the student cheating.\nChoice 2: The student's answer is wrong.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nWhile a wrong answer might frustrate a teacher, it's highly unusual for a teacher to *tear up* a test paper solely because of incorrect answers. Typically, incorrect answers receive a grade and feedback. Tearing up a test paper is a much more severe reaction. Catching a student cheating, however, is a serious offense that could reasonably lead to such a drastic action as destroying the evidence (the test paper). Therefore, choice 1 is the more appropriate cause.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nI stopped talking.\nWhat is the cause?\nChoice 1: I lost my voice.\nChoice 2: I was out of breath.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nI stopped talking.\nWhat is the cause?\nChoice 1: I lost my voice.\nChoice 2: I was out of breath.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states \"I stopped talking.\" Both choices could be reasons for this, but losing your voice (Choice 1) directly prevents someone from talking. Being out of breath (Choice 2) might *cause* someone to pause or slow down talking, but doesn't necessarily mean they *stopped* altogether. Losing your voice is a more definitive reason to cease speaking.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "2",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe frozen food is thawed.\nWhat is the cause?\nChoice 1: I put it in the microwave.\nChoice 2: I covered it with plastic wrap.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe frozen food is thawed.\nWhat is the cause?\nChoice 1: I put it in the microwave.\nChoice 2: I covered it with plastic wrap.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the frozen food is thawed. Thawing means going from a frozen state to a less frozen or liquid state.\nChoice 1, putting food in the microwave, is a common method for thawing food. Microwaves use energy to heat food, which would thaw it.\nChoice 2, covering food with plastic wrap, does not inherently thaw food. It might *help* retain moisture during thawing, but it doesn't *cause* the thawing itself.\n\nTherefore, the most appropriate cause is putting the food in the microwave.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe employee pretends to be sick.\nWhat is the cause?\nChoice 1: He has stomach cramps.\nChoice 2: He wants to take a day off.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe employee pretends to be sick.\nWhat is the cause?\nChoice 1: He has stomach cramps.\nChoice 2: He wants to take a day off.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the employee is *pretending* to be sick. This means the illness isn't genuine. Choice 1 describes a real medical condition (stomach cramps), which contradicts the premise of pretending. Choice 2 explains a reason *why* someone might pretend to be sick – to get a day off. Therefore, choice 2 is the more appropriate cause.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe girl fell into the swimming pool.\nWhat is the cause?\nChoice 1: She runs on the pool deck.\nChoice 2: She jumped off the diving board.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe girl fell into the swimming pool.\nWhat is the cause?\nChoice 1: She runs on the pool deck.\nChoice 2: She jumped off the diving board.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the girl *fell* into the pool. Falling implies an accidental or unintentional entry into the water. Running on the pool deck could easily lead to a slip and fall. Jumping off the diving board is an intentional act, not a fall. Therefore, running on the pool deck is a more likely cause of *falling* into the pool.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "2",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe movie tickets are sold out.\nWhat is the cause?\nChoice 1: This is the first day of the movie.\nChoice 2: The review of this movie is poor.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe movie tickets are sold out.\nWhat is the cause?\nChoice 1: This is the first day of the movie.\nChoice 2: The review of this movie is poor.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the movie tickets are sold out. This implies high demand for the movie.\nChoice 1, \"This is the first day of the movie,\" explains high demand as people are eager to see a new release.\nChoice 2, \"The review of this movie is poor,\" suggests low demand, which contradicts the premise of sold-out tickets.\n\nTherefore, Choice 1 is the more appropriate cause.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe man lost weight.\nWhat is the effect?\nChoice 1: People isolate him.\nChoice 2: People praised him.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe man lost weight.\nWhat is the effect?\nChoice 1: People isolate him.\nChoice 2: People praised him.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nLosing weight is generally viewed as a positive change, often associated with improved health and self-discipline. Therefore, a more likely effect would be positive reinforcement like praise. While isolation *could* occur for various reasons, it's not a direct or common consequence of weight loss. Praise is a more natural and expected outcome.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe girl's hand blistered.\nWhat is the cause?\nChoice 1: She typed a letter.\nChoice 2: She climbed up a rope.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe girl's hand blistered.\nWhat is the cause?\nChoice 1: She typed a letter.\nChoice 2: She climbed up a rope.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nBoth options could potentially cause blisters, but climbing a rope (Choice 2) is far more likely to cause blisters on the hands due to the friction involved in gripping and pulling on the rope. Typing (Choice 1) *could* cause minor friction, but is less likely to result in a blister unless the typing was extremely prolonged and forceful, or the person has very sensitive skin. The premise simply states a blister occurred, and rope climbing is a more direct and common cause.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nCircus performers juggling while riding a unicycle.\nWhat is the effect?\nChoice 1: The audience cheered in surprise.\nChoice 2: The acrobats flew around from the sky.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise: \nCircus performers juggling while riding a unicycle.\nWhat is the effect?\nChoice 1: The audience cheered in surprise.\nChoice 2: The acrobats flew around from the sky.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise describes a circus act – performers juggling on unicycles. This is a skillful and entertaining feat, but not necessarily something that would *cause* acrobats to fly from the sky. It's much more likely that such a performance would elicit a positive reaction from the audience, such as cheering in surprise and delight. Choice 2 introduces a completely new element (acrobats flying) not connected to the premise.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nI lost my patience.\nWhat is the cause?\nChoice 1: My friend keeps me waiting.\nChoice 2: My friend arrived on time.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nI lost my patience.\nWhat is the cause?\nChoice 1: My friend keeps me waiting.\nChoice 2: My friend arrived on time.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nLosing patience generally stems from frustration or annoyance. Being kept waiting is a common cause of frustration, while someone arriving on time would not typically lead to a loss of patience. Therefore, choice 1 is the more likely cause.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe warring nations demand peace.\nWhat is the effect?\nChoice 1: They developed nuclear weapons.\nChoice 2: They agreed on a treaty.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe warring nations demand peace.\nWhat is the effect?\nChoice 1: They developed nuclear weapons.\nChoice 2: They agreed on a treaty.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states that warring nations *demand* peace. This implies a desire to end conflict. Developing nuclear weapons (Choice 1) would likely *escalate* conflict or be used as a deterrent, not a direct result of demanding peace. Agreeing on a treaty (Choice 2) is a direct action taken to achieve peace, and therefore a logical effect of demanding it.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe man took sleeping pills.\nWhat is the effect?\nChoice 1: He became lethargic.\nChoice 2: He has a fever.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe man took sleeping pills.\nWhat is the effect?\nChoice 1: He became lethargic.\nChoice 2: He has a fever.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nSleeping pills are designed to induce sleep or reduce wakefulness. A common side effect of taking sleeping pills is drowsiness and a slowing down of bodily functions, which manifests as lethargy. A fever is unrelated to the typical effects of sleeping pills. Therefore, lethargy is the more appropriate effect.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe woman bumped into the sofa.\nWhat is the effect?\nChoice 1: The legs of the sofa are loose.\nChoice 2: She bruised her knee.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe woman bumped into the sofa.\nWhat is the effect?\nChoice 1: The legs of the sofa are loose.\nChoice 2: She bruised her knee.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states a woman bumped into a sofa. This implies a physical impact between the woman and the sofa. While it's *possible* the impact could loosen the sofa's legs (Choice 1), it's much more *likely* the woman would experience a physical consequence like a bruise (Choice 2). Bumping into something often results in personal injury, especially to exposed areas like knees. The sofa being damaged is a less direct and less probable outcome.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe boy squeezed a balloon.\nWhat is the effect?\nChoice 1: The balloon burst.\nChoice 2: The balloon flew away.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe boy squeezed a balloon.\nWhat is the effect?\nChoice 1: The balloon burst.\nChoice 2: The balloon flew away.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the boy *squeezed* a balloon. Squeezing applies pressure. Balloons are elastic and have a limited capacity for compression. Applying enough pressure by squeezing will likely cause the balloon to burst. While a balloon *could* fly away if released, the premise specifically describes an action (squeezing) that directly leads to a change in the balloon's structural integrity, making bursting the more probable outcome.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe travelers checked into their hotel room.\nWhat is the effect?\nChoice 1: They opened the suitcase.\nChoice 2: They went to the airport.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe travelers checked into their hotel room.\nWhat is the effect?\nChoice 1: They opened the suitcase.\nChoice 2: They went to the airport.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the travelers checked into their hotel room. This implies they have arrived at their destination and are settling in. Opening a suitcase (Choice 1) is a logical next step after checking into a hotel room, as travelers often unpack. Going to the airport (Choice 2) would be a step *before* checking into a hotel, not after. Therefore, Choice 1 is the more appropriate effect.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nI bit a peach.\nWhat is the effect?\nChoice 1: The peach is broken.\nChoice 2: The juice spilled out.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nI bit a peach.\nWhat is the effect?\nChoice 1: The peach is broken.\nChoice 2: The juice spilled out.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nBiting a peach will almost certainly break the skin and flesh of the peach. While juice *might* spill out, the primary and most direct effect of biting something is to physically alter its structure. Breaking the peach is a more certain outcome than juice spilling, as juice spilling depends on factors like how ripe the peach is and the angle of the bite.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "2",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nMy hands are sticky.\nWhat is the cause?\nChoice 1: I ate donuts.\nChoice 2: I love sweets.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nMy hands are sticky.\nWhat is the cause?\nChoice 1: I ate donuts.\nChoice 2: I love sweets.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states \"My hands are sticky.\" We need to determine the most likely cause from the two choices.\nChoice 1, \"I ate donuts,\" directly explains sticky hands – donuts are often glazed or covered in sugary toppings that leave residue on the hands.\nChoice 2, \"I love sweets,\" is a preference and doesn't directly cause stickiness. While someone who loves sweets *might* eat things that make their hands sticky, it's not a direct cause-and-effect relationship. The premise is about the current state (sticky hands), not a general habit.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nI pushed the door.\nWhat is the effect?\nChoice 1: The door opened.\nChoice 2: The door is locked.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nI pushed the door.\nWhat is the effect?\nChoice 1: The door opened.\nChoice 2: The door is locked.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states an action – pushing a door. Pushing a door *generally* intends to open it. While a door *could* be locked, the premise doesn't state that. The most direct and likely effect of pushing a door is that it opens. Choice 2 introduces additional information (the door being locked) not present in the premise. Therefore, Choice 1 is the more appropriate effect.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nRadicals boycotted these products.\nWhat is the cause?\nChoice 1: The product passed the quality assurance test.\nChoice 2: The products are made by child labor.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nRadicals boycotted these products.\nWhat is the cause?\nChoice 1: The product passed the quality assurance test.\nChoice 2: The products are made by child labor.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nRadicals typically boycott products due to ethical or political reasons. Passing a quality assurance test (Choice 1) would generally *increase* sales, not cause a boycott. However, the use of child labor (Choice 2) is a significant ethical concern that would strongly motivate a boycott, especially by radical groups. Therefore, Choice 2 is the more likely cause.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nI drilled a hole in the wall.\nWhat is the effect?\nChoice 1: A mouse crawled out of the hole.\nChoice 2: Dust blows out from the hole.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nI drilled a hole in the wall.\nWhat is the effect?\nChoice 1: A mouse crawled out of the hole.\nChoice 2: Dust blows out from the hole.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nDrilling a hole in a wall directly results in creating debris. This debris manifests as dust. While a mouse *could* theoretically crawl out of a hole, it's not a *direct* and *guaranteed* effect of drilling. Dust is a certain consequence of the action.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe woman envied her sister.\nWhat is the cause?\nChoice 1: Her sister is very happy.\nChoice 2: Her sister is divorced.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe woman envied her sister.\nWhat is the cause?\nChoice 1: Her sister is very happy.\nChoice 2: Her sister is divorced.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nEnvy typically arises when someone desires something that another person possesses. Happiness is something people generally desire for themselves. A divorce, while potentially causing sadness, isn't something someone would typically *envy* another person for experiencing. Therefore, the sister's happiness is a more likely cause for the woman's envy.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nI spilled wine on my shirt.\nWhat is the effect?\nChoice 1: I put on an apron.\nChoice 2: I changed my shirt.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nI spilled wine on my shirt.\nWhat is the effect?\nChoice 1: I put on an apron.\nChoice 2: I changed my shirt.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states that wine was spilled on a shirt. The most direct and logical response to this is to remove the stained shirt and put on a clean one. While an apron *could* be used to cover the stain, it doesn't address the fact that the shirt is soiled. Changing the shirt resolves the problem caused by the spill.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe cashier opened the cash register.\nWhat is the cause?\nChoice 1: The customer rummaged through his wallet.\nChoice 2: The customer handed over the money.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe cashier opened the cash register.\nWhat is the cause?\nChoice 1: The customer rummaged through his wallet.\nChoice 2: The customer handed over the money.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the cashier opened the cash register. This action is typically done *before* receiving money from a customer. Therefore, the customer handing over money (Choice 2) is a consequence of the register being open, not a cause. The customer preparing to pay, indicated by rummaging through their wallet (Choice 1), is a more likely precursor to the cashier opening the register. The cashier opens the register in anticipation of a transaction beginning.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "2",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nStreet musicians attracted a group of people.\nWhat is the effect?\nChoice 1: People gave him change.\nChoice 2: He drove the crowd away.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise: \nStreet musicians attracted a group of people.\nWhat is the effect?\nChoice 1: People gave him change.\nChoice 2: He drove the crowd away.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states that street musicians *attracted* a group of people. This implies a positive reaction to the music. Choice 1, \"People gave him change,\" is a typical positive response to enjoying street music – a way of showing appreciation. Choice 2, \"He drove the crowd away,\" is the opposite of attracting a crowd and therefore doesn't logically follow from the premise.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe little boy cried to his nanny.\nWhat is the cause?\nChoice 1: He missed his parents.\nChoice 2: It's snack time.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe little boy cried to his nanny.\nWhat is the cause?\nChoice 1: He missed his parents.\nChoice 2: It's snack time.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the boy cried *to his nanny*. This suggests a need for comfort or help, which is more strongly associated with missing parents (a significant emotional need) than simply it being snack time. While a child might cry *because* it's snack time if they are hungry, crying *to a nanny* implies a deeper emotional reason. Missing parents is a common cause for a young child to seek comfort from a caregiver like a nanny.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe pilot's radar spotted a storm.\nWhat is the effect?\nChoice 1: The pilot avoided the storm.\nChoice 2: The pilot flew through the storm.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise: \nThe pilot's radar spotted a storm.\nWhat is the effect?\nChoice 1: The pilot avoided the storm.\nChoice 2: The pilot flew through the storm.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the pilot *spotted* a storm. Spotting something implies awareness. A rational pilot, upon spotting a storm with radar, would likely take action to avoid it, as flying through a storm is generally undesirable and dangerous. While it's *possible* the pilot flew through the storm, it's not the most *appropriate* or likely effect given simply spotting it. Avoiding the storm is the more logical consequence.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe tree has fallen leaves.\nWhat is the effect?\nChoice 1: The leaves have changed color.\nChoice 2: The leaves are stacked on the ground.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe tree has fallen leaves.\nWhat is the effect?\nChoice 1: The leaves have changed color.\nChoice 2: The leaves are stacked on the ground.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the tree *has* fallen leaves. This means the leaves are no longer on the tree. Choice 1, \"The leaves have changed color,\" describes a state *leading up to* leaves falling, not a result of them having already fallen. Choice 2, \"The leaves are stacked on the ground,\" is a direct consequence of leaves falling from a tree – they end up on the ground. Therefore, Choice 2 is the more appropriate effect.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe boy wanted to play a prank.\nWhat is the effect?\nChoice 1: He decided to play a card game with his sister.\nChoice 2: He decided to tease his sister.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise: \nThe boy wanted to play a prank.\nWhat is the effect?\nChoice 1: He decided to play a card game with his sister.\nChoice 2: He decided to tease his sister.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the boy wanted to play a prank. A prank is a trick or playful act intended to cause amusement or annoyance.\nChoice 1, playing a card game, doesn't inherently involve a prank. It's a normal activity.\nChoice 2, teasing his sister, *is* a common form of a prank, aiming to playfully annoy or get a reaction. Therefore, it's a more direct effect of wanting to play a prank.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe child complained that he must go to the bathroom.\nWhat is the effect?\nChoice 1: Father gave him soda.\nChoice 2: His father parked the car at the gas station.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise: \nThe child complained that he must go to the bathroom.\nWhat is the effect?\nChoice 1: Father gave him soda.\nChoice 2: His father parked the car at the gas station.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the child needs to use the bathroom. A logical effect of this would be a change in plans to accommodate that need, such as stopping somewhere. Choice 2, the father parking at a gas station, provides a potential location for a bathroom break. Choice 1, giving the child soda, is unrelated to the need to use the bathroom and could even exacerbate the problem. Therefore, Choice 2 is the more appropriate effect.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe child sprinkled fish food into the water tank.\nWhat is the effect?\nChoice 1: The fish jumped out of the tank.\nChoice 2: The fish swam towards food.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise: \nThe child sprinkled fish food into the water tank.\nWhat is the effect?\nChoice 1: The fish jumped out of the tank.\nChoice 2: The fish swam towards food.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states a child added fish food to a water tank containing fish. Fish are generally motivated by food and will swim towards it when it's introduced into their environment. It's highly unlikely fish would jump *out* of the tank simply because food is added. Therefore, the most logical effect is that the fish would swim towards the food.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nWomen's political views have changed.\nWhat is the effect?\nChoice 1: She changed parties.\nChoice 2: She participated in the protest.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nWomen's political views have changed.\nWhat is the effect?\nChoice 1: She changed parties.\nChoice 2: She participated in the protest.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states that a woman's political views have changed. This is a broad statement. Changing political views *could* lead to a change in party affiliation (Choice 1), as people often align themselves with parties that reflect their beliefs. However, it could also lead to many other actions, such as participating in a protest (Choice 2) if the changed views motivate action on a specific issue.\n\nWhile both are possible, changing views is a more direct precursor to changing party affiliation than to participating in a single protest. A change in views might *eventually* lead to protest participation, but it doesn't necessarily mean it will. A change in views is more likely to cause a re-evaluation of party alignment.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe sink in the bathroom is clogged.\nWhat is the effect?\nChoice 1: I turn on the tap.\nChoice 2: I poured sewer cleaner into the sink.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe sink in the bathroom is clogged.\nWhat is the effect?\nChoice 1: I turn on the tap.\nChoice 2: I poured sewer cleaner into the sink.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the sink is clogged. A clogged sink means water isn't draining. Turning on the tap (Choice 1) would likely cause the sink to fill up with water since it can't drain, exacerbating the problem. Pouring sewer cleaner (Choice 2) is a direct attempt to *resolve* a clog, even if it's not always the best method. Therefore, pouring sewer cleaner is the more appropriate action *given* the premise of a clogged sink.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe passengers got off the train.\nWhat is the cause?\nChoice 1: The train arrived at the station.\nChoice 2: The train whistle.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe passengers got off the train.\nWhat is the cause?\nChoice 1: The train arrived at the station.\nChoice 2: The train whistle.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states that passengers got off the train. This action is most directly caused by the train reaching its destination, which is typically a station. While a train whistle *could* signal an approaching train, it doesn't directly cause passengers to disembark. The arrival at the station is the event that prompts passengers to get off.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe man pressed the wet mouth of the envelope.\nWhat is the effect?\nChoice 1: He stamped the envelope.\nChoice 2: He sealed the envelope.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise: \nThe man pressed the wet mouth of the envelope.\nWhat is the effect?\nChoice 1: He stamped the envelope.\nChoice 2: He sealed the envelope.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the man pressed the \"wet mouth of the envelope.\" This implies he moistened the adhesive on the envelope flap to close it. \"Stamping\" an envelope involves applying a postage stamp, which doesn't relate to the wet mouth. \"Sealing\" an envelope means closing it, and moistening the flap is a common way to do this. Therefore, sealing is the more appropriate effect.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nFriends lost contact.\nWhat is the cause?\nChoice 1: They enjoy each other's company.\nChoice 2: They moved to different cities.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nFriends lost contact.\nWhat is the cause?\nChoice 1: They enjoy each other's company.\nChoice 2: They moved to different cities.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states friends *lost* contact. This implies a separation or barrier to continued interaction. Choice 1, \"They enjoy each other's company,\" suggests continued positive interaction, which contradicts the premise of lost contact. Choice 2, \"They moved to different cities,\" provides a plausible reason for losing contact – distance and logistical challenges to maintaining the relationship. Therefore, Choice 2 is the more appropriate explanation.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe accountant mismanaged the company's funds.\nWhat is the effect?\nChoice 1: She was fired.\nChoice 2: She took maternity leave.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe accountant mismanaged the company's funds.\nWhat is the effect?\nChoice 1: She was fired.\nChoice 2: She took maternity leave.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the accountant *mismanaged* funds. Mismanagement typically leads to negative consequences, such as job loss. Taking maternity leave is unrelated to mismanagement of funds; it's a personal life event. Therefore, being fired is the more logical effect of the given premise.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nI look at the clock.\nWhat is the cause?\nChoice 1: I heard the ticking of the clock.\nChoice 2: I want to check the time.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nI look at the clock.\nWhat is the cause?\nChoice 1: I heard the ticking of the clock.\nChoice 2: I want to check the time.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states \"I look at the clock.\" This action doesn't *require* hearing the ticking (Choice 1). While ticking might *sometimes* cause someone to look, it's not a necessary cause. However, a common and direct cause for looking at a clock is wanting to know the time (Choice 2). The premise doesn't give any information about hearing a ticking sound, but it's reasonable to assume someone looks at a clock to check the time.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nMy hands tightened.\nWhat is the cause?\nChoice 1: I wrote the paper by hand.\nChoice 2: My wife and I held hands.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nMy hands tightened.\nWhat is the cause?\nChoice 1: I wrote the paper by hand.\nChoice 2: My wife and I held hands.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise \"My hands tightened\" suggests a physical reaction to some sort of stress, effort, or emotion.\n\nChoice 1, \"I wrote the paper by hand,\" could cause hand tightening due to the physical exertion of writing for a prolonged period, or perhaps due to anxiety about the paper itself. This is a plausible cause.\n\nChoice 2, \"My wife and I held hands,\" generally implies a relaxed and comforting action, and wouldn't typically cause hands to *tighten*. While a tight *grip* is possible when holding hands, the premise uses \"tightened\" which suggests an involuntary action, not necessarily a deliberate one.\n\nTherefore, Choice 1 is the more appropriate cause.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe bolts are tightened.\nWhat is the cause?\nChoice 1: I replaced the bolts.\nChoice 2: I twisted the wrench.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe bolts are tightened.\nWhat is the cause?\nChoice 1: I replaced the bolts.\nChoice 2: I twisted the wrench.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states \"The bolts are tightened.\" We need to determine the most direct cause of this.\n\nChoice 1, \"I replaced the bolts,\" doesn't necessarily mean the new bolts were *tightened*. They could have been loosely installed. Replacement is a separate action from tightening.\n\nChoice 2, \"I twisted the wrench,\" is the direct action that results in tightening bolts. Twisting a wrench *is* the act of tightening.\n\nTherefore, twisting the wrench is the more appropriate cause.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe couple signed an apartment lease.\nWhat is the effect?\nChoice 1: The couple moved into the apartment.\nChoice 2: The city government sentenced the apartment to a dilapidated building.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe couple signed an apartment lease.\nWhat is the effect?\nChoice 1: The couple moved into the apartment.\nChoice 2: The city government sentenced the apartment to a dilapidated building.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the couple signed a lease. Signing a lease implies an agreement to rent the apartment and, typically, to move in. While unforeseen circumstances *could* lead to the apartment being condemned (Choice 2), this is not a *direct* or *likely* effect of simply signing a lease. Choice 1, moving into the apartment, is the most logical and common consequence of signing a lease agreement.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe woman was sitting outside the porch.\nWhat is the cause?\nChoice 1: She wants to watch the sunset.\nChoice 2: She thought she saw lightning.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe woman was sitting outside the porch.\nWhat is the cause?\nChoice 1: She wants to watch the sunset.\nChoice 2: She thought she saw lightning.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the woman is sitting *outside* the porch. This suggests a pleasant or at least neutral reason for being outdoors. Watching a sunset (Choice 1) is a common and peaceful activity done outdoors. Thinking she saw lightning (Choice 2) would likely cause someone to seek *inside* for shelter, not sit calmly outside. Therefore, watching the sunset is a more appropriate cause.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe man was wearing a life jacket in the water.\nWhat is the cause?\nChoice 1: He can't swim.\nChoice 2: The water is very shallow.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise: \nThe man was wearing a life jacket in the water.\nWhat is the cause?\nChoice 1: He can't swim.\nChoice 2: The water is very shallow.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the man is wearing a life jacket *in the water*. A life jacket is worn as a safety precaution against drowning. While a person who can't swim might wear a life jacket, it's not the *only* reason. Someone who *can* swim might wear one in rough waters, or if they are participating in a water activity where there's a risk of falling into the water. Shallow water doesn't necessarily necessitate a life jacket; someone can easily stand in shallow water. The most logical cause for wearing a life jacket *in the water* is a potential risk of drowning, which is most directly related to not being a strong swimmer.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe woman made a typo in the word processor.\nWhat is the effect?\nChoice 1: She deleted the file.\nChoice 2: She pressed the backspace key.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe woman made a typo in the word processor.\nWhat is the effect?\nChoice 1: She deleted the file.\nChoice 2: She pressed the backspace key.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the woman made a typo. A typo is an error in typing. The most immediate and logical response to a typo is to correct it. Pressing the backspace key is the standard way to correct a typo in a word processor. Deleting the entire file is a much more drastic action and isn't a direct consequence of *making* a typo. It's a possible reaction to a larger problem, but not the immediate effect of the typo itself.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe girl brags to her friend.\nWhat is the cause?\nChoice 1: Her grades are not good.\nChoice 2: She won the game.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe girl brags to her friend.\nWhat is the cause?\nChoice 1: Her grades are not good.\nChoice 2: She won the game.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nPeople generally brag when they have achieved something positive or believe they have something to be proud of. Winning a game is a positive achievement that would likely lead someone to brag. Poor grades are typically something someone would be embarrassed about and less likely to brag about. Therefore, winning the game is the more likely cause of the bragging.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe lawn is muddy.\nWhat is the cause?\nChoice 1: It rained all night.\nChoice 2: There are weeds everywhere.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe lawn is muddy.\nWhat is the cause?\nChoice 1: It rained all night.\nChoice 2: There are weeds everywhere.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nA muddy lawn is most directly caused by water. Rain is a source of water. Weeds, while potentially affecting the lawn's health, do not directly cause mud. Therefore, rain is the more likely cause of a muddy lawn.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe woman overslept.\nWhat is the cause?\nChoice 1: She stayed in the hotel for one night.\nChoice 2: She forgot to set the alarm clock.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe woman overslept.\nWhat is the cause?\nChoice 1: She stayed in the hotel for one night.\nChoice 2: She forgot to set the alarm clock.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the woman overslept. Oversleeping means sleeping past the intended wake-up time. Choice 1, staying in a hotel, doesn't directly explain *why* she overslept – it simply states where she was sleeping. Choice 2, forgetting to set the alarm clock, directly explains a reason why someone might sleep past their intended wake-up time. Therefore, choice 2 is the more appropriate cause.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe man put on sunscreen.\nWhat is the cause?\nChoice 1: He sits in the shadows.\nChoice 2: He went to the beach.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe man put on sunscreen.\nWhat is the cause?\nChoice 1: He sits in the shadows.\nChoice 2: He went to the beach.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nSunscreen is used to protect skin from the sun's harmful rays. Therefore, the most likely cause for someone to put on sunscreen is that they are going to be exposed to the sun. Sitting in the shadows would *avoid* sun exposure, making that an unlikely cause. Going to the beach almost certainly involves sun exposure.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe researchers proved this theory.\nWhat is the effect?\nChoice 1: The researchers withdrew this theory.\nChoice 2: The public accepted this theory.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe researchers proved this theory.\nWhat is the effect?\nChoice 1: The researchers withdrew this theory.\nChoice 2: The public accepted this theory.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states that researchers *proved* a theory. Proving a theory generally leads to its acceptance, not its withdrawal. Withdrawing a theory implies disproof or finding evidence against it. Therefore, the most logical effect of proving a theory is that the public would be more likely to accept it.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe fans booed in the game.\nWhat is the cause?\nChoice 1: The game enters overtime.\nChoice 2: The referee made a wrong judgment.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe fans booed in the game.\nWhat is the cause?\nChoice 1: The game enters overtime.\nChoice 2: The referee made a wrong judgment.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nFans booing typically indicates disapproval of something that happened during the game. While overtime can be exciting, it doesn't usually elicit boos. A wrong judgment by a referee, however, is a common cause for fan dissatisfaction and booing. Therefore, choice 2 is the more likely cause.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nI entered my combination code on the lock.\nWhat is the effect?\nChoice 1: I locked it.\nChoice 2: The lock is unlocked.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nI entered my combination code on the lock.\nWhat is the effect?\nChoice 1: I locked it.\nChoice 2: The lock is unlocked.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states that a combination code was *entered* on the lock. This action doesn't inherently lock or unlock the lock; it simply initiates the process of attempting to access it. However, entering the correct combination code is typically done *to* unlock something. Without further information, it's more likely the intention of entering the code was to unlock the lock.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe crowd is increasing.\nWhat is the effect?\nChoice 1: The father handed his son some money.\nChoice 2: The father holds his son's hand.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe crowd is increasing.\nWhat is the effect?\nChoice 1: The father handed his son some money.\nChoice 2: The father holds his son's hand.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise \"The crowd is increasing\" suggests a potentially chaotic or overwhelming situation. In such a scenario, a parent would be more likely to ensure their child's safety and keep them close. Handing money to a child (Choice 1) doesn't directly address the safety concerns arising from a growing crowd. Holding a child's hand (Choice 2) is a direct action to maintain physical connection and prevent the child from getting lost or separated in the crowd. Therefore, Choice 2 is the more appropriate effect.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nSnow blocked the driveway.\nWhat is the effect?\nChoice 1: I gathered the snow into a snowball.\nChoice 2: I shoveled the snow away.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise: \nSnow blocked the driveway.\nWhat is the effect?\nChoice 1: I gathered the snow into a snowball.\nChoice 2: I shoveled the snow away.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states that snow blocked the driveway, creating an obstacle. The effect should logically address resolving this blockage.\n\nChoice 1, making a snowball, doesn't address the blocked driveway; it's an unrelated activity.\n\nChoice 2, shoveling the snow away, directly addresses and resolves the problem of the blocked driveway. Therefore, it's the most appropriate effect.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe kayaker was paddling.\nWhat is the effect?\nChoice 1: The kayak reached the shore.\nChoice 2: The kayak encountered wind and waves.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise: \nThe kayaker was paddling.\nWhat is the effect?\nChoice 1: The kayak reached the shore.\nChoice 2: The kayak encountered wind and waves.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the kayaker was *paddling*. Paddling is an action taken to *cause* movement, but doesn't guarantee a specific outcome like reaching the shore. Paddling inherently involves interacting with the water, and therefore encountering elements like wind and waves is a very likely and direct consequence of the action. Reaching the shore is a possible *result* of paddling, but not a direct effect of the act itself.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "1",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe girl's bicycle got out of control.\nWhat is the effect?\nChoice 1: She released the handlebar.\nChoice 2: She hit the fence.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe girl's bicycle got out of control.\nWhat is the effect?\nChoice 1: She released the handlebar.\nChoice 2: She hit the fence.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the bicycle got *out of control*. This means something happened that caused the rider to lose control. While releasing the handlebar (Choice 1) *could* cause a bike to go out of control, it's not a direct *effect* of a bike already being out of control. Hitting the fence (Choice 2) is a very likely *result* of a bicycle being out of control – a natural consequence of losing steering or balance. Therefore, hitting the fence is the more appropriate effect.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nI turned on the fan.\nWhat is the effect?\nChoice 1: Sprinkle water on my skin.\nChoice 2: I feel a cool breeze.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nI turned on the fan.\nWhat is the effect?\nChoice 1: Sprinkle water on my skin.\nChoice 2: I feel a cool breeze.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states that a fan was turned on. The primary function of a fan is to circulate air, creating a breeze. While a fan *could* be used in conjunction with water to create a cooling effect (like misting fans), simply turning on a fan doesn't inherently involve sprinkling water. Therefore, feeling a cool breeze is the direct and most logical effect of turning on a fan.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe surfer returned to the beach.\nWhat is the cause?\nChoice 1: They were drenched.\nChoice 2: They saw a shark.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe surfer returned to the beach.\nWhat is the cause?\nChoice 1: They were drenched.\nChoice 2: They saw a shark.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the surfer *returned* to the beach. This implies they were *in* the water previously. Being drenched (Choice 1) is a common consequence of surfing, and a natural reason to return to the beach – to warm up, change clothes, etc. Seeing a shark (Choice 2) is a reason to *leave* the water quickly, and while it could lead to returning to the beach, it's a more dramatic and less common reason than simply being wet and finished surfing. Therefore, being drenched is the more likely and appropriate cause for returning to the beach.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "2",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nI pulled off the drain plug in the bathtub.\nWhat is the effect?\nChoice 1: The water drains from the bathtub.\nChoice 2: Water splashed on the floor.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise: \nI pulled off the drain plug in the bathtub.\nWhat is the effect?\nChoice 1: The water drains from the bathtub.\nChoice 2: Water splashed on the floor.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the drain plug was removed from the bathtub. The primary function of a drain plug is to prevent water from leaving the tub. Removing it directly leads to the water flowing out through the drain. While some splashing *could* occur, it's not the direct and guaranteed result of removing the plug. The draining of water is the immediate and most logical effect.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe husband feels guilty for cheating on his wife.\nWhat is the effect?\nChoice 1: He accused her of being unfaithful.\nChoice 2: He confessed his infidelity to her.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe husband feels guilty for cheating on his wife.\nWhat is the effect?\nChoice 1: He accused her of being unfaithful.\nChoice 2: He confessed his infidelity to her.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the husband feels *guilty* for cheating. Guilt often leads to a desire for atonement or relief. Accusing his wife of infidelity (Choice 1) would be a deflection of his own guilt and an attempt to shift blame, which is less likely given the stated guilt. Confessing his infidelity (Choice 2) directly addresses his wrongdoing and could be a way to seek forgiveness or alleviate his guilt. Therefore, confessing is the more logical effect of feeling guilty.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe ink on the poster was wiped away.\nWhat is the cause?\nChoice 1: I waited for the ink to dry.\nChoice 2: I spilled water on the poster.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe ink on the poster was wiped away.\nWhat is the cause?\nChoice 1: I waited for the ink to dry.\nChoice 2: I spilled water on the poster.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the ink was wiped away. Waiting for the ink to dry (Choice 1) wouldn't cause the ink to be wiped away; it would simply allow the ink to set. Spilling water on the poster (Choice 2) *could* cause the ink to run or smear, making it appear as if it was wiped away, or it could weaken the ink making it easier to wipe away. Therefore, Choice 2 is the more plausible cause.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe child yelled.\nWhat is the cause?\nChoice 1: He had a nightmare.\nChoice 2: He wet the bed.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe child yelled.\nWhat is the cause?\nChoice 1: He had a nightmare.\nChoice 2: He wet the bed.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nBoth choices could potentially cause a child to yell, but a nightmare (Choice 1) is a more common and direct cause of yelling in children, especially during sleep or upon waking. Wetting the bed (Choice 2) might cause distress, but a yell isn't the immediate or guaranteed reaction; the child might be embarrassed or upset silently. A nightmare is more likely to elicit a sudden, loud yell.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe boy put his feet on the table.\nWhat is the effect?\nChoice 1: Father sat down at the table.\nChoice 2: His father educated him.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe boy put his feet on the table.\nWhat is the effect?\nChoice 1: Father sat down at the table.\nChoice 2: His father educated him.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states an action by the boy – putting his feet on the table. This is generally considered impolite behavior. Choice 1, the father sitting down, is a related event but doesn't necessarily *result* from the boy's action. Choice 2, the father educating him, is a direct and logical consequence of the boy's impolite behavior. A parent would likely respond by correcting or educating their child. Therefore, Choice 2 is the more appropriate effect.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nMy friend turned his head in my direction.\nWhat is the cause?\nChoice 1: I called his name.\nChoice 2: I waved my arms.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nMy friend turned his head in my direction.\nWhat is the cause?\nChoice 1: I called his name.\nChoice 2: I waved my arms.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nPeople generally turn their heads towards the source of a direct address or a noticeable visual signal. Calling someone's name is a direct address and a common reason for someone to turn their head. Waving arms is a visual signal, but less direct than being called by name. While waving *could* cause someone to look, a name is more likely to elicit a head turn specifically *in your direction*. Therefore, calling his name is the more appropriate cause.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe government oppresses its citizens.\nWhat is the effect?\nChoice 1: The citizens launched a rebellion.\nChoice 2: Citizens register to vote.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe government oppresses its citizens.\nWhat is the effect?\nChoice 1: The citizens launched a rebellion.\nChoice 2: Citizens register to vote.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the government *oppresses* its citizens. Oppression typically leads to resistance, and a rebellion is a direct form of resistance against oppressive rule. While registering to vote *could* be a response to a bad government, it's a more passive and long-term strategy, and less directly linked to immediate oppression than a rebellion. A rebellion is a more likely and immediate effect of being oppressed.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe boy got lost in the woods.\nWhat is the effect?\nChoice 1: He set up a tent.\nChoice 2: He screamed for help.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe boy got lost in the woods.\nWhat is the effect?\nChoice 1: He set up a tent.\nChoice 2: He screamed for help.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the boy is lost. Being lost implies a state of distress and a need to either find his way back or signal for assistance. Setting up a tent (Choice 1) is a longer-term solution, suggesting he's accepting he'll be there for a while, which isn't the *immediate* reaction to getting lost. Screaming for help (Choice 2) is a direct and immediate response to being lost, attempting to resolve the situation quickly. Therefore, screaming for help is the more appropriate effect.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThis woman has traveled abroad.\nWhat is the cause?\nChoice 1: She wants to learn to paint.\nChoice 2: She wants to learn about other cultures.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise: \nThis woman has traveled abroad.\nWhat is the cause?\nChoice 1: She wants to learn to paint.\nChoice 2: She wants to learn about other cultures.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nTraveling abroad is often motivated by a desire to experience different cultures. While someone *could* travel abroad to learn to paint (taking art classes in another country, for example), it's a less common and more specific reason than simply wanting to learn about other cultures. The premise simply states she traveled abroad; it doesn't give any specific details about *why*. A general desire to learn about other cultures is a more typical and broader reason for international travel.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe man is jealous of his colleague.\nWhat is the cause?\nChoice 1: His colleague was promoted.\nChoice 2: His colleague worked late.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe man is jealous of his colleague.\nWhat is the cause?\nChoice 1: His colleague was promoted.\nChoice 2: His colleague worked late.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nJealousy typically arises from a perceived disadvantage or threat in relation to someone else. A promotion represents a clear advancement and a potential source of envy, as it signifies recognition and opportunity that the jealous person may desire for themselves. While a colleague working late might be seen as diligence, it doesn't inherently trigger jealousy in the same way a promotion does. A promotion directly impacts status and career progression, making it a much more likely cause of jealousy.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe man witnessed aliens.\nWhat is the cause?\nChoice 1: He had hallucinations at that time.\nChoice 2: He was meditating.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe man witnessed aliens.\nWhat is the cause?\nChoice 1: He had hallucinations at that time.\nChoice 2: He was meditating.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the man *witnessed* aliens. This implies a perception of an external reality, even if that perception is incorrect. Hallucinations are perceptions in the absence of external stimuli – essentially, seeing something that isn't there. This directly addresses the premise of \"witnessing\" something, but explains it as an internal phenomenon. Meditating, while potentially leading to altered states of consciousness, doesn't inherently cause someone to witness aliens; it's a practice focused on internal experience, not external perception of extraterrestrials. Therefore, hallucinations are a more direct explanation for *witnessing* something that isn't real.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe man's hair turned golden.\nWhat is the cause?\nChoice 1: He put bleach in his hair.\nChoice 2: He put shampoo in his hair.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe man's hair turned golden.\nWhat is the cause?\nChoice 1: He put bleach in his hair.\nChoice 2: He put shampoo in his hair.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the man's hair *turned* golden. This implies a change in color. Shampoo is used to clean hair and doesn't typically cause a significant color change to golden. Bleach, however, is specifically used to lighten hair, and can absolutely turn hair golden. Therefore, choice 1 is the more appropriate cause.\n\nFinal Answer\n{\"answer\": \"1\"}",
+    "Answer": "1",
+    "MyAnswer": "1"
+  },
+  {
+    "Question": "There is a premise: \nThe artist created a new work.\nWhat is the cause?\nChoice 1: She criticized her previous work.\nChoice 2: She felt a burst of inspiration.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe artist created a new work.\nWhat is the cause?\nChoice 1: She criticized her previous work.\nChoice 2: She felt a burst of inspiration.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the artist *created* a new work. While criticism of previous work (Choice 1) *could* lead to new work, it's not a direct cause of creation. Inspiration (Choice 2) is a much more direct and common cause for an artist to begin and complete a new work. An artist typically creates something *because* they are inspired to do so. Criticism might be a motivating factor, but inspiration is the initial spark.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe son left the house.\nWhat is the cause?\nChoice 1: He was discharged from the army.\nChoice 2: He is going to college.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe son left the house.\nWhat is the cause?\nChoice 1: He was discharged from the army.\nChoice 2: He is going to college.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states simply that the son left the house. Both choices offer potential reasons *why* he might have left. However, going to college (Choice 2) is a much more common and direct reason for a son to leave the family home than being discharged from the army (Choice 1). While discharge from the army *could* lead to someone leaving a house, it's less universally applicable and requires additional context (e.g., where he was stationed, where his family lives). Going to college is a standard life transition that frequently involves a son leaving home. Therefore, Choice 2 is the more appropriate cause given the limited information.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe book fell off the shelf.\nWhat is the cause?\nChoice 1: The shelf is full of dust.\nChoice 2: An earthquake shook the bookshelves.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe book fell off the shelf.\nWhat is the cause?\nChoice 1: The shelf is full of dust.\nChoice 2: An earthquake shook the bookshelves.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states a book fell off the shelf. We need to determine the most likely cause from the two choices.\n\nChoice 1, dust on the shelf, might contribute to a book being *less* stable, but it's unlikely to be the direct cause of a book falling. Dust doesn't actively push things off shelves.\n\nChoice 2, an earthquake, is a strong external force that could easily cause a book to fall off a shelf. Earthquakes involve shaking and movement, directly impacting the stability of objects.\n\nTherefore, an earthquake is the more appropriate cause.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThere is a power outage in my house.\nWhat is the effect?\nChoice 1: I turned on a light.\nChoice 2: I reset the circuit breaker.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise: \nThere is a power outage in my house.\nWhat is the effect?\nChoice 1: I turned on a light.\nChoice 2: I reset the circuit breaker.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states there is a power outage. A power outage means no electricity is flowing to the house.\nChoice 1, \"I turned on a light,\" is illogical because a light cannot turn on during a power outage.\nChoice 2, \"I reset the circuit breaker,\" is a logical response to a power outage, as a tripped circuit breaker is a common cause of power outages within a house. Resetting it could restore power.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nWe took a roller coaster.\nWhat is the cause?\nChoice 1: It looks scary.\nChoice 2: It looks very interesting.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nWe took a roller coaster.\nWhat is the cause?\nChoice 1: It looks scary.\nChoice 2: It looks very interesting.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states \"We took a roller coaster.\" This implies an action was *taken*, meaning someone *chose* to ride it. While a roller coaster might *look* scary (Choice 1), that doesn't explain *why* someone would take the ride. Looking interesting (Choice 2) is a much more plausible reason for someone to willingly get on a roller coaster. People ride roller coasters for the thrill and enjoyment of something interesting.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  },
+  {
+    "Question": "There is a premise: \nThe popcorn bag began to crack.\nWhat is the cause?\nChoice 1: I poured the butter into the bag.\nChoice 2: I heated it in the microwave.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Translated": "There is a premise:\nThe popcorn bag began to crack.\nWhat is the cause?\nChoice 1: I poured the butter into the bag.\nChoice 2: I heated it in the microwave.\nPlease choose the most appropriate choice based on the premise.\nAt the end of your response, provide your answer in this exact JSON format: {\"answer\": \"your_choice_number\"}\nThe answer must be either \"1\" or \"2\".\n",
+    "Result": "Reasoning process\nThe premise states the popcorn bag *began* to crack. This suggests a stressor was applied to the bag, causing it to weaken and start to break.\n\nChoice 1, pouring butter into the bag, could potentially weaken the bag over time, but wouldn't cause immediate cracking.\n\nChoice 2, heating the bag in the microwave, involves significant internal pressure building up from the steam created as the popcorn kernels pop. This pressure is a direct and common cause of popcorn bags cracking. The premise uses the word \"began\" which suggests the cracking is happening *during* the popping process.\n\nTherefore, choice 2 is the more appropriate cause.\n\nFinal Answer\n{\"answer\": \"2\"}",
+    "Answer": "2",
+    "MyAnswer": "2"
+  }
+]
