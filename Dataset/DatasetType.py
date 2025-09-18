@@ -19,12 +19,12 @@ DATASET_LIST = [d.value for d in DatasetType]
 
 # key 改成字串，對應 dataset class
 DATASET_MAP = {
-    DatasetType.MATHQA.value: _MathQA,
-    DatasetType.COMMENSEQA.value: _CommenseQA,
-    DatasetType.MGSM.value: _MGSM,
-    DatasetType.MMLU.value: _MMLU,
-    DatasetType.TRUTHFULQA.value: _TruthfulQA,
-    DatasetType.XCOPA.value: _XCOPA
+    _MathQA.NAME: _MathQA,
+    _CommenseQA.NAME: _CommenseQA,
+    _MGSM.NAME: _MGSM,
+    _MMLU.NAME: _MMLU,
+    _TruthfulQA.NAME: _TruthfulQA,
+    _XCOPA.NAME: _XCOPA
 }
 
 # key 改成字串，對應 dataset 名稱
