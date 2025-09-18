@@ -18,15 +18,15 @@ class RunContext():
         self.log: Log = Log()
     
     def setStrategy(self, mode: str):
-        if mode == StrategyType.ONLYCHINESE:
+        if mode == StrategyType.ONLYCHINESE.value:
             self.strategy = OnlyChinese()
             self.log = OneDatasetLog()
 
-        elif mode == StrategyType.ONLYENGLISH:
+        elif mode == StrategyType.ONLYENGLISH.value:
             self.strategy = OnlyEnglish()
             self.log = OneDatasetLog()
 
-        elif mode == StrategyType.MULTIAGENT:
+        elif mode == StrategyType.MULTIAGENT.value:
             self.strategy = MultiAgent()
             self.log = TwoAgentLog()
 
