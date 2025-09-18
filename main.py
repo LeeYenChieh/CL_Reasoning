@@ -30,7 +30,7 @@ def parseArgs():
     parser.add_argument("--dirpath", help="your dir path")
     parser.add_argument("--filepath", help="your file path")
 
-    parser.add_argument("-t", "--test", choices=TestType.Test_LIST, help="choose your test stratey")
+    parser.add_argument("-t", "--testmode", choices=TestType.Test_LIST, help="choose your test stratey")
     parser.add_argument("--testfile", help="The file need to be test")
     parser.add_argument("--testmodel", nargs="+", help="The model you want to test")
     parser.add_argument("--testdataset", nargs="+", help="The dataset you want to test")
@@ -66,7 +66,7 @@ def textExperiment(args):
     else:
         file = fileFactory.getFileBySetting(args.testmodel, args.testdataset, args.teststrategy)
     context: TestContext = TestContext()
-    context.setTest(args.test)
+    context.setTest(args.testmode)
     context.runTest(file)
 
 def main():
