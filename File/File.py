@@ -26,7 +26,7 @@ class File():
         self.dataNums = self.nums * self.sample
     
     def setData(self, data):
-        self.getData = data
+        self.data = data
     
     def getDatasetName(self) -> str:
         return self.datasetName
@@ -41,4 +41,4 @@ class File():
         return self.dataNums
     
     def getData(self) -> list:
-        return self.getData
+        return self.data
