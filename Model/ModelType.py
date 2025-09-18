@@ -13,7 +13,7 @@ class ModelType(str, Enum):
     GEMINI = 'gemini'
     GEMMA = 'gemma'
     
-    MODEL_LIST = [GPT41MINI, GPT4OMINI, DEEPSEEK, GEMINI, GEMMA]
+    MODEL_LIST = [m.value for m in (GPT41MINI, GPT4OMINI, DEEPSEEK, GEMINI, GEMMA)]
     MODEL_NAME_DICT = {
         GPT41MINI: _GPT41mini.NAME,
         GPT4OMINI: _GPT4omini.NAME,

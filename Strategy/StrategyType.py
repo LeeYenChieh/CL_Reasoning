@@ -8,7 +8,7 @@ class StrategyType(str, Enum):
     ONLYENGLISH = "onlyEnglish"
     MULTIAGENT = "multiAgent"
 
-    STRATEGY_LIST = [ONLYCHINESE, ONLYENGLISH, MULTIAGENT]
+    STRATEGY_LIST = [s.value for s in (ONLYCHINESE, ONLYENGLISH, MULTIAGENT)]
     STRATEGY_NAME_DICT = {
         ONLYCHINESE: _OnlyChinese.NAME,
         ONLYENGLISH: _OnlyEnglish.NAME,
