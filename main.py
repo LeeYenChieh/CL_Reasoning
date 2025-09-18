@@ -17,7 +17,6 @@ from File.FileFactory import FileFactory
 import json
 
 def parseArgs():
-    print(ModelType.MODEL_LIST)
     parser = ArgumentParser()
     parser.add_argument("--run", action="store_true", help="Run Experiment")
     parser.add_argument("--test", action="store_true", help="Test Experiment")
