@@ -61,10 +61,13 @@ def runExperiment(args):
 
 def textExperiment(args):
     fileFactory: FileFactory = FileFactory()
+    test_models = args.testmodel
+    if not test_models and args.model:
+        test_models = [args.model]
     if args.testfile:
         file = [fileFactory.getFileByPath(args.testfile)]
     else:
-        file = fileFactory.getFileBySetting(args.testmodel, args.testdataset, args.teststrategy)
+        file = fileFactory.getFileBySetting(test_models, args.testdataset, args.teststrategy)
     context: TestContext = TestContext()
     context.setTest(args.testmode)
     context.runTest(file)
