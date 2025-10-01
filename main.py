@@ -61,9 +61,6 @@ def runExperiment(args):
 
 def textExperiment(args):
     fileFactory: FileFactory = FileFactory()
-    test_models = args.testmodel
-    if not test_models and args.model:
-        test_models = [args.model]
     if args.testfile:
         file = [fileFactory.getFileByPath(args.testfile)]
     else:
