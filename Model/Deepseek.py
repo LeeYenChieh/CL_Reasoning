@@ -1,6 +1,6 @@
 from Model.Model import Model
 from openai import OpenAI
-from api_key import deepseek_api_key
+import os
 
 class Deepseek(Model):
     NAME = "Deepseek"
@@ -10,7 +10,7 @@ class Deepseek(Model):
         self.name: str = Deepseek.NAME
         self.modelName = "deepseek-reasoner"
         self.client = OpenAI(
-            api_key=deepseek_api_key,
+            api_key=os.getenv('DEEPSEEK_API_KEY'),
             base_url="https://api.deepseek.com"
         )
 

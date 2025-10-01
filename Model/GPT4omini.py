@@ -1,6 +1,6 @@
 from openai import OpenAI
 from Model.Model import Model
-from api_key import gpt_api_key
+import os
 
 class GPT4omini(Model):
     NAME = "GPT 4o mini"
@@ -9,7 +9,7 @@ class GPT4omini(Model):
         super().__init__(tempature)
         self.name: str = GPT4omini.NAME
         self.modelName = "gpt-4o-mini-2024-07-18"
-        self.client = OpenAI(api_key=gpt_api_key)
+        self.client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
     
     def getRes(self, prompt) -> str:
         try:

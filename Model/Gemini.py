@@ -1,6 +1,6 @@
 import google.generativeai as genai
 from Model.Model import Model
-from api_key import gemini_api_key
+import os
 
 class Gemini(Model):
     NAME = "Gemini"
@@ -9,7 +9,7 @@ class Gemini(Model):
         super().__init__(tempature)
         self.name: str = Gemini.NAME
         self.modelName: str = "models/gemini-1.5-pro"  # 用新版 Gemini Pro
-        genai.configure(api_key=gemini_api_key)
+        genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
         self.model = genai.GenerativeModel(self.modelName)
 
     def getRes(self, prompt) -> str:
