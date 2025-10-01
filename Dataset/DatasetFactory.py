@@ -13,17 +13,17 @@ class DatasetFactory():
         pass
 
     def buildDataset(self, type, *args, **kwargs) -> Dataset:
-        if type == DatasetType.MATHQA.value:
+        if type == DatasetType.MATHQA:
             return MathQA(*args, **kwargs)
-        elif type == DatasetType.COMMENSEQA.value:
+        elif type == DatasetType.COMMENSEQA:
             return CommenseQA(*args, **kwargs)
-        elif type == DatasetType.MGSM.value:
+        elif type == DatasetType.MGSM:
             return MGSM(*args, **kwargs)
-        elif type == DatasetType.MMLU.value:
+        elif type == DatasetType.MMLU:
             return MMLU(*args, **kwargs)
-        elif type == DatasetType.TRUTHFULQA.value:
+        elif type == DatasetType.TRUTHFULQA:
             return TruthfulQA(*args, **kwargs)
-        elif type == DatasetType.XCOPA.value:
+        elif type == DatasetType.XCOPA:
             return XCOPA(*args, **kwargs)
         else:
             print('Dataset doesn\'t exist!')

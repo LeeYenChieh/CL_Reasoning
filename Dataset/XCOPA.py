@@ -28,6 +28,7 @@ class XCOPA(Dataset):
                 f'Choice 1: {choice1}\n' \
                 f'Choice 2: {choice2}\n' \
                 f'Please choose the most appropriate choice based on the premise.\n' \
-                f'At the end of your response, provide your answer in this exact JSON format: {{"answer": "your_choice_number"}}\n' \
-                f'The answer must be either "1" or "2".\n'
+                f'At the end of your response, provide your answer in this exact JSON format: \n' \
+                f'{{"answer": "your_choice_number"}}\n' \
+                f'The answer must be either "1" or "2". You have to output double quotation marks. You have to ouput only one line.\n'
         return result

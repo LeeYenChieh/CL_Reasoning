@@ -23,12 +23,11 @@ class Deepseek(Model):
             response = self.client.chat.completions.create(
                 model=self.modelName,
                 messages=[{"role": "user", "content": prompt}],
-                max_tokens=4096,
+                max_tokens=8192,
                 temperature=self.tempature,
                 stream=False
             )
             return response.choices[0].message.content
         except Exception as e:
-            print(f"Error in Deepseek model: {e}")
-            return ""
+            return f"Error in Deepseek model: {e}"
 

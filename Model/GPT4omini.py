@@ -16,9 +16,9 @@ class GPT4omini(Model):
             response = self.client.chat.completions.create(
                 model=self.modelName,
                 messages=[{"role": "user", "content": prompt}],
-                max_tokens=1024,
-                temperature=0
+                max_tokens=8192,
+                temperature=self.tempature
             )
             return response.choices[0].message.content
-        except:
-            return ""
+        except Exception as e:
+            return f"Error in GPT 4o model: {e}"

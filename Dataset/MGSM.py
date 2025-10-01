@@ -31,9 +31,9 @@ class MGSM(Dataset):
         result = (
             f"There is a math word problem:\n"
             f"{question}\n\n"
-            f"At the end, provide the final numeric answer in this exact JSON format:\n"
+            f"At the end, provide the final numeric answer in this exact one line JSON format:\n"
             f'{{"answer": "number"}}\n'
-            f"The answer must be a single number."
+            f"The answer must be a single number. You have to output double quotation marks. You have to ouput only one line.\n"
         )
         return result
     

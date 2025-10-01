@@ -18,10 +18,9 @@ class Gemini(Model):
                 prompt,
                 generation_config=genai.types.GenerationConfig(
                     temperature=self.tempature,
-                    max_output_tokens=4096
+                    max_output_tokens=8192
                 )
             )
             return response.text
         except Exception as e:
-            print(f"Error in Gemini model: {e}")
-            return ""
+            return f"Error in Gemini model: {e}"

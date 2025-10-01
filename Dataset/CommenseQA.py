@@ -37,8 +37,8 @@ class CommenseQA(Dataset):
             f"And there are {len(labels)} choices:\n"
             f"{formatted_choices}\n"
             f"Please choose a choice based on the question.\n"
-            f"At the end of your response, provide your answer in this exact JSON format: "
+            f"At the end of your response, provide your answer in this exact JSON format: \n"
             f'{{"answer": "your_letter_choice"}}\n'
-            f"The answer must be a single English letter ({labels[0]}-{labels[-1]}).\n"
+            f"The answer must be a single English letter ({labels[0]}-{labels[-1]}). You have to output double quotation marks. You have to ouput only one line.\n"
         )
         return result

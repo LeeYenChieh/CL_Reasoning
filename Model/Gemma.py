@@ -1,6 +1,6 @@
 import google.generativeai as genai
 from Model.Model import Model
-from api_key import gemini_api_key
+import os
 
 class Gemma(Model):
     NAME = "Gemma"
@@ -9,7 +9,7 @@ class Gemma(Model):
         super().__init__(tempature)
         self.name: str = Gemma.NAME
         self.modelName = "models/gemma-3-27b-it"  # Using strongest Gemma model
-        genai.configure(api_key=gemini_api_key)
+        genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
         self.model = genai.GenerativeModel(self.modelName)
     
     def getRes(self, prompt) -> str:
@@ -23,5 +23,4 @@ class Gemma(Model):
             )
             return response.text
         except Exception as e:
-            print(f"Error in Gemma model: {e}")
-            return ""
+            return f"Error in Gemma model: {e}"
