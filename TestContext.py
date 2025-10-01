@@ -12,7 +12,7 @@ class TestContext():
         self.log: Log = FileLog()
     
     def setTest(self, mode: str):
-        if mode == TestType.TESTEM.value:
+        if mode == TestType.TESTEM:
             self.test = TestEM()
 
         else:

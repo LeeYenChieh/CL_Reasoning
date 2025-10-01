@@ -67,7 +67,7 @@ def textExperiment(args):
     if args.testfile:
         file = [fileFactory.getFileByPath(args.testfile)]
     else:
-        file = fileFactory.getFileBySetting(test_models, args.testdataset, args.teststrategy)
+        file = fileFactory.getFileBySetting(args.testmodel, args.testdataset, args.teststrategy)
     context: TestContext = TestContext()
     context.setTest(args.testmode)
     context.runTest(file)
