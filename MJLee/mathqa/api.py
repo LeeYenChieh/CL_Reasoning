@@ -1,3 +1,0 @@
-gpt_api_key = "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"
-gemini_api_key = "AIzaSyCUWQ9PdKQ9nnyXQ0HJX_7vwXF6IDnr2QM"
-deepseek_api_key = "sk-1856f226d0d54beeb953498db92afa4e"

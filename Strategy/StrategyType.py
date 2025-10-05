@@ -5,6 +5,7 @@ from Strategy.onlySpanish import OnlySpanish as _OnlySpanish
 from Strategy.multiAgent import MultiAgent as _MultiAgent
 from Strategy.chooseAnswer import ChooseAnswer as _ChooseAnswer
 from Strategy.getOneOutput import GetOneOutput as _GetOneResult
+from Strategy.basic import Basic as _Basic
 
 class StrategyType(str, Enum):
     ONLYCHINESE = "onlyChinese"
@@ -13,6 +14,7 @@ class StrategyType(str, Enum):
     MULTIAGENT = "multiAgent"
     CHOOSEANSWER = "chooseanswer"
     GETONEOUTPUT = 'getoneresult'
+    BASIC = "basic"
 
 # 直接取出 value，會是字串
 STRATEGY_LIST = [s.value for s in StrategyType]
@@ -24,5 +26,6 @@ STRATEGY_NAME_DICT = {
     StrategyType.ONLYSPANISH.value: _OnlySpanish.NAME,
     StrategyType.MULTIAGENT.value: _MultiAgent.NAME,
     StrategyType.CHOOSEANSWER.value: _ChooseAnswer.NAME,
-    StrategyType.GETONEOUTPUT.value: _GetOneResult.NAME
+    StrategyType.GETONEOUTPUT.value: _GetOneResult.NAME,
+    StrategyType.BASIC.value: _Basic.NAME
 }

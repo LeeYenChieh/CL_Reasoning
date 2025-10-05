@@ -12,6 +12,7 @@ from Strategy.onlySpanish import OnlySpanish
 from Strategy.multiAgent import MultiAgent
 from Strategy.chooseAnswer import ChooseAnswer
 from Strategy.getOneOutput import GetOneOutput
+from Strategy.basic import Basic
 
 from Strategy.StrategyType import StrategyType
 
@@ -43,6 +44,11 @@ class RunContext():
         
         elif mode == StrategyType.GETONEOUTPUT:
             self.strategy = GetOneOutput()
+        
+        elif mode == StrategyType.BASIC:
+            self.strategy = Basic()
+            self.log = TwoAgentLog()
+
         else:
             print("Strategy doesn't exist.")
             self.strategy = None
