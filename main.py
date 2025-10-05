@@ -24,11 +24,13 @@ def parseArgs():
     parser.add_argument("-m", "--model", choices=MODEL_LIST, help="choose your model")
     parser.add_argument("-d", "--dataset", choices=DATASET_LIST, help="choose your dataset")
     parser.add_argument("-s", "--strategy", choices=STRATEGY_LIST, help="choose your strategy")
+    parser.add_argument("--betterlanguage", choices=['EN', 'CN'], help="choose the better language")
     parser.add_argument("--datapath1", help="multi agent response 1")
     parser.add_argument("--datapath2", help="multi agent response 2")
     parser.add_argument("--nums", help="Data Nums", type=int)
     parser.add_argument("--dirpath", help="your dir path")
     parser.add_argument("--filepath", help="your file path")
+
 
     parser.add_argument("-t", "--testmode", choices=TEST_LIST, help="choose your test stratey")
     parser.add_argument("--testfile", help="The file need to be test")
@@ -40,15 +42,20 @@ def parseArgs():
     return args
 
 def runExperiment(args):
-    modelFactory = ModelFactory()
-    model: Model = modelFactory.buildModel(args.model)
-    datasetFactory = DatasetFactory()
-    dataset: Dataset = datasetFactory.buildDataset(args.dataset, nums = args.nums) if args.nums else datasetFactory.buildDataset(args.dataset)
+    model, dataset = None, None
+    if args.model:
+        modelFactory = ModelFactory()
+        model: Model = modelFactory.buildModel(args.model)
+    if args.dataset:
+        datasetFactory = DatasetFactory()
+        dataset: Dataset = datasetFactory.buildDataset(args.dataset, nums = args.nums) if args.nums else datasetFactory.buildDataset(args.dataset)
 
     context = RunContext()
     context.setStrategy(args.strategy)
-    result = context.runExperiment(model, dataset)
+    result = context.runExperiment(model, dataset, betterLanguage=args.betterlanguage) if args.betterlanguage else context.runExperiment(model, dataset)
 
+    if not result:
+        return
     path = ""
     if args.dirpath:
         path = f'{args.dirpath}/{model.getName()}_{dataset.getName()}_{context.getStrategyName()}.json'

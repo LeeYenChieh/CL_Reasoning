@@ -13,23 +13,23 @@ class MultiAgent(Strategy):
         self.name: str = MultiAgent.NAME
     
     def AC_Wrong_AE_Correct_Prompt(self, chinese_question, chinese_answer, english_answer):
-        prompt = f'你剛剛對於以下問題有一個答案1，答案1有可能是錯的，正確答案會不會是答案2?\n```\n問題：\n{chinese_question}\n```\n\n```\n答案1：\n{chinese_answer}\n```\n\n```\n答案2：\n{english_answer}\n```\n'
+        prompt = f'你剛剛對於以下問題有一個中文答案，中文答案有可能是錯的，正確答案會不會答案?\n```\n問題：\n{chinese_question}\n```\n\n```\n中文答案：\n{chinese_answer}\n```\n\n```\n英文答案：\n{english_answer}\n```\n'
         return prompt
     
     def AE_Wrong_AC_Correct_Prompt(self, english_question, english_answer, chinese_answer):
-        prompt = f'The answer you just gave to the following question was answer1, something might be wrong, can the answer be answer2?\n```\nqueston: \n{english_question}\n```\n\n```\nAnswer1：\n{english_answer}\n```\n\n```\nAnswer2：\n{chinese_answer}\n```\n?'
+        prompt = f'The answer you just gave to the following question was english answer, something might be wrong, can the answer be chinese answer?\n```\nqueston: \n{english_question}\n```\n\n```\nEnglish Answer：\n{english_answer}\n```\n\n```\nChinese Answer：\n{chinese_answer}\n```\n?'
         return prompt
     
     def chooseOnePrompt(self, chinese_question, chinese_answer, english_answer):
-        prompt = f'對於以下問題\n```\n{chinese_question}\n```\n有一個中文答案跟一個英文答案，分別是\n```\n{chinese_answer}\n```\n以及\n```\n{english_answer}\n```\n根據問題，仔細比較兩個答案，逐步說明你的推理過程，最後只選出一個更正確的答案，並嚴格按照指定的輸出格式回答。'
+        prompt = f'對於以下問題\n```\n{chinese_question}\n```\n有一份中文答案如下\n```\n{chinese_answer}\n```\n跟一份英文答案如下\n```\n{english_answer}\n```\n根據問題，仔細比較中文答案與英文答案，最後選擇並輸出一個較為正確的答案，逐步說明你的推理過程\n'
         return prompt
     
     def chineseProcessingPrompt(self):
-        prompt = f'逐步、詳細推理，不得跳過任何步驟。先檢查答案1的正確性，如果找到錯誤，請解釋原因；若答案1完全正確，則必須指出答案2的錯誤之處。'
+        prompt = f'先檢查答案1的正確性，如果找到錯誤，請解釋原因；若答案1完全正確，則必須指出答案2的錯誤之處。'
         return prompt
 
     def englishProcessingPrompt(self):
-        prompt = f'You must reason step by step, without skipping any details. First, check whether Answer 1 is correct.\n' \
+        prompt = f'First, check whether Answer 1 is correct.\n' \
             f'If you find mistakes in Answer 1, explain them clearly and compare with Answer 2.\n' \
             f'If Answer 1 is correct, you must explicitly point out the mistakes in Answer 2.\n'
         return prompt
@@ -37,21 +37,26 @@ class MultiAgent(Strategy):
     def chineseFormatPrompt(self):
         prompt = f'請嚴格遵守以下格式進行輸出\n' \
             f'推理過程\n' \
-            f'{{你的推理過程}}\n\n' \
+            f'{{你的推理過程-注意：**不得重述題目原文或在此加入題目未要求的內容**。}}\n\n' \
             f'最終答案\n' \
-            f'{{你的答案，必須完全符合上述問題指定的 JSON 格式，不能添加多餘文字或解釋}}\n'
-
+            f'{{"answer":"your answer"}}\n' \
+            f'（其中 你不該直接輸出"your answer"，"your answer" 應該且必須被取代為題目指定的格式(格式通常是一個英文字母或數字)，整個最終答案區塊只能是那一行JSON，前後不能有其他文字或說明。）\n'
         return prompt
     
     def englishFormatPrompt(self):
         prompt = f'Please strictly follow the format below for output\n' \
             f'Reasoning process\n' \
-            f'{{your reasoning process}}\n\n' \
+            f'{{your reasoning process - Note: **Do not restate the original question text or add content not required by the question**}}\n\n' \
             f'Final Answer\n' \
-            f'{{Your final Answer, Your response must end with the exact JSON format specified in the question above.}}\n'
+            f'{{"answer":"your answer"}}\n' \
+            f'(You shouldn\'t output "your answer" directly. Where "your answer" must and should strictly follow the rules(Usually a English letter or a number) required in the question. The entire final answer block must only be that one line of JSON, with no extra text or explanation before or after.)\n'
         return prompt
     
     def getPrompt(self, chinese_question, english_question, chinese_answer, english_answer):
+        if len(chinese_answer) > 2048:
+            chinese_answer = chinese_answer[0:2048] + '一直重複運算，結束輸出'
+        if len(english_answer) > 2048:
+            english_answer = english_answer[0:2048] + 'repeatlt compute the same thing, end the output'
         prompt1 = self.AC_Wrong_AE_Correct_Prompt(chinese_question, chinese_answer, english_answer) + self.chineseProcessingPrompt() + self.chineseFormatPrompt()
         prompt2 = self.AE_Wrong_AC_Correct_Prompt(english_question, english_answer, chinese_answer) + self.englishProcessingPrompt() + self.englishFormatPrompt()
         prompt3 = self.chooseOnePrompt(chinese_question, chinese_answer, english_answer) + self.chineseFormatPrompt()
@@ -101,32 +106,28 @@ class MultiAgent(Strategy):
             if dataset.compareTwoAnswer(chinese_answer, english_answer):
                 myAnswer = chinese_answer
 
-                log.logMessage(f'問題：{chinese_question}')
-                log.logMessage(f'結果：兩個Agent有相同結果！')
-
             else:
                 prompt1, prompt2, prompt3 = self.getPrompt(chinese_question, english_question, chinese_result, english_result)
                 resultOutput1, resultOutput2 = model.getRes(prompt1), model.getRes(prompt2)
                 myResultAnswer1, myResultAnswer2 = self.parseAnswer(resultOutput1), self.parseAnswer(resultOutput2)
 
-                log.logMessage(f'問題：{chinese_question}')
-                log.logMessage(f'Prompt1：{prompt1}')
-                log.logMessage(f'Prompt2：{prompt2}')
-                log.logMessage(f'結果1：{resultOutput1}')
-                log.logMessage(f'結果2：{resultOutput2}')
+                log.logMessage(f'Prompt1：\n{prompt1}')
+                log.logMessage(f'結果1：\n{resultOutput1}')
+                log.logMessage(f'Prompt2：\n{prompt2}')
+                log.logMessage(f'結果2：\n{resultOutput2}')
 
                 if dataset.compareTwoAnswer(myResultAnswer1, myResultAnswer2):
                     myAnswer = myResultAnswer1
 
                     log.logMessage(f'結果：兩個Agent有相同結果！')
                 else:
-                    resultOutput3 = self.parseAnswer(prompt3)
+                    resultOutput3 = model.getRes(prompt3)
                     myAnswer = self.parseAnswer(resultOutput3)
 
-                    log.logMessage(f'Prompt3：{prompt3}')
-                    log.logMessage(f'結果3：{resultOutput3}')
+                    log.logMessage(f'Prompt3：\n{prompt3}')
+                    log.logMessage(f'結果3：\n{resultOutput3}')
 
-            log.logMessage(f'My Answer: {myAnswer}\nCorrect Answer: {correct_answer}')
+                log.logMessage(f'My Answer: {myAnswer}\nCorrect Answer: {correct_answer}')
 
             result.append({
                 "English Question": english_question,

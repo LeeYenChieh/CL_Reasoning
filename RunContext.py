@@ -8,7 +8,10 @@ from Log.TwoAgentLog import TwoAgentLog
 from Strategy.Strategy import Strategy
 from Strategy.onlyChinese import OnlyChinese
 from Strategy.onlyEnglish import OnlyEnglish
+from Strategy.onlySpanish import OnlySpanish
 from Strategy.multiAgent import MultiAgent
+from Strategy.chooseAnswer import ChooseAnswer
+from Strategy.getOneOutput import GetOneOutput
 
 from Strategy.StrategyType import StrategyType
 
@@ -25,11 +28,21 @@ class RunContext():
         elif mode == StrategyType.ONLYENGLISH:
             self.strategy = OnlyEnglish()
             self.log = OneDatasetLog()
+        
+        elif mode == StrategyType.ONLYSPANISH:
+            self.strategy = OnlySpanish()
+            self.log = OneDatasetLog()
 
         elif mode == StrategyType.MULTIAGENT:
             self.strategy = MultiAgent()
             self.log = TwoAgentLog()
 
+        elif mode == StrategyType.CHOOSEANSWER:
+            self.strategy = ChooseAnswer()
+            self.log = TwoAgentLog()
+        
+        elif mode == StrategyType.GETONEOUTPUT:
+            self.strategy = GetOneOutput()
         else:
             print("Strategy doesn't exist.")
             self.strategy = None

@@ -8,7 +8,7 @@ class Deepseek(Model):
     def __init__(self, tempature: int = 0):
         super().__init__(tempature)
         self.name: str = Deepseek.NAME
-        self.modelName = "deepseek-reasoner"
+        self.modelName = "deepseek-chat"
         self.client = OpenAI(
             api_key=os.getenv('DEEPSEEK_API_KEY'),
             base_url="https://api.deepseek.com"

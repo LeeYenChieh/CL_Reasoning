@@ -3,6 +3,7 @@ from Log.FileLog import FileLog
 
 from Test.Test import Test
 from Test.TestEM import TestEM
+from Test.PrintOne import PrintOne
 
 from Test.TestType import TestType
 
@@ -14,6 +15,8 @@ class TestContext():
     def setTest(self, mode: str):
         if mode == TestType.TESTEM:
             self.test = TestEM()
+        elif mode == TestType.PRINTONE:
+            self.test = PrintOne()
 
         else:
             print("Test Strategy doesn't exist.")
