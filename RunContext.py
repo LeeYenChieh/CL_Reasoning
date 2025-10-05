@@ -13,6 +13,7 @@ from Strategy.multiAgent import MultiAgent
 from Strategy.chooseAnswer import ChooseAnswer
 from Strategy.getOneOutput import GetOneOutput
 from Strategy.basic import Basic
+from Strategy.cot import CoT
 
 from Strategy.StrategyType import StrategyType
 
@@ -47,6 +48,10 @@ class RunContext():
         
         elif mode == StrategyType.BASIC:
             self.strategy = Basic()
+            self.log = TwoAgentLog()
+        
+        elif mode == StrategyType.COT:
+            self.strategy = CoT()
             self.log = TwoAgentLog()
 
         else:
