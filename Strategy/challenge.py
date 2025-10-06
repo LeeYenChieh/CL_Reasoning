@@ -6,32 +6,18 @@ from Log.Log import Log
 from tqdm import tqdm
 import json
 
-class MultiAgent(Strategy):
-    NAME = "Multi Agent"
+class Challenge(Strategy):
+    NAME = "Challenge"
     def __init__(self):
         super().__init__()
-        self.name: str = MultiAgent.NAME
-    
-    def AC_Wrong_AE_Correct_Prompt(self, chinese_question, chinese_answer, english_answer):
-        prompt = f'你剛剛對於以下問題有一個中文答案，中文答案有可能是錯的，正確答案會不會是英文答案?\n```\n問題：\n{chinese_question}\n```\n\n```\n中文答案：\n{chinese_answer}\n```\n\n```\n英文答案：\n{english_answer}\n```\n'
-        return prompt
-    
-    def AE_Wrong_AC_Correct_Prompt(self, english_question, english_answer, chinese_answer):
-        prompt = f'The answer you just gave to the following question was english answer, something might be wrong, can the answer be chinese answer?\n```\nqueston: \n{english_question}\n```\n\n```\nEnglish Answer：\n{english_answer}\n```\n\n```\nChinese Answer：\n{chinese_answer}\n```\n?'
-        return prompt
-    
-    def chooseOnePrompt(self, chinese_question, chinese_answer, english_answer):
-        prompt = f'對於以下問題\n```\n{chinese_question}\n```\n有一份中文答案如下\n```\n{chinese_answer}\n```\n跟一份英文答案如下\n```\n{english_answer}\n```\n根據問題，仔細比較中文答案與英文答案，最後選擇並輸出一個較為正確的答案，逐步說明你的推理過程\n'
-        return prompt
+        self.name: str = Challenge.NAME
     
     def chineseProcessingPrompt(self):
-        prompt = f'先檢查答案1的正確性，如果找到錯誤，請解釋原因；若答案1完全正確，則必須指出答案2的錯誤之處。'
+        prompt = f'分析兩個答案的推理過程，一步一步思考並輸出思考過程\n'
         return prompt
 
     def englishProcessingPrompt(self):
-        prompt = f'First, check whether Answer 1 is correct.\n' \
-            f'If you find mistakes in Answer 1, explain them clearly and compare with Answer 2.\n' \
-            f'If Answer 1 is correct, you must explicitly point out the mistakes in Answer 2.\n'
+        prompt = f'Analyze the reasoning process of both answers. Think step by step and output your thought process.\n'
         return prompt
     
     def chineseFormatPrompt(self):
@@ -42,7 +28,7 @@ class MultiAgent(Strategy):
             f'{{"answer":"your answer"}}\n' \
             f'（其中 你不該直接輸出"your answer"，"your answer" 應該且必須被取代為題目指定的格式(格式通常是一個英文字母或數字)，整個最終答案區塊只能是那一行JSON，前後不能有其他文字或說明。）\n'
         return prompt
-    
+
     def englishFormatPrompt(self):
         prompt = f'Please strictly follow the format below for output\n' \
             f'Reasoning process\n' \
@@ -52,15 +38,37 @@ class MultiAgent(Strategy):
             f'(You shouldn\'t output "your answer" directly. Where "your answer" must and should strictly follow the rules(Usually a English letter or a number) required in the question. The entire final answer block must only be that one line of JSON, with no extra text or explanation before or after.)\n'
         return prompt
     
-    def getPrompt(self, chinese_question, english_question, chinese_answer, english_answer):
-        if len(chinese_answer) > 2048:
-            chinese_answer = chinese_answer[0:2048] + '一直重複運算，結束輸出'
-        if len(english_answer) > 2048:
-            english_answer = english_answer[0:2048] + 'repeatlt compute the same thing, end the output'
-        prompt1 = self.AC_Wrong_AE_Correct_Prompt(chinese_question, chinese_answer, english_answer) + self.chineseProcessingPrompt() + self.chineseFormatPrompt()
-        prompt2 = self.AE_Wrong_AC_Correct_Prompt(english_question, english_answer, chinese_answer) + self.englishProcessingPrompt() + self.englishFormatPrompt()
-        prompt3 = self.chooseOnePrompt(chinese_question, chinese_answer, english_answer) + self.chineseFormatPrompt()
-        return prompt1, prompt2, prompt3
+    def Chinese_Prompt(self, new_answer):
+        prompt = f'你剛剛提供的答案有沒有可能是錯誤的? 正確答案有沒有可能是以下這份答案?\n```\n{new_answer}\n```\n'
+        return prompt + self.chineseProcessingPrompt() + self.chineseFormatPrompt()
+    
+    def English_Prompt(self, new_answer):
+        prompt = f'Could the answer you just provided be incorrect? Is it possible that the correct answer is actually the following:\n```\n{new_answer}\n```\n'
+        return prompt + self.englishProcessingPrompt() + self.englishFormatPrompt()
+    
+    def cot_Prompt(self, chinese_question, chinese_answer, english_answer):
+        prompt = f'For the following question\n```\n{chinese_question}\n```\nThere is a Chinese answer as follows\n```\n{chinese_answer}\n```\nAnd an English answer as follows\n```\n{english_answer}\n```\nBased on the question, select and output a more correct answer. You must think step by step about which parts of the reasoning in the Chinese answer and English answer are incorrect, and output your reasoning process.\n'
+        return prompt + self.englishProcessingPrompt() + self.englishFormatPrompt()
+    
+    def runChallenge(self, model: Model, dataset: Dataset, chinese_question, english_question, chinese_result, english_result, chinese_answer, english_answer, threshold=3):
+        response1, response2 = chinese_result, english_result
+        answer1, answer2 = chinese_answer, english_answer
+        answerRecord1, answerRecord2 = [answer1], [answer2]
+        record1, record2 = [{"role": "user", "content": chinese_question}, {"role": "assistant", "content": chinese_result}], [{"role": "user", "content": english_question}, {"role": "assistant", "content": english_result}]
+        cur = 0
+        while not dataset.compareTwoAnswer(answer1, answer2) and cur < threshold:
+            prompt1, prompt2 = self.Chinese_Prompt(response2), self.English_Prompt(response1)
+            record1.append({"role": "user", "content": prompt1})
+            record2.append({"role": "user", "content": prompt2})
+            response1, response2 = model.getListRes(record1), model.getListRes(record2)
+            record1.append({"role": "assistant", "content": response1})
+            record2.append({"role": "assistant", "content": response2})
+            answer1, answer2 = self.parseAnswer(response1), self.parseAnswer(response2)
+            answerRecord1.append(answer1)
+            answerRecord2.append(answer2)
+
+            cur += 1
+        return record1, record2, answer1, answer2, answerRecord1, answerRecord2, cur
     
     def getRes(self, model: Model, dataset: Dataset, log: Log, dataPath1: str=None, dataPath2: str=None) -> list:
         if dataPath1 == None or dataPath2 == None:
@@ -99,32 +107,32 @@ class MultiAgent(Strategy):
             chinese_answer, english_answer = data1[i + 1]["MyAnswer"], data2[i + 1]["MyAnswer"]
             correct_answer = data2[i + 1]["Answer"]
 
-            prompt1, prompt2, prompt3 = "", "", ""
-            resultOutput1, resultOutput2, resultOutput3 = "", "", ""
+            cur = 0
+            resultOutput3 = ""
             myAnswer = ""
+            record1, record2 = [], []
+            answerRecord1, answerRecord2 = [], []
 
             if dataset.compareTwoAnswer(chinese_answer, english_answer):
                 myAnswer = chinese_answer
 
             else:
-                prompt1, prompt2, prompt3 = self.getPrompt(chinese_question, english_question, chinese_result, english_result)
-                resultOutput1, resultOutput2 = model.getRes(prompt1), model.getRes(prompt2)
-                myResultAnswer1, myResultAnswer2 = self.parseAnswer(resultOutput1), self.parseAnswer(resultOutput2)
+                record1, record2, answer1, answer2, answerRecord1, answerRecord2, cur = self.runChallenge(model, dataset, chinese_question, english_question, chinese_result, english_result, chinese_answer, english_answer) 
 
-                log.logMessage(f'Prompt1：\n{prompt1}')
-                log.logMessage(f'結果1：\n{resultOutput1}')
-                log.logMessage(f'Prompt2：\n{prompt2}')
-                log.logMessage(f'結果2：\n{resultOutput2}')
+                log.logMessage(f'Record1：\n{record1}')
+                log.logMessage(f'結果1：\n{answerRecord1}')
+                log.logMessage(f'Record2：\n{record2}')
+                log.logMessage(f'結果2：\n{answerRecord2}')
+                log.logMessage(f'Times：\n{cur}')
 
-                if dataset.compareTwoAnswer(myResultAnswer1, myResultAnswer2):
-                    myAnswer = myResultAnswer1
+                if dataset.compareTwoAnswer(answer1, answer2):
+                    myAnswer = answer1
 
                     log.logMessage(f'結果：兩個Agent有相同結果！')
                 else:
-                    resultOutput3 = model.getRes(prompt3)
+                    resultOutput3 = model.getRes(self.cot_Prompt(chinese_question, chinese_answer, english_answer))
                     myAnswer = self.parseAnswer(resultOutput3)
 
-                    log.logMessage(f'Prompt3：\n{prompt3}')
                     log.logMessage(f'結果3：\n{resultOutput3}')
 
                 log.logMessage(f'My Answer: {myAnswer}\nCorrect Answer: {correct_answer}')
@@ -132,11 +140,11 @@ class MultiAgent(Strategy):
             result.append({
                 "English Question": english_question,
                 "Chinese Question": chinese_question,
-                "Prompt1": prompt1,
-                "Prompt2": prompt2,
-                "Prompt3": prompt3,
-                "Result1": resultOutput1,
-                "Result2": resultOutput2,
+                "Record1": record1,
+                "Record2": record2,
+                "AnswerRecord1": answerRecord1,
+                "AnswerRecord2": answerRecord2,
+                "Times": cur,
                 "Result3": resultOutput3,
                 "Answer": correct_answer,
                 "MyAnswer": myAnswer

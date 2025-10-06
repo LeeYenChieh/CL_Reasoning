@@ -1,4 +1,4 @@
-import google.generativeai as genai
+from openai import OpenAI
 from Model.Model import Model
 import os
 
@@ -9,19 +9,35 @@ class Gemini(Model):
         super().__init__(tempature)
         self.name: str = Gemini.NAME
         self.modelName: str = "gemini-2.5-flash-lite"  # 用新版 Gemini Pro
-        genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
-        self.model = genai.GenerativeModel(self.modelName)
-        print(genai.list_models())
+        self.client = OpenAI(
+            api_key=os.getenv('GEMINI_API_KEY'),
+            base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
+        )
 
     def getRes(self, prompt) -> str:
         try:
-            response = self.model.generate_content(
-                prompt,
-                generation_config=genai.types.GenerationConfig(
-                    temperature=self.tempature,
-                    max_output_tokens=8192
-                )
+            response = self.client.chat.completions.create(
+                model=self.modelName,
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=8192,
+                temperature=self.tempature,
+                stream=False
             )
-            return response.text
+
+            return response.choices[0].message
+        except Exception as e:
+            return f"Error in Gemini model: {e}"
+    
+    def getListRes(self, promptList):
+        try:
+            response = self.client.chat.completions.create(
+                model=self.modelName,
+                messages=promptList,
+                max_tokens=8192,
+                temperature=self.tempature,
+                stream=False
+            )
+
+            return response.choices[0].message
         except Exception as e:
             return f"Error in Gemini model: {e}"

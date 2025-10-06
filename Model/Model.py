@@ -12,3 +12,6 @@ class Model():
 
     def getRes(self, prompt: str) -> str:
         return ""
+    
+    def getListRes(self, promptList: list) -> list:
+        return []

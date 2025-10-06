@@ -31,3 +31,14 @@ class Deepseek(Model):
         except Exception as e:
             return f"Error in Deepseek model: {e}"
 
+    def getListRes(self, promptList):
+        try:
+            response = self.client.chat.completions.create(
+                model=self.modelName,
+                messages=promptList,
+                max_tokens=8192,
+                temperature=self.tempature
+            )
+            return response.choices[0].message.content
+        except Exception as e:
+            return f"Error in DeepSeek model: {e}"

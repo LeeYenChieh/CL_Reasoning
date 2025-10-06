@@ -7,6 +7,7 @@ from Strategy.chooseAnswer import ChooseAnswer as _ChooseAnswer
 from Strategy.getOneOutput import GetOneOutput as _GetOneResult
 from Strategy.basic import Basic as _Basic
 from Strategy.cot import CoT as _CoT
+from Strategy.challenge import Challenge as _Challenge
 
 class StrategyType(str, Enum):
     ONLYCHINESE = "onlyChinese"
@@ -17,6 +18,7 @@ class StrategyType(str, Enum):
     GETONEOUTPUT = 'getoneresult'
     BASIC = "basic"
     COT = "cot"
+    CHALLENGE = "challenge"
 
 # 直接取出 value，會是字串
 STRATEGY_LIST = [s.value for s in StrategyType]
@@ -30,5 +32,6 @@ STRATEGY_NAME_DICT = {
     StrategyType.CHOOSEANSWER.value: _ChooseAnswer.NAME,
     StrategyType.GETONEOUTPUT.value: _GetOneResult.NAME,
     StrategyType.BASIC.value: _Basic.NAME,
-    StrategyType.COT.value: _CoT.NAME
+    StrategyType.COT.value: _CoT.NAME,
+    StrategyType.CHALLENGE.value: _Challenge.NAME
 }
