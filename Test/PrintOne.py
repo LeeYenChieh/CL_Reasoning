@@ -20,14 +20,15 @@ class PrintOne(Test):
 
         printList = []
         for i in range(total):
-            if str(data[i]["Prompt"]):
+            if data[i]["Times"] != 0 and data[i]["Times"] != 3:
                 printList.append(i)
         log.logMessage(f'There are {len(printList)} samples.')
         
         while(True):
             index = int(input('Which sample you want to check?\n'))
             d = data[printList[index]]
-            log.logMessage(f'Prompt: \n{d["Prompt"]}')
-            log.logMessage(f'Result: \n{d["Result"]}')
+            log.logMessage(f'Record1: \n{d["Record1"]}')
+            log.logMessage(f'Record2: \n{d["Record2"]}')
+            log.logMessage(f'Times: \n{d["Times"]}')
             log.logMessage(f'Correct Answer: \n{d["Answer"]}')
             log.logMessage(f'My Answer: \n{d["MyAnswer"]}')
