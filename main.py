@@ -27,6 +27,7 @@ def parseArgs():
     parser.add_argument("--betterlanguage", choices=['EN', 'CN'], help="choose the better language")
     parser.add_argument("--datapath1", help="multi agent response 1")
     parser.add_argument("--datapath2", help="multi agent response 2")
+    parser.add_argument("--tempature", type=float, help="Tempature")
     parser.add_argument("--nums", help="Data Nums", type=int)
     parser.add_argument("--dirpath", help="your dir path")
     parser.add_argument("--filepath", help="your file path")
@@ -45,7 +46,7 @@ def runExperiment(args):
     model, dataset = None, None
     if args.model:
         modelFactory = ModelFactory()
-        model: Model = modelFactory.buildModel(args.model)
+        model: Model = modelFactory.buildModel(args.model, tempature=args.tempature)
     if args.dataset:
         datasetFactory = DatasetFactory()
         dataset: Dataset = datasetFactory.buildDataset(args.dataset, nums = args.nums) if args.nums else datasetFactory.buildDataset(args.dataset)
