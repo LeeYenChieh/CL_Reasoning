@@ -52,7 +52,11 @@ def runExperiment(args):
 
     context = RunContext()
     context.setStrategy(args.strategy)
-    result = context.runExperiment(model, dataset, betterLanguage=args.betterlanguage) if args.betterlanguage else context.runExperiment(model, dataset)
+    result = None
+    if args.datapath1 and args.datapath2:
+        result = context.runExperiment(model, dataset, dataPath1=args.datapath1, dataPath2=args.datapath2, betterLanguage=args.betterlanguage) if args.betterlanguage else context.runExperiment(model, dataset, dataPath1=args.datapath1, dataPath2=args.datapath2)
+    else:
+        result = context.runExperiment(model, dataset, betterLanguage=args.betterlanguage) if args.betterlanguage else context.runExperiment(model, dataset)
 
     if not result:
         return
