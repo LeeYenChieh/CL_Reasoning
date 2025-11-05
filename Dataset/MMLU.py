@@ -29,6 +29,10 @@ class MMLU(Dataset):
 
         if self.nums == -1 or self.nums > len(self.data):
             self.nums = len(self.data)
+        
+        self.realData = self.getRealData()
+        self.realAnawer = self.getRealAnswer()
+        self.nums = len(self.realData)
 
     def createQuestion(self, question, choices) -> str:
         choicesPrompt = ""
@@ -45,7 +49,7 @@ class MMLU(Dataset):
                 f'The answer must be a single English letter (A-D). You have to output double quotation marks. You have to ouput only one line.\n'
         return result
     
-    def getData(self):
+    def getRealData(self):
         types_list = list(self.type.keys()) 
         base = self.nums // len(types_list)       # 每個至少多少
         remainder =  self.nums % len(types_list)   # 剩下多少要分配
@@ -57,7 +61,7 @@ class MMLU(Dataset):
             result.extend(self.type[t]['question'][0:n])
         return result
     
-    def getAnswer(self):
+    def getRealAnswer(self):
         types_list = list(self.type.keys()) 
         base = self.nums // len(types_list)       # 每個至少多少
         remainder =  self.nums % len(types_list)   # 剩下多少要分配
@@ -68,3 +72,9 @@ class MMLU(Dataset):
         for n, t in zip(eachNums, types_list):
             result.extend(self.type[t]['answer'][0:n])
         return result
+    
+    def getData(self):
+        return self.realData * self.sample
+    
+    def getAnswer(self):
+        return self.realAnawer * self.sample
