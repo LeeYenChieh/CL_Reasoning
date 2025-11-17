@@ -5,7 +5,7 @@ import os
 class Deepseek(Model):
     NAME = "Deepseek"
 
-    def __init__(self, tempature: int = 0):
+    def __init__(self, tempature: int = 2):
         super().__init__(tempature)
         self.name: str = Deepseek.NAME
         self.modelName = "deepseek-chat"

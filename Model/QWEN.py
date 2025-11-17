@@ -5,7 +5,7 @@ import os
 class QWEN(Model):
     NAME = "QWEN 3-8b"
     
-    def __init__(self, tempature: int = 0):
+    def __init__(self, tempature: int = 2):
         super().__init__(tempature)
         self.name: str = QWEN.NAME
         self.modelName = "qwen3-8b"

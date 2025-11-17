@@ -5,7 +5,7 @@ import os
 class Gemini(Model):
     NAME = "Gemini 2.5 Flash"
 
-    def __init__(self, tempature: int = 0):
+    def __init__(self, tempature: int = 2):
         super().__init__(tempature)
         self.name: str = Gemini.NAME
         self.modelName: str = "gemini-2.5-flash-lite"  # 用新版 Gemini Pro

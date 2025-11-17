@@ -5,7 +5,7 @@ import os
 class GPT41mini(Model):
     NAME = "GPT 4.1 mini"
 
-    def __init__(self, tempature: int = 0):
+    def __init__(self, tempature: int = 2):
         super().__init__(tempature)
         self.name: str = GPT41mini.NAME
         self.modelName = "gpt-4.1-mini-2025-04-14"
