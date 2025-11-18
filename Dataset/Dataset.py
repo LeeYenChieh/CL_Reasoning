@@ -15,7 +15,7 @@ class Dataset():
     def getNums(self) -> int:
         return self.nums
     
-    def getSamples(self) -> int:
+    def getSample(self) -> int:
         return self.sample
 
     def getDataNum(self) -> int:

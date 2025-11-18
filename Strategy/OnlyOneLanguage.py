@@ -33,7 +33,7 @@ class OnlyOneLanguage(Strategy):
             "Dataset": self.dataset.getName(),
             "Strategy": self.name,
             "Data Nums": self.dataset.getNums(),
-            "Data Samples": self.dataset.getSamples()
+            "Data Samples": self.dataset.getSample()
         }]
 
         pbar = tqdm(total=self.dataset.getDataNum())

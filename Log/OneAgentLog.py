@@ -1,6 +1,6 @@
 from Log.Log import Log
 
-class OneDatasetLog(Log):
+class OneAgentLog(Log):
     def __init__(self):
         super().__init__()
     

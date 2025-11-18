@@ -1,4 +1,4 @@
-from Strategy.StrategyType import StrategyType
+from Strategy.StrategyType import StrategyType, StrategyNameType
 
 class PromptAbstractFactory:
     def __init__(self):
@@ -14,10 +14,10 @@ class PromptAbstractFactory:
         pass
 
     def getPrompt(self, type, *args, **kwargs):
-        if type == StrategyType.ONLYCHINESE:
+        if type == StrategyType.ONLYCHINESE or type == StrategyNameType.ONLYCHINESE:
             return self.chinesePrompt(*args, **kwargs)
-        if type == StrategyType.ONLYENGLISH:
+        if type == StrategyType.ONLYENGLISH or type == StrategyNameType.ONLYENGLISH:
             return self.englishPrompt(*args, **kwargs)
-        if type == StrategyType.ONLYSPANISH:
+        if type == StrategyType.ONLYSPANISH or type == StrategyNameType.ONLYSPANISH:
             return self.spanishPrompt(*args, **kwargs)
         return None

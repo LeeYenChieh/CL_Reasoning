@@ -1,5 +1,4 @@
 from enum import Enum
-from Strategy.Challenge import Challenge as _Challenge
 
 class StrategyType(str, Enum):
     ONLYCHINESE = "onlyChinese"
@@ -39,4 +38,7 @@ STRATEGY_TO_LANGUAGE = {
     StrategyType.ONLYCHINESE.value: 'Chinese',
     StrategyType.ONLYENGLISH.value: 'English',
     StrategyType.ONLYSPANISH.value: 'Spanish',
+    StrategyNameType.ONLYCHINESE.value: 'Chinese',
+    StrategyNameType.ONLYENGLISH.value: 'English',
+    StrategyNameType.ONLYSPANISH.value: 'Spanish',
 }
