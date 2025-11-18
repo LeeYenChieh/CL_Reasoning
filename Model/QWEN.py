@@ -1,11 +1,12 @@
 from openai import OpenAI
 from Model.Model import Model
+from Model.ModelType import ModelType, MODEL_NAME_DICT
 import os
 
 class QWEN(Model):
-    NAME = "QWEN 3-8b"
+    NAME = MODEL_NAME_DICT[ModelType.QWEN]
     
-    def __init__(self, tempature: int = 2):
+    def __init__(self, tempature):
         super().__init__(tempature)
         self.name: str = QWEN.NAME
         self.modelName = "qwen3-8b"

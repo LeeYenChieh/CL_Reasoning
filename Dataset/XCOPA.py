@@ -1,9 +1,10 @@
 from Dataset.Dataset import Dataset
+from Dataset.DatasetType import DATASET_NAME_DICT, DatasetType
 from Dataset.path import xcopa_path
 import json
 
 class XCOPA(Dataset):
-    NAME = "XCOPA"
+    NAME = DATASET_NAME_DICT[DatasetType.XCOPA]
 
     def __init__(self, nums = -1, sample = 1):
         super().__init__(nums, sample)

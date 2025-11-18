@@ -1,9 +1,10 @@
 from Dataset.Dataset import Dataset
 from datasets import load_dataset
+from Dataset.DatasetType import DATASET_NAME_DICT, DatasetType
 import pandas as pd
 
 class MMLU(Dataset):
-    NAME = "MMLU"
+    NAME = DATASET_NAME_DICT[DatasetType.MMLU]
     letters = ['A', 'B', 'C', 'D']
 
     def __init__(self, nums = -1, sample = 1):

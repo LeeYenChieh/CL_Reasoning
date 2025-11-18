@@ -1,11 +1,12 @@
 from openai import OpenAI
 from Model.Model import Model
+from Model.ModelType import ModelType, MODEL_NAME_DICT
 import os
 
 class GPT4omini(Model):
-    NAME = "GPT 4o mini"
+    NAME = MODEL_NAME_DICT[ModelType.GPT4OMINI]
     
-    def __init__(self, tempature: int = 0):
+    def __init__(self, tempature):
         super().__init__(tempature)
         self.name: str = GPT4omini.NAME
         self.modelName = "gpt-4o-mini-2024-07-18"

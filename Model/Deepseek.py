@@ -1,11 +1,12 @@
 from Model.Model import Model
 from openai import OpenAI
+from Model.ModelType import ModelType, MODEL_NAME_DICT
 import os
 
 class Deepseek(Model):
-    NAME = "Deepseek"
+    NAME = MODEL_NAME_DICT[ModelType.DEEPSEEK.value]
 
-    def __init__(self, tempature: int = 2):
+    def __init__(self, tempature):
         super().__init__(tempature)
         self.name: str = Deepseek.NAME
         self.modelName = "deepseek-chat"

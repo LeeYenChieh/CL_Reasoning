@@ -1,9 +1,10 @@
 from Dataset.Dataset import Dataset
 from Dataset.path import mathqa_path
+from Dataset.DatasetType import DATASET_NAME_DICT, DatasetType
 import json
 
 class MathQA(Dataset):
-    NAME = "MathQA"
+    NAME = DATASET_NAME_DICT[DatasetType.MATHQA]
 
     def __init__(self, nums = -1, sample = 1):
         super().__init__(nums, sample)

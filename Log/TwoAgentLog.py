@@ -4,13 +4,13 @@ class TwoAgentLog(Log):
     def __init__(self):
         super().__init__()
     
-    def logInfo(self, strategy, model, dataset, datapath1, datapath2):
+    def logInfo(self, strategy, model, dataset, datafile1, datafile2):
         print('=' * 30)
         print(f'Log Information')
         strategy.printName()
         model.printName()
         dataset.printName()
         dataset.printDataNums()
-        print(f'First File Path: {datapath1}')
-        print(f'Second File Path: {datapath2}')
+        print(f'First File Path: {datafile1.getPath()}')
+        print(f'Second File Path: {datafile2.getPath()}')
         print('=' * 30)
