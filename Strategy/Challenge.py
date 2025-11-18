@@ -38,7 +38,7 @@ class Challenge(Strategy):
     
     def cot_Prompt(self, question1, result1, result2):
         prompt = PromptTwoResultCOTFactory().englishPrompt(question1, result1, result2, self.type1, self.type2) \
-            + PromptFormatFactory().englishPrompt(0)
+            + PromptFormatFactory().englishPrompt()
         return prompt
     
     def runChallenge(self, model: Model, dataset: Dataset, question1, question2, result1, result2, answer1, answer2):

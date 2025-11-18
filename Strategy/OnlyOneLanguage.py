@@ -20,7 +20,7 @@ class OnlyOneLanguage(Strategy):
         self.type = type
 
     def getPrompt(self, question: str) -> str:
-        prompt = PromptCOTFactory().getPrompt(self.type, question) + PromptFormatFactory().getPrompt(type)
+        prompt = PromptCOTFactory().getPrompt(self.type, question) + PromptFormatFactory().getPrompt(self.type)
         return prompt
 
     def getRes(self) -> list:
