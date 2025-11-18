@@ -3,7 +3,7 @@ from File.File import File
 
 from Model.ModelType import MODEL_NAME_DICT, MODEL_LIST
 from Dataset.DatasetType import DATASET_NAME_DICT, DATASET_LIST
-from Strategy.StrategyType import STRATEGY_NAME_DICT, STRATEGY_LIST
+from Strategy.StrategyType import STRATEGY_TO_NAME, STRATEGY_LIST
 
 class FileFactory():
     def __init__(self):
@@ -32,7 +32,7 @@ class FileFactory():
         for m in model:
             for d in dataset:
                 for s in strategy:
-                    path = f'{dir}/{MODEL_NAME_DICT[m]}_{DATASET_NAME_DICT[d]}_{STRATEGY_NAME_DICT[s]}.json'
+                    path = f'{dir}/{MODEL_NAME_DICT[m]}_{DATASET_NAME_DICT[d]}_{STRATEGY_TO_NAME[s]}.json'
                     newFile = self.getFileByPath(path)
                     if newFile:
                         result.append(newFile)
