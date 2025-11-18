@@ -8,9 +8,12 @@ from tqdm import tqdm
 class OnlyEnglish(Strategy):
     NAME = "Only English"
 
-    def __init__(self):
+    def __init__(self, model: Model, dataset: Dataset, log: Log):
         super().__init__()
         self.name: str = OnlyEnglish.NAME
+        self.model = model
+        self.dataset = dataset
+        self.log = log
 
     def translatePrompt(self, question: str) -> str:
         prompt = f'Translate the text inside the following triple quotation marks into English. Never include the instructions asking the model to perform the translation in the output. If the text is already in English, just output it as-is without any modifications. Translate the entire question including all instructions and format requirements. However, do NOT provide any actual JSON answer - only translate the text. Do not attempt to solve the problem, do not reason or analyze the question, and do not add any comments. Strictly perform language conversion only.\n```\n{question}\n```\n'
@@ -33,23 +36,23 @@ class OnlyEnglish(Strategy):
         prompt = 'For the following question. \n```\n' + question + '\n```\n' + self.processPrompt() + self.formatPrompt()
         return prompt
 
-    def getRes(self, model: Model, dataset: Dataset, log: Log) -> list:
-        log.logInfo(self, model, dataset)
+    def getRes(self) -> list:
+        self.log.logInfo(self, self.model, self.dataset)
 
-        database = dataset.getData()
-        answer = dataset.getAnswer()
+        database = self.dataset.getData()
+        answer = self.dataset.getAnswer()
         result = [{
-            "Model": model.getName(),
-            "Dataset": dataset.getName(),
+            "Model": self.model.getName(),
+            "Dataset": self.dataset.getName(),
             "Strategy": self.name,
-            "Data Nums": dataset.getNums(),
-            "Data Samples": dataset.getSamples()
+            "Data Nums": self.dataset.getNums(),
+            "Data Samples": self.dataset.getSamples()
         }]
 
-        pbar = tqdm(total=dataset.getDataNum())
-        for i in range(dataset.getDataNum()):
-            translateQuestion = model.getRes(self.translatePrompt(database[i]))
-            resultAnswer = model.getRes(self.getPrompt(translateQuestion))
+        pbar = tqdm(total=self.dataset.getDataNum())
+        for i in range(self.dataset.getDataNum()):
+            translateQuestion = self.model.getRes(self.translatePrompt(database[i]))
+            resultAnswer = self.model.getRes(self.getPrompt(translateQuestion))
             result.append({
                 "Question": database[i],
                 "Translated": translateQuestion,
@@ -58,10 +61,10 @@ class OnlyEnglish(Strategy):
                 "MyAnswer": self.parseAnswer(resultAnswer)
             })
 
-            log.logMessage(f'翻譯問題：\n{translateQuestion}')
-            log.logMessage(f'結果：\n{resultAnswer}')
-            log.logMessage(f'My Answer: {result[-1]["MyAnswer"]}\nCorrect Answer: {answer[i]}')
-            pbar.update()
+            self.log.logMessage(f'翻譯問題：\n{translateQuestion}')
+            self.log.logMessage(f'結果：\n{resultAnswer}')
+            self.log.logMessage(f'My Answer: {result[-1]["MyAnswer"]}\nCorrect Answer: {answer[i]}')
+            self.pbar.update()
         
         pbar.close()
 

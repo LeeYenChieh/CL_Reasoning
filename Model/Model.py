@@ -1,6 +1,6 @@
 class Model():
-    def __init__(self, tempature: int = 0):
-        self.tempature: int = tempature
+    def __init__(self, tempature):
+        self.tempature: int = 0 if tempature == None else tempature
         self.name: str = ""
 
     def getName(self) -> str:

@@ -1,11 +1,12 @@
 import google.generativeai as genai
 from Model.Model import Model
+from Model.ModelType import ModelType, MODEL_NAME_DICT
 import os
 
 class Gemma(Model):
-    NAME = "Gemma"
+    NAME = MODEL_NAME_DICT[ModelType.GEMMA]
 
-    def __init__(self, tempature: int = 0):
+    def __init__(self, tempature):
         super().__init__(tempature)
         self.name: str = Gemma.NAME
         self.modelName = "models/gemma-3-27b-it"  # Using strongest Gemma model

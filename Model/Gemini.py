@@ -1,11 +1,12 @@
 from openai import OpenAI
 from Model.Model import Model
+from Model.ModelType import ModelType, MODEL_NAME_DICT
 import os
 
 class Gemini(Model):
-    NAME = "Gemini 2.5 Flash"
+    NAME = MODEL_NAME_DICT[ModelType.GEMINI]
 
-    def __init__(self, tempature: int = 2):
+    def __init__(self, tempature):
         super().__init__(tempature)
         self.name: str = Gemini.NAME
         self.modelName: str = "gemini-2.5-flash-lite"  # 用新版 Gemini Pro

@@ -1,9 +1,10 @@
 from Dataset.Dataset import Dataset
 from Dataset.path import mgsm_en_path
+from Dataset.DatasetType import DATASET_NAME_DICT, DatasetType
 import json
 
 class MGSM(Dataset):
-    NAME = "MGSM"
+    NAME = DATASET_NAME_DICT[DatasetType.MGSM]
 
     def __init__(self, nums=-1, sample=1):
         super().__init__(nums, sample)

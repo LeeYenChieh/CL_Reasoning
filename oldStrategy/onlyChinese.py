@@ -8,9 +8,12 @@ from tqdm import tqdm
 class OnlyChinese(Strategy):
     NAME = "Only Chinese"
 
-    def __init__(self):
+    def __init__(self, model: Model, dataset: Dataset, log: Log):
         super().__init__()
         self.name: str = OnlyChinese.NAME
+        self.model = model
+        self.dataset = dataset
+        self.log = log
 
     def translatePrompt(self, question: str) -> str:
         prompt = f'將以下三個引號內的文字翻譯成中文。翻譯整個問題，包括所有說明和格式要求，絕對不要把要求模型翻譯相關的指令輸出。但是不要提供任何實際的JSON答案 - 只翻譯文字。不要嘗試解決問題，不要推理、分析題目，嚴格只進行語言轉換。\n```\n{question}\n```\n'
@@ -33,23 +36,23 @@ class OnlyChinese(Strategy):
         prompt = '對於以下問題\n```\n' + question + '\n```\n' + self.processPrompt() + self.formatPrompt()
         return prompt
 
-    def getRes(self, model: Model, dataset: Dataset, log: Log) -> list:
-        log.logInfo(self, model, dataset)
+    def getRes(self) -> list:
+        self.log.logInfo(self, self.model, self.dataset)
 
-        database = dataset.getData()
-        answer = dataset.getAnswer()
+        database = self.dataset.getData()
+        answer = self.dataset.getAnswer()
         result = [{
-            "Model": model.getName(),
-            "Dataset": dataset.getName(),
+            "Model": self.model.getName(),
+            "Dataset": self.dataset.getName(),
             "Strategy": self.name,
-            "Data Nums": dataset.getNums(),
-            "Data Samples": dataset.getSamples()
+            "Data Nums": self.dataset.getNums(),
+            "Data Samples": self.dataset.getSamples()
         }]
 
-        pbar = tqdm(total=dataset.getDataNum())
-        for i in range(dataset.getDataNum()):
-            translateQuestion = model.getRes(self.translatePrompt(database[i]))
-            resultAnswer = model.getRes(self.getPrompt(translateQuestion))
+        pbar = tqdm(total=self.dataset.getDataNum())
+        for i in range(self.dataset.getDataNum()):
+            translateQuestion = self.model.getRes(self.translatePrompt(database[i]))
+            resultAnswer = self.model.getRes(self.getPrompt(translateQuestion))
             result.append({
                 "Question": database[i],
                 "Translated": translateQuestion,
@@ -58,9 +61,9 @@ class OnlyChinese(Strategy):
                 "MyAnswer": self.parseAnswer(resultAnswer)
             })
 
-            log.logMessage(f'翻譯問題：\n{translateQuestion}')
-            log.logMessage(f'結果：\n{resultAnswer}')
-            log.logMessage(f'My Answer: {result[-1]["MyAnswer"]}\nCorrect Answer: {answer[i]}')
+            self.log.logMessage(f'翻譯問題：\n{translateQuestion}')
+            self.log.logMessage(f'結果：\n{resultAnswer}')
+            self.log.logMessage(f'My Answer: {result[-1]["MyAnswer"]}\nCorrect Answer: {answer[i]}')
 
             pbar.update()
         

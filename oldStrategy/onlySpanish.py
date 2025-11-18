@@ -8,7 +8,7 @@ from tqdm import tqdm
 class OnlySpanish(Strategy):
     NAME = "Only Spanish"
 
-    def __init__(self):
+    def __init__(self, model: Model, dataset: Dataset, log: Log):
         super().__init__()
         self.name: str = OnlySpanish.NAME
 
@@ -34,23 +34,23 @@ class OnlySpanish(Strategy):
         prompt = 'Para la siguiente pregunta\n```\n' + question + '\n```\n' + self.processPrompt() + self.formatPrompt()
         return prompt
 
-    def getRes(self, model: Model, dataset: Dataset, log: Log) -> list:
-        log.logInfo(self, model, dataset)
+    def getRes(self) -> list:
+        self.log.logInfo(self, self.model, self.dataset)
 
-        database = dataset.getData()
-        answer = dataset.getAnswer()
+        database = self.dataset.getData()
+        answer = self.dataset.getAnswer()
         result = [{
-            "Model": model.getName(),
-            "Dataset": dataset.getName(),
+            "Model": self.model.getName(),
+            "Dataset": self.dataset.getName(),
             "Strategy": self.name,
-            "Data Nums": dataset.getNums(),
-            "Data Samples": dataset.getSamples()
+            "Data Nums": self.dataset.getNums(),
+            "Data Samples": self.dataset.getSamples()
         }]
 
-        pbar = tqdm(total=dataset.getDataNum())
-        for i in range(dataset.getDataNum()):
-            translateQuestion = model.getRes(self.translatePrompt(database[i]))
-            resultAnswer = model.getRes(self.getPrompt(translateQuestion))
+        pbar = tqdm(total=self.dataset.getDataNum())
+        for i in range(self.dataset.getDataNum()):
+            translateQuestion = self.model.getRes(self.translatePrompt(database[i]))
+            resultAnswer = self.model.getRes(self.getPrompt(translateQuestion))
             result.append({
                 "Question": database[i],
                 "Translated": translateQuestion,
@@ -59,9 +59,9 @@ class OnlySpanish(Strategy):
                 "MyAnswer": self.parseAnswer(resultAnswer)
             })
 
-            log.logMessage(f'翻譯問題：\n{translateQuestion}')
-            log.logMessage(f'結果：\n{resultAnswer}')
-            log.logMessage(f'My Answer: {result[-1]["MyAnswer"]}\nCorrect Answer: {answer[i]}')
+            self.log.logMessage(f'翻譯問題：\n{translateQuestion}')
+            self.log.logMessage(f'結果：\n{resultAnswer}')
+            self.log.logMessage(f'My Answer: {result[-1]["MyAnswer"]}\nCorrect Answer: {answer[i]}')
 
             pbar.update()
         

@@ -8,9 +8,20 @@ import json
 
 class MultiAgent(Strategy):
     NAME = "Multi Agent"
-    def __init__(self):
+    def __init__(self, model: Model, dataset: Dataset, log: Log, dataPath1: str=None, dataPath2: str=None):
         super().__init__()
         self.name: str = MultiAgent.NAME
+        self.model = model
+        self.dataset = dataset
+        self.log = log
+        self.dataPath1 = dataPath1
+        self.dataPath2 = dataPath2
+        if dataPath1 == None or dataPath2 == None:
+            print("Use default file(onlyChinese and onlyEnglish output file)!")
+            from Strategy.onlyChinese import OnlyChinese
+            from Strategy.onlyEnglish import OnlyEnglish
+            self.dataPath1 = f'result/{model.getName()}_{dataset.getName()}_{OnlyChinese.NAME}.json'
+            self.dataPath2 = f'result/{model.getName()}_{dataset.getName()}_{OnlyEnglish.NAME}.json'
     
     def AC_Wrong_AE_Correct_Prompt(self, chinese_question, chinese_answer, english_answer):
         prompt = f'你剛剛對於以下問題有一個中文答案，中文答案有可能是錯的，正確答案會不會是英文答案?\n```\n問題：\n{chinese_question}\n```\n\n```\n中文答案：\n{chinese_answer}\n```\n\n```\n英文答案：\n{english_answer}\n```\n'
@@ -62,39 +73,32 @@ class MultiAgent(Strategy):
         prompt3 = self.chooseOnePrompt(chinese_question, chinese_answer, english_answer) + self.chineseFormatPrompt()
         return prompt1, prompt2, prompt3
     
-    def getRes(self, model: Model, dataset: Dataset, log: Log, dataPath1: str=None, dataPath2: str=None) -> list:
-        if dataPath1 == None or dataPath2 == None:
-            print("Use default file(onlyChinese and onlyEnglish output file)!")
-            from Strategy.onlyChinese import OnlyChinese
-            from Strategy.onlyEnglish import OnlyEnglish
-            dataPath1 = f'result/{model.getName()}_{dataset.getName()}_{OnlyChinese.NAME}.json'
-            dataPath2 = f'result/{model.getName()}_{dataset.getName()}_{OnlyEnglish.NAME}.json'
-
-        log.logInfo(self, model, dataset, dataPath1, dataPath2)
+    def getRes(self) -> list:
+        self.log.logInfo(self, self.model, self.dataset, self.dataPath1, self.dataPath2)
 
         try:
-            with open(dataPath1, 'r') as f:
+            with open(self.dataPath1, 'r') as f:
                 data1 = json.load(f)
-            with open(dataPath2, 'r') as f:
+            with open(self.dataPath2, 'r') as f:
                 data2 = json.load(f)
         except:
-            log.logMessage(f'\nRead File Error!')
+            self.log.logMessage(f'\nRead File Error!')
             return []
 
-        if data1[0]["Data Nums"] != dataset.getNums() or data1[0]["Data Samples"] != dataset.getSamples() or data2[0]["Data Nums"] != dataset.getNums() or data2[0]["Data Samples"] != dataset.getSamples():
-            log.logMessage(f'\nNums or Samples of Data in path1 or path2 doesn\'t match your setting!')
+        if data1[0]["Data Nums"] != self.dataset.getNums() or data1[0]["Data Samples"] != self.dataset.getSamples() or data2[0]["Data Nums"] != self.dataset.getNums() or data2[0]["Data Samples"] != self.dataset.getSamples():
+            self.log.logMessage(f'\nNums or Samples of Data in path1 or path2 doesn\'t match your setting!')
             return []
 
         result = [{
-            "Model": model.getName(),
-            "Dataset": dataset.getName(),
+            "Model": self.model.getName(),
+            "Dataset": self.dataset.getName(),
             "Strategy": self.name,
-            "Data Nums": dataset.getNums(),
-            "Data Samples": dataset.getSamples()
+            "Data Nums": self.dataset.getNums(),
+            "Data Samples": self.dataset.getSamples()
         }]
 
-        pbar = tqdm(total=dataset.getDataNum())
-        for i in range(dataset.getDataNum()):
+        pbar = tqdm(total=self.dataset.getDataNum())
+        for i in range(self.dataset.getDataNum()):
             chinese_question, english_question, chinese_result, english_result = data1[i + 1]["Translated"], data2[i + 1]["Translated"], data1[i + 1]["Result"], data2[i + 1]["Result"]
             chinese_answer, english_answer = data1[i + 1]["MyAnswer"], data2[i + 1]["MyAnswer"]
             correct_answer = data2[i + 1]["Answer"]
@@ -103,31 +107,31 @@ class MultiAgent(Strategy):
             resultOutput1, resultOutput2, resultOutput3 = "", "", ""
             myAnswer = ""
 
-            if dataset.compareTwoAnswer(chinese_answer, english_answer):
+            if self.dataset.compareTwoAnswer(chinese_answer, english_answer):
                 myAnswer = chinese_answer
 
             else:
                 prompt1, prompt2, prompt3 = self.getPrompt(chinese_question, english_question, chinese_result, english_result)
-                resultOutput1, resultOutput2 = model.getRes(prompt1), model.getRes(prompt2)
+                resultOutput1, resultOutput2 = self.model.getRes(prompt1), self.model.getRes(prompt2)
                 myResultAnswer1, myResultAnswer2 = self.parseAnswer(resultOutput1), self.parseAnswer(resultOutput2)
 
-                log.logMessage(f'Prompt1：\n{prompt1}')
-                log.logMessage(f'結果1：\n{resultOutput1}')
-                log.logMessage(f'Prompt2：\n{prompt2}')
-                log.logMessage(f'結果2：\n{resultOutput2}')
+                self.log.logMessage(f'Prompt1：\n{prompt1}')
+                self.log.logMessage(f'結果1：\n{resultOutput1}')
+                self.log.logMessage(f'Prompt2：\n{prompt2}')
+                self.log.logMessage(f'結果2：\n{resultOutput2}')
 
-                if dataset.compareTwoAnswer(myResultAnswer1, myResultAnswer2):
+                if self.dataset.compareTwoAnswer(myResultAnswer1, myResultAnswer2):
                     myAnswer = myResultAnswer1
 
-                    log.logMessage(f'結果：兩個Agent有相同結果！')
+                    self.log.logMessage(f'結果：兩個Agent有相同結果！')
                 else:
-                    resultOutput3 = model.getRes(prompt3)
+                    resultOutput3 = self.model.getRes(prompt3)
                     myAnswer = self.parseAnswer(resultOutput3)
 
-                    log.logMessage(f'Prompt3：\n{prompt3}')
-                    log.logMessage(f'結果3：\n{resultOutput3}')
+                    self.log.logMessage(f'Prompt3：\n{prompt3}')
+                    self.log.logMessage(f'結果3：\n{resultOutput3}')
 
-                log.logMessage(f'My Answer: {myAnswer}\nCorrect Answer: {correct_answer}')
+                self.log.logMessage(f'My Answer: {myAnswer}\nCorrect Answer: {correct_answer}')
 
             result.append({
                 "English Question": english_question,

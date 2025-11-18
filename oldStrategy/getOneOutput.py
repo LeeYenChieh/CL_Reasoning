@@ -4,19 +4,22 @@ from Log.Log import Log
 
 class GetOneOutput(Strategy):
     NAME = "Get One Output"
-    def __init__(self):
+    def __init__(self, model: Model, dataset, log: Log):
         super().__init__()
         self.name: str = GetOneOutput.NAME
+        self.model = model
+        self.dataset = dataset
+        self.log = log
     
     def getPrompt(self):
         prompt = input('Input your prompt:\n')
         return prompt
     
-    def getRes(self, model: Model, dataset, log: Log) -> list:
-        model.printName()
+    def getRes(self) -> list:
+        self.model.printName()
         prompt = self.getPrompt()
-        resultOutput = model.getRes(prompt)
-        log.logMessage(f'Prompt：{prompt}')
-        log.logMessage(f'結果：\n{resultOutput}')
+        resultOutput = self.model.getRes(prompt)
+        self.log.logMessage(f'Prompt：{prompt}')
+        self.log.logMessage(f'結果：\n{resultOutput}')
 
         return

@@ -49,7 +49,7 @@ def runExperiment(args):
         model: Model = modelFactory.buildModel(args.model, tempature=args.tempature)
     if args.dataset:
         datasetFactory = DatasetFactory()
-        dataset: Dataset = datasetFactory.buildDataset(args.dataset, nums = args.nums) if args.nums else datasetFactory.buildDataset(args.dataset)
+        dataset: Dataset = datasetFactory.buildDataset(args.dataset, nums = args.nums)
 
     context = RunContext()
     context.setStrategy(args.strategy)

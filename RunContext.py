@@ -14,7 +14,7 @@ from Strategy.chooseAnswer import ChooseAnswer
 from Strategy.getOneOutput import GetOneOutput
 from Strategy.basic import Basic
 from Strategy.cot import CoT
-from Strategy.challenge import Challenge
+from Strategy.Challenge import Challenge
 
 from Strategy.StrategyType import StrategyType
 

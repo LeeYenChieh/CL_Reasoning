@@ -1,10 +1,10 @@
 class Dataset():
-    def __init__(self, nums: int = -1, sample: int = 1):
+    def __init__(self, nums: int, sample: int):
         self.name: str = ""
         self.data: list = []
         self.answer: list = []
-        self.nums: int = nums
-        self.sample: int = sample
+        self.nums: int = -1 if nums == None else nums
+        self.sample: int = 1 if sample == None else sample
     
     @staticmethod
     def compareTwoAnswer(answer1, answer2):
