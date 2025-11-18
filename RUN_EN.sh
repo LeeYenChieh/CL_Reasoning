@@ -10,7 +10,7 @@ python3 ./main.py --run -m deepseek -d commenseqa -s onlyEnglish --nums 6000
 python3 ./main.py --run -m deepseek -d mmlu -s onlyEnglish --nums 6000
 python3 ./main.py --run -m deepseek -d truthfulqa -s onlyEnglish --nums 6000
 
-python3 ./main.py --run -m qwen mathqa  -s onlyEnglish --nums 3000
-python3 ./main.py --run -m qwen commenseqa -s onlyEnglish --nums 6000
-python3 ./main.py --run -m qwen mmlu -s onlyEnglish --nums 6000
-python3 ./main.py --run -m qwen truthfulqa -s onlyEnglish --nums 6000
+python3 ./main.py --run -m qwen -d mathqa  -s onlyEnglish --nums 3000
+python3 ./main.py --run -m qwen -d commenseqa -s onlyEnglish --nums 6000
+python3 ./main.py --run -m qwen -d mmlu -s onlyEnglish --nums 6000
+python3 ./main.py --run -m qwen -d truthfulqa -s onlyEnglish --nums 6000
