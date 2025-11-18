@@ -9,6 +9,7 @@ class TwoAgentLog(Log):
         print(f'Log Information')
         strategy.printName()
         model.printName()
+        model.printTempature()
         dataset.printName()
         dataset.printDataNums()
         print(f'First File Path: {datafile1.getPath()}')

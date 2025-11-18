@@ -9,6 +9,10 @@ class Model():
     def printName(self):
         print(f'Model： {self.name}')
         return
+    
+    def printTempature(self):
+        print(f'Tempature： {self.tempature}')
+        return
 
     def getRes(self, prompt: str) -> str:
         return ""
