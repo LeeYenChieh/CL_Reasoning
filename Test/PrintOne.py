@@ -1,6 +1,6 @@
 from File.File import File
 from Log.Log import Log
-from Dataset.DatasetType import DATASET_MAP
+from Dataset.DatasetType import get_dataset_map
 
 from Test.Test import Test
 

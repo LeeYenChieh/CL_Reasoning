@@ -1,10 +1,4 @@
 from enum import Enum
-from Dataset.MathQA import MathQA as _MathQA
-from Dataset.CommenseQA import CommenseQA as _CommenseQA
-from Dataset.MGSM import MGSM as _MGSM
-from Dataset.MMLU import MMLU as _MMLU
-from Dataset.TruthfulQA import TruthfulQA as _TruthfulQA
-from Dataset.XCOPA import XCOPA as _XCOPA
 
 class DatasetType(str, Enum):
     MATHQA = "mathqa"
@@ -18,14 +12,23 @@ class DatasetType(str, Enum):
 DATASET_LIST = [d.value for d in DatasetType]
 
 # key 改成字串，對應 dataset class
-DATASET_MAP = {
-    "MathQA": _MathQA,
-    "CommenseQA": _CommenseQA,
-    "MGSM": _MGSM,
-    "MMLU": _MMLU,
-    "TruthfulQA": _TruthfulQA,
-    "XCOPA": _XCOPA
-}
+def get_dataset_map():
+    # ← 只有真正用到時才 import，不會循環
+    from Dataset.MathQA import MathQA as _MathQA
+    from Dataset.CommenseQA import CommenseQA as _CommenseQA
+    from Dataset.MGSM import MGSM as _MGSM
+    from Dataset.MMLU import MMLU as _MMLU
+    from Dataset.TruthfulQA import TruthfulQA as _TruthfulQA
+    from Dataset.XCOPA import XCOPA as _XCOPA
+
+    return {
+        "MathQA": _MathQA,
+        "CommenseQA": _CommenseQA,
+        "MGSM": _MGSM,
+        "MMLU": _MMLU,
+        "TruthfulQA": _TruthfulQA,
+        "XCOPA": _XCOPA
+    }
 
 # key 改成字串，對應 dataset 名稱
 DATASET_NAME_DICT = {
