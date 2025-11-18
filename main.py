@@ -18,8 +18,11 @@ from Log.Log import Log
 from Log.OneAgentLog import OneAgentLog
 from Log.TwoAgentLog import TwoAgentLog
 
-from TestContext import TestContext
-from Test.TestType import TEST_LIST
+from Test.TestContext import TestContext
+from Test.TestEM import TestEM
+from Test.PrintOne import PrintOne
+from Test.TestCaseBase import TestCaseBase
+from Test.TestType import TEST_LIST, TestType
 from File.FileFactory import FileFactory
 
 import json
@@ -46,6 +49,7 @@ def parseArgs():
 
     parser.add_argument("-t", "--testmode", choices=TEST_LIST, help="choose your test stratey")
     parser.add_argument("--testfile", help="The file need to be test")
+    parser.add_argument("--testdir", help="The dir need to be test")
     parser.add_argument("--testmodel", choices=MODEL_LIST, nargs="+", help="The model you want to test")
     parser.add_argument("--testdataset", choices=DATASET_LIST, nargs="+", help="The dataset you want to test")
     parser.add_argument("--teststrategy", choices=STRATEGY_LIST, nargs="+", help="The strategy you want to test")
@@ -94,9 +98,15 @@ def textExperiment(args):
     if args.testfile:
         file = [fileFactory.getFileByPath(args.testfile)]
     else:
-        file = fileFactory.getFileBySetting(args.testmodel, args.testdataset, args.teststrategy)
+        file = fileFactory.getFileBySetting(args.testdir, args.testmodel, args.testdataset, args.teststrategy)
+
     context: TestContext = TestContext()
-    context.setTest(args.testmode)
+    if args.testmode == TestType.TESTEM:
+        context.setTest(TestEM())
+    elif args.testmode == TestType.PRINTONE:
+        context.setTest(PrintOne())
+    elif args.testmode == TestType.TESTCASE:
+        context.setTest(TestCaseBase())
     context.runTest(file)
 
 def main():

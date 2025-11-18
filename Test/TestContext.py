@@ -1,29 +1,14 @@
 from Log.Log import Log
 from Log.FileLog import FileLog
-
 from Test.Test import Test
-from Test.TestEM import TestEM
-from Test.PrintOne import PrintOne
-from Test.TestCaseBase import TestCaseBase
-
-from Test.TestType import TestType
 
 class TestContext():
     def __init__(self):
         self.test: Test = None
         self.log: Log = FileLog()
     
-    def setTest(self, mode: str):
-        if mode == TestType.TESTEM:
-            self.test = TestEM()
-        elif mode == TestType.PRINTONE:
-            self.test = PrintOne()
-        elif mode == TestType.TESTCASE:
-            self.test = TestCaseBase()
-
-        else:
-            print("Test Strategy doesn't exist.")
-            self.strategy = None
+    def setTest(self, test: Test):
+        self.test = test
     
     def getTestName(self) -> str:
         return self.test.getName()

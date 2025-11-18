@@ -20,7 +20,7 @@ class FileFactory():
             return None
         return result
     
-    def getFileBySetting(self, model: list=None, dataset: list=None, strategy: list=None) -> list:
+    def getFileBySetting(self, dir: str="", model: list=None, dataset: list=None, strategy: list=None) -> list:
         if model == None:
             model = MODEL_LIST
         if dataset == None:
@@ -32,7 +32,7 @@ class FileFactory():
         for m in model:
             for d in dataset:
                 for s in strategy:
-                    path = f'result/{MODEL_NAME_DICT[m]}_{DATASET_NAME_DICT[d]}_{STRATEGY_NAME_DICT[s]}.json'
+                    path = f'{dir}/{MODEL_NAME_DICT[m]}_{DATASET_NAME_DICT[d]}_{STRATEGY_NAME_DICT[s]}.json'
                     newFile = self.getFileByPath(path)
                     if newFile:
                         result.append(newFile)
