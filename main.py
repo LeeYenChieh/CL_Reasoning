@@ -72,7 +72,7 @@ def runExperiment(args):
     if args.strategy == StrategyType.ONLYCHINESE or args.strategy == StrategyType.ONLYENGLISH or args.strategy == StrategyType.ONLYSPANISH:
         context.setStrategy(OnlyOneLanguage(model, dataset, OneAgentLog(), args.strategy))
     elif args.strategy == StrategyType.REPAIR:
-        file = FileFactory().getFileByPath()
+        file = FileFactory().getFileByPath(args.repairpath)
         context.setStrategy(Repair(model, dataset, OneAgentLog(), file))
     elif args.strategy == StrategyType.GETONEOUTPUT:
         context.setStrategy(GetOneOutput(model, dataset, Log()))
