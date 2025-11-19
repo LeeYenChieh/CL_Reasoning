@@ -28,7 +28,7 @@ class Repair(OnlyOneLanguage):
         for d in repairData:
             if d["MyAnswer"] == "":
                 cnt += 1
-        self.log.logMessage(f'Repair Data: {cnt} / {self.file.getDataNums}')
+        self.log.logMessage(f'Repair Data: {cnt} / {self.file.getDataNums()}')
 
         database = self.dataset.getData()
         answer = self.dataset.getAnswer()

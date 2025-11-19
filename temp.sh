@@ -12,6 +12,9 @@
 # python3 ./main.py --run -m gemini -d truthfulqa -s onlyEnglish --nums 6000 --dirpath result/tempature0/temp
 # python3 ./main.py --run -m gemini -d truthfulqa -s onlySpanish --nums 6000 --dirpath result/tempature0/temp
 
+python3 ./main.py --run -m gpt4.1mini -d mathqa  -s repair --nums 3000 --dirpath result/tempature0/ --repairpath ./result/tempature0/GPT\ 4.1\ mini_MathQA_Only\ English.json
+
+
 python3 ./main.py --run -m gpt4omini -d mmlu -s onlyChinese --nums 6000 --dirpath result/tempature0/temp
 python3 ./main.py --run -m gpt4omini -d mmlu -s onlyEnglish --nums 6000 --dirpath result/tempature0/temp
 python3 ./main.py --run -m gpt4omini -d mmlu -s onlySpanish --nums 6000 --dirpath result/tempature0/temp
