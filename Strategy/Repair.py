@@ -12,7 +12,6 @@ from tqdm import tqdm
 
 class Repair(OnlyOneLanguage):
     def __init__(self, model: Model, dataset: Dataset, log: Log, file: File):
-        super().__init__()
         self.name: str = file.getStrategyName()
         self.model = model
         self.dataset = dataset
