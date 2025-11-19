@@ -6,6 +6,7 @@ class StrategyType(str, Enum):
     ONLYSPANISH = "onlySpanish"
     CHALLENGE = "challenge"
     GETONEOUTPUT = 'getoneresult'
+    REPAIR = 'repair'
 
 class StrategyNameType(str, Enum):
     ONLYCHINESE = "Only Chinese"
@@ -13,6 +14,7 @@ class StrategyNameType(str, Enum):
     ONLYSPANISH = "Only Spanish"
     CHALLENGE = "Challenge"
     GETONEOUTPUT = "Get One Output"
+    REPAIR = "Repair"
 
 # 直接取出 value，會是字串
 STRATEGY_LIST = [s.value for s in StrategyType]

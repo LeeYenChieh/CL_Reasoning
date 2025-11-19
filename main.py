@@ -11,6 +11,7 @@ from Dataset.DatasetType import DATASET_LIST
 
 from Strategy.StrategyType import STRATEGY_LIST, StrategyType
 from Strategy.OnlyOneLanguage import OnlyOneLanguage
+from Strategy.Repair import Repair
 from Strategy.Challenge import Challenge
 from Strategy.GetOneResult import GetOneOutput
 
@@ -40,6 +41,7 @@ def parseArgs():
     parser.add_argument("--sample", help="Data Sample", default=1, type=int)
 
     parser.add_argument("-s", "--strategy", choices=STRATEGY_LIST, help="choose your strategy")
+    parser.add_argument("--repairpath", help="The file you need to repair")
     parser.add_argument("--datapath1", help="Two Result Path 1")
     parser.add_argument("--datapath2", help="Two Result Path 2")
 
@@ -69,6 +71,9 @@ def runExperiment(args):
     context = RunContext()
     if args.strategy == StrategyType.ONLYCHINESE or args.strategy == StrategyType.ONLYENGLISH or args.strategy == StrategyType.ONLYSPANISH:
         context.setStrategy(OnlyOneLanguage(model, dataset, OneAgentLog(), args.strategy))
+    elif args.strategy == StrategyType.REPAIR:
+        file = FileFactory().getFileByPath()
+        context.setStrategy(Repair(model, dataset, OneAgentLog(), file))
     elif args.strategy == StrategyType.GETONEOUTPUT:
         context.setStrategy(GetOneOutput(model, dataset, Log()))
     elif args.strategy == StrategyType.CHALLENGE:
