@@ -5,7 +5,7 @@ from Strategy.StrategyType import StrategyNameType
 from Log.Log import Log
 from File.File import File
 from Strategy.PromptAbstractFactory.PromptFormatFactory import PromptFormatFactory
-from Strategy.PromptAbstractFactory.PromptSelfReflectionCOTFacroty import PromptSelfReflectionCOTFacroty
+from Strategy.PromptAbstractFactory.PromptSelfReflectionCOTFactory import PromptSelfReflectionCOTFactory
 
 
 from tqdm import tqdm
@@ -22,7 +22,7 @@ class SelfReflection(Strategy):
         self.type = self.dataFile.getStrategyName()
 
     def getPrompt(self) -> str:
-        prompt = PromptSelfReflectionCOTFacroty().getPrompt(self.type) + PromptFormatFactory().getPrompt(self.type)
+        prompt = PromptSelfReflectionCOTFactory().getPrompt(self.type) + PromptFormatFactory().getPrompt(self.type)
         return prompt
 
     def getRes(self) -> list:
