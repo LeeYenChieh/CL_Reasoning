@@ -108,7 +108,7 @@ python3 ./main.py --run -m gemini -d commenseqa -s challenge --nums 6000 --dirpa
 
 
 0 python3 ./main.py --run -m gpt4.1mini -d mathqa -s challenge --nums 3000 --dirpath result/tempature0/challenge_ESEN --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
-1 python3 ./main.py --run -m gpt4.1mini -d truthfulqa -s challenge --nums 6000 --dirpath result/tempature0/challenge_ESEN --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
+# 1 python3 ./main.py --run -m gpt4.1mini -d truthfulqa -s challenge --nums 6000 --dirpath result/tempature0/challenge_ESEN --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
 2 python3 ./main.py --run -m gpt4.1mini -d mmlu -s challenge --nums 6000 --dirpath result/tempature0/challenge_ESEN --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
 4 python3 ./main.py --run -m gpt4.1mini -d commenseqa -s challenge --nums 6000 --dirpath result/tempature0/challenge_ESEN --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
 
