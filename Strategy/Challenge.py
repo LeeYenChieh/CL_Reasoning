@@ -95,7 +95,7 @@ class Challenge(Strategy):
 
         pbar = tqdm(total=different_cnt)
 
-        for i in range(self.dataset.getDataNum()):    
+        for i in range(self.dataset.getDataNums()):    
             question1, question2, result1, result2 = \
                 data1[i]["Translated"], data2[i]["Translated"], data1[i]["Result"], data2[i]["Result"]
             answer1, answer2 = data1[i]["MyAnswer"], data2[i]["MyAnswer"]
