@@ -24,6 +24,7 @@ STRATEGY_TO_NAME = {
     StrategyType.ONLYCHINESE.value: StrategyNameType.ONLYCHINESE.value,
     StrategyType.ONLYENGLISH.value: StrategyNameType.ONLYENGLISH.value,
     StrategyType.ONLYSPANISH.value: StrategyNameType.ONLYSPANISH.value,
+    StrategyType.REPAIR.value: StrategyNameType.REPAIR.value,
     StrategyType.GETONEOUTPUT.value: StrategyNameType.GETONEOUTPUT.value,
     StrategyType.CHALLENGE.value: StrategyNameType.CHALLENGE.value
 }
@@ -32,6 +33,7 @@ NAME_TO_STRATEGY = {
     StrategyNameType.ONLYCHINESE.value: StrategyType.ONLYCHINESE.value,
     StrategyNameType.ONLYENGLISH.value: StrategyType.ONLYENGLISH.value,
     StrategyNameType.ONLYSPANISH.value: StrategyType.ONLYSPANISH.value,
+    StrategyNameType.REPAIR.value: StrategyType.REPAIR.value,
     StrategyNameType.GETONEOUTPUT.value: StrategyType.GETONEOUTPUT.value,
     StrategyNameType.CHALLENGE.value: StrategyType.CHALLENGE.value
 }
