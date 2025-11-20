@@ -39,6 +39,6 @@ class Gemini(Model):
                 stream=False
             )
 
-            return response.choices[0].message
+            return response.choices[0].message.content
         except Exception as e:
             return f"Error in Gemini model: {e}"
