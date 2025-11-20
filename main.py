@@ -11,6 +11,7 @@ from Dataset.DatasetType import DATASET_LIST
 
 from Strategy.StrategyType import STRATEGY_LIST, StrategyType
 from Strategy.OnlyOneLanguage import OnlyOneLanguage
+from Strategy.SelfReflection import SelfReflection
 from Strategy.Repair import Repair
 from Strategy.Challenge import Challenge
 from Strategy.GetOneResult import GetOneOutput
@@ -72,11 +73,18 @@ def runExperiment(args):
     context = RunContext()
     if args.strategy == StrategyType.ONLYCHINESE or args.strategy == StrategyType.ONLYENGLISH or args.strategy == StrategyType.ONLYSPANISH:
         context.setStrategy(OnlyOneLanguage(model, dataset, OneAgentLog(), args.strategy))
+
     elif args.strategy == StrategyType.REPAIR:
         file = FileFactory().getFileByPath(args.repairpath)
         context.setStrategy(Repair(model, dataset, OneAgentLog(), file))
+
+    elif args.strategy == StrategyType.SELFREFLECTION:
+        dataFile = fileFactory.getFileByPath(args.datapath)
+        context.setStrategy(SelfReflection(model, dataset, OneAgentLog(), dataFile))
+
     elif args.strategy == StrategyType.GETONEOUTPUT:
         context.setStrategy(GetOneOutput(model, dataset, Log()))
+
     elif args.strategy == StrategyType.CHALLENGE:
         dataFile1, dataFile2 = None, None
         if args.datapath1 and args.datapath2:

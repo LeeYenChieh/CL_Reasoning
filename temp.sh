@@ -17,13 +17,13 @@
 # python3 ./main.py --run -m gpt4omini -d mmlu -s onlySpanish --nums 6000 --dirpath result/tempature0/temp
 # python3 ./main.py --run -m gemini -d mmlu -s onlyChinese --nums 6000 --dirpath result/tempature0/temp
 # python3 ./main.py --run -m gemini -d mmlu -s onlyEnglish --nums 6000 --dirpath result/tempature0/temp
-python3 ./main.py --run -m gemini -d mmlu -s onlySpanish --nums 6000 --dirpath result/tempature0/temp 11
+11 python3 ./main.py --run -m gemini -d mmlu -s onlySpanish --nums 6000 --dirpath result/tempature0/temp
 
 # python3 ./main.py --run -m gpt4omini -d commenseqa -s onlyChinese --nums 6000 --dirpath result/tempature0/temp
 # python3 ./main.py --run -m gpt4omini -d commenseqa -s onlyEnglish --nums 6000 --dirpath result/tempature0/temp
 # python3 ./main.py --run -m gpt4omini -d commenseqa -s onlySpanish --nums 6000 --dirpath result/tempature0/temp
 # python3 ./main.py --run -m gemini -d commenseqa -s onlyChinese --nums 6000 --dirpath result/tempature0/temp
-python3 ./main.py --run -m gemini -d commenseqa -s onlyEnglish --nums 6000 --dirpath result/tempature0/temp 16
+16 python3 ./main.py --run -m gemini -d commenseqa -s onlyEnglish --nums 6000 --dirpath result/tempature0/temp
 # python3 ./main.py --run -m gemini -d commenseqa -s onlySpanish --nums 6000 --dirpath result/tempature0/temp
 
 
@@ -65,7 +65,7 @@ python3 ./main.py --run -m gpt4omini -d commenseqa -s challenge --nums 6000 --di
 
 # 25 python3 ./main.py --run -m deepseek -d mathqa -s challenge --nums 3000 --dirpath result/tempature1/challenge_CN --threshold 3 --datapath1 result/tempature1/ --datapath2 result/tempature1_2/
 # 26 python3 ./main.py --run -m deepseek -d truthfulqa -s challenge --nums 6000 --dirpath result/tempature1/challenge_CN --threshold 3 --datapath1 result/tempature1/ --datapath2 result/tempature1_2/
-27 python3 ./main.py --run -m deepseek -d mmlu -s challenge --nums 6000 --dirpath result/tempature1/challenge_CN --threshold 3 --datapath1 result/tempature1/ --datapath2 result/tempature1_2/
+# 27 python3 ./main.py --run -m deepseek -d mmlu -s challenge --nums 6000 --dirpath result/tempature1/challenge_CN --threshold 3 --datapath1 result/tempature1/ --datapath2 result/tempature1_2/
 28 python3 ./main.py --run -m deepseek -d commenseqa -s challenge --nums 6000 --dirpath result/tempature1/challenge_CN --threshold 3 --datapath1 result/tempature1/ --datapath2 result/tempature1_2/
 
 python3 ./main.py --run -m gemini -d mathqa -s challenge --nums 3000 --dirpath result/tempature1/challenge_CN --threshold 3 --datapath1 result/tempature1/ --datapath2 result/tempature1_2/
@@ -134,6 +134,37 @@ python3 ./main.py --run -m gemini -d commenseqa -s challenge --nums 6000 --dirpa
 
 
 
+
+python3 ./main.py --run -m gpt4.1mini -d mathqa -s selfreflection --nums 3000 --dirpath result/tempature0/selfreflection_CN --datapath1 result/tempature0/
+python3 ./main.py --run -m gpt4.1mini -d truthfulqa -s selfreflection --nums 6000 --dirpath result/tempature0/selfreflection_CN --datapath1 result/tempature0/
+python3 ./main.py --run -m gpt4.1mini -d mmlu -s selfreflection --nums 6000 --dirpath result/tempature0/selfreflection_CN --datapath1 result/tempature0/
+python3 ./main.py --run -m gpt4.1mini -d commenseqa -s selfreflection --nums 6000 --dirpath result/tempature0/selfreflection_CN --datapath1 result/tempature0/
+
+python3 ./main.py --run -m deepseek -d mathqa -s selfreflection --nums 3000 --dirpath result/tempature0/selfreflection_CN --datapath1 result/tempature0/
+python3 ./main.py --run -m deepseek -d truthfulqa -s selfreflection --nums 6000 --dirpath result/tempature0/selfreflection_CN --datapath1 result/tempature0/
+python3 ./main.py --run -m deepseek -d mmlu -s selfreflection --nums 6000 --dirpath result/tempature0/selfreflection_CN --datapath1 result/tempature0/
+python3 ./main.py --run -m deepseek -d commenseqa -s selfreflection --nums 6000 --dirpath result/tempature0/selfreflection_CN --datapath1 result/tempature0/
+
+python3 ./main.py --run -m qwen -d mathqa -s selfreflection --nums 3000 --dirpath result/tempature0/selfreflection_CN --datapath1 result/tempature0/
+python3 ./main.py --run -m qwen -d truthfulqa -s selfreflection --nums 6000 --dirpath result/tempature0/selfreflection_CN --datapath1 result/tempature0/
+python3 ./main.py --run -m qwen -d mmlu -s selfreflection --nums 6000 --dirpath result/tempature0/selfreflection_CN --datapath1 result/tempature0/
+python3 ./main.py --run -m qwen -d commenseqa -s selfreflection --nums 6000 --dirpath result/tempature0/selfreflection_CN --datapath1 result/tempature0/
+
+
+python3 ./main.py --run -m gpt4.1mini -d mathqa -s selfreflection --nums 3000 --dirpath result/tempature0/selfreflection_EN --datapath1 result/tempature0/
+python3 ./main.py --run -m gpt4.1mini -d truthfulqa -s selfreflection --nums 6000 --dirpath result/tempature0/selfreflection_EN --datapath1 result/tempature0/
+python3 ./main.py --run -m gpt4.1mini -d mmlu -s selfreflection --nums 6000 --dirpath result/tempature0/selfreflection_EN --datapath1 result/tempature0/
+python3 ./main.py --run -m gpt4.1mini -d commenseqa -s selfreflection --nums 6000 --dirpath result/tempature0/selfreflection_EN --datapath1 result/tempature0/
+
+python3 ./main.py --run -m deepseek -d mathqa -s selfreflection --nums 3000 --dirpath result/tempature0/selfreflection_EN --datapath1 result/tempature0/
+python3 ./main.py --run -m deepseek -d truthfulqa -s selfreflection --nums 6000 --dirpath result/tempature0/selfreflection_EN --datapath1 result/tempature0/
+python3 ./main.py --run -m deepseek -d mmlu -s selfreflection --nums 6000 --dirpath result/tempature0/selfreflection_EN --datapath1 result/tempature0/
+python3 ./main.py --run -m deepseek -d commenseqa -s selfreflection --nums 6000 --dirpath result/tempature0/selfreflection_EN --datapath1 result/tempature0/
+
+python3 ./main.py --run -m qwen -d mathqa -s selfreflection --nums 3000 --dirpath result/tempature0/selfreflection_EN --datapath1 result/tempature0/
+python3 ./main.py --run -m qwen -d truthfulqa -s selfreflection --nums 6000 --dirpath result/tempature0/selfreflection_EN --datapath1 result/tempature0/
+python3 ./main.py --run -m qwen -d mmlu -s selfreflection --nums 6000 --dirpath result/tempature0/selfreflection_EN --datapath1 result/tempature0/
+python3 ./main.py --run -m qwen -d commenseqa -s selfreflection --nums 6000 --dirpath result/tempature0/selfreflection_EN --datapath1 result/tempature0/
 
 
 # python3 ./main.py --run -m gpt4omini -d mathqa -s onlyChinese --nums 3000 --tempature 1 --dirpath result/tempature1/temp

@@ -5,6 +5,7 @@ class StrategyType(str, Enum):
     ONLYENGLISH = "onlyEnglish"
     ONLYSPANISH = "onlySpanish"
     CHALLENGE = "challenge"
+    SELFREFLECTION = "selfreflection"
     GETONEOUTPUT = 'getoneresult'
     REPAIR = 'repair'
 
@@ -12,6 +13,7 @@ class StrategyNameType(str, Enum):
     ONLYCHINESE = "Only Chinese"
     ONLYENGLISH = "Only English"
     ONLYSPANISH = "Only Spanish"
+    SELFREFLECTION = "Self Reflection"
     CHALLENGE = "Challenge"
     GETONEOUTPUT = "Get One Output"
     REPAIR = "Repair"
@@ -24,6 +26,7 @@ STRATEGY_TO_NAME = {
     StrategyType.ONLYCHINESE.value: StrategyNameType.ONLYCHINESE.value,
     StrategyType.ONLYENGLISH.value: StrategyNameType.ONLYENGLISH.value,
     StrategyType.ONLYSPANISH.value: StrategyNameType.ONLYSPANISH.value,
+    StrategyType.SELFREFLECTION.value: StrategyNameType.SELFREFLECTION.value,
     StrategyType.REPAIR.value: StrategyNameType.REPAIR.value,
     StrategyType.GETONEOUTPUT.value: StrategyNameType.GETONEOUTPUT.value,
     StrategyType.CHALLENGE.value: StrategyNameType.CHALLENGE.value
@@ -33,6 +36,7 @@ NAME_TO_STRATEGY = {
     StrategyNameType.ONLYCHINESE.value: StrategyType.ONLYCHINESE.value,
     StrategyNameType.ONLYENGLISH.value: StrategyType.ONLYENGLISH.value,
     StrategyNameType.ONLYSPANISH.value: StrategyType.ONLYSPANISH.value,
+    StrategyNameType.SELFREFLECTION.value: StrategyType.SELFREFLECTION.value,
     StrategyNameType.REPAIR.value: StrategyType.REPAIR.value,
     StrategyNameType.GETONEOUTPUT.value: StrategyType.GETONEOUTPUT.value,
     StrategyNameType.CHALLENGE.value: StrategyType.CHALLENGE.value
