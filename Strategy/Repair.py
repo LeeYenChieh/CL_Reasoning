@@ -41,7 +41,7 @@ class Repair(OnlyOneLanguage):
         }]
 
         pbar = tqdm(total=cnt)
-        for i in range(self.dataset.getDataNum()):
+        for i in range(self.dataset.getDataNums()):
             if repairData[i]["MyAnswer"] != "":
                 result.append(repairData[i])
                 continue

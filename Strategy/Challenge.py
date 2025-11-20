@@ -84,9 +84,16 @@ class Challenge(Strategy):
             "Data Samples": self.dataset.getSample()
         }]
 
-        pbar = tqdm(total=self.dataset.getDataNum())
         data1 = self.dataFile1.getData()
         data2 = self.dataFile2.getData()
+        different_cnt = 0
+
+        for i in range(self.dataset.getDataNums()):
+            if self.dataset.compareTwoAnswer(data1[i]["MyAnswer"], data2[i]["MyAnswer"]):
+                different_cnt += 1
+        self.log.logMessage(f'Different Answer: {different_cnt} / {self.dataset.getDataNums()}')
+
+        pbar = tqdm(total=different_cnt)
 
         for i in range(self.dataset.getDataNum()):    
             question1, question2, result1, result2 = \
@@ -124,6 +131,7 @@ class Challenge(Strategy):
                     self.log.logMessage(f'結果3：\n{resultOutput3}')
 
                 self.log.logMessage(f'My Answer: {myAnswer}\nCorrect Answer: {correct_answer}')
+                pbar.update()
 
             result.append({
                 "Question1": question1,
@@ -137,8 +145,6 @@ class Challenge(Strategy):
                 "Answer": correct_answer,
                 "MyAnswer": myAnswer
             })
-
-            pbar.update()
         
         pbar.close()
 

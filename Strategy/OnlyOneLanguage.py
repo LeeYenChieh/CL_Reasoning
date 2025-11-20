@@ -36,8 +36,8 @@ class OnlyOneLanguage(Strategy):
             "Data Samples": self.dataset.getSample()
         }]
 
-        pbar = tqdm(total=self.dataset.getDataNum())
-        for i in range(self.dataset.getDataNum()):
+        pbar = tqdm(total=self.dataset.getDataNums())
+        for i in range(self.dataset.getDataNums()):
             translateQuestion = self.model.getRes(PromptTranslateFactory().getPrompt(self.type, database[i]))
             resultAnswer = self.model.getRes(self.getPrompt(translateQuestion))
             result.append({
