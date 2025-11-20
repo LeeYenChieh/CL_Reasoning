@@ -24,8 +24,9 @@ class Gemini(Model):
                 temperature=self.tempature,
                 stream=False
             )
-
-            return response.choices[0].message.content
+            if response.choices[0].message.content:
+                return response.choices[0].message.content
+            return ""
         except Exception as e:
             return f"Error in Gemini model: {e}"
     
@@ -39,6 +40,8 @@ class Gemini(Model):
                 stream=False
             )
 
-            return response.choices[0].message.content
+            if response.choices[0].message.content:
+                return response.choices[0].message.content
+            return ""
         except Exception as e:
             return f"Error in Gemini model: {e}"
