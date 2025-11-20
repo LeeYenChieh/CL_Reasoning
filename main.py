@@ -44,6 +44,7 @@ def parseArgs():
     parser.add_argument("--repairpath", help="The file you need to repair")
     parser.add_argument("--datapath1", help="Two Result Path 1")
     parser.add_argument("--datapath2", help="Two Result Path 2")
+    parser.add_argument("--threshold", type=int, default=3, help="Challenge Threshold 3")
 
     parser.add_argument("--dirpath", help="your dir path")
     parser.add_argument("--filepath", help="your file path")
