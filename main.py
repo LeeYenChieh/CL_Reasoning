@@ -79,7 +79,7 @@ def runExperiment(args):
         context.setStrategy(Repair(model, dataset, OneAgentLog(), file))
 
     elif args.strategy == StrategyType.SELFREFLECTION:
-        dataFile = FileFactory().getFileByPath(args.datapath)
+        dataFile = FileFactory().getFileByPath(args.datapath1)
         context.setStrategy(SelfReflection(model, dataset, OneAgentLog(), dataFile))
 
     elif args.strategy == StrategyType.GETONEOUTPUT:
