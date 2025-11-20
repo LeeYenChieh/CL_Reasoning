@@ -89,7 +89,7 @@ class Challenge(Strategy):
         different_cnt = 0
 
         for i in range(self.dataset.getDataNums()):
-            if self.dataset.compareTwoAnswer(data1[i]["MyAnswer"], data2[i]["MyAnswer"]):
+            if not self.dataset.compareTwoAnswer(data1[i]["MyAnswer"], data2[i]["MyAnswer"]):
                 different_cnt += 1
         self.log.logMessage(f'Different Answer: {different_cnt} / {self.dataset.getDataNums()}')
 
