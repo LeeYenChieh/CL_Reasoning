@@ -13,7 +13,7 @@ class FileFactory():
         try:
             with open(path, 'r') as f:
                 data = json.load(f)
-            result = File(datasetName=data[0]["Dataset"], modelName=data[0]["Model"], strategyName=data[0]["Strategy"], nums=data[0]["Data Nums"], sample=data[0]["Data Samples"], data=data[1:])
+            result = File(datasetName=data[0]["Dataset"], modelName=data[0]["Model"], strategyName=data[0]["Strategy"], nums=data[0]["Data Nums"], sample=data[0]["Data Samples"], data=data[1:], path=path)
         except:
             print(f'開啟檔案失敗')
             print(path)

@@ -27,10 +27,10 @@ python3 ./main.py --run -m gemini -d commenseqa -s onlyEnglish --nums 6000 --dir
 # python3 ./main.py --run -m gemini -d commenseqa -s onlySpanish --nums 6000 --dirpath result/tempature0/temp
 
 
-python3 ./main.py --run -m gpt4.1mini -d mathqa -s challenge --nums 3000 --dirpath result/tempature0/challenge --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
-python3 ./main.py --run -m gpt4.1mini -d truthfulqa -s challenge --nums 6000 --dirpath result/tempature0/challenge --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
-python3 ./main.py --run -m gpt4.1mini -d mmlu -s challenge --nums 6000 --dirpath result/tempature0/challenge --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
-python3 ./main.py --run -m gpt4.1mini -d commenseqa -s challenge --nums 6000 --dirpath result/tempature0/challenge --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
+python3 ./main.py --run -m gpt4.1mini -d mathqa -s challenge --nums 3000 --dirpath result/tempature0/challenge_CNEN --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
+python3 ./main.py --run -m gpt4.1mini -d truthfulqa -s challenge --nums 6000 --dirpath result/tempature0/challenge_CNEN --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
+python3 ./main.py --run -m gpt4.1mini -d mmlu -s challenge --nums 6000 --dirpath result/tempature0/challenge_CNEN --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
+python3 ./main.py --run -m gpt4.1mini -d commenseqa -s challenge --nums 6000 --dirpath result/tempature0/challenge_CNEN --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
 
 
 python3 ./main.py --run -m gpt4omini -d mathqa -s onlyChinese --nums 3000 --tempature 1 --dirpath result/tempature1/temp
