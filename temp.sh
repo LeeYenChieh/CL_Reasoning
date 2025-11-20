@@ -42,11 +42,15 @@ python3 ./main.py --run -m gemini -d commenseqa -s onlyEnglish --nums 6000 --dir
 10 python3 ./main.py --run -m deepseek -d mmlu -s challenge --nums 6000 --dirpath result/tempature0/challenge_CNEN --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
 12 python3 ./main.py --run -m deepseek -d commenseqa -s challenge --nums 6000 --dirpath result/tempature0/challenge_CNEN --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
 
-python3 ./main.py --run -m gemini -d mathqa -s challenge --nums 3000 --dirpath result/tempature0/challenge_CNEN --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
-python3 ./main.py --run -m gemini -d truthfulqa -s challenge --nums 6000 --dirpath result/tempature0/challenge_CNEN --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
-python3 ./main.py --run -m gemini -d mmlu -s challenge --nums 6000 --dirpath result/tempature0/challenge_CNEN --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
+13 python3 ./main.py --run -m gemini -d mathqa -s challenge --nums 3000 --dirpath result/tempature0/challenge_CNEN --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
+14 python3 ./main.py --run -m gemini -d truthfulqa -s challenge --nums 6000 --dirpath result/tempature0/challenge_CNEN --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
+15 python3 ./main.py --run -m gemini -d mmlu -s challenge --nums 6000 --dirpath result/tempature0/challenge_CNEN --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
 python3 ./main.py --run -m gemini -d commenseqa -s challenge --nums 6000 --dirpath result/tempature0/challenge_CNEN --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
 
+python3 ./main.py --run -m qwen -d mathqa -s challenge --nums 3000 --dirpath result/tempature0/challenge_CNEN --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
+python3 ./main.py --run -m qwen -d truthfulqa -s challenge --nums 6000 --dirpath result/tempature0/challenge_CNEN --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
+python3 ./main.py --run -m qwen -d mmlu -s challenge --nums 6000 --dirpath result/tempature0/challenge_CNEN --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
+python3 ./main.py --run -m qwen -d commenseqa -s challenge --nums 6000 --dirpath result/tempature0/challenge_CNEN --threshold 3 --datapath1 result/tempature0/ --datapath2 result/tempature0/
 
 
 python3 ./main.py --run -m gpt4omini -d mathqa -s onlyChinese --nums 3000 --tempature 1 --dirpath result/tempature1/temp

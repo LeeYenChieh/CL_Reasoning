@@ -32,6 +32,7 @@ class QWEN(Model):
         try:
             response = self.client.chat.completions.create(
                 model=self.modelName,
+                extra_body={"enable_thinking": False},
                 messages=promptList,
                 max_tokens=8192,
                 temperature=self.tempature
