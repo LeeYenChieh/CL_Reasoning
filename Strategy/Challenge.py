@@ -13,7 +13,7 @@ from Strategy.PromptAbstractFactory.PromptDebateCOTFacroty import PromptDebateCO
 from tqdm import tqdm
 
 class Challenge(Strategy):
-    NAME = StrategyNameType.CHALLENGE
+    NAME = StrategyNameType.CHALLENGE.value
     def __init__(self, model: Model, dataset: Dataset, log: Log, threshold: int, dataFile1: File, dataFile2: File):
         super().__init__()
         self.name: str = Challenge.NAME
