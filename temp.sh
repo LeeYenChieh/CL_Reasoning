@@ -148,30 +148,43 @@ python3 ./main.py --run -m gemini -d commenseqa -s challenge --nums 6000 --dirpa
 # 42 python3 ./main.py --run -m qwen -d commenseqa -s selfreflection --nums 6000 --dirpath result/tempature0/selfreflection_EN --datapath1 result/tempature0/
 
 
-python3 ./main.py --run -m gpt4.1mini -d mlecqa -s onlyChinese --nums 6000 --dirpath result/tempature0/
-python3 ./main.py --run -m gpt4.1mini -d mlecqa -s onlyEnglish --nums 6000 --dirpath result/tempature0/
-python3 ./main.py --run -m gpt4.1mini -d cmb -s onlyChinese --nums 6000 --dirpath result/tempature0/
-python3 ./main.py --run -m gpt4.1mini -d cmb -s onlyEnglish --nums 6000 --dirpath result/tempature0/
+# python3 ./main.py --run -m gpt4.1mini -d mlecqa -s onlyChinese --nums 3000 --dirpath result/tempature0/
+# python3 ./main.py --run -m gpt4.1mini -d mlecqa -s onlyEnglish --nums 3000 --dirpath result/tempature0/
+# python3 ./main.py --run -m gpt4.1mini -d cmb -s onlyChinese --nums 3000 --dirpath result/tempature0/
+# python3 ./main.py --run -m gpt4.1mini -d cmb -s onlyEnglish --nums 3000 --dirpath result/tempature0/
 
-python3 ./main.py --run -m gpt4omini -d mlecqa -s onlyChinese --nums 6000 --dirpath result/tempature0/
-python3 ./main.py --run -m gpt4omini -d mlecqa -s onlyEnglish --nums 6000 --dirpath result/tempature0/
-python3 ./main.py --run -m gpt4omini -d cmb -s onlyChinese --nums 6000 --dirpath result/tempature0/
-python3 ./main.py --run -m gpt4omini -d cmb -s onlyEnglish --nums 6000 --dirpath result/tempature0/
+# python3 ./main.py --run -m gpt4omini -d mlecqa -s onlyChinese --nums 3000 --dirpath result/tempature0/
+# python3 ./main.py --run -m gpt4omini -d mlecqa -s onlyEnglish --nums 3000 --dirpath result/tempature0/
+# python3 ./main.py --run -m gpt4omini -d cmb -s onlyChinese --nums 3000 --dirpath result/tempature0/
+# python3 ./main.py --run -m gpt4omini -d cmb -s onlyEnglish --nums 3000 --dirpath result/tempature0/
 
-python3 ./main.py --run -m deepseek -d mlecqa -s onlyChinese --nums 6000 --dirpath result/tempature0/
-python3 ./main.py --run -m deepseek -d mlecqa -s onlyEnglish --nums 6000 --dirpath result/tempature0/
-python3 ./main.py --run -m deepseek -d cmb -s onlyChinese --nums 6000 --dirpath result/tempature0/
-python3 ./main.py --run -m deepseek -d cmb -s onlyEnglish --nums 6000 --dirpath result/tempature0/
+# python3 ./main.py --run -m deepseek -d mlecqa -s onlyChinese --nums 3000 --dirpath result/tempature0/
+# python3 ./main.py --run -m deepseek -d mlecqa -s onlyEnglish --nums 3000 --dirpath result/tempature0/
+# python3 ./main.py --run -m deepseek -d cmb -s onlyChinese --nums 3000 --dirpath result/tempature0/
+# python3 ./main.py --run -m deepseek -d cmb -s onlyEnglish --nums 3000 --dirpath result/tempature0/
 
-python3 ./main.py --run -m qwen -d mlecqa -s onlyChinese --nums 6000 --dirpath result/tempature0/
-python3 ./main.py --run -m qwen -d mlecqa -s onlyEnglish --nums 6000 --dirpath result/tempature0/
-python3 ./main.py --run -m qwen -d cmb -s onlyChinese --nums 6000 --dirpath result/tempature0/
-python3 ./main.py --run -m qwen -d cmb -s onlyEnglish --nums 6000 --dirpath result/tempature0/
+# python3 ./main.py --run -m qwen -d mlecqa -s onlyChinese --nums 3000 --dirpath result/tempature0/
+# python3 ./main.py --run -m qwen -d mlecqa -s onlyEnglish --nums 3000 --dirpath result/tempature0/
+# python3 ./main.py --run -m qwen -d cmb -s onlyChinese --nums 3000 --dirpath result/tempature0/
+# python3 ./main.py --run -m qwen -d cmb -s onlyEnglish --nums 3000 --dirpath result/tempature0/
 
-python3 ./main.py --run -m gemini -d mlecqa -s onlyChinese --nums 6000 --dirpath result/tempature0/
-python3 ./main.py --run -m gemini -d mlecqa -s onlyEnglish --nums 6000 --dirpath result/tempature0/
-python3 ./main.py --run -m gemini -d cmb -s onlyChinese --nums 6000 --dirpath result/tempature0/
-python3 ./main.py --run -m gemini -d cmb -s onlyEnglish --nums 6000 --dirpath result/tempature0/
+# python3 ./main.py --run -m gemini -d mlecqa -s onlyChinese --nums 3000 --dirpath result/tempature0/
+# python3 ./main.py --run -m gemini -d mlecqa -s onlyEnglish --nums 3000 --dirpath result/tempature0/
+# python3 ./main.py --run -m gemini -d cmb -s onlyChinese --nums 3000 --dirpath result/tempature0/
+# python3 ./main.py --run -m gemini -d cmb -s onlyEnglish --nums 3000 --dirpath result/tempature0/
+
+
+0 python3 ./main.py --run -m gpt4.1mini -d mlecqa -s challenge --nums 3000 --dirpath result/tempature0/challenge_CNEN --datapath1 result/tempature0/ --datapath2 result/tempature0/
+1 python3 ./main.py --run -m gpt4omini -d mlecqa -s challenge --nums 3000 --dirpath result/tempature0/challenge_CNEN --datapath1 result/tempature0/ --datapath2 result/tempature0/
+python3 ./main.py --run -m deepseek -d mlecqa -s challenge --nums 3000 --dirpath result/tempature0/challenge_CNEN --datapath1 result/tempature0/ --datapath2 result/tempature0/
+2 python3 ./main.py --run -m qwen -d mlecqa -s challenge --nums 3000 --dirpath result/tempature0/challenge_CNEN --datapath1 result/tempature0/ --datapath2 result/tempature0/
+3 python3 ./main.py --run -m gemini -d mlecqa -s challenge --nums 3000 --dirpath result/tempature0/challenge_CNEN --datapath1 result/tempature0/ --datapath2 result/tempature0/
+
+6 python3 ./main.py --run -m gpt4.1mini -d cmb -s challenge --nums 3000 --dirpath result/tempature0/challenge_CNEN --datapath1 result/tempature0/ --datapath2 result/tempature0/
+7 python3 ./main.py --run -m gpt4omini -d cmb -s challenge --nums 3000 --dirpath result/tempature0/challenge_CNEN --datapath1 result/tempature0/ --datapath2 result/tempature0/
+8 python3 ./main.py --run -m deepseek -d cmb -s challenge --nums 3000 --dirpath result/tempature0/challenge_CNEN --datapath1 result/tempature0/ --datapath2 result/tempature0/
+9 python3 ./main.py --run -m qwen -d cmb -s challenge --nums 3000 --dirpath result/tempature0/challenge_CNEN --datapath1 result/tempature0/ --datapath2 result/tempature0/
+10 python3 ./main.py --run -m gemini -d cmb -s challenge --nums 3000 --dirpath result/tempature0/challenge_CNEN --datapath1 result/tempature0/ --datapath2 result/tempature0/
 
 
 # python3 ./main.py --run -m gpt4omini -d mathqa -s onlyChinese --nums 3000 --tempature 1 --dirpath result/tempature1/temp
