@@ -7,6 +7,8 @@ class DatasetType(str, Enum):
     MMLU = "mmlu"
     TRUTHFULQA = "truthfulqa"
     XCOPA = "xcopa"
+    MLECQA = "mlecqa"
+    CMBEXAM = "cmb"
 
 # 直接用 value 取字串列表
 DATASET_LIST = [d.value for d in DatasetType]
@@ -20,6 +22,8 @@ def get_dataset_map():
     from Dataset.MMLU import MMLU as _MMLU
     from Dataset.TruthfulQA import TruthfulQA as _TruthfulQA
     from Dataset.XCOPA import XCOPA as _XCOPA
+    from Dataset.MLECQA import MLECQA as _MLECQA
+    from Dataset.CMBExam import CMBExam as _CMBExam
 
     return {
         "MathQA": _MathQA,
@@ -27,7 +31,9 @@ def get_dataset_map():
         "MGSM": _MGSM,
         "MMLU": _MMLU,
         "TruthfulQA": _TruthfulQA,
-        "XCOPA": _XCOPA
+        "XCOPA": _XCOPA,
+        "MLEC-QA": _MLECQA,
+        "CMB-Exam": _CMBExam
     }
 
 # key 改成字串，對應 dataset 名稱
@@ -37,5 +43,7 @@ DATASET_NAME_DICT = {
     DatasetType.MGSM.value: "MGSM",
     DatasetType.MMLU.value: "MMLU",
     DatasetType.TRUTHFULQA.value: "TruthfulQA",
-    DatasetType.XCOPA.value: "XCOPA"
+    DatasetType.XCOPA.value: "XCOPA",
+    DatasetType.MLECQA.value: "MLEC-QA",
+    DatasetType.CMBEXAM.value: "CMB-Exam"
 }
