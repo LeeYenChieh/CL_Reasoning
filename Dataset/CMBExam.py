@@ -12,7 +12,7 @@ class CMBExam(Dataset):
         self.data: list = []
         self.answer: list = []
         
-        dataset = load_dataset("FreedomIntelligence/CMB", "exam", split="val")
+        dataset = load_dataset("FreedomIntelligence/CMB", "CMB-Exam", split="val")
         
         for data in dataset:
             if len(data["answer"]) != 1:
