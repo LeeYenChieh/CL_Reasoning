@@ -1,6 +1,7 @@
 from Dataset.Dataset import Dataset
 from Dataset.DatasetType import DATASET_NAME_DICT, DatasetType
-from datasets import load_dataset
+from Dataset.path import cmb_path
+import json
 
 class CMBExam(Dataset):
     NAME = DATASET_NAME_DICT[DatasetType.CMBEXAM]
@@ -12,7 +13,8 @@ class CMBExam(Dataset):
         self.data: list = []
         self.answer: list = []
         
-        dataset = load_dataset("FreedomIntelligence/CMB", "CMB-Exam")
+        with open(cmb_path, "r") as f:
+            dataset = json.load(f)
         
         for data in dataset:
             if len(data["answer"]) != 1:
