@@ -1,4 +1,4 @@
-from Dataset.CMBExam import CMBExam
+from Model.GPT41mini import GPT41mini
 
-d = CMBExam()
-print(d.getDataNums())
+model = GPT41mini(1)
+print(model.getRes(input()))

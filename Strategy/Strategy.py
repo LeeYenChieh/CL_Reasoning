@@ -34,3 +34,7 @@ class Strategy():
 
     def getRes(self, model: Model, dataset: Dataset, log: Log) -> list:
         return []
+    
+    @staticmethod
+    def getTokenLens(model: Model, data):
+        return 0

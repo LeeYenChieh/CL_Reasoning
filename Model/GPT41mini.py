@@ -1,6 +1,7 @@
 from openai import OpenAI
 from Model.Model import Model
 from Model.ModelType import ModelType, MODEL_NAME_DICT
+import tiktoken
 import os
 
 class GPT41mini(Model):
@@ -11,6 +12,7 @@ class GPT41mini(Model):
         self.name: str = GPT41mini.NAME
         self.modelName = "gpt-4.1-mini-2025-04-14"
         self.client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+        self.enc = tiktoken.get_encoding("cl100k_base")
     
     def getRes(self, prompt) -> str:
         try:
@@ -35,3 +37,6 @@ class GPT41mini(Model):
             return response.choices[0].message.content
         except Exception as e:
             return f"Error in GPT 4.1 mini model: {e}"
+        
+    def getTokenLens(self, text: str):
+        return len(self.enc.encode(text))

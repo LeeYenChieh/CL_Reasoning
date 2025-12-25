@@ -149,3 +149,13 @@ class Challenge(Strategy):
         pbar.close()
 
         return result
+    
+    @staticmethod
+    def getTokenLens(model: Model, data):
+        result = model.getTokenLens(data["Question1"]) + model.getTokenLens(data["Question2"])
+        for r in data["Record1"]:
+            if r["role"] == "assistant":
+                result += model.getTokenLens(r["content"]) + model.getTokenLens(r["content"])
+        if data["Result3"] != "":
+            result += model.getTokenLens(data["Result3"])
+        return result

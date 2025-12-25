@@ -73,3 +73,7 @@ class SelfReflection(Strategy):
         pbar.close()
 
         return result
+    
+    @staticmethod
+    def getTokenLens(model: Model, data):
+        return model.getTokenLens(data["Result"] * 3) + model.getTokenLens(data["Translated"]) + model.getTokenLens(data["Response"]) * 3

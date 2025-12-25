@@ -57,3 +57,7 @@ class OnlyOneLanguage(Strategy):
         pbar.close()
 
         return result
+    
+    @staticmethod
+    def getTokenLens(model: Model, data):
+        return model.getTokenLens(data["Result"]) + model.getTokenLens(data["Translated"])

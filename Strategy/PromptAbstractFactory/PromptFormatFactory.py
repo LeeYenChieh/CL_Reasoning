@@ -30,3 +30,21 @@ class PromptFormatFactory(PromptAbstractFactory):
             f'{{"answer":"tu respuesta"}}\n' \
             f'(donde "tu respuesta" debe ser reemplazada por el formato especificado en la pregunta (generalmente una letra o un número), y todo el bloque de la respuesta final debe ser únicamente esa línea JSON, sin texto ni explicaciones adicionales antes o después.)\n'
         return prompt
+
+    def japanesePrompt(self):
+        prompt = f'出力には以下の形式を厳守してください\n' \
+            f'推論プロセス\n' \
+            f'{{あなたの推論プロセス - 注意：**元の質問文を繰り返したり、質問で要求されていない内容を追加したりしないでください**。}}\n\n' \
+            f'最終回答\n' \
+            f'{{"answer":"your answer"}}\n' \
+            f'（ここで "your answer" は直接出力せず、質問で指定された形式（通常は英字または数字）に置き換えてください。最終回答ブロック全体は、そのJSONの1行のみである必要があり、前後に余分なテキストや説明を含めてはいけません。）\n'
+        return prompt
+
+    def russianPrompt(self):
+        prompt = f'Пожалуйста, строго соблюдайте следующий формат вывода\n' \
+            f'Ход рассуждений\n' \
+            f'{{ваш ход рассуждений - Примечание: **Не повторяйте исходный текст вопроса и не добавляйте контент, который не требуется в вопросе**}}\n\n' \
+            f'Окончательный ответ\n' \
+            f'{{"answer":"your answer"}}\n' \
+            f'(Где "your answer" не должно выводиться буквально, а должно быть заменено на формат, указанный в вопросе (обычно это английская буква или цифра). Весь блок окончательного ответа должен состоять только из этой одной строки JSON, без какого-либо дополнительного текста или пояснений до или после нее.)\n'
+        return prompt

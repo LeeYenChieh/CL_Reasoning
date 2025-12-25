@@ -4,5 +4,7 @@ class TestType(str, Enum):
     TESTEM = "testem"
     PRINTONE = "printone"
     TESTCASE = "testcase"
+    TESTPVALUE = "testp"
+    TESTTOKEN = "testtoken"
 
 TEST_LIST = [t.value for t in TestType]

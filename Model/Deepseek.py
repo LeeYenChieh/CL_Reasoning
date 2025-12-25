@@ -1,5 +1,6 @@
 from Model.Model import Model
 from openai import OpenAI
+from transformers import AutoTokenizer
 from Model.ModelType import ModelType, MODEL_NAME_DICT
 import os
 
@@ -14,12 +15,12 @@ class Deepseek(Model):
             api_key=os.getenv('DEEPSEEK_API_KEY'),
             base_url="https://api.deepseek.com"
         )
+        self.tokenizer = AutoTokenizer.from_pretrained(
+            "deepseek-ai/DeepSeek-V3",
+            trust_remote_code=True
+        )
 
     def getRes(self, prompt) -> str:
-        print("Sending request to Deepseek...")
-        print(f"Model: {self.modelName}")
-        print(f"Prompt: {prompt[:100]}...")  # 只印前 100 字
-
         try:
             response = self.client.chat.completions.create(
                 model=self.modelName,
@@ -43,3 +44,6 @@ class Deepseek(Model):
             return response.choices[0].message.content
         except Exception as e:
             return f"Error in DeepSeek model: {e}"
+        
+    def getTokenLens(self, text: str):
+        return len(self.tokenizer.encode(text))

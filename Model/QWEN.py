@@ -1,6 +1,7 @@
 from openai import OpenAI
 from Model.Model import Model
 from Model.ModelType import ModelType, MODEL_NAME_DICT
+from transformers import AutoTokenizer
 import os
 
 class QWEN(Model):
@@ -13,6 +14,10 @@ class QWEN(Model):
         self.client = OpenAI(
             api_key=os.getenv("QWEN_API_KEY"),
             base_url="https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+        )
+        self.tokenizer = AutoTokenizer.from_pretrained(
+            "Qwen/Qwen3-8B",
+            trust_remote_code=True
         )
     
     def getRes(self, prompt) -> str:
@@ -40,3 +45,6 @@ class QWEN(Model):
             return response.choices[0].message.content
         except Exception as e:
             return f"Error in QWEN model: {e}"
+        
+    def getTokenLens(self, text: str):
+        return len(self.tokenizer.encode(text))

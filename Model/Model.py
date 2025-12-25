@@ -19,3 +19,6 @@ class Model():
     
     def getListRes(self, promptList: list) -> list:
         return []
+    
+    def getTokenLens(self, text) -> int:
+        return 0

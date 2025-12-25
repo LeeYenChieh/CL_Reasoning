@@ -15,4 +15,11 @@ class PromptTranslateFactory(PromptAbstractFactory):
     def spanishPrompt(self, question: str):
         prompt = f'Traduce al español el texto dentro de las siguientes tres comillas. Traduce toda la pregunta, incluidas todas las instrucciones y los requisitos de formato, pero **no traduzcas el formato JSON**, y **no incluyas en la salida las instrucciones que indican al modelo realizar la traducción**. Pero no proporciones ninguna respuesta JSON real: solo traduce el texto. No intentes resolver el problema, ni razonar, ni analizar la pregunta, estrictamente solo realiza la conversión de idioma.\n```\n{question}\n```\n'
         return prompt
-    
+
+    def japanesePrompt(self, question: str):
+        prompt = f'以下の三重引用符で囲まれたテキストを日本語に翻訳してください。質問全体、すべての指示、フォーマット要件を含めて翻訳してください。ただし、モデルに翻訳を依頼するこの指示自体は出力に含めないでください。実際のJSON回答は提供しないでください - テキストのみを翻訳してください。問題を解決しようとしたり、質問を推理・分析したりせず、コメントも追加しないでください。厳密に言語変換のみを行ってください。\n```\n{question}\n```\n'
+        return prompt
+
+    def russianPrompt(self, question: str):
+        prompt = f'Переведите текст внутри следующих тройных кавычек на русский язык. Переведите весь вопрос, включая все инструкции и требования к формату. Никогда не включайте в вывод инструкции, в которых модель просят выполнить перевод. Однако НЕ предоставляйте никакого фактического ответа в формате JSON - переводите только текст. Не пытайтесь решить задачу, не рассуждайте и не анализируйте вопрос, а также не добавляйте никаких комментариев. Выполняйте строго только языковое преобразование.\n```\n{question}\n```\n'
+        return prompt

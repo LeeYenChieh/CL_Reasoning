@@ -17,6 +17,7 @@ from Strategy.Challenge import Challenge
 from Strategy.GetOneResult import GetOneOutput
 
 from Log.Log import Log
+from Log.NoLog import NoLog
 from Log.OneAgentLog import OneAgentLog
 from Log.TwoAgentLog import TwoAgentLog
 
@@ -24,6 +25,8 @@ from Test.TestContext import TestContext
 from Test.TestEM import TestEM
 from Test.PrintOne import PrintOne
 from Test.TestCaseBase import TestCaseBase
+from Test.TestPValue import TestPValue
+from Test.TestTokenNums import TestTokenNums
 from Test.TestType import TEST_LIST, TestType
 from File.FileFactory import FileFactory
 
@@ -33,6 +36,7 @@ def parseArgs():
     parser = ArgumentParser()
     parser.add_argument("--run", action="store_true", help="Run Experiment")
     parser.add_argument("--test", action="store_true", help="Test Experiment")
+    parser.add_argument("--log", action="store_true", help="log to terminal")
 
     parser.add_argument("-m", "--model", choices=MODEL_LIST, help="choose your model")
     parser.add_argument("--tempature", default=0, type=float, help="Tempature")
@@ -52,7 +56,7 @@ def parseArgs():
 
 
     parser.add_argument("-t", "--testmode", choices=TEST_LIST, help="choose your test stratey")
-    parser.add_argument("--testfile", help="The file need to be test")
+    parser.add_argument("--testfile", nargs="+", help="The file need to be test")
     parser.add_argument("--testdir", help="The dir need to be test")
     parser.add_argument("--testmodel", choices=MODEL_LIST, nargs="+", help="The model you want to test")
     parser.add_argument("--testdataset", choices=DATASET_LIST, nargs="+", help="The dataset you want to test")
@@ -63,6 +67,15 @@ def parseArgs():
 
 def runExperiment(args):
     model, dataset = None, None
+    log = NoLog()
+    if args.log:
+        if args.strategy == StrategyType.GETONEOUTPUT:
+            log = Log()
+        elif args.strategy == StrategyType.CHALLENGE:
+            log = TwoAgentLog()
+        else:
+            log = OneAgentLog()
+
     if args.model:
         modelFactory = ModelFactory()
         model: Model = modelFactory.buildModel(args.model, tempature=args.tempature)
@@ -71,19 +84,20 @@ def runExperiment(args):
         dataset: Dataset = datasetFactory.buildDataset(args.dataset, nums = args.nums, sample = args.sample)
 
     context = RunContext()
-    if args.strategy == StrategyType.ONLYCHINESE or args.strategy == StrategyType.ONLYENGLISH or args.strategy == StrategyType.ONLYSPANISH:
-        context.setStrategy(OnlyOneLanguage(model, dataset, OneAgentLog(), args.strategy))
+    if args.strategy == StrategyType.ONLYCHINESE or args.strategy == StrategyType.ONLYENGLISH or args.strategy == StrategyType.ONLYSPANISH \
+        or args.strategy == StrategyType.ONLYJAPANESE or args.strategy == StrategyType.ONLYRUSSIAN:
+        context.setStrategy(OnlyOneLanguage(model, dataset, log, args.strategy))
 
     elif args.strategy == StrategyType.REPAIR:
         file = FileFactory().getFileByPath(args.repairpath)
-        context.setStrategy(Repair(model, dataset, OneAgentLog(), file))
+        context.setStrategy(Repair(model, dataset, log, file))
 
     elif args.strategy == StrategyType.SELFREFLECTION:
         dataFile = FileFactory().getFileByPath(args.datapath1)
-        context.setStrategy(SelfReflection(model, dataset, OneAgentLog(), dataFile))
+        context.setStrategy(SelfReflection(model, dataset, log, dataFile))
 
     elif args.strategy == StrategyType.GETONEOUTPUT:
-        context.setStrategy(GetOneOutput(model, dataset, Log()))
+        context.setStrategy(GetOneOutput(model, dataset, log))
 
     elif args.strategy == StrategyType.CHALLENGE:
         dataFile1, dataFile2 = None, None
@@ -91,7 +105,7 @@ def runExperiment(args):
             fileFactory = FileFactory()
             dataFile1 = fileFactory.getFileByPath(args.datapath1)
             dataFile2 = fileFactory.getFileByPath(args.datapath2)
-        context.setStrategy(Challenge(model, dataset, TwoAgentLog(), args.threshold, dataFile1, dataFile2))
+        context.setStrategy(Challenge(model, dataset, log, args.threshold, dataFile1, dataFile2))
 
     result = context.runExperiment()
 
@@ -110,17 +124,23 @@ def runExperiment(args):
 def textExperiment(args):
     fileFactory: FileFactory = FileFactory()
     if args.testfile:
-        file = [fileFactory.getFileByPath(args.testfile)]
+        file = []
+        for f_temp in args.testfile:
+            file.append(fileFactory.getFileByPath(f_temp))
     else:
         file = fileFactory.getFileBySetting(args.testdir, args.testmodel, args.testdataset, args.teststrategy)
 
     context: TestContext = TestContext()
     if args.testmode == TestType.TESTEM:
         context.setTest(TestEM())
+    if args.testmode == TestType.TESTPVALUE:
+        context.setTest(TestPValue())
     elif args.testmode == TestType.PRINTONE:
         context.setTest(PrintOne())
     elif args.testmode == TestType.TESTCASE:
         context.setTest(TestCaseBase())
+    elif args.testmode == TestType.TESTTOKEN:
+        context.setTest(TestTokenNums())
     context.runTest(file)
 
 def main():

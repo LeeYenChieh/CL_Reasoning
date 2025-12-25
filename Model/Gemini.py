@@ -1,6 +1,7 @@
 from openai import OpenAI
 from Model.Model import Model
 from Model.ModelType import ModelType, MODEL_NAME_DICT
+from google.generativeai import GenerativeModel
 import os
 
 class Gemini(Model):
@@ -45,3 +46,9 @@ class Gemini(Model):
             return ""
         except Exception as e:
             return f"Error in Gemini model: {e}"
+    
+    def getTokenLens(self, text: str):
+        gm = GenerativeModel(self.modelName)
+        ret = gm.count_tokens(text)
+        # Gemini 無法取 token ID，因此回傳等長 list
+        return ret.total_tokens
