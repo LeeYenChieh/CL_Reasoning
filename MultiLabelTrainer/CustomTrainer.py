@@ -14,7 +14,7 @@ class ConservativeTrainer(Trainer):
         # 這會強迫模型只有在非常有把握時才敢猜 1
         
         # 您可以先設 0.3 試試看 (數值越小，模型越保守，越愛猜 0)
-        weights = torch.full((logits.shape[1],), 0.25).to(logits.device) 
+        weights = torch.full((logits.shape[1],), 0.6).to(logits.device) 
         
         loss_fct = nn.BCEWithLogitsLoss(pos_weight=weights)
         loss = loss_fct(logits, labels)

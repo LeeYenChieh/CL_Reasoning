@@ -47,7 +47,7 @@ def main():
     )
 
     args = TrainingArguments(
-        output_dir="xlm-roberta-multilabel-output3",
+        output_dir="xlm-roberta-multilabel-output4",
         eval_strategy="steps",    # 🔥 改成 steps
         eval_steps=100,
         save_strategy="steps",
