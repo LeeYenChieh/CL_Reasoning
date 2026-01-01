@@ -73,7 +73,7 @@ def main():
         eval_dataset=val_dataset,
         tokenizer=tokenizer,
         compute_metrics=compute_metrics,
-        callbacks=[EarlyStoppingCallback(early_stopping_patience=30)]
+        callbacks=[EarlyStoppingCallback(early_stopping_patience=15)]
     )
 
     # 開始訓練
