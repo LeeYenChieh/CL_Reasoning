@@ -28,7 +28,7 @@ def parseArgs():
 def main():
     args = parseArgs()
     
-    (train_texts, train_labels), (val_texts, val_labels) = DataReader(args.dirpath, args.model, args.dataset, args.strategy)
+    (train_texts, train_labels), (val_texts, val_labels) = DataReader(args.dirpath, args.model, args.dataset, args.strategy).getDataset(args.datanums, args.split)
     model_name = "xlm-roberta-base"
     tokenizer = XLMRobertaTokenizer.from_pretrained(model_name)
     train_dataset = MultiLabelDataset(train_texts, train_labels, tokenizer, args.maxlens)
