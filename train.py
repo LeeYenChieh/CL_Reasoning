@@ -51,7 +51,6 @@ def main():
         save_strategy="epoch",
         learning_rate=2e-5,
         num_train_epochs=20,          # 🔥 直接設大一點 (例如 20)
-        load_best_model_at_end=True,  # 配合早停，一定要開這個
         per_device_train_batch_size=64,
         per_device_eval_batch_size=64,
         fp16=True,
