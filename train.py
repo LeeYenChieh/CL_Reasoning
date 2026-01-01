@@ -9,7 +9,7 @@ from MultiLabelTrainer.MultiLabelDataset import MultiLabelDataset
 from MultiLabelTrainer.Metric import compute_metrics
 
 from transformers import XLMRobertaTokenizer, XLMRobertaForSequenceClassification
-from transformers import TrainingArguments, Trainer
+from transformers import TrainingArguments, Trainer, EarlyStoppingCallback
 
 def parseArgs():
     parser = ArgumentParser()
@@ -31,7 +31,7 @@ def main():
     (train_texts, train_labels), (val_texts, val_labels) = DataReader(args.dirpath, args.model, args.dataset, args.strategy).getDataset(args.datanums, args.split)
     count = 0
     for label in train_labels:
-        if label == [1, 1, 1, 1, 1]:
+        if label == [1, 1, 1, 1, 1] or label == [0, 0, 0, 0, 0]:
             count += 1
     print(f'{count} / {len(train_labels)}')
     model_name = "xlm-roberta-base"
@@ -46,19 +46,21 @@ def main():
     )
 
     args = TrainingArguments(
-        output_dir="xlm-roberta-multilabel-output",
+        output_dir="xlm-roberta-multilabel-output2",
         eval_strategy="epoch",
         save_strategy="epoch",
         learning_rate=2e-5,
-        per_device_train_batch_size=8,
-        per_device_eval_batch_size=8,
-        num_train_epochs=5,
+        num_train_epochs=20,          # 🔥 直接設大一點 (例如 20)
+        load_best_model_at_end=True,  # 配合早停，一定要開這個
+        per_device_train_batch_size=64,
+        per_device_eval_batch_size=64,
+        fp16=True,
         weight_decay=0.01,
         load_best_model_at_end=True,
         metric_for_best_model="f0.5_micro", # 多標籤通常看 F1-Micro
 
         logging_strategy="steps",
-        logging_steps=10,  # 每 10 步紀錄一次 Training Loss (畫圖比較平滑)
+        logging_steps=50,  # 每 10 步紀錄一次 Training Loss (畫圖比較平滑)
         report_to="tensorboard"   # 先設 none，我們下面手動用 Matplotlib 畫圖
     )
 
@@ -68,7 +70,8 @@ def main():
         train_dataset=train_dataset,
         eval_dataset=val_dataset,
         tokenizer=tokenizer,
-        compute_metrics=compute_metrics
+        compute_metrics=compute_metrics,
+        callbacks=[EarlyStoppingCallback(early_stopping_patience=5)]
     )
 
     # 開始訓練
