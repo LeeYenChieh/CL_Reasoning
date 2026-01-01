@@ -19,7 +19,7 @@ def parseArgs():
     parser.add_argument("-s", "--strategy", nargs="+", choices=STRATEGY_LIST, help="choose your strategy")
     parser.add_argument("--dirpath", help="your dir path")
     parser.add_argument("--split", default=0.7, type=float, help="split train - val")
-    parser.add_argument("--data nums", default=1000, type=int, help="total data nums")
+    parser.add_argument("--datanums", default=1000, type=int, help="total data nums")
     parser.add_argument("--maxlens", default=512, type=int, help="data max length")
 
     args = parser.parse_args()
