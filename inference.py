@@ -74,7 +74,7 @@ if __name__ == "__main__":
     # 這裡填入您訓練輸出的資料夾路徑
     # 如果您有設 load_best_model_at_end=True，最好的模型會在 checkpoint 資料夾裡
     # 或者直接指到 output_dir (如果訓練正常結束)
-    MODEL_PATH = "./xlm-roberta-multilabel-output2/checkpoint-2690" # 範例路徑，請修改
+    MODEL_PATH = "./xlm-roberta-multilabel-output3/checkpoint-3600" # 範例路徑，請修改
 
     # 初始化預測器
     predictor = ModelPredictor(MODEL_PATH)
