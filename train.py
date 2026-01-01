@@ -52,6 +52,7 @@ def main():
         eval_steps=100,
         save_strategy="steps",
         save_steps=100,
+        save_total_limit=2,
         learning_rate=2e-5,
         num_train_epochs=20,          # 🔥 直接設大一點 (例如 20)
         per_device_train_batch_size=64,
