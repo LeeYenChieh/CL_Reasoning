@@ -2,7 +2,7 @@ import torch
 from torch.utils.data import Dataset
 
 class MultiLabelDataset(Dataset):
-    def __init__(self, texts, labels, tokenizer, max_len=128):
+    def __init__(self, texts, labels, tokenizer, max_len=512):
         self.texts = texts
         self.labels = labels
         self.tokenizer = tokenizer
