@@ -53,7 +53,7 @@ class DataReader():
                     for f in files:
                         item = f.getData()[idx]
                         temp_texts.append(item.get("Translated"))
-                        one_label[self.strategy_map[f.getStrategyName()]] = 1 if get_dataset_map()[d].compareTwoAnswer(item.get("Answer"), item.get("MyAnswer")) else 0
+                        one_label[self.strategy_map[f.getStrategyName()]] = 1 if get_dataset_map()[f.getDatasetName()].compareTwoAnswer(item.get("Answer"), item.get("MyAnswer")) else 0
                     temp_labels += [one_label] * len(files)
                 
                 train_texts += temp_texts[0:len(self.strategy) * train_nums]
