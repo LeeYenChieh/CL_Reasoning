@@ -7,6 +7,7 @@ from Strategy.StrategyType import STRATEGY_LIST
 from MultiLabelTrainer.DataReader import DataReader
 from MultiLabelTrainer.MultiLabelDataset import MultiLabelDataset
 from MultiLabelTrainer.Metric import compute_metrics
+from MultiLabelTrainer.CustomTrainer import ConservativeTrainer
 
 from transformers import XLMRobertaTokenizer, XLMRobertaForSequenceClassification
 from transformers import TrainingArguments, Trainer, EarlyStoppingCallback
@@ -46,15 +47,17 @@ def main():
     )
 
     args = TrainingArguments(
-        output_dir="xlm-roberta-multilabel-output2",
-        eval_strategy="epoch",
-        save_strategy="epoch",
+        output_dir="xlm-roberta-multilabel-output3",
+        eval_strategy="steps",    # 🔥 改成 steps
+        eval_steps=100,
+        save_strategy="steps",
+        save_steps=100,
         learning_rate=2e-5,
         num_train_epochs=20,          # 🔥 直接設大一點 (例如 20)
         per_device_train_batch_size=64,
         per_device_eval_batch_size=64,
         fp16=True,
-        weight_decay=0.01,
+        weight_decay=0.05,
         load_best_model_at_end=True,
         metric_for_best_model="f0.5_micro", # 多標籤通常看 F1-Micro
 
@@ -63,14 +66,14 @@ def main():
         report_to="tensorboard"   # 先設 none，我們下面手動用 Matplotlib 畫圖
     )
 
-    trainer = Trainer(
+    trainer = ConservativeTrainer(
         model=model,
         args=args,
         train_dataset=train_dataset,
         eval_dataset=val_dataset,
         tokenizer=tokenizer,
         compute_metrics=compute_metrics,
-        callbacks=[EarlyStoppingCallback(early_stopping_patience=5)]
+        callbacks=[EarlyStoppingCallback(early_stopping_patience=20)]
     )
 
     # 開始訓練
