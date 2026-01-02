@@ -21,7 +21,7 @@ class ConservativeTrainer(Trainer):
         
         # --- 3. 設定權重 (Pos Weight) ---
         # 這裡設定 0.6 (比 1 小，稍微懲罰誤報，鼓勵保守)
-        weights = torch.full((logits.shape[1],), 0.6).to(logits.device) 
+        weights = torch.full((logits.shape[1],), 0.4).to(logits.device) 
         
         # --- 4. 計算原始 Loss (不平均) ---
         # 🔥 關鍵：設定 reduction='none'，這樣它會回傳一個跟 logits 形狀一樣的 loss 矩陣
