@@ -32,7 +32,7 @@ def main():
     (train_texts, train_labels), (val_texts, val_labels) = DataReader(args.dirpath, args.model, args.dataset, args.strategy).getDataset(args.datanums, args.split)
     count = 0
     for label in train_labels:
-        if label == [1, 1, 1, 1, 1] or label == [0, 0, 0, 0, 0]:
+        if label == [1, 1, 1, 1, 1]:
             count += 1
     print(f'{count} / {len(train_labels)}')
     model_name = "xlm-roberta-base"
@@ -47,7 +47,7 @@ def main():
     )
 
     args = TrainingArguments(
-        output_dir="xlm-roberta-multilabel-output4",
+        output_dir="xlm-roberta-multilabel-output5",
         eval_strategy="steps",    # 🔥 改成 steps
         eval_steps=100,
         save_strategy="steps",
