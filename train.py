@@ -47,20 +47,20 @@ def main():
     )
 
     args = TrainingArguments(
-        output_dir="xlm-roberta-multilabel-output5",
+        output_dir="xlm-roberta-multilabel-output6",
         eval_strategy="steps",    # 🔥 改成 steps
         eval_steps=100,
         save_strategy="steps",
         save_steps=100,
         save_total_limit=2,
-        learning_rate=2e-5,
+        learning_rate=1e-5,
         num_train_epochs=20,          # 🔥 直接設大一點 (例如 20)
         per_device_train_batch_size=64,
         per_device_eval_batch_size=64,
         fp16=True,
-        weight_decay=0.05,
+        weight_decay=0.1,
         load_best_model_at_end=True,
-        metric_for_best_model="f0.5_micro", # 多標籤通常看 F1-Micro
+        metric_for_best_model="eval_loss", # 多標籤通常看 F1-Micro
 
         logging_strategy="steps",
         logging_steps=50,  # 每 10 步紀錄一次 Training Loss (畫圖比較平滑)
