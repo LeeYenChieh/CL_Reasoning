@@ -47,7 +47,7 @@ class DataReader():
                     temp_texts = []
                     temp_label = [None] * len(self.strategy)
                     for f in files:
-                        if f.getDataNums() < nums:
+                        if f.getDataNums() <= idx:
                             temp_label[self.strategy_map[f.getStrategyName()]] = -1
                             continue
                         item = f.getData()[idx]
@@ -58,7 +58,7 @@ class DataReader():
                         batch_labels += [temp_label] * len(files)
                     if -1 in temp_label and 0 not in temp_label:
                         batch_lack_texts += temp_texts
-                        batch_lack_labels += temp_label * len(temp_texts)
+                        batch_lack_labels += [temp_label] * len(temp_texts)
                 
                 batch_train_size = int(len(batch_texts) * split)
                 lack_train_size = int(len(batch_lack_texts) * split)
