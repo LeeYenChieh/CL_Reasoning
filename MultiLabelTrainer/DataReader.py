@@ -40,29 +40,37 @@ class DataReader():
                     print(f"Warning: Model {m} on Dataset {d} missing strategy files. Skipping.")
                     continue
                 
-                realnums = nums
-                for f in files:
-                    if realnums > f.getDataNums():
-                        realnums = f.getDataNums()
-                        print(f'{m} {d} datanums = {realnums}')
-                
-                train_nums = int(realnums * split)
-                temp_texts, temp_labels = [], []
-                for idx in range(realnums):
-                    temp_temp_texts = []
-                    one_label = [None] * len(self.strategy)
+
+                batch_texts, batch_labels = [], []
+                batch_lack_texts, batch_lack_labels = [], []
+                for idx in range(nums):
+                    temp_texts = []
+                    temp_label = [None] * len(self.strategy)
                     for f in files:
+                        if f.getDataNums() < nums:
+                            temp_label[self.strategy_map[f.getStrategyName()]] = -1
+                            continue
                         item = f.getData()[idx]
-                        temp_temp_texts.append(item.get("Translated"))
-                        one_label[self.strategy_map[f.getStrategyName()]] = 1 if get_dataset_map()[f.getDatasetName()].compareTwoAnswer(item.get("Answer"), item.get("MyAnswer")) else 0
-                    if one_label != [1] * len(files):
-                        temp_texts += temp_temp_texts
-                        temp_labels += [one_label] * len(files)
+                        temp_texts.append(item.get("Translated"))
+                        temp_label[self.strategy_map[f.getStrategyName()]] = 1 if get_dataset_map()[f.getDatasetName()].compareTwoAnswer(item.get("Answer"), item.get("MyAnswer")) else 0
+                    if -1 not in temp_label and temp_label != [1] * len(files):
+                        batch_texts += temp_texts
+                        batch_labels += [temp_label] * len(files)
+                    if -1 in temp_label and 0 not in temp_label:
+                        batch_lack_texts += temp_texts
+                        batch_lack_labels += temp_label * len(temp_texts)
                 
-                train_texts += temp_texts[0:len(self.strategy) * train_nums]
-                train_labels += temp_labels[0:len(self.strategy) * train_nums]
-                val_texts += temp_texts[len(self.strategy) * train_nums:]
-                val_labels += temp_labels[len(self.strategy) * train_nums:]
+                batch_train_size = int(len(batch_texts) * split)
+                lack_train_size = int(len(batch_lack_texts) * split)
+
+                train_texts += batch_texts[0:batch_train_size]
+                train_labels += batch_labels[0:batch_train_size]
+                val_texts += batch_texts[batch_train_size:]
+                val_labels += batch_labels[batch_train_size:]
+                train_texts += batch_lack_texts[0:lack_train_size]
+                train_labels += batch_lack_labels[0:lack_train_size]
+                val_texts += batch_lack_texts[lack_train_size:]
+                val_labels += batch_lack_labels[lack_train_size:]
         
         return (train_texts, train_labels), (val_texts, val_labels)
 
