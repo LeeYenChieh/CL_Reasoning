@@ -49,12 +49,15 @@ class DataReader():
                 train_nums = int(realnums * split)
                 temp_texts, temp_labels = [], []
                 for idx in range(realnums):
+                    temp_temp_texts = []
                     one_label = [None] * len(self.strategy)
                     for f in files:
                         item = f.getData()[idx]
-                        temp_texts.append(item.get("Translated"))
+                        temp_temp_texts.append(item.get("Translated"))
                         one_label[self.strategy_map[f.getStrategyName()]] = 1 if get_dataset_map()[f.getDatasetName()].compareTwoAnswer(item.get("Answer"), item.get("MyAnswer")) else 0
-                    temp_labels += [one_label] * len(files)
+                    if one_label != [1] * len(files):
+                        temp_texts += temp_temp_texts
+                        temp_labels += [one_label] * len(files)
                 
                 train_texts += temp_texts[0:len(self.strategy) * train_nums]
                 train_labels += temp_labels[0:len(self.strategy) * train_nums]
