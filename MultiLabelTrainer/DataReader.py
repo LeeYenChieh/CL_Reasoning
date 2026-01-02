@@ -48,15 +48,15 @@ class DataReader():
                     temp_label = [None] * len(self.strategy)
                     for f in files:
                         if f.getDataNums() <= idx:
-                            temp_label[self.strategy_map[f.getStrategyName()]] = -1
+                            temp_label[self.strategy_map[f.getStrategyName()]] = -100
                             continue
                         item = f.getData()[idx]
                         temp_texts.append(item.get("Translated"))
                         temp_label[self.strategy_map[f.getStrategyName()]] = 1 if get_dataset_map()[f.getDatasetName()].compareTwoAnswer(item.get("Answer"), item.get("MyAnswer")) else 0
-                    if -1 not in temp_label and temp_label != [1] * len(files):
+                    if -100 not in temp_label and temp_label != [1] * len(files):
                         batch_texts += temp_texts
                         batch_labels += [temp_label] * len(files)
-                    if -1 in temp_label and 0 not in temp_label:
+                    if -100 in temp_label and 0 not in temp_label:
                         batch_lack_texts += temp_texts
                         batch_lack_labels += [temp_label] * len(temp_texts)
                 
