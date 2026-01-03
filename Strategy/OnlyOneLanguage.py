@@ -11,12 +11,16 @@ from Strategy.PromptAbstractFactory.PromptFormatFactory import PromptFormatFacto
 from tqdm import tqdm
 
 class OnlyOneLanguage(Strategy):
+    """
+    A strategy implementation that translates questions into a specific target language
+    before performing reasoning (Chain-of-Thought) to generate an answer.
+    """
     def __init__(self, model: Model, dataset: Dataset, log: Log, type):
         super().__init__()
         self.name: str = STRATEGY_TO_NAME[type]
-        self.model = model
-        self.dataset = dataset
-        self.log = log
+        self.model: Model = model
+        self.dataset: Dataset = dataset
+        self.log: Log = log
         self.type = type
 
     def getPrompt(self, question: str) -> str:
@@ -27,7 +31,6 @@ class OnlyOneLanguage(Strategy):
         self.log.logInfo(self, self.model, self.dataset)
 
         database = self.dataset.getData()
-        answer = self.dataset.getAnswer()
         result = [{
             "Model": self.model.getName(),
             "Dataset": self.dataset.getName(),
@@ -37,20 +40,21 @@ class OnlyOneLanguage(Strategy):
         }]
 
         pbar = tqdm(total=self.dataset.getDataNums())
-        for i in range(self.dataset.getDataNums()):
-            translateQuestion = self.model.getRes(PromptTranslateFactory().getPrompt(self.type, database[i]))
+        for data in database:
+            translateQuestion = self.model.getRes(PromptTranslateFactory().getPrompt(self.type, data["question"]))
             resultAnswer = self.model.getRes(self.getPrompt(translateQuestion))
             result.append({
-                "Question": database[i],
+                "id": data["id"],
+                "Question": data["question"],
                 "Translated": translateQuestion,
                 "Result": resultAnswer,
-                "Answer": answer[i],
+                "Answer": data["answer"],
                 "MyAnswer": self.parseAnswer(resultAnswer)
             })
 
             self.log.logMessage(f'翻譯問題：\n{translateQuestion}')
             self.log.logMessage(f'結果：\n{resultAnswer}')
-            self.log.logMessage(f'My Answer: {result[-1]["MyAnswer"]}\nCorrect Answer: {answer[i]}')
+            self.log.logMessage(f'My Answer: {result[-1]["MyAnswer"]}\nCorrect Answer: {data["answer"]}')
 
             pbar.update()
         

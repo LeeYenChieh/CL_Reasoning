@@ -7,16 +7,20 @@ class ModelType(str, Enum):
     GEMINI = 'gemini'
     GEMMA = 'gemma'
     QWEN = 'qwen'
+
+class ModelNameType(str, Enum):
+    GPT41MINI = 'GPT4.1 mini'
+    GPT4OMINI = 'GPT4o mini'
+    DEEPSEEK = 'Deepseek'
+    GEMINI = 'Gemini'
+    GEMMA = 'Gemma'
+    QWEN = 'QWEN'
     
-MODEL_LIST = [m.value for m in ModelType]
-MODEL_NAME_DICT = {
-    ModelType.GPT41MINI.value: "GPT 4.1 mini",
-    ModelType.GPT4OMINI.value: "GPT 4o mini",
-    ModelType.DEEPSEEK.value: "Deepseek",
-    ModelType.GEMINI.value: "Gemini 2.5 Flash",
-    ModelType.GEMMA.value: "Gemma",
-    ModelType.QWEN.value: "QWEN 3-8b"
+MODEL_TO_NAME = {
+    member: ModelNameType[member.name] for member in ModelType
 }
+
+MODEL_LIST = [m.value for m in ModelType]
 
 def get_model_map():
     # ← 只有真正用到時才 import，不會循環
@@ -27,10 +31,10 @@ def get_model_map():
     from Model.QWEN import QWEN
     from Model.Gemma import Gemma
     return {
-        "GPT 4.1 mini": GPT41mini,
-        "GPT 4o mini": GPT4omini,
-        "Deepseek": Deepseek,
-        "Gemini 2.5 Flash": Gemini,
-        "Gemma": Gemma,
-        "QWEN 3-8b": QWEN
+        ModelType.GPT41MINI.value: GPT41mini,
+        ModelType.GPT4OMINI.value: GPT4omini,
+        ModelType.DEEPSEEK.value: Deepseek,
+        ModelType.GEMINI.value: Gemini,
+        ModelType.GEMMA.value: Gemma,
+        ModelType.QWEN.value: QWEN
     }

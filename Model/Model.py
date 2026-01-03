@@ -1,7 +1,13 @@
 class Model():
     def __init__(self, tempature):
-        self.tempature: int = 0 if tempature == None else tempature
-        self.name: str = ""
+        self.name: str = "Model"
+        
+        if tempature is None:
+            print(f"[{self.name}] Notice: 'tempature' is None. Defaulting to 0.")
+            self.tempature = 0
+        else:
+            self.tempature = tempature
+            print(f"[{self.name}] Log: 'tempature' set to {self.tempature}.")
 
     def getName(self) -> str:
         return self.name

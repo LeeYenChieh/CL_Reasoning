@@ -1,9 +1,22 @@
 class Dataset():
     def __init__(self, nums: int, sample: int):
-        self.name: str = ""
+        self.name: str = "Dataset"
         self.data: list[dict] = []
-        self.nums: int = -1 if nums == None else nums
-        self.sample: int = 1 if sample == None else sample
+
+        if nums is None:
+            print(f"[{self.name}] Notice: 'nums' is None. Defaulting to -1 (Use all data).")
+            self.nums = -1
+        else:
+            self.nums = nums
+            print(f"[{self.name}] Log: 'nums' set to {self.nums}.")
+
+        # 處理 sample 的 None 判斷與 Log
+        if sample is None:
+            print(f"[{self.name}] Notice: 'sample' is None. Defaulting to 1.")
+            self.sample = 1
+        else:
+            self.sample = sample
+            print(f"[{self.name}] Log: 'sample' set to {self.sample}.")
     
     @staticmethod
     def compareTwoAnswer(answer1, answer2):
@@ -25,6 +38,11 @@ class Dataset():
 
     def getData(self) -> list:
         return self.data[0:self.nums] * self.sample
+    
+    def getDataById(self, id: int):
+        if id >= self.getNums:
+            return None
+        return self.data[id]
         
     def printName(self):
         print(f'Dataset: {self.name}')

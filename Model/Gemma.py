@@ -1,10 +1,10 @@
 import google.generativeai as genai
 from Model.Model import Model
-from Model.ModelType import ModelType, MODEL_NAME_DICT
+from Model.ModelType import ModelType, MODEL_TO_NAME
 import os
 
 class Gemma(Model):
-    NAME = MODEL_NAME_DICT[ModelType.GEMMA]
+    NAME = MODEL_TO_NAME[ModelType.GEMMA]
 
     def __init__(self, tempature):
         super().__init__(tempature)

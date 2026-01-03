@@ -1,29 +1,26 @@
 from Dataset.Dataset import Dataset
-from Dataset.path import commenseqa_path
-from Dataset.DatasetType import DATASET_NAME_DICT, DatasetType
+from Dataset.path import commensenseqa_path
+from Dataset.DatasetType import DATASET_TO_NAME, DatasetType
 import json
 
 class CommonsenseseQA(Dataset):
-    NAME = DATASET_NAME_DICT[DatasetType.COMMENSEQA]
+    NAME = DATASET_TO_NAME[DatasetType.COMMONSENSEQA]
     
     def __init__(self, nums=-1, sample=1):
         super().__init__(nums, sample)
-        self.name: str = CommenseQA.NAME
+        self.name: str = CommonsenseseQA.NAME
 
-        with open(commenseqa_path, "r") as f:
+        with open(commensenseqa_path, "r") as f:
             originData = json.load(f)
 
-        self.data: list = []
-        self.answer: list = []
-        for odata in originData:
-            self.data.append(
-                self.createQuestion(
-                    odata["question"],
-                    odata["choices"]["label"],
-                    odata["choices"]["text"]
-                )
-            )
-            self.answer.append(odata["answerKey"])
+        for idx, odata in enumerate(originData):
+            question = self.createQuestion(odata["question"], odata["choices"]["label"], odata["choices"]["text"])
+            ans = odata["answerKey"]
+            self.data.append({
+                "id": idx,
+                "question": question,
+                "answer": ans
+            })
 
         if self.nums == -1 or self.nums > len(self.data):
             self.nums = len(self.data)

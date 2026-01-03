@@ -1,5 +1,5 @@
 mathqa_path = "./data/mathqa.json"
 xcopa_path = "./data/xcopa/data-gmt/zh/test.zh.jsonl"
-commenseqa_path = "./data/commenseqa.json"
+commensenseqa_path = "./data/commenseqa.json"
 mgsm_en_path = "./data/mgsm_en.json"
 cmb_path = "./data/CMB/CMB-Exam/CMB-val/CMB-val-merge.json"

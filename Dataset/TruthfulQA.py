@@ -1,28 +1,28 @@
 from Dataset.Dataset import Dataset
-from Dataset.DatasetType import DATASET_NAME_DICT, DatasetType
+from Dataset.DatasetType import DATASET_TO_NAME, DatasetType
 from datasets import load_dataset
 import string
 
 letters = list(string.ascii_uppercase)
 
 class TruthfulQA(Dataset):
-    NAME = DATASET_NAME_DICT[DatasetType.TRUTHFULQA]
+    NAME = DATASET_TO_NAME[DatasetType.TRUTHFULQA]
 
     def __init__(self, nums = -1, sample = 1):
         super().__init__(nums, sample)
         self.name: str = TruthfulQA.NAME
-
-        self.data: list = []
-        self.answer: list = []
         
         dataset = load_dataset("truthfulqa/truthful_qa", "multiple_choice", split="validation")
         
-        for data in dataset:
+        for idx, data in enumerate(dataset):
             question = self.createQuestion(data["question"], data["mc1_targets"]["choices"])
             ans = letters[data["mc1_targets"]["labels"].index(1)]
 
-            self.data.append(question)
-            self.answer.append(ans)
+            self.data.append({
+                "id": idx,
+                "question": question,
+                "answer": ans
+            })
         
         if self.nums == -1 or self.nums > len(self.data):
             self.nums = len(self.data)

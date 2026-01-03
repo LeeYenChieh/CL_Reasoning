@@ -1,11 +1,11 @@
 from openai import OpenAI
 from Model.Model import Model
-from Model.ModelType import ModelType, MODEL_NAME_DICT
+from Model.ModelType import ModelType, MODEL_TO_NAME
 from google.generativeai import GenerativeModel
 import os
 
 class Gemini(Model):
-    NAME = MODEL_NAME_DICT[ModelType.GEMINI]
+    NAME = MODEL_TO_NAME[ModelType.GEMINI]
 
     def __init__(self, tempature):
         super().__init__(tempature)

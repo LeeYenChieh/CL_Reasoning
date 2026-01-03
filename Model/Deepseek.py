@@ -1,11 +1,11 @@
 from Model.Model import Model
 from openai import OpenAI
 from transformers import AutoTokenizer
-from Model.ModelType import ModelType, MODEL_NAME_DICT
+from Model.ModelType import ModelType, MODEL_TO_NAME
 import os
 
 class Deepseek(Model):
-    NAME = MODEL_NAME_DICT[ModelType.DEEPSEEK.value]
+    NAME = MODEL_TO_NAME[ModelType.DEEPSEEK.value]
 
     def __init__(self, tempature):
         super().__init__(tempature)

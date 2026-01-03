@@ -113,11 +113,11 @@ def runExperiment(args):
         return
     path = ""
     if args.dirpath:
-        path = f'{args.dirpath}/{model.getName()}_{dataset.getName()}_{context.getStrategyName()}.json'
+        path = f'{args.dirpath}/{args.model}_{args.dataset}_{args.strategy}.json'
     elif args.filepath:
         path = f'{args.filepath}'
     else:
-        path = f'{model.getName()}_{dataset.getName()}_{context.getStrategyName()}.json'
+        path = f'{args.model}_{args.dataset}_{args.strategy}.json'
     with open(path, 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 

@@ -1,10 +1,10 @@
 from Dataset.Dataset import Dataset
-from Dataset.DatasetType import DATASET_NAME_DICT, DatasetType
+from Dataset.DatasetType import DATASET_TO_NAME, DatasetType
 from Dataset.path import cmb_path
 import json
 
 class CMBExam(Dataset):
-    NAME = DATASET_NAME_DICT[DatasetType.CMBEXAM]
+    NAME = DATASET_TO_NAME[DatasetType.CMBEXAM]
 
     def __init__(self, nums = -1, sample = 1):
         super().__init__(nums, sample)

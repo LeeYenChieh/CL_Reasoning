@@ -20,14 +20,14 @@ class PromptAbstractFactory:
         pass
 
     def getPrompt(self, type, *args, **kwargs):
-        if type == StrategyType.ONLYCHINESE or type == StrategyNameType.ONLYCHINESE:
+        if type == StrategyType.ONLYCHINESE:
             return self.chinesePrompt(*args, **kwargs)
-        if type == StrategyType.ONLYENGLISH or type == StrategyNameType.ONLYENGLISH:
+        if type == StrategyType.ONLYENGLISH:
             return self.englishPrompt(*args, **kwargs)
-        if type == StrategyType.ONLYSPANISH or type == StrategyNameType.ONLYSPANISH:
+        if type == StrategyType.ONLYSPANISH:
             return self.spanishPrompt(*args, **kwargs)
-        if type == StrategyType.ONLYJAPANESE or type == StrategyNameType.ONLYJAPANESE:
+        if type == StrategyType.ONLYJAPANESE:
             return self.japanesePrompt(*args, **kwargs)
-        if type == StrategyType.ONLYRUSSIAN or type == StrategyNameType.ONLYRUSSIAN:
+        if type == StrategyType.ONLYRUSSIAN:
             return self.russianPrompt(*args, **kwargs)
         return None

@@ -1,10 +1,10 @@
 from Dataset.Dataset import Dataset
 from Dataset.path import mgsm_en_path
-from Dataset.DatasetType import DATASET_NAME_DICT, DatasetType
+from Dataset.DatasetType import DATASET_TO_NAME, DatasetType
 import json
 
 class MGSM(Dataset):
-    NAME = DATASET_NAME_DICT[DatasetType.MGSM]
+    NAME = DATASET_TO_NAME[DatasetType.MGSM]
 
     def __init__(self, nums=-1, sample=1):
         super().__init__(nums, sample)
@@ -14,13 +14,16 @@ class MGSM(Dataset):
         with open(mgsm_en_path, 'r', encoding='utf-8') as f:
             originData = json.load(f)
 
-        self.data: list = []
-        self.answer: list = []
-
-        for odata in originData:
-            self.data.append(self.createQuestion(odata["question"]))
+        for idx, odata in enumerate(originData):
+            question = self.createQuestion(odata["question"])
             # MGSM 取最終數字答案
-            self.answer.append(odata.get("answer_number"))
+            ans = odata.get("answer_number")
+
+            self.data.append({
+                "id": idx,
+                "question": question,
+                "answer": ans
+            })
 
         if self.nums == -1 or self.nums > len(self.data):
             self.nums = len(self.data)

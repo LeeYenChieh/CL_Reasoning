@@ -27,27 +27,11 @@ STRATEGY_LIST = [s.value for s in StrategyType]
 
 # 用字串當 key，比較方便查
 STRATEGY_TO_NAME = {
-    StrategyType.ONLYCHINESE.value: StrategyNameType.ONLYCHINESE.value,
-    StrategyType.ONLYENGLISH.value: StrategyNameType.ONLYENGLISH.value,
-    StrategyType.ONLYSPANISH.value: StrategyNameType.ONLYSPANISH.value,
-    StrategyType.ONLYJAPANESE.value: StrategyNameType.ONLYJAPANESE.value,
-    StrategyType.ONLYRUSSIAN.value: StrategyNameType.ONLYRUSSIAN.value,
-    StrategyType.SELFREFLECTION.value: StrategyNameType.SELFREFLECTION.value,
-    StrategyType.REPAIR.value: StrategyNameType.REPAIR.value,
-    StrategyType.GETONEOUTPUT.value: StrategyNameType.GETONEOUTPUT.value,
-    StrategyType.CHALLENGE.value: StrategyNameType.CHALLENGE.value
+    member: StrategyNameType[member.name] for member in StrategyType
 }
 
 NAME_TO_STRATEGY = {
-    StrategyNameType.ONLYCHINESE.value: StrategyType.ONLYCHINESE.value,
-    StrategyNameType.ONLYENGLISH.value: StrategyType.ONLYENGLISH.value,
-    StrategyNameType.ONLYSPANISH.value: StrategyType.ONLYSPANISH.value,
-    StrategyNameType.ONLYJAPANESE.value: StrategyType.ONLYJAPANESE.value,
-    StrategyNameType.ONLYRUSSIAN.value: StrategyType.ONLYRUSSIAN.value,
-    StrategyNameType.SELFREFLECTION.value: StrategyType.SELFREFLECTION.value,
-    StrategyNameType.REPAIR.value: StrategyType.REPAIR.value,
-    StrategyNameType.GETONEOUTPUT.value: StrategyType.GETONEOUTPUT.value,
-    StrategyNameType.CHALLENGE.value: StrategyType.CHALLENGE.value
+    member: StrategyType[member.name] for member in StrategyNameType
 }
 
 STRATEGY_TO_LANGUAGE = {
@@ -56,9 +40,6 @@ STRATEGY_TO_LANGUAGE = {
     StrategyType.ONLYSPANISH.value: 'Spanish',
     StrategyType.ONLYJAPANESE.value: 'Japanese',
     StrategyType.ONLYRUSSIAN.value: 'Russian',
-    StrategyNameType.ONLYCHINESE.value: 'Chinese',
-    StrategyNameType.ONLYENGLISH.value: 'English',
-    StrategyNameType.ONLYSPANISH.value: 'Spanish',
 }
 
 def get_strategy_map():

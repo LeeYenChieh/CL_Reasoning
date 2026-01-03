@@ -6,7 +6,7 @@ import re
 
 class Strategy():
     def __init__(self):
-        self.name: str = ""
+        self.name: str = "Strategy"
     
     def printName(self):
         print(f'Strategy {self.name}')

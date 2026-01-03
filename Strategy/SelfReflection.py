@@ -15,9 +15,9 @@ class SelfReflection(Strategy):
     def __init__(self, model: Model, dataset: Dataset, log: Log, dataFile: File):
         super().__init__()
         self.name: str = SelfReflection.NAME
-        self.model = model
-        self.dataset = dataset
-        self.log = log
+        self.model: Model = model
+        self.dataset: Dataset = dataset
+        self.log: Log = log
         self.dataFile = dataFile
         self.type = self.dataFile.getStrategyName()
 
@@ -32,11 +32,11 @@ class SelfReflection(Strategy):
             or self.dataFile.getDatasetName() != self.dataset.getName():
 
             self.log.logMessage("Setting doesn't match")
-            return []
+            return None
 
         database = self.dataset.getData()
         fileData = self.dataFile.getData()
-        answer = self.dataset.getAnswer()
+
         result = [{
             "Model": self.model.getName(),
             "Dataset": self.dataset.getName(),
@@ -46,8 +46,8 @@ class SelfReflection(Strategy):
         }]
 
         pbar = tqdm(total=self.dataset.getDataNums())
-        for i in range(self.dataset.getDataNums()):
-            question, output = fileData[i]["Translated"], fileData[i]["Result"]
+        for idx, data in enumerate(database):
+            question, output = fileData[idx]["Translated"], fileData[idx]["Result"]
             record = [
                 {"role": "user", "content": question},
                 {"role": "assistant", "content": output},
@@ -55,18 +55,19 @@ class SelfReflection(Strategy):
             ]
             resultAnswer = self.model.getListRes(record)
             result.append({
-                "Question": database[i],
+                "id": data["id"],
+                "Question": data["question"],
                 "Translated": question,
                 "Response": output,
                 "Result": resultAnswer,
-                "Answer": answer[i],
+                "Answer": data["answer"],
                 "MyAnswer": self.parseAnswer(resultAnswer)
             })
 
             self.log.logMessage(f'問題：\n{question}')
             self.log.logMessage(f'Response：\n{output}')
             self.log.logMessage(f'結果：\n{resultAnswer}')
-            self.log.logMessage(f'My Answer: {result[-1]["MyAnswer"]}\nCorrect Answer: {answer[i]}')
+            self.log.logMessage(f'My Answer: {result[-1]["MyAnswer"]}\nCorrect Answer: {data["answer"]}')
 
             pbar.update()
         

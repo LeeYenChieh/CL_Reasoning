@@ -1,11 +1,11 @@
 from openai import OpenAI
 from Model.Model import Model
-from Model.ModelType import ModelType, MODEL_NAME_DICT
+from Model.ModelType import ModelType, MODEL_TO_NAME
 from transformers import AutoTokenizer
 import os
 
 class QWEN(Model):
-    NAME = MODEL_NAME_DICT[ModelType.QWEN]
+    NAME = MODEL_TO_NAME[ModelType.QWEN]
     
     def __init__(self, tempature):
         super().__init__(tempature)
