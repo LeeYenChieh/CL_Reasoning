@@ -9,21 +9,21 @@ class CMBExam(Dataset):
     def __init__(self, nums = -1, sample = 1):
         super().__init__(nums, sample)
         self.name: str = CMBExam.NAME
-
-        self.data: list = []
-        self.answer: list = []
         
         with open(cmb_path, "r") as f:
             dataset = json.load(f)
         
-        for data in dataset:
+        for idx, data in enumerate(dataset):
             if len(data["answer"]) != 1:
                 continue
             question = self.createQuestion(data["question"], data["option"])
             ans = data["answer"]
 
-            self.data.append(question)
-            self.answer.append(ans)
+            self.data.append({
+                "id": idx,
+                "question": question,
+                "answer": ans
+            })
         
         if self.nums == -1 or self.nums > len(self.data):
             self.nums = len(self.data)

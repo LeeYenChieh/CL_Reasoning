@@ -3,7 +3,7 @@ from Dataset.path import commenseqa_path
 from Dataset.DatasetType import DATASET_NAME_DICT, DatasetType
 import json
 
-class CommenseQA(Dataset):
+class CommonsenseseQA(Dataset):
     NAME = DATASET_NAME_DICT[DatasetType.COMMENSEQA]
     
     def __init__(self, nums=-1, sample=1):

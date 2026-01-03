@@ -1,6 +1,6 @@
 from Dataset.Dataset import Dataset
 from Dataset.MathQA import MathQA
-from Dataset.CommenseQA import CommenseQA
+from Dataset.CommonsenseQA import CommenseQA
 from Dataset.MGSM import MGSM
 from Dataset.MMLU import MMLU
 from Dataset.TruthfulQA import TruthfulQA

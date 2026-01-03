@@ -2,13 +2,23 @@ from enum import Enum
 
 class DatasetType(str, Enum):
     MATHQA = "mathqa"
-    COMMENSEQA = "commenseqa"
+    COMMONSENSEQA = "commonsenseqa"
     MGSM = "mgsm"
     MMLU = "mmlu"
     TRUTHFULQA = "truthfulqa"
     XCOPA = "xcopa"
     MLECQA = "mlecqa"
     CMBEXAM = "cmb"
+
+class DatasetNameType(str, Enum):
+    MATHQA = "MathQA"
+    COMMONSENSEQA = "CommonSenseQA"
+    MGSM = "MGSM"
+    MMLU = "MMLU"
+    TRUTHFULQA = "TruthfulQA"
+    XCOPA = "XCOPA"
+    MLECQA = "MlecQA"
+    CMBEXAM = "CMB Exam"
 
 # 直接用 value 取字串列表
 DATASET_LIST = [d.value for d in DatasetType]
@@ -17,7 +27,7 @@ DATASET_LIST = [d.value for d in DatasetType]
 def get_dataset_map():
     # ← 只有真正用到時才 import，不會循環
     from Dataset.MathQA import MathQA as _MathQA
-    from Dataset.CommenseQA import CommenseQA as _CommenseQA
+    from Dataset.CommonsenseQA import CommonsenseseQA as _CommonsenseseQA
     from Dataset.MGSM import MGSM as _MGSM
     from Dataset.MMLU import MMLU as _MMLU
     from Dataset.TruthfulQA import TruthfulQA as _TruthfulQA
@@ -26,24 +36,17 @@ def get_dataset_map():
     from Dataset.CMBExam import CMBExam as _CMBExam
 
     return {
-        "MathQA": _MathQA,
-        "CommenseQA": _CommenseQA,
-        "MGSM": _MGSM,
-        "MMLU": _MMLU,
-        "TruthfulQA": _TruthfulQA,
-        "XCOPA": _XCOPA,
-        "MLEC-QA": _MLECQA,
-        "CMB-Exam": _CMBExam
+        DatasetType.MATHQA.value: _MathQA,
+        DatasetType.COMMONSENSEQA.value: _CommonsenseseQA,
+        DatasetType.MGSM.value: _MGSM,
+        DatasetType.MMLU.value: _MMLU,
+        DatasetType.TRUTHFULQA.value: _TruthfulQA,
+        DatasetType.XCOPA.value: _XCOPA,
+        DatasetType.MLECQA.value: _MLECQA,
+        DatasetType.CMBEXAM.value: _CMBExam
     }
 
 # key 改成字串，對應 dataset 名稱
-DATASET_NAME_DICT = {
-    DatasetType.MATHQA.value: "MathQA",
-    DatasetType.COMMENSEQA.value: "CommenseQA",
-    DatasetType.MGSM.value: "MGSM",
-    DatasetType.MMLU.value: "MMLU",
-    DatasetType.TRUTHFULQA.value: "TruthfulQA",
-    DatasetType.XCOPA.value: "XCOPA",
-    DatasetType.MLECQA.value: "MLEC-QA",
-    DatasetType.CMBEXAM.value: "CMB-Exam"
+DATASET_TO_NAME = {
+    member: DatasetNameType[member.name] for member in DatasetType
 }

@@ -1,8 +1,7 @@
 class Dataset():
     def __init__(self, nums: int, sample: int):
         self.name: str = ""
-        self.data: list = []
-        self.answer: list = []
+        self.data: list[dict] = []
         self.nums: int = -1 if nums == None else nums
         self.sample: int = 1 if sample == None else sample
     
@@ -26,10 +25,7 @@ class Dataset():
 
     def getData(self) -> list:
         return self.data[0:self.nums] * self.sample
-    
-    def getAnswer(self) -> list:
-        return self.answer[0:self.nums] * self.sample
-    
+        
     def printName(self):
         print(f'Dataset: {self.name}')
         return
