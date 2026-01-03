@@ -13,6 +13,11 @@ from Strategy.PromptAbstractFactory.PromptDebateCOTFacroty import PromptDebateCO
 from tqdm import tqdm
 
 class Challenge(Strategy):
+    """
+    Implements a 'Challenge' (or Debate) strategy where two agents (or the same model acting as two)
+    debate their answers until they reach a consensus or a threshold is met.
+    If consensus is not reached, a third 'judge' step is invoked.
+    """
     NAME = StrategyNameType.CHALLENGE.value
     def __init__(self, model: Model, dataset: Dataset, log: Log, threshold: int, dataFile1: File, dataFile2: File):
         super().__init__()
@@ -100,7 +105,7 @@ class Challenge(Strategy):
         different_cnt = 0
         
         for i in range(self.dataset.getDataNums()):
-            if data1["id"] != data2["id"]:
+            if data1[i]["id"] != data2[i]["id"]:
                 raise Exception(f'[Warning] ID mismatch found at data1 id {data1["id"]} and data2 id {data2["id"]}!')
             datasetData = self.dataset.getDataById(data1["id"])
             if datasetData == None:
