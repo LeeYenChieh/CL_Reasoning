@@ -30,11 +30,11 @@ class SelfReflection(Strategy):
         # Dynamically update the display name to reflect the language
         self.config.displayName += f"{self.target_lang}"
 
-    def getPrompt(self) -> str:
+    def getPrompt(self, question, output) -> str:
         """
         Constructs the self-reflection prompt and the expected output format.
         """
-        prompt = PromptSelfReflectionCOTFactory().getPrompt(self.target_lang) \
+        prompt = PromptSelfReflectionCOTFactory().getPrompt(self.target_lang, question, output) \
                 + PromptFormatFactory().getPrompt(self.target_lang)
         return prompt
 
@@ -82,21 +82,17 @@ class SelfReflection(Strategy):
             prev_output = prev_record.get("Result", "")
 
             # Construct the conversational history to mimic a back-and-forth self-critique
-            chat_record = [
-                {"role": "user", "content": current_question},
-                {"role": "assistant", "content": prev_output},
-                {"role": "user", "content": self.getPrompt()}
-            ]
+            prompt = self.getPrompt(current_question, prev_output)
 
             # Ask the model to generate a new result based on the chat history
-            resultAnswer = self.model.getListRes(chat_record)
+            resultAnswer = self.model.getRes(prompt)
             my_answer = self.parseAnswer(resultAnswer)
 
             result.append({
                 "id": q_id,
                 "Question": current_question,
                 "Response": prev_output,  # The original flawed/initial output
-                "Reflection": self.getPrompt(),
+                "Reflection": prompt,
                 "Result": resultAnswer,   # The new reflected output
                 "Answer": data.get("answer", ""),
                 "MyAnswer": my_answer
