@@ -215,12 +215,13 @@ class Challenge(Strategy):
     @staticmethod
     def getTokenLens(model: Model, data):
         """Calculates total token usage across all debate turns and the judge phase."""
-        result = model.getTokenLens(data.get("Question1", "")) + model.getTokenLens(data.get("Question2", ""))
+        result = 0
         
         for r in data.get("Record1", []):
-            if r.get("role") == "assistant":
-                # Assuming symmetric token usage tracking, calculate token cost for content
-                result += model.getTokenLens(r.get("content", "")) * 2 
+            result += model.getTokenLens(r.get("content", ""))
+        
+        for r in data.get("Record2", []):
+            result += model.getTokenLens(r.get("content", ""))
                 
         if data.get("Result3"):
             result += model.getTokenLens(data["Result3"])

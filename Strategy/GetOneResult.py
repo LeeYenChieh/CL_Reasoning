@@ -10,14 +10,14 @@ class GetOneOutput(Strategy):
         self.name: str = GetOneOutput.NAME
         self.model = model
         self.dataset = dataset
-        self.log = log
+        self.log: Log = log
     
     def getPrompt(self):
         prompt = input('Input your prompt:\n')
         return prompt
     
     def getRes(self) -> list:
-        self.model.printName()
+        self.log.logInfo(self, self.model, self.dataset)
         prompt = self.getPrompt()
         resultOutput = self.model.getRes(prompt)
         self.log.logMessage(f'Prompt：{prompt}')

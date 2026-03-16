@@ -95,4 +95,4 @@ class OnlyOneLanguage(Strategy):
         Note: We no longer calculate translation tokens here since the translation 
         is pre-computed and loaded directly by the Dataset.
         """
-        return model.getTokenLens(data.get("Result", ""))
+        return model.getTokenLens(data.get("Question", "")) + model.getTokenLens(data.get("Result", ""))

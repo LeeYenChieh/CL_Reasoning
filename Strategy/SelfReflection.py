@@ -96,6 +96,7 @@ class SelfReflection(Strategy):
                 "id": q_id,
                 "Question": current_question,
                 "Response": prev_output,  # The original flawed/initial output
+                "Reflection": self.getPrompt(),
                 "Result": resultAnswer,   # The new reflected output
                 "Answer": data.get("answer", ""),
                 "MyAnswer": my_answer
@@ -123,6 +124,7 @@ class SelfReflection(Strategy):
         # Summing the lengths of the components involved in the conversational prompt
         # Multipliers can be applied if you are simulating the full chat history cost
         tokens = model.getTokenLens(data.get("Question", ""))
-        tokens += model.getTokenLens(data.get("Response", "")) * 2 # Represents reading it back
+        tokens += model.getTokenLens(data.get("Response", "")) # Represents reading it back
+        tokens += model.getTokenLens(data.get("Reflection", ""))
         tokens += model.getTokenLens(data.get("Result", ""))
         return tokens
