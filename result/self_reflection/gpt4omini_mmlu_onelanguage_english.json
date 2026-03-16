@@ -20,7 +20,10 @@
             "languages": [
                 "english"
             ]
-        }
+        },
+        "ExactMatch_Correct": 1570,
+        "ExactMatch_Total": 2000,
+        "ExactMatch_Accuracy": 0.785
     },
     {
         "id": 0,
