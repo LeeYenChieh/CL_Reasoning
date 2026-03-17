@@ -86,5 +86,5 @@ def generate_report(dir_path):
 
 if __name__ == "__main__":
     # 你可以把這裡換成你實際存放 JSON 的資料夾路徑
-    TARGET_DIR = "result/baseline" 
+    TARGET_DIR = "result/self_reflection/" 
     generate_report(TARGET_DIR)

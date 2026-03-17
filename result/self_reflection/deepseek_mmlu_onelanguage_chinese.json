@@ -20,7 +20,10 @@
             "languages": [
                 "chinese"
             ]
-        }
+        },
+        "ExactMatch_Correct": 1792,
+        "ExactMatch_Total": 2000,
+        "ExactMatch_Accuracy": 0.896
     },
     {
         "id": 0,

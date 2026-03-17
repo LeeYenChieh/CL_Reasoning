@@ -21,9 +21,9 @@
                 "english"
             ]
         },
-        "ExactMatch_Correct": 1538,
+        "ExactMatch_Correct": 1542,
         "ExactMatch_Total": 2000,
-        "ExactMatch_Accuracy": 0.769
+        "ExactMatch_Accuracy": 0.771
     },
     {
         "id": 0,
