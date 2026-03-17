@@ -74,7 +74,8 @@
         "ExactMatch_Total": 2000,
         "ExactMatch_Accuracy": 0.6855,
         "Average Token (All Data)": 1235.2515,
-        "Average Token (Only Debate)": 2578.0071942446043
+        "Average Token (Only Debate)": 2578.0071942446043,
+        "Average Token Nums": 1235.2215
     },
     {
         "id": 0,
