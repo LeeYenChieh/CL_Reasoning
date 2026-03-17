@@ -3,9 +3,6 @@ from Log.Log import Log
 from Dataset.DatasetType import get_dataset_map, DatasetType
 from Test.Test import Test
 
-from Strategy.Strategy import Strategy
-from Strategy.StrategyConfig import StrategyConfig
-
 class TestEM(Test):
     """
     Evaluates the Exact Match (EM) accuracy of the model's answers.
@@ -24,8 +21,6 @@ class TestEM(Test):
             fileList (list[File]): A list of File objects to evaluate.
             log (Log): The logging utility for outputting results.
         """
-        config = StrategyConfig.from_dict({"strategyType": "temp"})
-        s = Strategy(config)
         for file in fileList:
             # 1. Provide basic info to the log
             # Depending on your log implementation, you might want to pass config objects instead
@@ -47,11 +42,9 @@ class TestEM(Test):
                 # Safely get the answers, defaulting to empty strings if missing
                 ans = str(record.get("Answer", ""))
                 my_ans = str(record.get("MyAnswer", ""))
-
-                previous_ans = str(s.parseAnswer(record.get("Response")))
                 
                 # Use the dataset's static method to compare answers (e.g., handles math float equality)
-                if DatasetClass.compareTwoAnswer(ans, my_ans) or DatasetClass.compareTwoAnswer(ans, previous_ans):
+                if DatasetClass.compareTwoAnswer(ans, my_ans):
                     correct_cnt += 1
             
             # 4. Calculate performance securely (prevent division by zero)
