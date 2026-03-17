@@ -23,7 +23,8 @@
         },
         "ExactMatch_Correct": 1627,
         "ExactMatch_Total": 2000,
-        "ExactMatch_Accuracy": 0.8135
+        "ExactMatch_Accuracy": 0.8135,
+        "Average Token Nums": 364.0325
     },
     {
         "id": 0,
