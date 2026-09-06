@@ -13,7 +13,8 @@ dependencies = [
     "torch (>=2.14.0,<3.0.0)",
     "torchvision (>=0.29.0,<0.30.0)",
     "pandas (>=3.0.5,<4.0.0)",
-    "tabulate (>=0.10.0,<0.11.0)"
+    "tabulate (>=0.10.0,<0.11.0)",
+    "statsmodels (>=0.15.0,<0.16.0)"
 ]
 
 

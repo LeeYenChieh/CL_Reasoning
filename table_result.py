@@ -3,16 +3,17 @@ import json
 import glob
 import pandas as pd
 
+LANGUAGE_ORDER = ["english", "chinese", "japanese", "spanish", "russian"]
+
 def generate_report(dir_path):
     """
     掃描指定資料夾內的所有 JSON 檔，萃取 Metadata 中的實驗成績，
-    並輸出成一個排版精美的表格。
+    以 Dataset 為單位輸出 pivot 表格（Row: Language, Column: Model）。
     """
     if not os.path.exists(dir_path):
         print(f"❌ 找不到目錄: {dir_path}")
         return
 
-    # 尋找所有 json 檔案
     search_pattern = os.path.join(dir_path, "*.json")
     files = glob.glob(search_pattern)
 
@@ -29,62 +30,72 @@ def generate_report(dir_path):
             except json.JSONDecodeError:
                 print(f"⚠️ 略過檔案 (JSON 格式錯誤): {os.path.basename(filepath)}")
                 continue
-            
-            # 確保檔案有內容
+
             if not data or len(data) == 0:
                 continue
-                
+
             meta = data[0]
-            
-            # 確保這個檔案已經被 TestEM 算過成績了
+
             if "ExactMatch_Accuracy" not in meta:
                 continue
 
-            # 安全地萃取所需資訊
             model_name = meta.get("Model", {}).get("displayName", "Unknown")
             dataset_name = meta.get("Dataset", {}).get("displayName", "Unknown")
-            # 嘗試從 Strategy 拿語言，若沒有則從 Dataset 拿
-            language = meta.get("Strategy", {}).get("languages", ["Unknown"])[0] 
-            strategy = meta.get("Strategy", {}).get("strategyType", "Unknown")
-            
-            correct = meta.get("ExactMatch_Correct", 0)
-            total = meta.get("ExactMatch_Total", 0)
+            language = meta.get("Strategy", {}).get("languages", ["Unknown"])[0]
             accuracy = meta.get("ExactMatch_Accuracy", 0.0)
 
             results.append({
                 "Model": model_name,
                 "Dataset": dataset_name,
                 "Language": language.capitalize(),
-                "Strategy": strategy.capitalize(),
-                "Correct / Total": f"{correct} / {total}",
-                "Accuracy (%)": accuracy * 100  # 轉為百分比
+                "Accuracy (%)": round(accuracy * 100, 2),
             })
 
     if not results:
         print("⚠️ 找不到包含 'ExactMatch_Accuracy' 成績的檔案。請確認是否已執行過 TestEM。")
         return
 
-    # 1. 轉換成 Pandas DataFrame
     df = pd.DataFrame(results)
 
-    # 2. 依照 Dataset -> Language -> Model 進行排序，讓表格看起來更有條理
-    df = df.sort_values(by=["Dataset", "Language", "Model"]).reset_index(drop=True)
+    # 語言排序：依照 LANGUAGE_ORDER，其餘按字母排
+    lang_order = [l.capitalize() for l in LANGUAGE_ORDER]
+    all_langs = df["Language"].unique().tolist()
+    ordered_langs = [l for l in lang_order if l in all_langs] + \
+                    sorted([l for l in all_langs if l not in lang_order])
+    df["Language"] = pd.Categorical(df["Language"], categories=ordered_langs, ordered=True)
 
-    # 3. 格式化小數點 (只保留兩位小數)
-    df["Accuracy (%)"] = df["Accuracy (%)"].apply(lambda x: f"{x:.2f}%")
-
-    # 4. 在終端機印出漂亮表格 (需安裝 tabulate)
-    print("\n📊 實驗成績彙總表 (Experiment Results Summary):")
-    print("=" * 80)
-    print(df.to_markdown(index=False, tablefmt="github"))
+    print(f"\n📊 實驗成績 Pivot 表 — {dir_path}")
     print("=" * 80)
 
-    # 5. (可選) 匯出成 CSV，方便你用 Excel 打開
+    markdown_output = ""
+    for dataset in sorted(df["Dataset"].unique()):
+        sub = df[df["Dataset"] == dataset]
+        pivot = sub.pivot_table(
+            index="Language",
+            columns="Model",
+            values="Accuracy (%)",
+            aggfunc="first"
+        )
+        pivot = pivot.sort_index()
+        pivot_str = pivot.map(lambda x: f"{x:.2f}%" if pd.notna(x) else "-")
+
+        md_table = pivot_str.to_markdown(tablefmt="github")
+        block = f"### {dataset}\n\n{md_table}\n"
+        print(block)
+        markdown_output += block + "\n"
+
+    print("=" * 80)
+
+    output_md = "experiment_results_summary.md"
+    with open(output_md, 'w', encoding='utf-8') as f:
+        f.write(f"# 實驗成績 — {dir_path}\n\n" + markdown_output)
+    print(f"💾 Markdown 已匯出至: {output_md}")
+
     output_csv = "experiment_results_summary.csv"
     df.to_csv(output_csv, index=False, encoding="utf-8-sig")
-    print(f"\n💾 表格已自動匯出至: {output_csv}")
+    print(f"💾 原始資料 CSV 已匯出至: {output_csv}")
 
 if __name__ == "__main__":
-    # 你可以把這裡換成你實際存放 JSON 的資料夾路徑
-    TARGET_DIR = "result/self_reflection/" 
+    import sys                                                                                                                                                                                                                        
+    TARGET_DIR = sys.argv[1] if len(sys.argv) > 1 else "result/self_reflection/"
     generate_report(TARGET_DIR)

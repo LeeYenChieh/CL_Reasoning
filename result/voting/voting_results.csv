@@ -1,0 +1,17 @@
+﻿model,dataset,correct,total,accuracy
+deepseek,commonsenseqa,1604,2000,0.802
+deepseek,mmlu,1818,2000,0.909
+deepseek,mathqa,1829,2000,0.9145
+deepseek,truthfulqa,732,817,0.896
+gpt4omini,commonsenseqa,1510,2000,0.755
+gpt4omini,mmlu,1591,2000,0.7955
+gpt4omini,mathqa,1684,2000,0.842
+gpt4omini,truthfulqa,593,817,0.7258
+gemini,commonsenseqa,1538,2000,0.769
+gemini,mmlu,1695,2000,0.8475
+gemini,mathqa,1697,2000,0.8485
+gemini,truthfulqa,666,817,0.8152
+qwen,commonsenseqa,1465,2000,0.7325
+qwen,mmlu,1555,2000,0.7775
+qwen,mathqa,1677,2000,0.8385
+qwen,truthfulqa,638,817,0.7809

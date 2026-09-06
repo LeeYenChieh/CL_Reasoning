@@ -1,22 +1,24 @@
 import os
 import json
 import glob
+import sys
 import pandas as pd
 
+LANGUAGE_ORDER = ["english", "chinese", "japanese", "spanish", "russian"]
+
+
+def make_pair_key(langs):
+    """依照 LANGUAGE_ORDER 排序兩個語言，組成統一的 pair 字串。"""
+    ordered = sorted(langs[:2], key=lambda l: LANGUAGE_ORDER.index(l.lower()) if l.lower() in LANGUAGE_ORDER else 99)
+    return f"{ordered[0].capitalize()} vs {ordered[1].capitalize()}"
+
+
 def generate_challenge_report(dir_path):
-    """
-    掃描指定資料夾內的所有 JSON 檔，萃取 Metadata 中的實驗成績，
-    針對 Challenge 策略，將 Dataset 放上方、Language pair 放左側，
-    按 Model 輸出成 HackMD 支援的 Markdown 表格格式。
-    """
     if not os.path.exists(dir_path):
         print(f"❌ 找不到目錄: {dir_path}")
         return
 
-    # 尋找所有 json 檔案
-    search_pattern = os.path.join(dir_path, "*.json")
-    files = glob.glob(search_pattern)
-
+    files = glob.glob(os.path.join(dir_path, "*.json"))
     if not files:
         print(f"⚠️ 在 {dir_path} 找不到任何 JSON 檔案。")
         return
@@ -24,102 +26,86 @@ def generate_challenge_report(dir_path):
     results = []
 
     for filepath in files:
-        with open(filepath, 'r', encoding='utf-8') as f:
+        with open(filepath, "r", encoding="utf-8") as f:
             try:
                 data = json.load(f)
             except json.JSONDecodeError:
                 print(f"⚠️ 略過檔案 (JSON 格式錯誤): {os.path.basename(filepath)}")
                 continue
-            
-            # 確保檔案有內容
-            if not data or len(data) == 0:
-                continue
-                
-            # 兼容處理：有時 metadata 放在 list 第一個元素，有時放在 dict 的 "metadata" 鍵中
-            if isinstance(data, list):
-                meta = data[0]
-            else:
-                meta = data.get("metadata", {})
-            
-            # 確保這個檔案已經被 TestEM 算過成績了
-            if "ExactMatch_Accuracy" not in meta:
-                continue
 
-            # 安全地萃取所需資訊
-            model_name = meta.get("Model", {}).get("displayName", "Unknown")
-            dataset_name = meta.get("Dataset", {}).get("displayName", "Unknown")
-            
-            # 🎯 取得兩個語言，組成 Language Pair
-            languages = meta.get("Strategy", {}).get("languages", ["Unknown"])
-            if len(languages) >= 2:
-                language_pair = f"{languages[0].capitalize()} vs {languages[1].capitalize()}"
-            elif len(languages) == 1:
-                language_pair = languages[0].capitalize()
-            else:
-                language_pair = "Unknown"
-                
-            accuracy = meta.get("ExactMatch_Accuracy", 0.0)
+        if not data or len(data) == 0:
+            continue
 
-            results.append({
-                "Model": model_name,
-                "Dataset": dataset_name,
-                "Language Pair": language_pair,
-                "Accuracy (%)": accuracy * 100  
-            })
+        meta = data[0] if isinstance(data, list) else data.get("metadata", {})
+
+        if "ExactMatch_Accuracy" not in meta:
+            continue
+
+        model_name = meta.get("Model", {}).get("displayName", "Unknown")
+        dataset_name = meta.get("Dataset", {}).get("displayName", "Unknown")
+        languages = meta.get("Strategy", {}).get("languages", [])
+        accuracy = meta.get("ExactMatch_Accuracy", 0.0)
+
+        if len(languages) >= 2:
+            pair = make_pair_key(languages)
+        elif len(languages) == 1:
+            pair = languages[0].capitalize()
+        else:
+            pair = "Unknown"
+
+        results.append({
+            "Model": model_name,
+            "Dataset": dataset_name,
+            "Language Pair": pair,
+            "Accuracy (%)": round(accuracy * 100, 2),
+        })
 
     if not results:
-        print("⚠️ 找不到包含 'ExactMatch_Accuracy' 成績的檔案。請確認是否已執行過 TestEM。")
+        print("⚠️ 找不到包含 'ExactMatch_Accuracy' 的檔案。請確認是否已執行過 TestEM。")
         return
 
-    # 1. 轉換成 Pandas DataFrame
     df = pd.DataFrame(results)
 
-    # 2. 格式化小數點為字串 (只保留兩位小數並加上 %)
-    df["Accuracy Str"] = df["Accuracy (%)"].apply(lambda x: f"{x:.2f}%")
+    # 排序 Language Pair：依照第一個語言在 LANGUAGE_ORDER 的位置
+    all_pairs = df["Language Pair"].unique().tolist()
+    def pair_sort_key(pair):
+        first = pair.split(" vs ")[0].lower()
+        return LANGUAGE_ORDER.index(first) if first in LANGUAGE_ORDER else 99
+    ordered_pairs = sorted(all_pairs, key=pair_sort_key)
+    df["Language Pair"] = pd.Categorical(df["Language Pair"], categories=ordered_pairs, ordered=True)
 
-    # 3. 取得所有不重複的 Model 列表，並排序
-    models = sorted(df["Model"].unique())
-
-    print("\n" + "="*80)
-    print("📋 請直接複製以下 Markdown 語法貼上至 HackMD：\n")
+    print(f"\n📊 Challenge 實驗成績 Pivot 表 — {dir_path}")
+    print("=" * 80)
 
     markdown_output = ""
+    for dataset in sorted(df["Dataset"].unique()):
+        sub = df[df["Dataset"] == dataset]
+        pivot = sub.pivot_table(
+            index="Language Pair",
+            columns="Model",
+            values="Accuracy (%)",
+            aggfunc="first",
+        )
+        pivot = pivot.sort_index()
+        pivot_str = pivot.map(lambda x: f"{x:.2f}%" if pd.notna(x) else "-")
 
-    for model in models:
-        # 篩選出該 Model 的數據
-        model_df = df[df["Model"] == model]
+        md_table = pivot_str.to_markdown(tablefmt="github")
+        block = f"### {dataset}\n\n{md_table}\n"
+        print(block)
+        markdown_output += block + "\n"
 
-        # 🎯 核心改動：使用 pivot_table 將 Dataset 轉為 Column，Language Pair 轉為 Row
-        pivot_df = model_df.pivot_table(
-            index="Language Pair", 
-            columns="Dataset", 
-            values="Accuracy Str", 
-            aggfunc="first"
-        ).fillna("-").reset_index() # fillna("-") 用來處理如果某個資料集剛好漏了某個語言的防呆
+    print("=" * 80)
 
-        # 確保 Language Pair 標題正確，並產生 Markdown 表格
-        md_table = pivot_df.to_markdown(index=False, tablefmt="github")
+    output_md = "challenge_results_summary.md"
+    with open(output_md, "w", encoding="utf-8") as f:
+        f.write(f"# Challenge 實驗成績 — {dir_path}\n\n" + markdown_output)
+    print(f"💾 Markdown 已匯出至: {output_md}")
 
-        # 組合 Markdown 內容
-        markdown_output += f"### 🤖 Model: {model}\n\n"
-        markdown_output += md_table + "\n\n<br>\n\n"
+    output_csv = "challenge_results_summary.csv"
+    df.to_csv(output_csv, index=False, encoding="utf-8-sig")
+    print(f"💾 原始資料 CSV 已匯出至: {output_csv}")
 
-    # 在終端機印出所有 Markdown 語法供使用者直接複製
-    print(markdown_output)
-    print("="*80)
-
-    # 4. 將 Markdown 語法存成文字檔，方便備用
-    output_md = "challenge_results_hackmd.md"
-    with open(output_md, 'w', encoding='utf-8') as f:
-        f.write(markdown_output)
-    print(f"\n💾 Markdown 語法也已自動存成檔案至: {output_md}")
-
-    # 5. 保留一份原始的一維 CSV 給你
-    output_csv = "challenge_results_raw.csv"
-    df.drop(columns=["Accuracy Str"]).to_csv(output_csv, index=False, encoding="utf-8-sig")
-    print(f"💾 原始分析資料 (CSV) 存至: {output_csv}\n")
 
 if __name__ == "__main__":
-    # 將目標路徑指向存放 Challenge 算分結果的資料夾
-    TARGET_DIR = "result/challenge" 
+    TARGET_DIR = sys.argv[1] if len(sys.argv) > 1 else "result/challenge"
     generate_challenge_report(TARGET_DIR)

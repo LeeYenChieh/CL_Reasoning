@@ -1,0 +1,114 @@
+[
+    {
+        "model": "deepseek",
+        "dataset": "commonsenseqa",
+        "correct": 1604,
+        "total": 2000,
+        "accuracy": 0.802
+    },
+    {
+        "model": "deepseek",
+        "dataset": "mmlu",
+        "correct": 1818,
+        "total": 2000,
+        "accuracy": 0.909
+    },
+    {
+        "model": "deepseek",
+        "dataset": "mathqa",
+        "correct": 1829,
+        "total": 2000,
+        "accuracy": 0.9145
+    },
+    {
+        "model": "deepseek",
+        "dataset": "truthfulqa",
+        "correct": 732,
+        "total": 817,
+        "accuracy": 0.896
+    },
+    {
+        "model": "gpt4omini",
+        "dataset": "commonsenseqa",
+        "correct": 1510,
+        "total": 2000,
+        "accuracy": 0.755
+    },
+    {
+        "model": "gpt4omini",
+        "dataset": "mmlu",
+        "correct": 1591,
+        "total": 2000,
+        "accuracy": 0.7955
+    },
+    {
+        "model": "gpt4omini",
+        "dataset": "mathqa",
+        "correct": 1684,
+        "total": 2000,
+        "accuracy": 0.842
+    },
+    {
+        "model": "gpt4omini",
+        "dataset": "truthfulqa",
+        "correct": 593,
+        "total": 817,
+        "accuracy": 0.7258
+    },
+    {
+        "model": "gemini",
+        "dataset": "commonsenseqa",
+        "correct": 1538,
+        "total": 2000,
+        "accuracy": 0.769
+    },
+    {
+        "model": "gemini",
+        "dataset": "mmlu",
+        "correct": 1695,
+        "total": 2000,
+        "accuracy": 0.8475
+    },
+    {
+        "model": "gemini",
+        "dataset": "mathqa",
+        "correct": 1697,
+        "total": 2000,
+        "accuracy": 0.8485
+    },
+    {
+        "model": "gemini",
+        "dataset": "truthfulqa",
+        "correct": 666,
+        "total": 817,
+        "accuracy": 0.8152
+    },
+    {
+        "model": "qwen",
+        "dataset": "commonsenseqa",
+        "correct": 1465,
+        "total": 2000,
+        "accuracy": 0.7325
+    },
+    {
+        "model": "qwen",
+        "dataset": "mmlu",
+        "correct": 1555,
+        "total": 2000,
+        "accuracy": 0.7775
+    },
+    {
+        "model": "qwen",
+        "dataset": "mathqa",
+        "correct": 1677,
+        "total": 2000,
+        "accuracy": 0.8385
+    },
+    {
+        "model": "qwen",
+        "dataset": "truthfulqa",
+        "correct": 638,
+        "total": 817,
+        "accuracy": 0.7809
+    }
+]

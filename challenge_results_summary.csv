@@ -1,0 +1,161 @@
+﻿Model,Dataset,Language Pair,Accuracy (%)
+QWEN,MMLU,English vs Spanish,78.75
+Gemini,MathQA,English vs Chinese,85.95
+Gemini,TruthfulQA,Chinese vs Japanese,82.37
+QWEN,MathQA,Chinese vs Russian,83.3
+QWEN,TruthfulQA,English vs Spanish,75.89
+QWEN,MMLU,Chinese vs Japanese,75.8
+Gemini,MMLU,English vs Spanish,86.05
+QWEN,CommonSenseQA,Japanese vs Spanish,69.85
+Gemini,CommonSenseQA,Japanese vs Spanish,75.2
+Gemini,MMLU,Spanish vs Russian,85.25
+Gemini,CommonSenseQA,Japanese vs Russian,74.4
+GPT4o mini,MathQA,Spanish vs Russian,83.65
+Gemini,TruthfulQA,Japanese vs Russian,82.37
+GPT4o mini,TruthfulQA,English vs Spanish,73.19
+Deepseek,TruthfulQA,Chinese vs Japanese,89.96
+GPT4o mini,MMLU,Japanese vs Spanish,78.15
+GPT4o mini,CommonSenseQA,English vs Chinese,77.3
+GPT4o mini,TruthfulQA,Chinese vs Japanese,71.6
+QWEN,MathQA,Spanish vs Russian,84.4
+Gemini,MathQA,Spanish vs Russian,86.9
+Deepseek,MathQA,Spanish vs Russian,90.95
+QWEN,CommonSenseQA,Chinese vs Russian,68.6
+QWEN,MathQA,English vs Chinese,82.75
+QWEN,CommonSenseQA,English vs Japanese,75.85
+QWEN,TruthfulQA,Japanese vs Russian,74.42
+QWEN,MathQA,Japanese vs Russian,83.45
+Gemini,CommonSenseQA,English vs Japanese,78.2
+QWEN,TruthfulQA,English vs Japanese,76.25
+GPT4o mini,MMLU,Chinese vs Spanish,78.0
+QWEN,CommonSenseQA,Spanish vs Russian,68.35
+QWEN,CommonSenseQA,Chinese vs Spanish,68.6
+QWEN,MathQA,English vs Spanish,84.25
+GPT4o mini,MathQA,English vs Japanese,82.75
+Gemini,MMLU,Japanese vs Spanish,85.3
+Gemini,MathQA,English vs Japanese,85.95
+QWEN,TruthfulQA,Spanish vs Russian,75.89
+QWEN,MMLU,Chinese vs Spanish,76.1
+GPT4o mini,MMLU,Chinese vs Japanese,76.3
+Gemini,TruthfulQA,Japanese vs Spanish,83.35
+QWEN,MathQA,Chinese vs Japanese,82.75
+Deepseek,TruthfulQA,English vs Chinese,88.62
+QWEN,MMLU,Japanese vs Spanish,76.25
+Gemini,CommonSenseQA,English vs Spanish,78.1
+Deepseek,TruthfulQA,English vs Japanese,88.98
+Deepseek,CommonSenseQA,English vs Russian,80.55
+GPT4o mini,TruthfulQA,English vs Chinese,73.56
+Deepseek,MMLU,English vs Russian,90.8
+Deepseek,MMLU,Chinese vs Russian,89.6
+QWEN,CommonSenseQA,Chinese vs Japanese,68.65
+QWEN,CommonSenseQA,Japanese vs Russian,68.55
+Gemini,TruthfulQA,English vs Japanese,82.86
+Deepseek,CommonSenseQA,English vs Japanese,80.8
+GPT4o mini,MathQA,English vs Chinese,84.35
+Gemini,TruthfulQA,Chinese vs Russian,81.52
+GPT4o mini,MMLU,Japanese vs Russian,76.4
+Gemini,TruthfulQA,English vs Chinese,82.62
+GPT4o mini,TruthfulQA,Spanish vs Russian,71.36
+Deepseek,TruthfulQA,English vs Spanish,87.64
+QWEN,MMLU,English vs Russian,79.15
+Deepseek,TruthfulQA,Japanese vs Spanish,88.74
+Deepseek,MMLU,Japanese vs Russian,89.75
+Deepseek,MMLU,English vs Spanish,91.0
+Deepseek,MathQA,English vs Russian,91.3
+GPT4o mini,MathQA,Japanese vs Spanish,81.85
+GPT4o mini,MMLU,English vs Chinese,81.4
+Gemini,CommonSenseQA,Spanish vs Russian,74.25
+GPT4o mini,MathQA,Chinese vs Japanese,80.65
+Gemini,MathQA,Japanese vs Spanish,87.4
+Deepseek,CommonSenseQA,English vs Chinese,80.3
+GPT4o mini,CommonSenseQA,Japanese vs Spanish,71.8
+GPT4o mini,TruthfulQA,Japanese vs Spanish,71.48
+QWEN,TruthfulQA,Chinese vs Spanish,77.6
+QWEN,MMLU,English vs Japanese,78.5
+QWEN,MMLU,English vs Chinese,79.15
+QWEN,CommonSenseQA,English vs Spanish,75.6
+GPT4o mini,MathQA,English vs Spanish,84.05
+GPT4o mini,MathQA,Japanese vs Russian,82.0
+Gemini,CommonSenseQA,Chinese vs Japanese,74.0
+QWEN,TruthfulQA,Japanese vs Spanish,72.83
+GPT4o mini,CommonSenseQA,English vs Russian,77.15
+QWEN,TruthfulQA,Chinese vs Russian,76.62
+Gemini,TruthfulQA,English vs Russian,82.5
+Deepseek,TruthfulQA,Spanish vs Russian,88.37
+Deepseek,CommonSenseQA,Japanese vs Russian,76.55
+GPT4o mini,MMLU,Spanish vs Russian,78.35
+GPT4o mini,MathQA,Chinese vs Spanish,83.25
+Gemini,MMLU,Chinese vs Spanish,85.45
+Deepseek,TruthfulQA,Chinese vs Spanish,88.49
+QWEN,MathQA,Chinese vs Spanish,83.3
+GPT4o mini,CommonSenseQA,Chinese vs Spanish,71.2
+Deepseek,MathQA,Chinese vs Spanish,91.35
+Gemini,TruthfulQA,Spanish vs Russian,82.01
+GPT4o mini,CommonSenseQA,Spanish vs Russian,73.0
+Gemini,CommonSenseQA,Chinese vs Spanish,74.55
+GPT4o mini,TruthfulQA,Chinese vs Spanish,72.34
+Deepseek,MathQA,English vs Chinese,91.55
+QWEN,MathQA,English vs Russian,84.1
+Gemini,MathQA,English vs Spanish,86.1
+GPT4o mini,CommonSenseQA,English vs Spanish,77.8
+GPT4o mini,TruthfulQA,English vs Japanese,72.09
+QWEN,MathQA,English vs Japanese,84.3
+Deepseek,MathQA,Chinese vs Japanese,91.0
+QWEN,MMLU,Chinese vs Russian,76.75
+GPT4o mini,MathQA,Chinese vs Russian,82.35
+Gemini,MMLU,Japanese vs Russian,84.45
+Deepseek,TruthfulQA,English vs Russian,88.74
+Deepseek,MathQA,Japanese vs Russian,91.15
+Gemini,MathQA,English vs Russian,86.05
+GPT4o mini,TruthfulQA,Chinese vs Russian,72.09
+Deepseek,MathQA,English vs Spanish,91.1
+QWEN,MMLU,Japanese vs Russian,76.35
+Deepseek,TruthfulQA,Japanese vs Russian,88.25
+Gemini,TruthfulQA,English vs Spanish,82.62
+QWEN,TruthfulQA,English vs Russian,77.23
+QWEN,TruthfulQA,English vs Chinese,78.34
+GPT4o mini,MMLU,English vs Russian,80.45
+Gemini,CommonSenseQA,English vs Chinese,76.8
+Deepseek,MathQA,English vs Japanese,91.5
+Deepseek,MMLU,Spanish vs Russian,89.85
+Gemini,CommonSenseQA,English vs Russian,77.3
+QWEN,MMLU,Spanish vs Russian,76.15
+Deepseek,MMLU,English vs Chinese,90.65
+Deepseek,MMLU,Chinese vs Japanese,89.45
+Deepseek,MathQA,Chinese vs Russian,91.2
+Deepseek,CommonSenseQA,Chinese vs Spanish,77.5
+Gemini,MMLU,Chinese vs Japanese,84.4
+Gemini,MMLU,English vs Japanese,85.65
+Gemini,MathQA,Chinese vs Japanese,86.6
+Gemini,MathQA,Japanese vs Russian,86.55
+GPT4o mini,CommonSenseQA,Japanese vs Russian,70.8
+Gemini,MMLU,English vs Russian,85.5
+Gemini,TruthfulQA,Chinese vs Spanish,82.74
+GPT4o mini,MathQA,English vs Russian,84.55
+GPT4o mini,TruthfulQA,Japanese vs Russian,70.99
+Deepseek,CommonSenseQA,Chinese vs Russian,77.1
+GPT4o mini,MMLU,English vs Spanish,80.25
+Deepseek,MMLU,English vs Japanese,91.45
+GPT4o mini,CommonSenseQA,English vs Japanese,77.7
+Deepseek,CommonSenseQA,Japanese vs Spanish,77.7
+Deepseek,TruthfulQA,Chinese vs Russian,88.62
+Gemini,CommonSenseQA,Chinese vs Russian,72.9
+Deepseek,CommonSenseQA,English vs Spanish,80.15
+Deepseek,CommonSenseQA,Spanish vs Russian,76.75
+Gemini,MathQA,Chinese vs Spanish,86.85
+GPT4o mini,CommonSenseQA,Chinese vs Japanese,70.05
+GPT4o mini,TruthfulQA,English vs Russian,73.07
+GPT4o mini,MMLU,Chinese vs Russian,77.75
+GPT4o mini,CommonSenseQA,Chinese vs Russian,70.65
+Gemini,MMLU,Chinese vs Russian,84.8
+Deepseek,CommonSenseQA,Chinese vs Japanese,76.25
+Deepseek,MMLU,Chinese vs Spanish,90.15
+Gemini,MathQA,Chinese vs Russian,86.8
+Deepseek,MathQA,Japanese vs Spanish,91.25
+QWEN,TruthfulQA,Chinese vs Japanese,75.03
+Deepseek,MMLU,Japanese vs Spanish,90.1
+QWEN,MathQA,Japanese vs Spanish,83.9
+GPT4o mini,MMLU,English vs Japanese,81.1
+Gemini,MMLU,English vs Chinese,86.45
+QWEN,CommonSenseQA,English vs Russian,74.6
+QWEN,CommonSenseQA,English vs Chinese,75.35
