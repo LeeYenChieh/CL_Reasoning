@@ -22,7 +22,10 @@
                 "english"
             ],
             "promptStyle": "cot"
-        }
+        },
+        "ExactMatch_Correct": 1777,
+        "ExactMatch_Total": 2000,
+        "ExactMatch_Accuracy": 0.8885
     },
     {
         "id": 0,
