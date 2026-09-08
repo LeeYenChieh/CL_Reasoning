@@ -9,6 +9,7 @@ class StrategyType(str, Enum):
     REPAIRONELANGUAGE = 'repaironelanguage'
     REPAIRCHALLENGE = 'repairchallenge'
     TRANSLATE = 'translate'
+    REWRITE = 'rewrite'
 
 class StrategyDisplayNameType(str, Enum):
     ONELANGUAGE = "One Language"
@@ -18,6 +19,7 @@ class StrategyDisplayNameType(str, Enum):
     REPAIRONELANGUAGE = "Repair One Language"
     REPAIRCHALLENGE = "Repair Challenge"
     TRANSLATE = 'Translate'
+    REWRITE = 'Rewrite'
 
 # Trailing commas turn the assigned value into a Tuple, breaking string comparisons.
 class LanguageType(str, Enum):
@@ -45,6 +47,7 @@ def get_strategy_map():
     Uses lazy importing to prevent circular dependency issues during initialization.
     """
     from Strategy.Translate import Translate
+    from Strategy.Rewrite import Rewrite
     from Strategy.OnlyOneLanguage import OnlyOneLanguage
     from Strategy.SelfReflection import SelfReflection
     from Strategy.Challenge import Challenge
@@ -53,6 +56,7 @@ def get_strategy_map():
 
     return {
         StrategyType.TRANSLATE: Translate,
+        StrategyType.REWRITE: Rewrite,
         StrategyType.ONELANGUAGE: OnlyOneLanguage,
         StrategyType.SELFREFLECTION: SelfReflection,
         StrategyType.CHALLENGE: Challenge,

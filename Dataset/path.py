@@ -7,3 +7,7 @@ mgsm_en_path = basedir + "mgsm_en.json"
 cmb_path = basedir + "CMB/CMB-Exam/CMB-val/CMB-val-merge.json"
 
 translatedBaseDir = './Data/v2_translated'
+
+# English paraphrases produced by Experiment 1 (run_rewrite.py). One file per dataset:
+#   {rewrittenBaseDir}/{datasetType}_english.json
+rewrittenBaseDir = './Data/rewritten'

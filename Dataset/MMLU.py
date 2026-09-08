@@ -34,8 +34,8 @@ class MMLU(Dataset):
         self.realData = self.getRealData()
         self.config.nums = len(self.realData)
         self.config.dataNums = self.config.nums * self.config.sample
-        
-        self._apply_translation()
+
+        self._apply_question_source()
 
     def createQuestion(self, question, choices) -> str:
         choicesPrompt = ""

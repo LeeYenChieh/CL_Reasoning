@@ -1,6 +1,6 @@
 from Dataset.DatasetConfig import DatasetConfig
 from Dataset.DatasetType import DATASET_TO_DISPLAYNAME
-from Dataset.path import translatedBaseDir
+from Dataset.path import translatedBaseDir, rewrittenBaseDir
 
 import json
 import os
@@ -95,6 +95,49 @@ class Dataset():
         except Exception as e:
             # Catch other potential errors (e.g., JSONDecodeError) to prevent application crash
             print(f"[{self.config.displayName}] Error loading translation: {e}")
+
+    def _apply_rewrite(self):
+        """
+        Experiment 2-4 counterpart of _apply_translation: overwrites the English question text
+        with the paraphrase produced by Experiment 1 (run_rewrite.py).
+
+        Loads Data/rewritten/{datasetType}_english.json ([meta, {id, Question, Rewritten}, ...])
+        and replaces self.data[*]["question"] by id while preserving the ground-truth answer.
+        Must be called by subclasses AFTER the original data is fully loaded into self.data.
+        """
+        rewrite_file = f"{self.config.datasetType}_english.json"
+        rewrite_path = os.path.join(rewrittenBaseDir, rewrite_file)
+
+        try:
+            with open(rewrite_path, "r", encoding="utf-8") as f:
+                rewritten_data = json.load(f)
+
+            # Skip index [0] (config metadata); map id -> non-empty rewritten stem.
+            rw_map = {item["id"]: item.get("Rewritten", "") for item in rewritten_data[1:]}
+
+            replaced = 0
+            for item in self.data:
+                if rw_map.get(item["id"]):
+                    item["question"] = rw_map[item["id"]]
+                    replaced += 1
+
+            print(f"[{self.config.displayName}] Applied English rewrite from {rewrite_file} ({replaced} questions).")
+
+        except FileNotFoundError:
+            print(f"[{self.config.displayName}] Warning: Rewrite file not found at {rewrite_path}. Using original English.")
+        except Exception as e:
+            print(f"[{self.config.displayName}] Error loading rewrite: {e}")
+
+    def _apply_question_source(self):
+        """
+        Single entry point for question-text overrides. Concrete datasets call this instead of
+        _apply_translation() directly: it applies the English rewrite when config.useRewrite is
+        set, otherwise it falls back to the usual translation double-loading.
+        """
+        if getattr(self.config, "useRewrite", False):
+            self._apply_rewrite()
+        else:
+            self._apply_translation()
 
     def getData(self) -> list:
         """

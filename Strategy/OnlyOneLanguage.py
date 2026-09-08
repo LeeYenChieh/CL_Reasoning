@@ -4,6 +4,8 @@ from Strategy.Strategy import Strategy
 from Strategy.StrategyConfig import StrategyConfig
 from Log.Log import Log
 from Strategy.PromptAbstractFactory.PromptCOTFactory import PromptCOTFactory
+from Strategy.PromptAbstractFactory.PromptShortCOTFactory import PromptShortCOTFactory
+from Strategy.PromptAbstractFactory.PromptDirectFactory import PromptDirectFactory
 from Strategy.PromptAbstractFactory.PromptFormatFactory import PromptFormatFactory
 
 from tqdm import tqdm
@@ -29,17 +31,34 @@ class OnlyOneLanguage(Strategy):
         else:
             self.config.displayName += " (Auto)"
 
+        # Surface a non-default reasoning style in the display name too
+        style = getattr(self.config, "promptStyle", "cot") or "cot"
+        if style != "cot":
+            self.config.displayName += f" [{style}]"
+
     def getPrompt(self, question: str) -> str:
         """
-        Constructs the reasoning prompt using the language-specific COT and Format factories.
+        Constructs the reasoning prompt for the configured language and prompt style.
+
+        promptStyle:
+          'cot'       -> full Chain-of-Thought + Format factory (historical default)
+          'short_cot' -> brief Chain-of-Thought + Format factory
+          'direct'    -> no Chain-of-Thought; a self-contained direct-answer prompt
         """
         target_lang = self.config.languages[0] if self.config.languages else "english"
-        
-        # Combine the Chain-of-Thought prompt and the Output Format prompt
-        cot_prompt = PromptCOTFactory().getPrompt(target_lang, question)
-        format_prompt = PromptFormatFactory().getPrompt(target_lang)
-        
-        return cot_prompt + format_prompt
+        style = getattr(self.config, "promptStyle", "cot") or "cot"
+
+        if style == "direct":
+            # PromptDirectFactory is self-contained: it must NOT be combined with the
+            # PromptFormatFactory, which would re-introduce a mandatory reasoning block.
+            return PromptDirectFactory().getPrompt(target_lang, question)
+
+        if style == "short_cot":
+            reasoning_prompt = PromptShortCOTFactory().getPrompt(target_lang, question)
+        else:
+            reasoning_prompt = PromptCOTFactory().getPrompt(target_lang, question)
+
+        return reasoning_prompt + PromptFormatFactory().getPrompt(target_lang)
 
     def getRes(self) -> list:
         """

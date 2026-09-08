@@ -12,7 +12,12 @@ class DatasetConfig:
     sample: int = 1
 
     language: LanguageType = LanguageType.ENGLISH.value
-    
+
+    # When True, the concrete dataset replaces its question text with the English paraphrase
+    # from Data/rewritten/{datasetType}_english.json instead of applying a translation.
+    # Only meaningful together with language == 'english' (Experiments 2-4).
+    useRewrite: bool = False
+
     # Use field(init=False) so this attribute is not expected in the __init__ arguments.
     # It will be calculated dynamically after initialization.
     dataNums: int = field(init=False)

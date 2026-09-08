@@ -7,9 +7,15 @@ class StrategyConfig:
     """
     strategyType: str = ''
     displayName: str = ''
-    
+
     # which would cause all instances to share the same list in memory.
     languages: list[str] = field(default_factory=list)
+
+    # Reasoning prompt style for single-language evaluation:
+    #   'cot'       -> full Chain-of-Thought (default, identical to the historical behavior)
+    #   'short_cot' -> a brief Chain-of-Thought (a few reasoning steps only)
+    #   'direct'    -> no Chain-of-Thought, the model outputs the answer directly
+    promptStyle: str = 'cot'
 
     @classmethod
     def from_args(cls, args):

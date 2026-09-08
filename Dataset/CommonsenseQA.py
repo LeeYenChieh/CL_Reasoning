@@ -24,7 +24,7 @@ class CommonsenseQA(Dataset):
             self.config.dataNums = self.config.nums * self.config.sample
 
         self.config.dataNums = self.config.nums * self.config.sample
-        self._apply_translation()
+        self._apply_question_source()
 
     def createQuestion(self, question, labels, texts) -> str:
         # format choices as: A) ignore, B) enforce, ...
