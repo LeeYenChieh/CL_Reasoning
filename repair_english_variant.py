@@ -14,7 +14,8 @@ def parseArgs():
     parser = ArgumentParser(description="Repair Experiments 2-4 (rewritten English + prompt style) output files")
     parser.add_argument("--log", action="store_true", help="Enable terminal logging")
     parser.add_argument("--dirpath", required=True, help="Directory containing the evaluation JSON files")
-    parser.add_argument("-w", "--workers", type=int, default=3, help="Max concurrent threads/workers")
+    parser.add_argument("-w", "--workers", type=int, default=None,
+                        help="Max concurrent threads/workers (default: one per file, i.e. full fan-out)")
     return parser.parse_args()
 
 
@@ -52,12 +53,15 @@ def main():
         print(f"⚠️ 在 {args.dirpath} 找不到任何 JSON 檔案。")
         return
 
+    workers = args.workers if args.workers is not None else len(files)
+    workers = max(1, workers)
+
     print(f"🚀 準備執行批次修復作業 (English Variant)...")
     print(f"📁 目標資料夾: {args.dirpath}")
     print(f"📄 找到檔案數: {len(files)} 個")
-    print(f"⚙️ 執行緒數量: {args.workers}\n")
+    print(f"⚙️ 執行緒數量: {workers}\n")
 
-    with ThreadPoolExecutor(max_workers=args.workers) as executor:
+    with ThreadPoolExecutor(max_workers=workers) as executor:
         futures = {executor.submit(runRepairTask, fp, args): fp for fp in files}
         for future in as_completed(futures):
             file_name = os.path.basename(futures[future])

@@ -41,7 +41,8 @@ def parseArgs():
     parser.add_argument("--sample", help="Data Sample multiplier", default=1, type=int)
 
     parser.add_argument("--dirpath", help="Directory to save the rewrite files", default="Data/rewritten")
-    parser.add_argument("-w", "--workers", type=int, default=3, help="Max concurrent threads/workers")
+    parser.add_argument("-w", "--workers", type=int, default=None,
+                        help="Max concurrent threads/workers (default: one per task, i.e. full fan-out)")
 
     return parser.parse_args()
 
@@ -91,13 +92,15 @@ def main():
     args = parseArgs()
 
     tasks = list(itertools.product([args.model], args.dataset))
+    workers = args.workers if args.workers is not None else len(tasks)
+    workers = max(1, workers)
 
     print("🚀 Preparing English rewrite (Experiment 1)...")
     print(f"Rewriter model: {args.model}")
     print(f"Datasets: {args.dataset}")
-    print(f"Concurrent workers: {args.workers}\n")
+    print(f"Total tasks: {len(tasks)} | Concurrent workers: {workers}\n")
 
-    with ThreadPoolExecutor(max_workers=args.workers) as executor:
+    with ThreadPoolExecutor(max_workers=workers) as executor:
         futures = [executor.submit(runRewrite, m, d, args) for m, d in tasks]
         for future in as_completed(futures):
             try:

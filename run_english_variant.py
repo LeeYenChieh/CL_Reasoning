@@ -42,7 +42,8 @@ def parseArgs():
                         help="cot = current baseline CoT (Exp 2), short_cot = brief CoT (Exp 3), direct = no CoT (Exp 4)")
 
     parser.add_argument("--dirpath", help="Directory to save results (default: result/english_<prompt_style>)", default=None)
-    parser.add_argument("-w", "--workers", type=int, default=3, help="Max concurrent threads/workers")
+    parser.add_argument("-w", "--workers", type=int, default=None,
+                        help="Max concurrent threads/workers (default: one per task, i.e. full fan-out)")
 
     return parser.parse_args()
 
@@ -100,15 +101,17 @@ def main():
     dirpath = args.dirpath or os.path.join("result", f"english_{args.prompt_style}")
 
     tasks = list(itertools.product(args.model, args.dataset))
+    workers = args.workers if args.workers is not None else len(tasks)
+    workers = max(1, workers)
 
     print("🚀 Preparing rewritten-English evaluation (Experiments 2-4)...")
     print(f"Models: {args.model}")
     print(f"Datasets: {args.dataset}")
     print(f"Prompt style: {args.prompt_style}")
     print(f"Output dir: {dirpath}")
-    print(f"Total tasks: {len(tasks)} | Concurrent workers: {args.workers}\n")
+    print(f"Total tasks: {len(tasks)} | Concurrent workers: {workers}\n")
 
-    with ThreadPoolExecutor(max_workers=args.workers) as executor:
+    with ThreadPoolExecutor(max_workers=workers) as executor:
         futures = [executor.submit(runExperiment, m, d, args, dirpath) for m, d in tasks]
         for future in as_completed(futures):
             try:
